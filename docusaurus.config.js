@@ -62,8 +62,6 @@ const config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/venom-blockchain/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -80,10 +78,6 @@ const config = {
       },
       navbar: {
         title: 'Venom',
-        logo: {
-          alt: 'Venom logo',
-          src: 'img/logo.svg',
-        },
         items: [
           {
             type: 'doc',
@@ -104,7 +98,7 @@ const config = {
             label: 'Standards',
           },
           {
-            href: 'https://github.com/venom-blockchain',
+            href: 'https://github.com/venom-blockchain/docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -148,6 +142,10 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/venomfoundation',
+              },
+              {
+                label: 'Medium',
+                href: 'https://medium.com/@venom.foundation',
               },
             ],
           },
