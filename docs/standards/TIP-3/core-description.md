@@ -1,9 +1,3 @@
----
-title: Core description
-sidebar_position: 0
-slug: /standard/TIP-3
----
-
 # Fungible Token
 
 ## Abstract
@@ -12,7 +6,7 @@ The following standard describes the basic idea about distributed fungible token
 
 ## Motivation
 
-The suggested standard differs considerably from Ethereum ERC20 and other smart contract token standards with single registry due to its distributed nature related to Everscale blockchain particularities. Given that Everscale has a storage fee, using an existing ERC20 standard design would cause excessive maintenance costs. Also, ERC20 is somewhat incompatible with the sharding architecture. Therefore, a Distributed Token standard is preferable.
+The suggested standard differs considerably from Ethereum ERC20 and other smart contract token standards with single registry due to its distributed nature related to Venom blockchain particularities. Given that Venom has a storage fee, using an existing ERC20 standard design would cause excessive maintenance costs. Also, ERC20 is somewhat incompatible with the sharding architecture. Therefore, a Distributed Token standard is preferable.
 
 The ERC20 sharding implementation (with an idea to simply shard its registry) has drawbacks mainly related to complicated and expansive management. TIP-3 is fully distributed and implies separate storage of each user’s balance.
 
@@ -30,6 +24,10 @@ Each token holder has its own instance of token wallet contract. Transfer happen
 
 ## References
 
+:::info
+The original [TIP-3](https://docs.everscale.network/standard/TIP-3) standard was developed and maintained by the Everscale network community.
+:::
+
 - [EIP-20: Token Standard](https://eips.ethereum.org/EIPS/eip-20)
-- [Everscale Forum - TIP3](https://forum.freeton.org/t/tip-3-distributed-token-or-ton-cash/64)
+- [TIP3](https://forum.everscale.network/t/tip-3-distributed-token-or-ton-cash/64)
 - [Reference implementation by Broxus](https://github.com/broxus/ton-eth-bridge-token-contracts)
