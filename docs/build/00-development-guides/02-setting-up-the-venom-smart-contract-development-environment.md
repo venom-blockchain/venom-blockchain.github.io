@@ -137,7 +137,7 @@ That's all! You can run tests and start to develop your amazing projects
 locklift test --network local --config ./locklift.config.js
 ```
 
-The next step in your learning is [here](how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md)
+The next step in your learning is [here](03-how-to-create-your-own-fungible-tip-3-token/00-fungible-tokens-in-venom-network.md)
 
 # Troubleshooting
 
