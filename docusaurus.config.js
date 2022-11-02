@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const redirects = require('./redirects');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,24 +32,7 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          {
-            to: '/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network',
-            from: '/build/development-guides/how-to-create-your-own-fungible-tip-3-token'
-          },
-          {
-            to: '/build/development-guides/developing-of-simple-voting-system/voting-system-basics',
-            from: '/build/development-guides/developing-of-simple-voting-system'
-          },
-          {
-            to: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network',
-            from: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token'
-          },
-          {
-            to: '/build/integration-guides/how-to-connect-dapp-ui-to-venom',
-            from: '/build/integration-guides'
-          }
-        ]
+        ...redirects
       }
     ]
   ],
