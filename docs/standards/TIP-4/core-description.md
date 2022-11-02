@@ -1,3 +1,8 @@
+---
+sidebar_position: 0
+sidebar_label: Basic
+---
+
 # Non-Fungible Token
 
 ## Abstract

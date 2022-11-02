@@ -1,4 +1,5 @@
 ---
+sidebar_position: 0
 displayed_sidebar: standardSidebar
 title: Venom Development Standards
 ---
