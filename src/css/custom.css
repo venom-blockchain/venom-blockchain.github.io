@@ -145,6 +145,10 @@ article {
   }
 }
 
+.footer__title {
+  color: var(--ifm-font-color-base);
+}
+
 .footer--dark {
   background-color: var(--ifm-fooger-bg-color);
   background-image: var(--ifm-background-image);
