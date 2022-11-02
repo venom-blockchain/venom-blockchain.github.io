@@ -62,4 +62,4 @@ Click on the "Receive" button and copy the address or show the QR code for the s
 
 Now you have the wallet to store your VENOMs, transfer funds, and explore your transactions.
 
-The next step is to learn [how to transfer your tokens](balance-transfers.md).
+The next step is to learn [how to transfer your tokens](04-balance-transfers.md).

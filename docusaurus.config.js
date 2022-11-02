@@ -112,7 +112,7 @@ const config = {
             items: [
               {
                 label: 'General',
-                to: 'general',
+                to: 'general/readme',
               },
               {
                 label: 'Learn',

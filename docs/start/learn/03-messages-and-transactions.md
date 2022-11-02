@@ -10,7 +10,7 @@ All interactions with the Venom network are carried out through messages. The me
 
 ### Prerequisites
 
-To help you better understand this page, we recommend you first read [Accounts](accounts.md).
+To help you better understand this page, we recommend you first read [Accounts](04-accounts.md).
 
 ### Message types
 
