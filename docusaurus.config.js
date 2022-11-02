@@ -27,6 +27,32 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network',
+            from: '/build/development-guides/how-to-create-your-own-fungible-tip-3-token'
+          },
+          {
+            to: '/build/development-guides/developing-of-simple-voting-system/voting-system-basics',
+            from: '/build/development-guides/developing-of-simple-voting-system'
+          },
+          {
+            to: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network',
+            from: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token'
+          },
+          {
+            to: '/build/integration-guides/how-to-connect-dapp-ui-to-venom',
+            from: '/build/integration-guides'
+          }
+        ]
+      }
+    ]
+  ],
+
   presets: [
     [
       'classic',
@@ -61,7 +87,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'general/readme',
+            docId: 'start/general/welcome-to-venom',
             position: 'left',
             label: 'Docs',
           },
