@@ -8,7 +8,7 @@ slug: /learn/accounts
 # Accounts
 
 :::info
-If you need to create a wallet account and don't care about the technical details then you can follow [this article](../general/create-a-new-wallet-account.md).
+If you need to create a wallet account and don't care about the technical details then you can follow [this article](../general/03-create-a-new-wallet-account.md).
 :::
 
 Usually, an account means the user's identity in the blockchain. An account has an address, stores a balance, can send and receive funds, and calls smart contracts. In particular cases, an account is a smart contract with state storage.

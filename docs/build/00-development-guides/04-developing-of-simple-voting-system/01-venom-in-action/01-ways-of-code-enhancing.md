@@ -29,7 +29,7 @@ function getBallotAddress(address owner)
 }
 ```
 
-As you can see we used some keywords and syntax, that haven't been discussed before. If function marked with `responsible` keyword, this function will generate an outbound message for caller with value, bounce and flag you set. It's preferable to use exactly `{value: 0, bounce: false, flag: 64}` for this function. Do you remember TIP-3 wallet deploying from our TIP-3 [guide](../how-to-create-your-own-fungible-tip-3-token/simple-tokensale.md)? Function deployEmptyWallet is responsible too. That's why we can set a callback parameter there.
+As you can see we used some keywords and syntax, that haven't been discussed before. If function marked with `responsible` keyword, this function will generate an outbound message for caller with value, bounce and flag you set. It's preferable to use exactly `{value: 0, bounce: false, flag: 64}` for this function. Do you remember TIP-3 wallet deploying from our TIP-3 [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md)? Function deployEmptyWallet is responsible too. That's why we can set a callback parameter there.
 
 The next important point is a success/unsuccess callbacks or events. Enhancing your contract with event emitting wouldn't be amiss.  Especially when you deploys something or ends some case. For example we can add `NewBallot` event (when new ballot deployed) and `VoteAccepted` event (after onBallotUsed callback)
 

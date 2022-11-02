@@ -12,7 +12,7 @@ description: >-
 This guide will be more complicated as compared with Tokensale implementation. It's recommended to pass it secondarily.
 :::
 
-Fist of all, as usual, we should setup our development environment with locklift. For this smart-contracts guideline you need to include both [TIP-3](../how-to-create-your-own-fungible-tip-3-token/quick-start-developing-with-tip-3.md#install-dependencies) and [TIP-4](quick-start-developing-with-tip-4.md#install-dependencies) dependencies, because our Auction will be accepted in TIP-3 tokens. Let's explore some scheme of our contracts interaction and describe it
+Fist of all, as usual, we should setup our development environment with locklift. For this smart-contracts guideline you need to include both [TIP-3](../../03-how-to-create-your-own-fungible-tip-3-token/01-quick-start-developing-with-tip-3.md#install-dependencies) and [TIP-4](../../05-how-to-create-your-own-non-fungible-tip-4-token/01-quick-start-developing-with-tip-4.md#install-dependencies) dependencies, because our Auction will be accepted in TIP-3 tokens. Let's explore some scheme of our contracts interaction and describe it
 
 ![Our smart-contracts interaction logic](<../../../../../static/img/tip4auction.svg>)
 
@@ -26,7 +26,7 @@ NFT creating is a green arrows flow, auction bids is a yellow. Let's describe a 
 6. Auction's TokenWallet send a callback to Auction, which one handle TIP-3 transfer - checks if incoming bid amount more than previous bid, and updates a leader bid address
 7. When time is over, finishAuction function will send NFT to auction winner or old owner, if there is no bids was accepted
 
-That's all! As you can see, the main mechanic of our interaction is a callbacks. Let's start implement our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](quick-start-developing-with-tip-4.md) guide.
+That's all! As you can see, the main mechanic of our interaction is a callbacks. Let's start implement our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md) guide.
 
 ```solidity title="Collection.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -130,7 +130,7 @@ contract Nft is TIP4_1Nft, TIP4_2Nft {
 ```
 
 :::info
-We won't explain this code blocks because of it's already done in TIP-4 [quick start](quick-start-developing-with-tip-4.md)
+We won't explain this code blocks because of it's already done in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md)
 :::
 
 Then, let's deal with `Auction` contract. We'll get started from state and constructor, as usual. Do not forget to add interfaces we need.
@@ -205,7 +205,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-Remember about gas management and token wallet deploying mechanics from previous Venom In Action [guide](../how-to-create-your-own-fungible-tip-3-token/simple-tokensale.md). Implement `onTokenWallet` callback the same way.
+Remember about gas management and token wallet deploying mechanics from previous Venom In Action [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md). Implement `onTokenWallet` callback the same way.
 
 ```solidity title="Auction.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -392,7 +392,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 
 You can explore this sample (with tests and some scripts) by going to this <todo: link> repository. But we should talks about scripts we need, because this sample needs not only deploy scripts. Moving on.
 
-We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying not a really hard too.
+We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](../01-quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying not a really hard too.
 
 ```typescript title="3-deploy-auction.ts" lineNumbers="true"
 import { Address, getRandomNonce, WalletTypes } from "locklift";

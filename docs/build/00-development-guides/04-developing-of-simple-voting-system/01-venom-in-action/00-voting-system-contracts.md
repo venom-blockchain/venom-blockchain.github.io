@@ -306,7 +306,7 @@ contract Ballot {
 }
 ```
 
-That's all. `Vote` contract will check our Ballot address by calculating it, as you remember, and vote will be accept. But what if Vote calls will fail because of some reason (low gas attached or yet network problem!)? Our `Ballot` will be marked as used (`_used` state variable will be set as true, and we can't call vote once again). For solve this problems, TVM has a [bounce](../../../learn/messages-and-transactions.md) messages and [`onBounce`](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#onbounce) function for handling it. Let's deal with it by example
+That's all. `Vote` contract will check our Ballot address by calculating it, as you remember, and vote will be accept. But what if Vote calls will fail because of some reason (low gas attached or yet network problem!)? Our `Ballot` will be marked as used (`_used` state variable will be set as true, and we can't call vote once again). For solve this problems, TVM has a [bounce](../../../../start/learn/03-messages-and-transactions.md) messages and [`onBounce`](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#onbounce) function for handling it. Let's deal with it by example
 
 ```solidity title="Ballot.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
