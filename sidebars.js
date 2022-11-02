@@ -59,9 +59,56 @@ const sidebars = {
           ],
         },
         {
-          type: 'doc',
-          id: 'standards/TIP-3/core-description',
+          type: 'category',
           label: 'Non-Fungible Token',
+          items: [
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/core-description',
+              label: 'Basic',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/1',
+              label: 'TIP-4.1',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/2',
+              label: 'TIP-4.2',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/3',
+              label: 'TIP-4.3',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/4',
+              label: 'TIP-4.4',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-4/5',
+              label: 'TIP-4.5',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Standard Interface Detection',
+          items: [
+            {
+              type: 'doc',
+              id: 'standards/TIP-6/core-description',
+              label: 'Basic',
+            },
+            {
+              type: 'doc',
+              id: 'standards/TIP-6/1',
+              label: 'TIP-6.1',
+            },
+          ],
         },
       ]
     },
