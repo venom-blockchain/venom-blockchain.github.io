@@ -1,28 +1,24 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+
+import discord from '@site/static/img/discord.png';
+import twitter from '@site/static/img/tw.png';
+import medium from '@site/static/img/md.png';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
   return (
-    <header className={clsx('hero', styles.heroBanner)}>
-      <div className={clsx('hero__container', 'container')}>
-        <div className={clsx('col col--8')}>
-          <h1 className="hero__title">Welcome to the Venom Knowledge Base</h1>
-          <p className="hero__subtitle">
-            Venom is a multi-blockchain network being a basis for scalable Web3 applications in the DeFi and Global Payments markets.
-          </p>
-          <p className="hero__description">
-            Venom blockchain provides the best transactional scalability solution by sharding protocol and economic scalability by enabling run community-built workchains in the future.
-          </p>
-          <p className="hero__description">
-            Everyone can become part of the Venom ecosystem which is open and transparent.
-          </p>
-        </div>
+    <header className={clsx('main', styles.mainBanner)}>
+      <div className={clsx('main__container', 'container')}>
+        <h1 className={clsx(styles.main__title)}>
+          Welcome to the Venom Knowledge Base
+        </h1>
+        <p>
+          The Knowledge Base is the entry point into the Venom universe.<br/>
+          Get to know the technology behind the incredible scalability of the Venom blockchain.
+        </p>
       </div>
     </header>
   );
@@ -35,7 +31,118 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className={clsx('main__container', 'container')}>
+          <h2 className={clsx(styles.main__title)}>Explore the Knowledge Base</h2>
+
+          <div className={clsx(styles.main__container, styles.main__explore)}>
+            <div className={clsx(styles.main__col, 'col col--3')}>
+              <h3>
+                Get started
+              </h3>
+              <ul>
+                <li>
+                  <a href="/general/whats-new">What's New</a>
+                </li>
+                <li>
+                  <a href="/general/ecosystem">Ecosystem</a>
+                </li>
+                <li>
+                  <a href="/general/create-a-new-wallet-account">Create a new Wallet Account</a>
+                </li>
+                <li>
+                  <a href="/general/balance-transfers">Balance Transfers</a>
+                </li>
+                <li>
+                  <a href="/general/community">Community</a>
+                </li>
+              </ul>
+            </div>
+            <div className={clsx(styles.main__col, 'col col--3')}>
+              <h3>
+                Learn
+              </h3>
+              <ul>
+                <li>
+                  <a href="/learn/glossary">Glossary</a>
+                </li>
+                <li>
+                  <a href="/learn/architecture">Architecture</a>
+                </li>
+                <li>
+                  <a href="/learn/tokens-and-assets">Tokens and Assets</a>
+                </li>
+                <li>
+                  <a href="/learn/messages-and-transactions">Messages and Transactions</a>
+                </li>
+                <li>
+                  <a href="/learnДа/accounts">Accounts</a>
+                </li>
+              </ul>
+            </div>
+            <div className={clsx(styles.main__col, 'col col--3')}>
+              <h3>
+                Build
+              </h3>
+              <ul>
+                <li>
+                  <a href="/build/development-guides/comparing-of-ethereum-vs-venom-architectures">Comparing of Ethereum and Venom architectures</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up The Venom Smart Contract Development Environment</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network">How to create your own fungible TIP-3 token</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/developing-of-simple-voting-system/voting-system-basics">Developing of simple voting system</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network">How to create your own non-fungible TIP-4 token</a>
+                </li>
+              </ul>
+            </div>
+            <div className={clsx(styles.main__col, 'col col--3')}>
+              <h3>
+                Maintain
+              </h3>
+              <ul>
+                <li>
+                  <a href="/maintain/network-maintainers">Network Maintainers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className={clsx('main__container', 'container')}>
+          <h2>Join our community</h2>
+          <div className={clsx(styles.social_links)}>
+
+          <div className={clsx(styles.social_links__item)}>
+              <img src={discord} alt='Discord link' />
+              <div>
+                <p>Discord</p>
+                <a href="https://discord.com/invite/QsVypuKbZj" target="_blank">Venom Foundation</a>
+              </div>
+            </div>
+            
+            <div className={clsx(styles.social_links__item)}>
+              <img src={twitter} alt='Twitter link' />
+              <div>
+                <p>Twitter</p>
+                <a href="https://twitter.com/venomfoundation" target="_blank">@venomfoundation</a>
+              </div>
+            </div>
+            
+            <div className={clsx(styles.social_links__item)}>
+              <img src={medium} alt='Medium link' />
+              <div>
+                <p>Medium</p>
+                <a href="https://medium.com/@venom.foundation" target="_blank">@venom.foundation</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );

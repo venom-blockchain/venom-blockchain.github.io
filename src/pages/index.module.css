@@ -3,22 +3,78 @@
  * and scoped locally.
  */
 
-.heroBanner {
+.mainBanner {
   background: none;
+  padding: 2rem 0 2rem 0;
 }
 
-.heroBanner h1{
-  font-size: 4rem;
+.main__container {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+@media (max-width: 996px) {
+  .main__container {
+    display: block;
   }
+}
+
+.main__col {
+  padding: 0;
+  margin: 0;
+}
+
+.main__container ul {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+}
+
+.main__container li {
+  margin: 0 0 5px 2px;
+}
+
+h1.main__title{
+  font-size: 3rem;
+}
+
+h2.main__title{
+  font-size: 2rem;
+}
+
+.main__explore {
+  padding: 20px 0;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.social_links {
+  padding: 20px 0;
+  display: flex;
+}
+
+.social_links img {
+  max-height: 35px;
+  margin-right: 15px;
+}
+
+.social_links__item {
+  display: flex;
+  width: 400px;
+  align-items: center;
+}
+
+.social_links p {
+  padding: 0;
+  margin: 0;
+}
+
+.social_links a {
+  margin-right: 20px;
 }
