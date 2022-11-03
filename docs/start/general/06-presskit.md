@@ -10,9 +10,9 @@ You can use these files to publish informational materials related to the Venom 
 
 ## Images
 
-![](<../../../static/img/Venom Foundation Press image 001.png>)
-![](<../../../static/img/Venom Foundation Press image 006 (1).jpg>)
-![](<../../../static/img/Venom Foundation Press image 003 (2) (1).png>)
+![Press image](<../../../static/img/Venom Foundation Press image 001.png>)
+![Press image](<../../../static/img/Venom Foundation Press image 006 (1).jpg>)
+![Press image](<../../../static/img/Venom Foundation Press image 003 (2) (1).png>)
 
 ## Logo
 
@@ -28,4 +28,4 @@ Venom Foundation is leading among three core directions, such as essential infra
 
 ## Social links
 
-[![](../../../static/img/discord.png)](https://discord.gg/E5JdCbFFW7) [![](../../../static/img/tw.png)](https://twitter.com/venomfoundation) [![](../../../static/img/md.png)](https://medium.com/@venom.foundation)
+[![Discord](../../../static/img/discord.png)](https://discord.gg/E5JdCbFFW7) [![Twitter](../../../static/img/tw.png)](https://twitter.com/venomfoundation) [![Medium](../../../static/img/md.png)](https://medium.com/@venom.foundation)
