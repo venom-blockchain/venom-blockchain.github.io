@@ -15,7 +15,7 @@ Usually, an account means the user's identity in the blockchain. An account has 
 
 Ethereum accounts can be externally owned (controlled by anyone with private keys) or deployed as smart contracts. In the Venom blockchain, an account and a smart contract are the same things. Here we don't have externally-owned accounts in the usual sense, and any accounts are smart contracts.
 
-#### Account has the ability to:
+#### **Account has the ability to:**
 
 * Receive, hold and send VENOM and tokens
 * Receive external messages from outside the blockchain
@@ -28,7 +28,7 @@ Ethereum accounts can be externally owned (controlled by anyone with private key
 
 `storage` - The storage contains balance, state, last transaction logical time, and initial code hash
 
-![](../../../static/img/account-schema.jpeg)
+![Account Schema](../../../static/img/account-schema.jpeg)
 
 ## Address
 

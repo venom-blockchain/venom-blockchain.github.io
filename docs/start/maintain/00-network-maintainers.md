@@ -24,7 +24,7 @@ If you want to know how to become a Validator then follow the next article broke
 
 Delegators are important participants in the decentralization of the network. By staking to the validators they increase the network security and tell the Elector's algorithm which validators should advance to the next round. In this way, low stake validators who are trusted by the community are able to raise funds in their pools to become validators.
 
-![](../../../static/img/pools.png)
+![Pools](../../../static/img/pools.png)
 
 Since Venom is not a nPoS-based blockchain, any participant with enough can become a validator, even if not nominated by other participants.
 
