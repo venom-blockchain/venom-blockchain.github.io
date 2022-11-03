@@ -16,7 +16,7 @@ Make sure you have:
 
 Open a terminal inside the base directory of your project. Inside the folder, follow the command
 
-```
+```shell
 npm i everscale-inpage-provider --save
 ```
 

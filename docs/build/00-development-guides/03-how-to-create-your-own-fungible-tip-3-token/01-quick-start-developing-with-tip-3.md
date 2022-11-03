@@ -163,7 +163,9 @@ main()
 
 Finally, we can deploy a new token to `local` network. For this, make sure local node is running, if not follow the next command
 
-<pre class="language-shell"><code class="lang-shell"><strong>docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node</strong></code></pre>
+```shell
+docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node
+```
 
 and run the deploy script
 

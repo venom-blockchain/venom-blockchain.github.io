@@ -78,4 +78,3 @@ contract Vote {
 ```
 
 Pay attention, that events and small value callbacks should be instantiate before any transfers with 128 flag.
-
