@@ -13,7 +13,7 @@ First, let's make sure we've chosen the right type of token for our purposes. In
 If you need to implement a different one of the most popular token types is NFT (Non-fungible token), follow [this](../how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network) article
 :::
 
-Venom network uses the standard of fungible tokens TIP-3
+Venom network uses the standard of fungible tokens [TIP-3](../../../standards/TIP-3/core-description.md)
 
 ### What is TIP-3?
 
@@ -35,5 +35,3 @@ As you may know, ERC20 contract main value is a balances mapping. So users just 
 ![TIP-3 concept simple scheme](<../../../../static/img/tip3.svg>)
 
 Safety of `TokenWallet - TokenWallet` interaction is provided by address calculation mechanics. Each contract in Venom Blockchain can store some contract code and has a possibility to calculate an address by using some state variables. Next, this address can be compared with msg.sender address. And if it same - the call is safety and correct. We will look through this mechanic in details [later](../04-developing-of-simple-voting-system/01-venom-in-action/00-voting-system-contracts.md).
-
-<todo: standard link>
