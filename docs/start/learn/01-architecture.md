@@ -14,7 +14,7 @@ Venom architecture is designed as a heterogeneous multi-blockchain platform with
 
 The masterchain is a layer-0 blockchain, which is responsible for coordinating all the protocol entities such as workchains and shardchains. The masterchain state stores the network configuration, information about a set of validators, their stakes, and election rounds. Blocks of the masterchain contain the shards configuration and the latest block hashes of the corresponding shardchains. Blocks of the masterchain are produced by the global validators set.
 
-![](../../../static/img/architecture.jpeg)
+![Architecrture](../../../static/img/architecture.jpeg)
 
 ### Workchains
 

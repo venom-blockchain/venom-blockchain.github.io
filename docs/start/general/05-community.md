@@ -14,4 +14,4 @@ The Venom community is constantly growing. There are a variety of essential link
 
 [https://github.com/venom-blockchain](https://github.com/venom-blockchain)
 
-[![](../../../static/img/discord.png)](https://discord.gg/E5JdCbFFW7)     [![](../../../static/img/tw.png)](https://twitter.com/venomfoundation)     [![](../../../static/img/md.png)](https://medium.com/@venom.foundation)
+[![Discord](../../../static/img/discord.png)](https://discord.gg/E5JdCbFFW7)     [![Twitter](../../../static/img/tw.png)](https://twitter.com/venomfoundation)     [![Medium](../../../static/img/md.png)](https://medium.com/@venom.foundation)

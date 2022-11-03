@@ -22,7 +22,7 @@ The Venom network has three different types of messages:
 
 **Outbound external message:** Known as a "_message to nowhere_" or "_event_". An event may be produced by a smart contract. Any off-chain participant can subscribe to events inside of the Venom network and receive them.
 
-![](<../../../static/img/messages.png>)
+![Messages](<../../../static/img/messages.png>)
 
 ### Message structure
 

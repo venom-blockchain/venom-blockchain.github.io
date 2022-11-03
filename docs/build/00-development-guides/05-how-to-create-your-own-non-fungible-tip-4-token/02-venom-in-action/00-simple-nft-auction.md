@@ -482,7 +482,7 @@ main()
 
 Pay attention on `callback` parameter of NFT's `transfer` method
 
-```
+```js
 callbacks: [[AUCTION_ADDRESS, {value: toNano(0.1), payload: ""}]] 
 ```
 
