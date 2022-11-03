@@ -6,7 +6,7 @@ description: >-
   deployed TIP-3 token
 ---
 
-# Venom In Action. Simple Tokensale.
+# Venom In Action. Simple Tokensale
 
 Who needs a token, that nobody can buy. So, let's create your first tokensale contract!
 
@@ -27,7 +27,7 @@ As in a previous guide we need to have a TIP-3 sources in this project. So. let'
 }
 ```
 
-```typescript title="locklift.config.ts" lineNumbers="true" 
+```typescript title="locklift.config.ts" lineNumbers="true"
 compiler: {
     ...
     externalContracts: {

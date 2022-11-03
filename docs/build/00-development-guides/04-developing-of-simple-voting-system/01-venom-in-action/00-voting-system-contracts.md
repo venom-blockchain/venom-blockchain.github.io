@@ -7,7 +7,7 @@ description: >-
   calculation, external callings and bounce handling.
 ---
 
-# Venom In Action. Voting system contracts.
+# Venom In Action. Voting system contracts
 
 No further ado. Let's start with familiar command
 
@@ -17,7 +17,7 @@ npx locklift init --path my-smv
 
 As you previously read, we need to implement two smart contracts. There is no external dependencies for this guide. Start with `Vote` contract. We have a pretty clean state and constructor without something unusual
 
-```solidity title="Vote.sol" lineNumbers="true" 
+```solidity title="Vote.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;

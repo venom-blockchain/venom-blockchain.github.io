@@ -8,7 +8,7 @@ description: The first thing to do before starting the smart contracts developme
 
 To improve your development experience, you may need some tools and utils to compile, deploy and test your Venom contracts. [Locklift](https://github.com/broxus/locklift/) is a development environment like Hardhat or Truffle.
 
-### Let's install it
+## Let's install it
 
 ```shell-session
 npm install -g locklift
@@ -16,7 +16,7 @@ locklift --version
 > 2.1.10
 ```
 
-### Initialize your first project
+## Initialize your first project
 
 ```shell-session
 locklift init --path sample-project
@@ -28,7 +28,7 @@ locklift init --path sample-project
 
 This command initializes a new Locklift project, filled with samples:
 
-```
+```txt
 ├── locklift.config.js
 ├── tsconfig.json
 ├── package.json
@@ -44,7 +44,7 @@ This command initializes a new Locklift project, filled with samples:
     └── sample-test.js
 ```
 
-### Configuration
+## Configuration
 
 The configuration file is called `locklift.config.js`. Here's the basic layout for Venom blockchain networks:
 
@@ -113,7 +113,7 @@ Let's go through each parameter
 `networks`  Specifies which networks are available for deployment and testing
 `networks.[NETWORK_NAME].keys.phrase` If you leave this field value empty - a new random seed will be generated each time you're running locklift. Or specify it explicitly - fill the `phrase` field with a mnemonic phrase.
 
-### Run The Local Node
+## Run The Local Node
 
 :::info
 You need to have a [docker](https://www.docker.com) runtime to continue with this guide
@@ -139,7 +139,7 @@ locklift test --network local --config ./locklift.config.js
 
 The next step in your learning is [here](03-how-to-create-your-own-fungible-tip-3-token/00-fungible-tokens-in-venom-network.md)
 
-# Troubleshooting
+## Troubleshooting
 
 <details>
 

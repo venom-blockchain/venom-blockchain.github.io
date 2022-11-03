@@ -20,7 +20,7 @@ You need to have an installed Smart Contract Development Environment. If you hav
 
 ### Initialize your NFT project
 
-```
+```shell
 npx locklift init --path my-first-nft
 > [INFO]  New Locklift project initialized in .
 > [INFO]  Installing required dependencies...
@@ -204,17 +204,21 @@ main()
 
 Finally, we can deploy a new token to `local` network. For this, make sure local node is running, if not follow the next command
 
-<pre class="language-shell"><code class="lang-shell"><strong>docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node</strong></code></pre>
+```shell
+docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node
+```
 
 and run our scripts
 
-<pre class="language-shell"><code class="lang-shell">npx locklift run -s ./scripts/1-deploy-collection.ts -n local
+```shell
+npx locklift run -s ./scripts/1-deploy-collection.ts -n local
 > [INFO]  factorySource generated
-<strong>> [INFO]  Built
-</strong>> Collection deployed at: 0:882c1f7af09efaf506ab313daecb6ce127acfab7d082e28e6dbcff839aa58bba
+> [INFO]  Built
+> Collection deployed at: 0:882c1f7af09efaf506ab313daecb6ce127acfab7d082e28e6dbcff839aa58bba
 npx locklift run -s ./scripts/2-call-mintNft.ts -n local
 > [INFO]  factorySource generated
 > [INFO]  Built
 > NFT: 0:64a4ea8fa80bf3d2ba78c0a602e39a045786a70b69e879f90e9abe2a2f7f33fe</code></pre>
+```
 
 Now you know how to deploy your own NFT collection and mint NFT with TIP-4 standard!

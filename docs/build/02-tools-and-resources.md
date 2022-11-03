@@ -5,7 +5,7 @@ sidebar_label: Tools & Resources
 
 # Tools & Resources
 
-### Smart contracts
+## Smart contracts
 
 Development environment aiming to help you with contracts development  
 [locklift](https://github.com/broxus/locklift)
@@ -13,7 +13,7 @@ Development environment aiming to help you with contracts development
 Solidity language support for Visual Studio Code  
 [vscode plugin](https://marketplace.visualstudio.com/items?itemName=everscale.solidity-support)
 
-### Frontend
+## Frontend
 
 A library that makes it easy to UI starts interacting with the Venom  
 [venom-connect](https://github.com/web3sp/venom-connect)
@@ -24,7 +24,7 @@ Standalone fallback client that supports compatibility with the Venom blockchain
 A Web3-like interface that supports compatibility with the Venom blockchain  
 [inpage-provider](https://github.com/broxus/everscale-inpage-provider)
 
-### Backend
+## Backend
 
 A standalone fallback client that supports compatibility with the Venom blockchain  
 [standalone-client/nodejs](https://github.com/broxus/everscale-standalone-client)
@@ -41,7 +41,7 @@ A simple service to stream Venom data into Kafka
 This is a light node + api for sending and tracking payments  
 [ton-wallet-api](https://github.com/broxus/ton-wallet-api)
 
-### Mobile
+## Mobile
 
 A Nekoton binding for flutter  
 [nekoton-flutter](https://github.com/broxus/nekoton-flutter)
