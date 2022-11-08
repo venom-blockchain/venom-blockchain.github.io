@@ -33,7 +33,17 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         ...redirects
-      }
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
+      },
     ]
   ],
 
@@ -80,6 +90,11 @@ const config = {
             docId: 'standards/readme',
             position: 'left',
             label: 'Standards',
+          },
+          {
+            href: 'https://forum.venom.foundation',
+            label: 'Forum',
+            position: 'right',
           },
           {
             href: 'https://github.com/venom-blockchain/docs',
