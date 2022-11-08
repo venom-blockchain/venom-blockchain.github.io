@@ -6,6 +6,7 @@
 .mainBanner {
   background: none;
   padding: 2rem 0 2rem 0;
+  margin-top: 20px;
 }
 
 .main__container {
@@ -33,7 +34,7 @@
 }
 
 .main__container li {
-  margin: 0 0 5px 2px;
+  margin: 0 0 15px 2px;
 }
 
 h1.main__title{
@@ -57,11 +58,6 @@ h2.main__title{
 .social_links {
   padding: 20px 0;
   display: flex;
-}
-
-.social_links img {
-  max-height: 35px;
-  margin-right: 15px;
 }
 
 .social_links__item {
