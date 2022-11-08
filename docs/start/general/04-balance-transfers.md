@@ -56,7 +56,7 @@ After you have confirmed the sending, the window will close.
 **Step 4.** Open Venom Wallet again and click the "Transactions" tab, look in the list of transactions you will see a transaction in the status "Transaction in progress", after a while it will be processed by the network and change its status.
 
 <Image img={img04} alt="In progress status"
-    style={{ width: "48%", minWidth: "320px", marginRight: "4", display: "inline-block" }}
+    style={{ width: "48%", minWidth: "320px", marginRight: "4%", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 <Image img={img05} alt="Applied transaction"
