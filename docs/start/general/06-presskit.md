@@ -11,8 +11,8 @@ You can use these files to publish informational materials related to the Venom 
 ## Images
 
 ![Press image](<../../../static/img/Venom Foundation Press image 001.png>)
-![Press image](<../../../static/img/Venom Foundation Press image 006 (1).jpg>)
-![Press image](<../../../static/img/Venom Foundation Press image 003 (2) (1).png>)
+![Press image](<../../../static/img/Venom Foundation Press image 006.jpg>)
+![Press image](<../../../static/img/Venom Foundation Press image 003.png>)
 
 ## Logo
 
