@@ -31,7 +31,7 @@ to select the wallet setup option:
 * Create a new wallet - You need to use this option if you have not used
 a wallet before and do not have a saved seed phrase
 * Sign in with seed phrase - If there is already a seed phrase then import
-the already created using this button
+the already created with using this button
 * Sign in with ledger - For using a ledger hardware wallet
 
 **Step 2.** We will consider the option when you first create a wallet.
@@ -49,7 +49,7 @@ gives you access to the tokens and other things associated with your Wallet Acco
 ![Example banner](./assets/create-a-new-wallet-account/3.png)
 
 We recommend you use **the paper and pencil backup** method. For storing
-on paper writing with a pencil is much better than pen. The paper should be
+on paper writing with a pencil is much better than a pen. The paper should be
 acid-free or archival paper and stored in the dark avoiding extremes of heat
 and moisture.
 
@@ -86,7 +86,7 @@ address of your new Account with the token sender
     className="create-a-new-wallet-account inline-img"
 />
 
-Click on the "Receive" button and copy the address or show the QR code for the sender.
+Click on the "Receive" button and copy the address or show the QR code to the sender.
 
 Now you have the wallet to store your VENOMs, transfer funds, and explore your transactions.
 

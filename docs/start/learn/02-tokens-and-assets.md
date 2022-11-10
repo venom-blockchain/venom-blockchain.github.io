@@ -50,7 +50,7 @@ Address: `0:28237a5d5abb32413a79b5f98573074d3b39b72121305d9c9c97912fc06d843c`
 
 #### Why do we need WVenom token?
 
-If you are a common user of DeFi protocols, you probably will not encounter direct ownership of the WVenom token. Since protocols usually do all the work of wrapping the Venom token behind the scenes, and you don't have to worry about it.
+If you are a common user of DeFi protocols, you probably will not encounter direct ownership of the WVenom token. Since protocols usually do all the work of wrapping the Venom token behind the scenes, you don't have to worry about it.
 
 #### Why do they do it?
 
