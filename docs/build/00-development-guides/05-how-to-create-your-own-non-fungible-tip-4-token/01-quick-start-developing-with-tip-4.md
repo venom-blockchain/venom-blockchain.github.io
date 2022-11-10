@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Quick start developing with TIP-4
 description: >-
   This page helps you to instantly start developing with TIP-4 and deploy your
-  NFT collection here and now. Read next guides, if you want to go deeper.
+  NFT collection here and now. Read the next guides, if you want to go deeper.
 ---
 
 # Quick start developing with TIP-4
@@ -45,7 +45,7 @@ npm i --save-dev @itgold/everscale-tip
 
 ### Implement base contracts
 
-Next, you should implement two interfaces in two contracts. Firstly, let's deal with Nft contract. The only thing we should do for basics is implement `TIP4_1Nft`&#x20;
+Next, you should implement two interfaces in two contracts. Firstly, let's deal with Nft contract. The only thing we should do for basics is implementing `TIP4_1Nft``&#x20;
 
 ```solidity title="Nft.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -71,7 +71,7 @@ contract Nft is TIP4_1Nft {
 }
 ```
 
-Now we should go for Collection contract. We should implement `TIP4_1Collection` and write some method for NFT deploying.
+Now we should go for the Collection contract. We should implement `TIP4_1Collection` and write some method for NFT deploying.
 
 ```solidity title="Collection.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -121,7 +121,7 @@ contract Collection is TIP4_1Collection {
 
 ### Deploy action
 
-Let's move to deploy action. We need two scripts for this quick start: one for `Collection` deploying, and second for calling `mintNft` function, that we have implemented.
+Let's move to deploy action. We need two scripts for this quick start: one for `Collection` deploying, and the second for calling `mintNft` function, that we have implemented.
 
 ```typescript title="1-deploy-collection.ts" lineNumbers="true"
 async function main() {
@@ -202,7 +202,7 @@ main()
   
 ```
 
-Finally, we can deploy a new token to `local` network. For this, make sure local node is running, if not follow the next command
+Finally, we can deploy a new token to the `local` network. For this, make sure the local node is running, if not follow the next command
 
 ```shell
 docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node

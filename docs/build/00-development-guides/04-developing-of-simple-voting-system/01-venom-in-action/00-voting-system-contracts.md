@@ -15,7 +15,7 @@ No further ado. Let's start with familiar command
 npx locklift init --path my-smv
 ```
 
-As you previously read, we need to implement two smart contracts. There is no external dependencies for this guide. Start with `Vote` contract. We have a pretty clean state and constructor without something unusual
+As you previously read, we need to implement two smart contracts. There are no external dependencies for this guide. Start with `Vote` contract. We have a pretty clean state and constructor without something unusual
 
 ```solidity title="Vote.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -44,7 +44,7 @@ contract Vote {
 }
 ```
 
-Next function we need - `deployBallot`. It realize popular "deploy contract from contract" mechanic well-descripted [here](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#deploy-contract-from-contract). We should just use `tvm.buildStateInit` function, fill `varInit` section by future values of our `Ballot` contract static variables and use keyword `new` for deploying.
+Next function we need - `deployBallot`. It realizes the popular "deploy contract from contract" mechanic well-described [here](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#deploy-contract-from-contract). We should just use `tvm.buildStateInit` function, fill `varInit` section with future values of our `Ballot` contract static variables and use the keyword `new` for deploying.
 
 ```solidity title="Vote.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -76,9 +76,9 @@ contract Vote {
 }
 ```
 
-Well, the votes will be stored in our Vote contract. That's why we need a special function, that can be called only by Ballot contract. Ballot contract will call this function and pass a vote (accept or reject) into. But how we can define a function, that can be called only by contracts with concrete code (by contracts, that was deployed by Vote contract)?&#x20;
+Well, the votes will be stored in our Vote contract. That's why we need a special function, that can be called only by Ballot contract. Ballot contract will call this function and pass a vote (accept or reject). But how we can define a function, that can be called only by contracts with concrete code (by contracts, that were deployed by Vote contract)?&#x20;
 
-It can't be any easier. Address of any contract can be definitely calculated, if you know state init variables, public key and contract code:
+It can't be any easier. The address of any contract can be definitely calculated if you know state init variables, a public key and contract code:
 
 ```solidity title="Vote.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -118,9 +118,9 @@ contract Vote {
 }
 ```
 
-That is the way out! `TokenWallets` of `TIP-3` implementation working the same way to transfer tokens (one wallet calls another wallet's `acceptTransfer` function).
+That is the way out! `TokenWallets` of `TIP-3` implementation work the same way to transfer tokens (one wallet calls another wallet's `acceptTransfer` function).
 
-The last thing we need is a getDetails view function to return results of our vote
+The last thing we need is a `getDetails` view function to return the results of our vote
 
 ```solidity
 function getDetails() external view returns (uint32 accepted, uint32 rejected) {
@@ -242,7 +242,7 @@ contract Ballot {
 }    
 ```
 
-Let's talk about activation mechanic. In constructor we already reserved little more venoms. We made it with purpose, that fee for external call will be payed from contract balance. That way of gas management allows us to transfer external calls fee paying to user responsibility. But activate method shouldn't be called by somebody unauthorized, so we just use `require` keyword with comparing `msg.pubkey` and  `_managerPublicKey` stored in state init. Of course you need to call `tvm.accept()` function. Simply put, this call allows contract to use it's own balance for execution pay.
+Let's talk about the activation mechanic. In constructor, we already reserved little more venoms. We made it with the purpose, that fee for the external call will be paid from the contract balance. That way of gas management allows us to transfer external calls fee-paying to user responsibility. But activate method shouldn't be called by somebody unauthorized, so we just use `require` keyword by comparing `msg.pubkey` and  `_managerPublicKey` stored in state init. Of course, you need to call `tvm.accept()` function. Simply put, this call allows the contract to use its own balance for executive pay.
 
 ```solidity title="Ballot.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -267,9 +267,9 @@ contract Ballot {
 }
 ```
 
-Let's implement main function of our `Ballot` - `vote`.
+Let's implement the main function of our `Ballot` - `vote`.
 
-Pay attention to imports. We have `import "./interfaces/IVote.sol";` . It's just an interface for calling our `Vote` contract (just like for EVM if you know what I mean).&#x20;
+Pay attention to imports. We have `import "./interfaces/IVote.sol"`. It's just an interface for calling our `Vote` contract (just like for EVM if you know what I mean).&#x20;
 
 ```solidity title="interfaces/IVote.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -280,7 +280,7 @@ interface IVote {
 }
 ```
 
-Let us now return for `vote` function
+Let us now return to `vote` function
 
 ```solidity title="Ballot.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -306,7 +306,7 @@ contract Ballot {
 }
 ```
 
-That's all. `Vote` contract will check our Ballot address by calculating it, as you remember, and vote will be accept. But what if Vote calls will fail because of some reason (low gas attached or yet network problem!)? Our `Ballot` will be marked as used (`_used` state variable will be set as true, and we can't call vote once again). For solve this problems, TVM has a [bounce](../../../../start/learn/03-messages-and-transactions.md) messages and [`onBounce`](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#onbounce) function for handling it. Let's deal with it by example
+That's all. `Vote` contract will check our Ballot address by calculating it, as you remember, and the vote will be accepted. But what if Vote calls will fail because of some reason (low gas attached or yet network problem!)? Our `Ballot` will be marked as used (`_used` state variable will be set as true, and we can't call vote once again). To solve this problems, TVM has [bounce](../../../../start/learn/03-messages-and-transactions.md) messages and [`onBounce`](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#onbounce) function for handling them. Let's deal with it by example
 
 ```solidity title="Ballot.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -400,4 +400,4 @@ contract Ballot {
 }
 ```
 
-Do not forget about tests and scripts. We won't show any scripts in this guideline just because there is no something special in. All source ode with deploy script and simple test suite are available in [repo](https://github.com/venom-blockchain/guides/tree/master/vote-contracts). Next section will show you some enhancing for this code.
+Do not forget about tests and scripts. We won't show any scripts in this guideline just because there is no something special in them. All source code with deploy script and simple test suites are available in [repo](https://github.com/venom-blockchain/guides/tree/master/vote-contracts). The next section will show you some enhancements for this code.
