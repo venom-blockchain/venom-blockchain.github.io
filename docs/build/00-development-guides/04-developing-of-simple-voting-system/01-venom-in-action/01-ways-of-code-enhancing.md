@@ -7,7 +7,7 @@ sidebar_label: Ways of code enhancing
 
 Let's dive into some best practices and good tone coding.&#x20;
 
-First of all, if your contract is deploy some another contracts, it's advisable to have a view method for returning new contract address:
+First of all, if your contract deploys some other contracts, it's advisable to have a view method for returning the new contract address:
 
 ```solidity lineNumbers="true"
 function getBallotAddress(address owner) 
@@ -29,9 +29,9 @@ function getBallotAddress(address owner)
 }
 ```
 
-As you can see we used some keywords and syntax, that haven't been discussed before. If function marked with `responsible` keyword, this function will generate an outbound message for caller with value, bounce and flag you set. It's preferable to use exactly `{value: 0, bounce: false, flag: 64}` for this function. Do you remember TIP-3 wallet deploying from our TIP-3 [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md)? Function deployEmptyWallet is responsible too. That's why we can set a callback parameter there.
+As you can see we used some keywords and syntax, that hasn't been discussed before. If the function is marked with `responsible` keyword, this function will generate an outbound message for the caller with the value, bounce and flag you set. It's preferable to use exactly `{value: 0, bounce: false, flag: 64}` for this function. Do you remember TIP-3 wallet deploying from our TIP-3 [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md)? Function deployEmptyWallet is responsible too. That's why we can set a callback parameter there.
 
-The next important point is a success/unsuccess callbacks or events. Enhancing your contract with event emitting wouldn't be amiss.  Especially when you deploys something or ends some case. For example we can add `NewBallot` event (when new ballot deployed) and `VoteAccepted` event (after onBallotUsed callback)
+The next important point is success/unsuccess callbacks or events. Enhancing your contract with event emitting wouldn't be amiss. Especially when you deploy something or end some case. For example, we can add `NewBallot` event (when the new ballot is deployed) and `VoteAccepted` event (after `onBallotUsed` callback)
 
 ```solidity title="Vote.sol" lineNumbers="true"
 ...
@@ -56,11 +56,11 @@ contract Vote {
 }
 ```
 
-There is another small hack for helping frontend developer. You can transfer small amount of nanotons (1,2,3..,etc) to owner address. For example:
+There is another small hack for helping frontend developers. You can transfer a small number of nanotons (1,2,3.., etc) to the owner's address. For example:
 
 `owner.transfer({value: 1, flag: 1, bounce: false))`&#x20;
 
-Frontend developer can subscribe on incoming transaction to user's wallet and use this small values for detect contract behavior. For example we can send 1 nanovenom, if vote has beet accepted
+Frontend developers can subscribe to incoming transactions to the user's wallet and use these small values to detect contract behavior. For example, we can send 1 nanovenom, if the vote has been accepted
 
 ```solidity title="Vote.sol" lineNumbers="true"
 ...
@@ -77,4 +77,4 @@ contract Vote {
 }l
 ```
 
-Pay attention, that events and small value callbacks should be instantiate before any transfers with 128 flag.
+Pay attention, that events and small value callbacks should be instantiated before any transfers with 128 flag.

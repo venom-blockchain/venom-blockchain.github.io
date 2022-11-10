@@ -58,7 +58,7 @@ const config: LockliftConfig = {
 
 Now we have two new networks in our config - `venomTestnet` and `venomMainnet`. Our interest is now in `giver` section of each network.
 
-When you work with a local node, you have a pre-deployed giver, which you can use for contract deploying. Of course, there are no givers in the global network (at least publicly accessible, you can deploy your own giver same as in the local node for sure). Locklift allows you to use your venom wallet as the giver. In a giver section, you should fill `address`, `phrase`, and `accountId` fields, according to your wallet data (address of the wallet, seed phrase, and account number for accountId). You can use the field `key` with a secret key instead of a phrase. Then you should fill the keys section the same way (`phrase` field, and `amount` of accounts you need from the given seed phrase)
+When you work with a local node, you have a pre-deployed giver, which you can use for contract deployment. Of course, there are no givers in the global network (at least publicly accessible, you can deploy your own giver same as in the local node for sure). Locklift allows you to use your venom wallet as the giver. In a giver section, you should fill `address`, `phrase`, and `accountId` fields, according to your wallet data (address of the wallet, seed phrase, and account number for accountId). You can use the field `key` with a secret key instead of a phrase. Then you should fill the keys section the same way (`phrase` field, and `amount` of accounts you need from the given seed phrase)
 
 As you can see we have a `giverFactory` field, that initializes a `GiverWallet` object. Let's have a look up there.
 
@@ -118,5 +118,5 @@ Summarizing:
 1. Fill `network` section of your locklift config with the data of the network you want
 2. Take your wallet address (or another contract you want), seed phrase (or secret key)
 3. Fill a `giver` and `keys` section of your locklift config with data you take previously
-4. Change `GiverWallet` class according to ABI of your contract (`sendTo` function)
+4. Change `GiverWallet` class according to the ABI of your contract (`sendTo` function)
 5. Call any deploy script with the network you need

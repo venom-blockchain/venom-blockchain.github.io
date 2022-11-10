@@ -5,7 +5,7 @@ sidebar_label: Comparing of Ethereum vs Venom architectures
 
 # Comparing of Ethereum vs Venom architectures
 
-Most likely you are familiar with EVM-based blockchains like Ethereum, and you need to migrate your experience from EVM-based blockchain to Venom. This article touches most important things about the difference between two networks.
+Most likely you are familiar with EVM-based blockchains like Ethereum, and you need to migrate your experience from EVM-based blockchain to Venom. This article touches most important things about the difference between the two networks.
 
 ## EVM as the "Global Computer" vs Infinity Sharding Protocol
 
