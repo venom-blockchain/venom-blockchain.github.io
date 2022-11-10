@@ -19,12 +19,12 @@ npx create-react-app my-tokensale-web --template typescript
 ```
 
 :::info
-This guide will not include frontend development basements and React essentuals. We focus our attention only on venom smart contracts integration.
+This guide will not include frontend development basements and React essentials. We focus our attention only on venom smart contracts integration.
 :::
 
 ## Connecting Venom Wallet to your app
 
-Suppose we already have some layout for our web application and you know how to use it with React. First of all, we need to connect our [venom wallet](../../../../start/general/02-ecosystem.md#venom-wallet) with our app. For this task we will use [venom-connect](https://www.npmjs.com/package/venom-connect) library. This library provides us with handy interface for building connect popup for our venom wallet and then gives us an interface for working with the venom network. The library has been built on [inpage-provider](https://github.com/broxus/everscale-inpage-provider) and [standalone-client](https://github.com/broxus/everscale-standalone-client) - basic libraries for interaction with the venom network, so you can build your own system for wallet connection, but we will just use a ready-made tool. Let's install it and the corresponding tools for working with it.
+Suppose we already have some layout for our web application and you know how to use it with React. First of all, we need to connect our [venom wallet](../../../../start/general/02-ecosystem.md#venom-wallet) with our app. For this task we will use [venom-connect](https://www.npmjs.com/package/venom-connect) library. This library provides us with a handy interface for building connect popup for our venom wallet and then gives us an interface for working with the venom network. The library has been built on [inpage-provider](https://github.com/broxus/everscale-inpage-provider) and [standalone-client](https://github.com/broxus/everscale-standalone-client) - basic libraries for interaction with the venom network, so you can build your own system for wallet connection, but we will just use a ready-made tool. Let's install it and the corresponding tools for working with it.
 
 ```shell
 npm install --save venom-connect everscale-inpage-provider everscale-standalone-client
@@ -207,7 +207,7 @@ That's it. Now you can see the widget popup window after clicking on `Connect Wa
 
 ## Getting the user's wallet address from the connected wallet
 
-But now the user doesn't know if his connection was succesfull. Let's add a header, that shows the wallet address after the wallet has been connected. And, of course, the disconnect button. In that case, we need to add some code. Pay attention to code comments
+But now the user doesn't know if his connection was successful. Let's add a header, that shows the wallet address after the wallet has been connected. And, of course, the disconnect button. In that case, we need to add some code. Pay attention to code comments
 
 ```typescript title="Main.tsx" lineNumbers="true"
 import React, { useEffect, useState } from 'react';

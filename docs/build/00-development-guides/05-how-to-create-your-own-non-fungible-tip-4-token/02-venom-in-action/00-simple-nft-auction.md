@@ -9,24 +9,24 @@ description: >-
 # Venom In Action. Simple NFT auction
 
 :::info
-This guide will be more complicated as compared with Tokensale implementation. It's recommended to pass it secondarily.
+This guide will be more complicated as compared with the Tokensale implementation. It's recommended to pass it secondarily.
 :::
 
-Fist of all, as usual, we should setup our development environment with locklift. For this smart-contracts guideline you need to include both [TIP-3](../../03-how-to-create-your-own-fungible-tip-3-token/01-quick-start-developing-with-tip-3.md#install-dependencies) and [TIP-4](../../05-how-to-create-your-own-non-fungible-tip-4-token/01-quick-start-developing-with-tip-4.md#install-dependencies) dependencies, because our Auction will be accepted in TIP-3 tokens. Let's explore some scheme of our contracts interaction and describe it
+First of all, as usual, we should set up our development environment with the locklift. For this smart-contracts guideline, you need to include both [TIP-3](../../03-how-to-create-your-own-fungible-tip-3-token/01-quick-start-developing-with-tip-3.md#install-dependencies) and [TIP-4](../../05-how-to-create-your-own-non-fungible-tip-4-token/01-quick-start-developing-with-tip-4.md#install-dependencies) dependencies, because our Auction will be accepted in TIP-3 tokens. Let's explore some scheme of our contracts interaction and describe it
 
 ![Our smart-contracts interaction logic](<../../../../../static/img/tip4auction.svg>)
 
-NFT creating is a green arrows flow, auction bids is a yellow. Let's describe a processes
+NFT creation is a green arrow flow, and auction bids are yellow. Let's describe a processes
 
 1. User mints its own NFT via Collection contract
-2. Then user deploys an Auction
-3. Auction deploys its own TIP-3 TokenWallet via given TokenRoot address (familiar mechanic for you from TIP-3 Tokensale guide)
-4. User sends minted NFT to Auction, which one implementing `INftTransfer` interface and accept this NFT
+2. Then, the user deploys an Auction
+3. Auction deploys its own TIP-3 TokenWallet via the given TokenRoot address (a familiar mechanic for you from TIP-3 Tokensale guide)
+4. The user sends minted NFT to Auction, which implements `INftTransfer` interface and accepts this NFT
 5. Another users sends TIP-3 tokens (bid) to Auction with `notify = true` parameter (see TIP-3 specs or TIP-3 guide)
-6. Auction's TokenWallet send a callback to Auction, which one handle TIP-3 transfer - checks if incoming bid amount more than previous bid, and updates a leader bid address
-7. When time is over, finishAuction function will send NFT to auction winner or old owner, if there is no bids was accepted
+6. Auction's TokenWallet sends a callback to Auction, which handles TIP-3 transfer - checks if the incoming bid amount is more than the previous bid, and updates a leader bid address
+7. When time is over, `finishAuction` function will send NFT to the auction winner or old owner, if there are no bids were accepted
 
-That's all! As you can see, the main mechanic of our interaction is a callbacks. Let's start implement our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md) guide.
+That's all! As you can see, the main mechanic of our interaction is callbacks. Let's start implementing our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md) guide.
 
 ```solidity title="Collection.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -130,10 +130,10 @@ contract Nft is TIP4_1Nft, TIP4_2Nft {
 ```
 
 :::info
-We won't explain this code blocks because of it's already done in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md)
+We won't explain this code blocks because it's already done in TIP-4 [quick start](../01-quick-start-developing-with-tip-4.md)
 :::
 
-Then, let's deal with `Auction` contract. We'll get started from state and constructor, as usual. Do not forget to add interfaces we need.
+Then, let's deal with `Auction` contract. We'll get started from the state and constructor, as usual. Do not forget to add the interfaces we need.
 
 ```solidity code title="Auction.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -205,7 +205,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-Remember about gas management and token wallet deploying mechanics from previous Venom In Action [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md). Implement `onTokenWallet` callback the same way.
+Remember about gas management and token wallet deploying mechanics from the previous Venom In Action [guide](../../03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/00-simple-tokensale.md). Implement `onTokenWallet` callback the same way.
 
 ```solidity title="Auction.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -227,7 +227,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-Ok, the next callback we need is `onNftTransfer`, that will be called when NFT owner send NFT to Auction address
+Ok, the next callback we need is `onNftTransfer`, which will be called when the NFT owner sends NFT to the auction address
 
 ```solidity title="Auction.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -330,7 +330,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-That's it. How hard is that? The last thing we need - finishAuction function.
+That's it. How hard is that? The last thing we need - is `finishAuction` function.
 
 ```solidity title="Auction.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -390,9 +390,9 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-You can explore this sample (with tests and some scripts) by going to this <todo: link> repository. But we should talks about scripts we need, because this sample needs not only deploy scripts. Moving on.
+You can explore this sample (with tests and some scripts) by going to this <todo: link> repository. But we should talk about scripts we need because this sample needs not only deploy scripts. Moving on.
 
-We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](../01-quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying not a really hard too.
+We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](../01-quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying is not really hard too.
 
 ```typescript title="3-deploy-auction.ts" lineNumbers="true"
 import { Address, getRandomNonce, WalletTypes } from "locklift";
@@ -480,13 +480,13 @@ main()
     });
 ```
 
-Pay attention on `callback` parameter of NFT's `transfer` method
+Pay attention to `callback` parameter of NFT's `transfer` method
 
 ```js
 callbacks: [[AUCTION_ADDRESS, {value: toNano(0.1), payload: ""}]] 
 ```
 
-This is really important step. You may lose your NFT if don't specify callback for our auction, because callback `onNftTransfer` won't be called. Same idea should be used by your auction participants. They should send TIP-3 tokens to Auction with `notify: true` parameter:
+This is a really important step. You may lose your NFT if don't specify a callback for our auction, because a callback `onNftTransfer` won't be called. The same idea should be used by your auction participants. They should send TIP-3 tokens to Auction with `notify: true` parameter:
 
 ```typescript
 await tokenWalletInstance.methods.transfer({

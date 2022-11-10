@@ -30,7 +30,7 @@ TIP-3 provides the following functionalities
 
 ![ERC20 concept simple scheme](<../../../../static/img/erc20.svg>)
 
-As you may know, ERC20 contract's main value is balances mapping. So users just have records about their balances and work only with this contract. TIP-3 working flow is different because of async nature of TVM.
+As you may know, the ERC20 contract's main value is balance mapping. So users just have records about their balances and work only with this contract. TIP-3 working flow is different because of the asynchronous nature of TVM.
 
 ![TIP-3 concept simple scheme](<../../../../static/img/tip3.svg>)
 
