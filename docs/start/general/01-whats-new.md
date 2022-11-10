@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: What's New
-description: All important updates to the documentations you can find here
+description: All important updates to the documentation you can find here
 slug: /general/whats-new
 ---
 
