@@ -37,7 +37,7 @@ npx locklift init --path my-first-token
 
 ### Install dependencies
 
-Add TIP-3 implementation repository as a `devDependencies` in corresponding section of `package.json` file
+Add TIP-3 implementation repository as a `devDependencies` in the corresponding section of `package.json` file
 
 ```json title="package.json" lineNumbers="true"
 {
@@ -48,7 +48,7 @@ Add TIP-3 implementation repository as a `devDependencies` in corresponding sect
 }
 ```
 
-Specify installed contracts to external contracts section of locklift config, by providing path to contracts artifacts (.abi.json files, .tvc files etc., most commonly placed in a build folder of smart contracts projects) and contract names array.
+Specify installed contracts to the external contracts section of locklift config, by providing a path to contracts artifacts (.abi.json files, .tvc files, etc., most commonly placed in a build folder of smart contracts projects) and contract names array.
 
 ```json title="locklift.config.ts" lineNumbers="true"
 compiler: {
@@ -84,7 +84,7 @@ ls ./build
 > ...
 ```
 
-Let's move to deploy action. Firstly, we make a new deploy script in `scripts` directory for TokenRoot contract.&#x20;
+Let's move to deploy action. Firstly, we make a new deploy script in `scripts` directory for the TokenRoot contract.&#x20;
 
 ```typescript title="01-deploy-token-root.ts" lineNumbers="true"
 import { Address, getRandomNonce, toNano, zeroAddress } from "locklift"
@@ -161,7 +161,7 @@ main()
 
 ```
 
-Finally, we can deploy a new token to `local` network. For this, make sure local node is running, if not follow the next command
+Finally, we can deploy a new token to `local` network. For this, make sure the local node is running, if not follow the next command
 
 ```shell
 docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node

@@ -8,15 +8,15 @@ description: >-
 
 # Venom In Action. Simple Tokensale
 
-Who needs a token, that nobody can buy. So, let's create your first tokensale contract!
+Who needs a token, that nobody can buy? So, let's create your first tokensale contract!
 
-Perhaps, you already can setup your venom developer environment. If not - follow [this](../../02-setting-up-the-venom-smart-contract-development-environment.md) guide. If you already familiar with this action - let's start with locklift init.
+Perhaps, you already can set up your venom developer environment. If not - follow [this](../../02-setting-up-the-venom-smart-contract-development-environment.md) guide. If you are already familiar with this action - let's start with locklift init.
 
 ```shell
 npx locklift init --path my-first-crowdsale
 ```
 
-As in a previous guide we need to have a TIP-3 sources in this project. So. let's add them
+As in a previous guide, we need to have TIP-3 sources in this project. So. let's add them
 
 ```json title="package.json" lineNumbers="true"
 {
@@ -36,7 +36,7 @@ compiler: {
   }
 ```
 
-Now we can start with our tokensale contract. Create a `Tokensale.sol` file in your `contracts` folder. First of all let's arrange pragmas and imports.
+Now we can start with our tokensale contract. Create a `Tokensale.sol` file in your `contracts` folder. First of all, let's arrange pragmas and imports.
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -48,7 +48,7 @@ import "tip3/contracts/interfaces/ITokenRoot.sol";
 import "tip3/contracts/interfaces/ITokenWallet.sol";
 ```
 
-As you can see, we will use some interfaces from TIP-3 implementation. Let's define our contract state and constructor.
+As you can see, we will use some interfaces from the TIP-3 implementation. Let's define our contract state and constructor.
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 contract Tokensale {
@@ -87,22 +87,22 @@ contract Tokensale {
 }
 ```
 
-So, let's break down some fundamental mechanics in this small piece of code. Very first thing that you should look out is a gas management. Look at this two lines:
+So, let's break down some fundamental mechanics in this small piece of code. The very first thing that you should look out - gas management. Look at these two lines:
 
 ```solidity
 tvm.rawReserve(1 ever, 0);
 sendRemainingGasTo.transfer({ value: 0, flag: 128, bounce: false });
 ```
 
-Fist code line is like a reservation of 1 venom on this contract. Essentially it generates an outbound message carrying **reserve** nanovenoms to oneself, so that the next performed actions would not be able to spend more venoms than the remainder.
+Fist code line is like a reservation of 1 venom on this contract. Essentially it generates an outbound message carrying **reserve** nanovenoms to oneself so that the next performed actions would not be able to spend more venoms than the remainder.
 
-Next line is a best practice for gas management in Venom. You always should send remaining gas to message sender or another given address. Pay attention to `value` and `flag` parameters of `transfer` function. Flag 128 means, that this transfer will carry all remaining not reserver gas! Summarizing, we have a flow like:
+The next line is a best practice for gas management in Venom. You always should send the remaining gas to the message sender or another given address. Pay attention to `value` and `flag` parameters of `transfer` function. Flag 128 means, that this transfer will carry all remaining not reserver gas! Summarizing, we have a flow like this:
 
 1. Reserving some initial contract balance for always active state.
-2. Perform contract logic (may be check inbound value if you need this)
+2. Perform contract logic (may be checked inbound value if you need this)
 3. Send remaining gas with 128 flag to message sender or another pointed address
 
-The next important logic of our constructor code is a deploying a wallet for contract on-chain
+The next important logic of our constructor code is deploying a wallet for contract on-chain
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 ...
@@ -117,7 +117,7 @@ The next important logic of our constructor code is a deploying a wallet for con
 ...
 ```
 
-This action generate an outbound message to `TokenRoot` contract with calling a `deployWallet` function. This function is `responsible` . That means it will generate an internal outbound message with calling a function, that was passed in a `callback` parameter (`onTokenWallet` in our case). Let's implement this function for our `Tokensale` contract. From TIP-3 source code we know, that `deployWallet` returns the only one parameter - deployed wallet address. So, just store it in our state.
+This action generates an outbound message to `TokenRoot` contract by calling a `deployWallet` function. This function is `responsible` . That means it will generate an internal outbound message by calling a function, that was passed in a `callback` parameter (`onTokenWallet` in our case). Let's implement this function for our `Tokensale` contract. From TIP-3 source code we know, that `deployWallet` returns tonly one parameter - deployed wallet address. So, just store it in our state.
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 ...
@@ -134,7 +134,7 @@ This action generate an outbound message to `TokenRoot` contract with calling a 
 ...
 ```
 
-That's all. Now, when we will deploy `Tokensale` contract, `deployWallet` will be called too and returned value will be stored in our contract state. All we need is a function for sell our tokens.
+That's all. Now, when we will deploy `Tokensale` contract, `deployWallet` will be called too and returned value will be stored in our contract state. All we need is a function to sell our tokens.
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 ...
@@ -164,9 +164,9 @@ That's all. Now, when we will deploy `Tokensale` contract, `deployWallet` will b
 ...
 ```
 
-Notice, that we don't use `require` instruction to check incoming value. If we will use `require`, user's deposit will not to be returned to sender and will stay on contract. So anyone can take this as a remaining gas, according on gas management (because this venoms won't be reserved). Best practice - when you check something incoming (venoms, another tip-3 tokens), you should use `if` instead of `require`.
+Notice, that we don't use `require` instruction to check incoming value. If we will use `require`, the user's deposit will not be returned to the sender and will stay on contract. So anyone can take this as a remaining gas, according to gas management (because these venoms won't be reserved). Best practice - when you check something incoming (venoms, other tip-3 tokens), you should use `if` instead of `require`.
 
-Next mechanic is already familiar to you. Tokensale just call it's own deployed in constructor wallet to transfer tokens for buyer. Of course you should transfer supply tokens to tokensale wallet before sales starts :)
+The next mechanic is already familiar to you. Tokensale just calls its own deployed in the constructor wallet to transfer tokens for a buyer. Of course, you should transfer supply tokens to tokensale wallet before sales starts :)
 
 ```solidity
 ITokenWallet(_distributedTokenWallet).transfer{ value: 0, flag: 128 }(
@@ -179,7 +179,7 @@ ITokenWallet(_distributedTokenWallet).transfer{ value: 0, flag: 128 }(
 );
 ```
 
-Pay attention to `value` and `flag`. Again 0 and 128. This allows us to delegate sending of remaining gas to TokenWallet contract (of course if you sure, that delegate perform this action). We send all remaining not reserved gas to TokenWallet, and that, after it's own actions, TokenWallet will return remaining gas where is required. (4th parameter of transfer function).
+Pay attention to `value` and `flag`. Again 0 and 128. This allows us to delegate sending of the remaining gas to TokenWallet contract (of course if you are sure, that delegate performs this action). We send all remaining not reserved gas to TokenWallet, and, after its own actions, TokenWallet will return the remaining gas where required. (4th parameter of transfer function).
 
 So, let's check our final contract code
 
