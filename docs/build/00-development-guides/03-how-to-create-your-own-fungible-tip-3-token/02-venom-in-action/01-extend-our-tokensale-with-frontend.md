@@ -10,7 +10,7 @@ description: >-
 
 It's good to have smart contracts for distributing our fungible token, but to
 have a human-friendly interface to working with our smart contracts is
-better. Let's implement some web-interface for transforming our simple smart contract to complete dapp.
+better. Let's implement some web interface for transforming our simple smart contract to a complete dapp.
 
 For building a web interface, we will use [React](https://reactjs.org/) library. Of course, you can use any library you want. We are starting with the command, that allows us to scaffold React application
 
@@ -30,7 +30,7 @@ Suppose we already have some layout for our web application and you know how to 
 npm install --save venom-connect everscale-inpage-provider everscale-standalone-client
 ```
 
-According on venom-connect documentation, we should just create a `VenomConnect` instance in our code. Let's implement some function for returns `VenomConnect` instance. You can read about all configuration options in venom-connect official documentation. Also it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
+According to venom-connect documentation, we should just create a `VenomConnect` instance in our code. Let's implement some functions for returns `VenomConnect` instance. You can read about all configuration options in venom-connect official documentation. Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
 
 ```typescript title="src/venom-connect/configure.ts" lineNumbers="true"
 import { VenomConnect } from 'venom-connect';
@@ -180,7 +180,7 @@ function ConnectWallet({ venomConnect }: Props) {
 export default ConnectWallet;
 ```
 
-Now we can add this component to our Main.tsx file, and pass venom-connect instance from.
+Now we can add this component to our `Main.tsx` file, and pass the venom-connect instance from.
 
 ```typescript title="Main.tsx" lineNumbers="true"
 import React from 'react';
@@ -203,11 +203,11 @@ function Main({ venomConnect }: Props) {
 export default Main;
 ```
 
-That's it. Now you can see widget popup window after clicking on `Connect Wallet` element. If you choose Browser Extension inside popup, you will see that your Venom Wallet extension will shows you a connection popup.
+That's it. Now you can see the widget popup window after clicking on `Connect Wallet` element. If you choose Browser Extension inside the popup, you will see that your Venom Wallet extension will show you a connection popup.
 
-## Getting user's wallet address from connected wallet
+## Getting the user's wallet address from the connected wallet
 
-But now user don't now if his connect was succesfull. Let's add some header, that shows wallet address, after wallet has beed connected. And, of course, disconnect button. For that case we need to add some code. Pay attention on code comments
+But now the user doesn't know if his connection was succesfull. Let's add a header, that shows the wallet address after the wallet has been connected. And, of course, the disconnect button. In that case, we need to add some code. Pay attention to code comments
 
 ```typescript title="Main.tsx" lineNumbers="true"
 import React, { useEffect, useState } from 'react';
@@ -397,7 +397,7 @@ That's it. Now we know how to read the state from the deployed smart contract! S
 
 ## Sending token purchase transaction
 
-Let's implement some buying tokens form. It should be shown only after the wallet has been connected. We need to get purchasing amount from user and send the purchase transaction from the user's wallet with inpage-provider, provided by venom-connect. Starts with a component for our form.
+Let's implement some buying tokens form. It should be shown only after the wallet has been connected. We need to get purchasing amount from the user and send the purchase transaction from the user's wallet with inpage-provider, provided by venom-connect. Starts with a component for our form.
 
 ```typescript title="components/SaleForm.tsx" lineNumbers="true"
 import React, { useState } from 'react';
