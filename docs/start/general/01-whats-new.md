@@ -7,6 +7,10 @@ slug: /general/whats-new
 
 # What's New
 
+## 10 November 2022
+
+* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build//00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/01-extend-our-tokensale-with-frontend.md), the first guide for frontend developers aims at interaction with contracts state - as reading, as changing with transactions.
+
 ## 24 October 2022
 
 * Added an article about important participants of the Venom Blockchain [Network Maintainers](../maintain/00-network-maintainers.md)
