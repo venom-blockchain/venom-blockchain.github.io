@@ -5,13 +5,13 @@ sidebar_label: Ways of code enhancing
 
 # Venom In Action. Ways of code enhancing
 
-Let's go over some best practice point, that will helps us to enhance a code we have. As you remember we have some tvm.rawReserve calls, like
+Let's go over some best practice points, that will helps us to enhance a code we have. As you remember we have some `tvm.rawReserve` calls, like
 
 ```solidity
 tvm.rawReserve(1 ever, 0);
 ```
 
-Moving that gas constants to standalone library is a good form. Same for external calling:
+Moving these gas constants to a standalone library is a good form. Same for external calling:
 
 ```solidity
 ITokenRoot(distributedTokenRoot).deployWallet {
@@ -36,7 +36,7 @@ library TokensaleGas {
 }
 ```
 
-So that allow you to easily change gas variables for you contract
+So that allows you to easily change gas variables for your contract
 
 ```solidity title="Tokensale.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
@@ -64,7 +64,7 @@ contract Tokensale {
                 );
 ```
 
-You can accept same idea for an error codes:
+You can accept the same idea for error codes:
 
 ```solidity title="TokensaleErrors.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;
