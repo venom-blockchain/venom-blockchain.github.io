@@ -1,10 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
 
-import discord from '@site/static/img/discord.png';
-import twitter from '@site/static/img/tw.png';
-import medium from '@site/static/img/md.png';
+import Layout from '@theme/Layout';
+import Image from '@theme/IdealImage';
+
+import discord from './assets/discord.png';
+import twitter from './assets/tw.png';
+import medium from './assets/md.png';
 
 import styles from './index.module.css';
 
@@ -75,7 +77,7 @@ export default function Home(): JSX.Element {
                   <a href="/learn/messages-and-transactions">Messages and Transactions</a>
                 </li>
                 <li>
-                  <a href="/learnДа/accounts">Accounts</a>
+                  <a href="/learn/accounts">Accounts</a>
                 </li>
               </ul>
             </div>
@@ -84,9 +86,6 @@ export default function Home(): JSX.Element {
                 Build
               </h3>
               <ul>
-                <li>
-                  <a href="/build/development-guides/comparing-of-ethereum-vs-venom-architectures">Comparing of Ethereum and Venom architectures</a>
-                </li>
                 <li>
                   <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up The Venom Smart Contract Development Environment</a>
                 </li>
@@ -119,15 +118,15 @@ export default function Home(): JSX.Element {
           <div className={clsx(styles.social_links)}>
 
           <div className={clsx(styles.social_links__item)}>
-              <img src={discord} alt='Discord link' />
+              <Image img={discord} alt='Discord link' style={{ width: '50px', marginRight: '15px' }} />
               <div>
                 <p>Discord</p>
-                <a href="https://discord.com/invite/QsVypuKbZj" target="_blank">Venom Foundation</a>
+                <a href="https://discord.venom.foundation" target="_blank">Venom Foundation</a>
               </div>
             </div>
             
             <div className={clsx(styles.social_links__item)}>
-              <img src={twitter} alt='Twitter link' />
+              <Image img={twitter} alt='Twitter link' style={{ width: '44px', marginRight: '15px' }} />
               <div>
                 <p>Twitter</p>
                 <a href="https://twitter.com/venomfoundation" target="_blank">@venomfoundation</a>
@@ -135,7 +134,7 @@ export default function Home(): JSX.Element {
             </div>
             
             <div className={clsx(styles.social_links__item)}>
-              <img src={medium} alt='Medium link' />
+              <Image img={medium} alt='Medium link' style={{ width: '48px', marginRight: '15px' }} />
               <div>
                 <p>Medium</p>
                 <a href="https://medium.com/@venom.foundation" target="_blank">@venom.foundation</a>

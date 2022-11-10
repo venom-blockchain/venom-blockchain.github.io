@@ -111,7 +111,7 @@ The way of delivering messages from one [shardchain](00-glossary.md#shardchain) 
 
 The private and public keys: Very large numbers that are used in a lengthy math process to encrypt, decrypt, sign, and verify messages.
 
-### Interoperability[​](https://wiki.polkadot.network/docs/glossary#interoperability) <a href="#interoperability" id="interoperability"></a>
+### Interoperability
 
 The ability of blockchain to transfer information and exchange data with other blockchains.
 
@@ -119,7 +119,7 @@ The ability of blockchain to transfer information and exchange data with other b
 
 The type of message that one contract sends to another contract.
 
-### Mainnet[​](https://wiki.polkadot.network/docs/glossary#mainnet) <a href="#mainnet" id="mainnet"></a>
+### Mainnet
 
 Short for "main network" is the primary public network of blockchain.
 
