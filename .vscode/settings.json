@@ -1,0 +1,18 @@
+{
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wrappingIndent": "same",
+        "editor.wordWrapColumn": 80,
+        "editor.rulers": [80],
+        "editor.formatOnSave": true,
+    },
+    "grammarly.files.include": [
+        "**/*.md"
+    ],
+    "grammarly.selectors": [
+        {
+            "language": "markdown",
+            "scheme": "file"
+        }
+    ]
+}
