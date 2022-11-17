@@ -10,7 +10,7 @@ description: >-
 
 Who needs a token, that nobody can buy? So, let's create your first tokensale contract!
 
-Perhaps, you already can set up your venom developer environment. If not - follow [this](../../02-setting-up-the-venom-smart-contract-development-environment.md) guide. If you are already familiar with this action - let's start with locklift init.
+Perhaps, you already can set up your venom developer environment. If not - follow [this](../../setting-up-the-venom-smart-contract-development-environment.md) guide. If you are already familiar with this action - let's start with locklift init.
 
 ```shell
 npx locklift init --path my-first-crowdsale
