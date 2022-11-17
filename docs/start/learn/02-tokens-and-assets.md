@@ -28,7 +28,7 @@ The venom currency has utility purposes for paying the transaction fees of maint
 ### TIP-3. Fungible token <a href="#fungible-assets" id="fungible-assets"></a>
 
 :::info
-If you need to create your own fungible token in the Venom network follow this [guide](../../build/00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/00-fungible-tokens-in-venom-network.md)
+If you need to create your own fungible token in the Venom network follow this [guide](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md)
 :::
 
 Just as ERC-20 is the most popular standard in the Ethereum network, TIP-3 assumes the same role in the Venom network. TIP-3 was designed to match the distributed system design of the Venom network and is cost-effective for its fee-paying model.

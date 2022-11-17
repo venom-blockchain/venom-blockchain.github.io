@@ -34,4 +34,4 @@ As you may know, the ERC20 contract's main value is balance mapping. So users ju
 
 ![TIP-3 concept simple scheme](<../../../../static/img/tip3.svg>)
 
-Safety of `TokenWallet - TokenWallet` interaction is provided by address calculation mechanics. Each contract in Venom Blockchain can store some contract code and can calculate an address by using some state variables. Next, this address can be compared with `msg.sender` address. If it is the same - the call is safe and correct. We will look through this mechanic in detail [later](../04-developing-of-simple-voting-system/01-venom-in-action/00-voting-system-contracts.md).
+Safety of `TokenWallet - TokenWallet` interaction is provided by address calculation mechanics. Each contract in Venom Blockchain can store some contract code and can calculate an address by using some state variables. Next, this address can be compared with `msg.sender` address. If it is the same - the call is safe and correct. We will look through this mechanic in detail [later](../developing-of-simple-voting-system/venom-in-action/voting-system-contracts.md).
