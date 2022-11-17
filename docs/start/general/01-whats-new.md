@@ -9,11 +9,11 @@ slug: /general/whats-new
 
 ## 17 November 2022
 
-* Added development guide on [Venom In Action. Extend our voting system with backend](../../build/00-development-guides/04-developing-of-simple-voting-system/01-venom-in-action/extend-our-voting-system-with-backend.md), the first guide for backend developers, that shows how to interact with smart contracts from the backend, to listen to any smart contract's event.
+* Added development guide on [Venom In Action. Extend our voting system with backend](../../build/development-guides/developing-of-simple-voting-system/venom-in-action/extend-our-voting-system-with-backend.md), the first guide for backend developers, that shows how to interact with smart contracts from the backend, to listen to any smart contract's event.
 
 ## 10 November 2022
 
-* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build/00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/01-extend-our-tokensale-with-frontend.md), the first guide for frontend developers aims at interaction with contracts state - as reading, as changing with transactions.
+* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md), the first guide for frontend developers aims at interaction with contracts state - as reading, as changing with transactions.
 
 ## 24 October 2022
 
@@ -21,11 +21,11 @@ slug: /general/whats-new
 
 ## 21 October 2022
 
-* Added development guide on [How to create your own non-fungible TIP-4 token](../../build/00-development-guides/05-how-to-create-your-own-non-fungible-tip-4-token/00-non-fungible-tokens-in-venom-network.md), the guide discussing the creation of an NFT, and a simple auction contract
+* Added development guide on [How to create your own non-fungible TIP-4 token](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network.md), the guide discussing the creation of an NFT, and a simple auction contract
 
 ## 18 October 2022
 
-* Added development guide on [How to create your own fungible TIP-3 token](../../build/00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/00-fungible-tokens-in-venom-network.md), it's a good starting point for learning development on the Venom
+* Added development guide on [How to create your own fungible TIP-3 token](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md), it's a good starting point for learning development on the Venom
 
 ## 15 October 2022
 
