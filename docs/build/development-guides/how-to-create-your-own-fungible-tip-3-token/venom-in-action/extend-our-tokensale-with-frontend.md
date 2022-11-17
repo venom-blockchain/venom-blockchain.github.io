@@ -519,6 +519,54 @@ function Main({ venomConnect }: Props) {
 }
 ```
 
+<details>
+
+<summary>Hint - add your token to the user's wallet</summary>
+
+Inpage provider can help you to ask the user if it wants to add your distributable token to the wallet extension. Implementation of this feature is pretty simple. Just add a button somewhere on your layout (we will create another block with the token address and new button) and create a click handler, where `provider.addAsset()` function will be called.
+
+```typescript title="components/SaleForm.tsx" lineNumbers="true"
+import React, { useState } from "react";
+
+...
+
+import AddTokenImg from "../styles/img/add_token.svg";
+
+...
+
+function SaleForm({ balance, venomConnect, address, provider, getBalance }: Props) {
+  ...
+  // handler that helps us to ask user about adding our token to the user's venom wallet
+  const onTokenAdd = () => {
+    console.log(provider?.addAsset({
+      account: new Address(address as string), // user's wallet address
+      params: {
+        rootContract: new Address("0:91470b9a77ada682c9f9aee5ae0a4e2ea549ee51f7b0f2cba5182ffec2eb233f"), // TokenRoot address
+      },
+      type: "tip3_token", // tip3 - is a standart we use
+    }))
+  }
+
+  ...
+
+  return (
+    <>
+      <h1>My Venom Crowdsale</h1>
+      <div className="item-info">
+        <span>Distributed Token</span>
+        <b>0:914...33f</b> 
+        <a className="add" onClick={onTokenAdd}>
+          <img src={AddTokenImg} alt="add_token" />
+        </a>
+      </div>
+      ...
+  )
+```
+
+Now when the user clicks an add button we have created, venom wallet asks the user to add our distributing token.
+
+</details>
+
 That's all. Build your app, host it and congratulations! You have your first dApp!
 
 Remember, that it's just an example and not production code. We didn't keep in mind some balance loaders and state managers. You can check out the implementation of this example with some styles and features in the [repository](https://github.com/venom-blockchain/guides/tree/master/tokensale-frontend).
