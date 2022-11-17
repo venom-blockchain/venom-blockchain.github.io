@@ -7,9 +7,13 @@ slug: /general/whats-new
 
 # What's New
 
+## 17 November 2022
+
+* Added development guide on [Venom In Action. Extend our voting system with backend](../../build/00-development-guides/04-developing-of-simple-voting-system/01-venom-in-action/extend-our-voting-system-with-backend.md), the first guide for backend developers, that shows how to interact with smart contracts from the backend, to listen to any smart contract's event.
+
 ## 10 November 2022
 
-* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build//00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/01-extend-our-tokensale-with-frontend.md), the first guide for frontend developers aims at interaction with contracts state - as reading, as changing with transactions.
+* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build/00-development-guides/03-how-to-create-your-own-fungible-tip-3-token/02-venom-in-action/01-extend-our-tokensale-with-frontend.md), the first guide for frontend developers aims at interaction with contracts state - as reading, as changing with transactions.
 
 ## 24 October 2022
 
