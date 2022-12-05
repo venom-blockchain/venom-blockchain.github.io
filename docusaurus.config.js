@@ -46,12 +46,6 @@ const config = {
       },
     ],
     [
-      require.resolve("@cmfcmf/docusaurus-search-local"),
-      {
-        // Options here
-      },
-    ],
-    [
       require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-MQRC9JG', // GTM Container ID
