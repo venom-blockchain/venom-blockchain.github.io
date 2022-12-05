@@ -119,6 +119,106 @@ contract Collection is TIP4_1Collection {
 }
 ```
 
+The previous code uses only TIP-4.1 part of TIP-4. But it is kinda useless. To work with your NFT with full NFT experience you should implement [TIP-4.2](../../../standards/TIP-4/2.md) - standard, which helps you with NFT metadata storing. Also, you will need [TIP-4.3](../../../standards/TIP-4/3.md) - standard, which helps other dApps to find all your NFT with single query (GQL or JRPC). You should study the information about these standards by links. Implementation of 4.2 and 4.3 is pretty simple.
+
+```solidity title="Collection.sol" lineNumbers="true"
+pragma ever-solidity >= 0.61.2;
+pragma AbiHeader expire;
+pragma AbiHeader pubkey;
+
+// importing all standards bases
+import '@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol';
+import '@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Nft.sol';
+import '@itgold/everscale-tip/contracts/TIP4_3/TIP4_3Nft.sol';
+
+
+contract Nft is TIP4_1Nft, TIP4_2Nft, TIP4_3Nft {
+
+    // just call constructors of all implemented classes
+    constructor(
+        address owner,
+        address sendGasTo,
+        uint128 remainOnNft,
+        string json, // for TIP-4.2
+        TvmCell codeIndex, // for TIP-4.3
+        uint128 indexDeployValue, // for TIP-4.3
+        uint128 indexDestroyValue // for TIP-4.3
+    ) TIP4_1Nft(
+        owner,
+        sendGasTo,
+        remainOnNft
+    ) TIP4_2Nft (
+        json
+    ) TIP4_3Nft (
+        indexDeployValue,
+        indexDestroyValue,
+        codeIndex
+    ) 
+    public {
+        
+    }
+
+    // Also, you need to implement some handlers, linked with NFT transferring
+    // Maybe you need to implement something special, but you can also use default handlers
+    
+    function _beforeTransfer(
+        address to, 
+        address sendGasTo, 
+        mapping(address => CallbackParams) callbacks
+    ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
+        TIP4_3Nft._destructIndex(sendGasTo);
+    }
+
+    function _afterTransfer(
+        address to, 
+        address sendGasTo, 
+        mapping(address => CallbackParams) callbacks
+    ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
+        TIP4_3Nft._deployIndex();
+    }
+
+    function _beforeChangeOwner(
+        address oldOwner, 
+        address newOwner,
+        address sendGasTo, 
+        mapping(address => CallbackParams) callbacks
+    ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
+        TIP4_3Nft._destructIndex(sendGasTo);
+    }   
+
+    function _afterChangeOwner(
+        address oldOwner, 
+        address newOwner,
+        address sendGasTo, 
+        mapping(address => CallbackParams) callbacks
+    ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
+        TIP4_3Nft._deployIndex();
+    }
+
+}
+```
+
+:::warning
+Notice, that Index (and IndexBasis) code must be precompiled! You shouldn't compile these contracts by yourself. Just take it from [here](https://github.com/venom-blockchain/guides/tree/master/nft-auction-contracts/precompiled), place it somewhere in your project, and add them as external contracts in your locklift config like this:
+
+```typescript title="locklift.config.ts" lineNumbers="false"
+...
+  compiler: {
+    // Specify path to your TON-Solidity-Compiler
+    // path: "/mnt/o/projects/broxus/TON-Solidity-Compiler/build/solc/solc",
+
+    // Or specify version of compiler
+    version: "0.62.0",
+
+    // Specify config for extarnal contracts as in exapmple
+    externalContracts: {
+      "../path/to/precompiled/indexes": ['Index', 'IndexBasis']
+    }
+    ...
+```
+
+:::
+
 ### Deploy action
 
 Let's move to deploy action. We need two scripts for this quick start: one for `Collection` deploying, and the second for calling `mintNft` function, that we have implemented.
@@ -127,12 +227,17 @@ Let's move to deploy action. We need two scripts for this quick start: one for `
 async function main() {
   const signer = (await locklift.keystore.getSigner("0"))!;
   const nftArtifacts = await locklift.factory.getContractArtifacts("NFT");
+  const indexArtifacts = await locklift.factory.getContractArtifacts("Index");
+  const indexBasisArtifacts = await locklift.factory.getContractArtifacts("IndexBasis");
   const { contract: sample, tx } = await locklift.factory.deployContract({
     contract: "Collection",
     publicKey: signer.publicKey,
     initParams: {},
     constructorParams: {
-      codeNft: nftArtifacts.code,
+        codeNft: nftArtifacts.code,
+        codeIndex: indexArtifacts.code,
+        codeIndexBasis: indexBasisArtifacts.code,
+        json: `{"collection":"tutorial"}` // EXAMPLE...not by TIP-4.2
     },
     value: locklift.utils.toNano(5),
   });
@@ -187,7 +292,7 @@ async function main() {
     // call mintNft function
     // firstly get current nft id (totalSupply) for future NFT address calculating
     const {count: id} = await collectionInsance.methods.totalSupply({ answerId: 0 }).call();
-    await collectionInsance.methods.mintNft({}).send({ from: someAccount.address, amount: toNano(1)});
+    await collectionInsance.methods.mintNft({ json: `{"name":"hello world"}` }).send({ from: someAccount.address, amount: toNano(1)});
     const {nft: nftAddress} = await collectionInsance.methods.nftAddress({ answerId: 0, id: id }).call();
   
     console.log(`NFT: ${nftAddress.toString()}`);
