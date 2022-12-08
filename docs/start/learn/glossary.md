@@ -13,7 +13,7 @@ A wallet account is your identity in the Venom ecosystem, a special case of a [s
 Any users who need to send Venom tokens to participants in the network must have is deployed the wallet account.
 
 :::info
-How to create a wallet account [read here](../general/create-a-new-wallet-account.md)
+How to create a wallet account [read here](../general/wallet/00-creating-new-wallet.md)
 :::
 
 All supported crypto wallets can calculate the address of your wallet account depending on its type ([default](glossary.md#default-wallet), [multisig](glossary.md#multisig-wallet)) and your [public key](glossary.md#keys) even before it is deployed. You will be able to receive token transfers to this address immediately as it was calculated.
