@@ -24,7 +24,7 @@ instruction on how to back up your seed [here](06-how-to-create-a-backup-file.md
 **Step 5.1.** If you prefer to **“import seed”**,choose the method and enter the seed phrase in the field above. Click **“next”** to complete the operation. You can read the instruction on how to import your existing seed phrases here:[insert link on How to sign in into the wallet account using the seed phrase]  
 **Step 5.2.** If you prefer to **“connect Ledger”**,choose the method and  click **“next”**. Link the Ledger to your device, follow the recommendation on the screen. Click **“connect”**.  
 
-You can read the instruction on how to manage your Venom Wallet with the Ledger device [here](05-the-ledger.md).
+You can read the instruction on how to manage your Venom Wallet with the Ledger device [here](../wallet/05-the-ledger/05-the-ledger.md).
 
 The imported seed will immediately appear in your account portfolio!
 

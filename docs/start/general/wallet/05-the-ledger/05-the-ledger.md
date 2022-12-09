@@ -12,7 +12,7 @@ To start using the Venom Wallet with Ledger device you shoud have the Everscale 
 
 
 **Here is a guide to follow to set up the Venom Wallet Account using Ledger device:**
- - **Prepare your Ledger device** with the installed Eversacle App. You can find the instructions on Installing Everscale via Ledger Live [here](05.1-installing-everscale-on-ledger-live.md).
+ - **Prepare your Ledger device** with the installed Eversacle App. You can find the instructions on Installing Everscale via Ledger Live [here](../05-the-ledger/05.1-installing-everscale-on-ledger-live.md).
  -  **Do not forget to** have Ledger Live software **closed** at all times while performing the following steps.
 
 **If you have just installed Venom Wallet and it has no connected seed phrases:**
