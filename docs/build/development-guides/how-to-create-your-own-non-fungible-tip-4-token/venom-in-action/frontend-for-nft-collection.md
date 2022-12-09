@@ -622,6 +622,6 @@ function Main({ venomConnect }: Props) {
 export default Main;
 ```
 
-That's all. Build your app, host it and congratulations! You have your first dApp!
+That's all. Build your app, host it and congratulations! You have your new dApp and know how to work with salts...also you meet on-chain indexers!
 
-Remember, that it's just an example and not production code. We didn't keep in mind some balance loaders and state managers. You can check out the implementation of this example with some styles and features in the [repository](https://github.com/venom-blockchain/guides/tree/master/nft-frontend).
+Remember, that it's just an example and not production code. We didn't keep in mind some loaders and state managers. You can check out the implementation of this example with some styles and features in the [repository](https://github.com/venom-blockchain/guides/tree/master/nft-frontend).
