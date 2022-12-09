@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 sidebar_label: Accounts
 description: This article describes the wallet accounts and how they interact on-chain.
 slug: /learn/accounts
