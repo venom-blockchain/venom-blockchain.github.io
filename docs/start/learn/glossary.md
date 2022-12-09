@@ -8,7 +8,7 @@ slug: /learn/glossary
 
 ### Wallet account
 
-A wallet account is your identity in the Venom ecosystem, a special case of a [smart contract](00-glossary.md#smart-contract) designed to interact with your Venom balance and [smart contracts](00-glossary.md#smart-contract).
+A wallet account is your identity in the Venom ecosystem, a special case of a [smart contract](glossary.md#smart-contract) designed to interact with your Venom balance and [smart contracts](glossary.md#smart-contract).
 
 Any users who need to send Venom tokens to participants in the network must have is deployed the wallet account.
 
@@ -16,25 +16,25 @@ Any users who need to send Venom tokens to participants in the network must have
 How to create a wallet account [read here](../general/03-create-a-new-wallet-account.md)
 :::
 
-All supported crypto wallets can calculate the address of your wallet account depending on its type ([default](00-glossary.md#default-wallet), [multisig](00-glossary.md#multisig-wallet)) and your [public key](00-glossary.md#keys) even before it is deployed. You will be able to receive token transfers to this address immediately as it was calculated.
+All supported crypto wallets can calculate the address of your wallet account depending on its type ([default](glossary.md#default-wallet), [multisig](glossary.md#multisig-wallet)) and your [public key](glossary.md#keys) even before it is deployed. You will be able to receive token transfers to this address immediately as it was calculated.
 
 ### Address
 
 The unique public identifier of the smart contract in the network stores code and state of the contract, and is the entry point for messages addressed to it.
 
-The address consists of two parts - the identifier of the [workchain](00-glossary.md#workchain) and the computed part.
+The address consists of two parts - the identifier of the [workchain](glossary.md#workchain) and the computed part.
 
 Example: `0:4de50f6789111213a3141516b7fed892fc123ca22158c0d6d0d34daf4c6a7a0a`
 
 `0` – _workchain\_id,_ `3de...7a0a` _– computed\_part_
 
-A workchain\_id is an integer identifier defining a [workchain](00-glossary.md#workchain).
+A workchain\_id is an integer identifier defining a [workchain](glossary.md#workchain).
 
-A computed part of the address is a 256-bit internal address determined by the [hash of the code](00-glossary.md#hash-of-the-code) and of the data contained in the [constructor message](00-glossary.md#constructor-message). We can calculate it even before the contract is deployed on the network. And It is possible to send messages, including value-bearing messages, to previously undeployed contracts.
+A computed part of the address is a 256-bit internal address determined by the [hash of the code](glossary.md#hash-of-the-code) and of the data contained in the [constructor message](glossary.md#constructor-message). We can calculate it even before the contract is deployed on the network. And It is possible to send messages, including value-bearing messages, to previously undeployed contracts.
 
 ### Block
 
-A collection of data such as [transactions](00-glossary.md#transaction), outbound messages, and an update of the state.
+A collection of data such as [transactions](glossary.md#transaction), outbound messages, and an update of the state.
 
 ### Block Explorer <a href="#block-explorer" id="block-explorer"></a>
 
@@ -50,7 +50,7 @@ Is a fault-tolerant mechanism that is used in blockchain networks to reach an ag
 
 ### Constructor message
 
-[An account](00-glossary.md#wallet-account), or [smart contract](00-glossary.md#smart-contract), is created by sending a special constructor message to its address**.** The body of such a message contains the initial code of the smart contract and the initial data of the smart contract.
+[An account](glossary.md#wallet-account), or [smart contract](glossary.md#smart-contract), is created by sending a special constructor message to its address**.** The body of such a message contains the initial code of the smart contract and the initial data of the smart contract.
 
 ### Commission
 
@@ -58,7 +58,7 @@ Reward validators for participating in network security by processing transactio
 
 ### Crypto wallet
 
-A hardware or software wallet that stores [public/private key](00-glossary.md#keys), and [seed phrase](00-glossary.md#seed-phrase) for signing cryptocurrency transactions. [Crypto wallets](00-glossary.md#crypto-wallet) in the Venom ecosystem are able to work with [wallet accounts](00-glossary.md#wallet-account), calculate their address by the [public key](00-glossary.md#keys), deploy them, and perform token transfers.
+A hardware or software wallet that stores [public/private key](glossary.md#keys), and [seed phrase](glossary.md#seed-phrase) for signing cryptocurrency transactions. [Crypto wallets](glossary.md#crypto-wallet) in the Venom ecosystem are able to work with [wallet accounts](glossary.md#wallet-account), calculate their address by the [public key](glossary.md#keys), deploy them, and perform token transfers.
 
 ### Dapp <a href="#dapps" id="dapps"></a>
 
@@ -66,7 +66,7 @@ A decentralized application is usually presented as a web UI that interacts with
 
 ### External message
 
-Any message that was not produced by a [smart contract](00-glossary.md#smart-contract) within the Venom network, but was received from off-chain. The most typical example arises when a user wants to transfer some funds from an [account](00-glossary.md#wallet-account) controlled by his to some other account. In this case, the user sends a signed external message to [the wallet account](00-glossary.md#wallet-account), then the [wallet account](00-glossary.md#wallet-account) authorizes the sender and allows them to pay for the transaction fee from their balance. There is a difference between external messages and [internal messages](00-glossary.md#internal-message) because the External message cannot bear value, so they cannot pay for their “gas” (i.e., their processing) themselves.
+Any message that was not produced by a [smart contract](glossary.md#smart-contract) within the Venom network, but was received from off-chain. The most typical example arises when a user wants to transfer some funds from an [account](glossary.md#wallet-account) controlled by his to some other account. In this case, the user sends a signed external message to [the wallet account](glossary.md#wallet-account), then the [wallet account](glossary.md#wallet-account) authorizes the sender and allows them to pay for the transaction fee from their balance. There is a difference between external messages and [internal messages](glossary.md#internal-message) because the External message cannot bear value, so they cannot pay for their “gas” (i.e., their processing) themselves.
 
 ### Hash of the code
 
@@ -97,15 +97,15 @@ A result of message execution that contains information about the sender, the tr
 
 ### Homogeneous
 
-In a [multi-blockchain](00-glossary.md#multi-blockchain) system, all blockchains may be essential of the same type and have the same rules (i.e., use the same format of transactions, the same virtual machine for executing [smart-contract](00-glossary.md#smart-contract) code, share the same cryptocurrency, and so on), and this similarity is explicitly exploited, but with different data in each blockchain. In this case, we say that the system is homogeneous.
+In a [multi-blockchain](glossary.md#multi-blockchain) system, all blockchains may be essential of the same type and have the same rules (i.e., use the same format of transactions, the same virtual machine for executing [smart-contract](glossary.md#smart-contract) code, share the same cryptocurrency, and so on), and this similarity is explicitly exploited, but with different data in each blockchain. In this case, we say that the system is homogeneous.
 
 ### Heterogeneous
 
-When, in a [multi-blockchain](00-glossary.md#multi-blockchain) system, different blockchains (which will usually be called [workchains](00-glossary.md#workchain) in this case) can have different “rules”. Then we say that the system is heterogeneous.
+When, in a [multi-blockchain](glossary.md#multi-blockchain) system, different blockchains (which will usually be called [workchains](glossary.md#workchain) in this case) can have different “rules”. Then we say that the system is heterogeneous.
 
 ### Hypercube routing
 
-The way of delivering messages from one [shardchain](00-glossary.md#shardchain) to another
+The way of delivering messages from one [shardchain](glossary.md#shardchain) to another
 
 ### Keys
 
@@ -125,7 +125,7 @@ Short for "main network" is the primary public network of blockchain.
 
 ### Masterchain
 
-The master blockchain contains the information necessary to reach a [consensus](00-glossary.md#consensus) between validators.
+The master blockchain contains the information necessary to reach a [consensus](glossary.md#consensus) between validators.
 
 ### Multisig wallet
 
@@ -153,11 +153,11 @@ A participant in network decentralization by bonding their tokens nominates a va
 
 ### Seed phrase
 
-A seed phrase is a series of words generated by [the cryptocurrency wallet](00-glossary.md#crypto-wallet) that gives you access to the cryptocurrency associated with that wallet.
+A seed phrase is a series of words generated by [the cryptocurrency wallet](glossary.md#crypto-wallet) that gives you access to the cryptocurrency associated with that wallet.
 
 ### Smart contract
 
-Code that performs arbitrary state changes within the blockchain, executable on [TVM](00-glossary.md#tvm) is the Turing complete [virtual machine](00-glossary.md#virtual-machine).
+Code that performs arbitrary state changes within the blockchain, executable on [TVM](glossary.md#tvm) is the Turing complete [virtual machine](glossary.md#virtual-machine).
 
 ### Staking pool
 
@@ -173,4 +173,4 @@ Venom supports the Turing complete virtual machine used to execute smart contrac
 
 ### Wallet types
 
-Types of [wallet account](00-glossary.md#wallet-account) smart contracts. At the current moment supports two types of wallets [Default](00-glossary.md#default-wallet) and [Multisig](00-glossary.md#multisig-wallet)
+Types of [wallet account](glossary.md#wallet-account) smart contracts. At the current moment supports two types of wallets [Default](glossary.md#default-wallet) and [Multisig](glossary.md#multisig-wallet)

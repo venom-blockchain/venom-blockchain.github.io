@@ -1,16 +1,22 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: Messages and Transactions
 slug: /learn/messages-and-transactions
 ---
 
 # Messages and Transactions
 
-All interactions with the Venom network are carried out through messages. The message is instructions from the account, which it will send to update the state of the Venom network.
+All interactions with the Venom network are carried out through messages.
 
 ### Prerequisites
 
-To help you better understand this page, we recommend you first read [Accounts](04-accounts.md).
+To help you better understand this page, we recommend you first read [Accounts](accounts.md).
+
+## Message
+
+A message sent to an account is the reason for producing the transaction with
+the state changing its account. A message contains instructions for an execution
+call of a smart contract (an account).
 
 ### Message types
 
@@ -18,7 +24,11 @@ The Venom network has three different types of messages:
 
 **Inbound external message:** a message sent from outside the blockchain into the blockchain. Such messages without a 'from' address, can be sent by regular users, external services, and any participants outside the chain, and are called "_messages from nowhere_". An inbound external message initializes updates on the state of the blockchain.
 
+The external message can not be the value-bearing message from one participant to another, it only can declare intent to transfer value to another account.
+
 **Internal message:** a message from one contract to another. Also as an inbound external message that type of message updates the state of the Venom network.
+
+Only an Internal message can be a value-bearing message.
 
 **Outbound external message:** Known as a "_message to nowhere_" or "_event_". An event may be produced by a smart contract. Any off-chain participant can subscribe to events inside of the Venom network and receive them.
 
