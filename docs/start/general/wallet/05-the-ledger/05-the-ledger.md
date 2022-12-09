@@ -7,8 +7,7 @@ sidebar_label: The Ledger
 ## Setting up Venom Wallet accounts with a Ledger device.
 
 :::info info
-To start using the Venom Wallet with Ledger device you shoud have the Everscale app installed on it. See, how to install Everscale
-> here.
+To start using the Venom Wallet with Ledger device you shoud have the Everscale app installed on it. See, how to install Everscale here.
 :::
 
 
@@ -38,8 +37,7 @@ To start using the Venom Wallet with Ledger device you shoud have the Everscale 
 13.  Click OK to close the window.
 
 :::info info
-All accounts which were selected in the Ledger will be
-> named Ledger 1, Ledger 2 and so on by default.
+All accounts which were selected in the Ledger will be named Ledger 1, Ledger 2 and so on by default.
 :::
 
 The Ledger device has been connected.

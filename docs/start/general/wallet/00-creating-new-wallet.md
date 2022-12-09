@@ -27,10 +27,10 @@ Here is a universal step-by-step guide on how to set up a new account on Venom W
 
  **Step 4.** The unique seed phrase will be auto-generated.  
   
-    ![create a new account](../assets/wallet/3.png)
+   ![create a new account](../assets/wallet/3.png)
 
 
-:::info
+:::info info
 We strongly recommend to keep it in the “safe environment”, never hand it over to someone and do not share it with third parties. Once created, the seed phrase gives access to the funds and information related to your wallet account. Make sure to save your seed phrase, just click the “copy” button to transfer the words to your device. We, as well, recommend to backup the seed phrase written down on a sheet of paper and store it in a dark cool place. When done, select an “I wrote it down on paper”.
 :::
 

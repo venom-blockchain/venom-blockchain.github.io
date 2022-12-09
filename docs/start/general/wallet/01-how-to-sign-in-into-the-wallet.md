@@ -25,6 +25,7 @@ device and regain access to your wallet transactions.
 
   
 1. Launch the extension/application and select the wallet “sign in with the seed phrase” option.
+
    ![create a new account](../assets/wallet/1.png)
 2. Enter your whole unique series of words in accordance to its sequence in the seed phrase. (The interface allows you to transfer the whole phrase automatically in one click, pasting it into any field).
 
@@ -35,7 +36,7 @@ device and regain access to your wallet transactions.
 
 :::info info
 Make sure you have made the seed phrase backup with the wallet extension, before logging out the account . See, how to back up
-your seed phrase using your account [here] (06-how-to-create-a-backup-file.md).
+your seed phrase using your account [here](06-how-to-create-a-backup-file.md).
 ::: 
 
   
