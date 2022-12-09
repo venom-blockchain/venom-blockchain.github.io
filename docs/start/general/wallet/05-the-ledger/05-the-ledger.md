@@ -4,7 +4,7 @@ sidebar_label: The Ledger
 ---
 
 # The Ledger
-### Setting up Venom Wallet accounts with a Ledger device.
+## Setting up Venom Wallet accounts with a Ledger device.
 
 > **Note!**To start using the Venom Wallet with Ledger device you shoud have the Everscale app installed on it. See, how to install Everscale
 > here.

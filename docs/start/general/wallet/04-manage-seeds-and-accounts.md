@@ -5,7 +5,7 @@ sidebar_label: Manage seeds and accounts
 
 # Manage seeds and accounts.
 
-### Gather all your existing wallets at a click.
+## Gather all your existing wallets at a click.
 
 **Venom Wallet** extension allows for a quick addition and convenient storage of your seed phrases at one place. Just, follow this quick guide to enjoy this function:
 

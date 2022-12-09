@@ -5,7 +5,7 @@ sidebar_label: How to Sign in into the Wallet
 
 # How to Sign in into the Wallet Account Using the Seed Phrase?
 
-### Restoring your seed phrase
+## Restoring your seed phrase
 
   
   
