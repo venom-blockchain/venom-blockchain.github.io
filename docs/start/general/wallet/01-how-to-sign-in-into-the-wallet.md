@@ -23,9 +23,9 @@ To sign in into your Venom wallet account the user should use a unique seed phra
 
   
 1. Launch the extension/application and select the wallet “sign in with the seed phrase” option.
-   ![create a new account](../assets/wallet/2.1.png)
+   ![create a new account](../assets/wallet/1.png)
 2. Enter your whole unique series of words in accordance to its sequence in the seed phrase. (The interface allows you to transfer the whole phrase automatically in one click, pasting it into any field).
-   ![create a new account](../assets/wallet/2.2.png)
+
 3. Enter the password into the field to access your wallet. If successful, the user is signed in into the wallet account.
 4. Open the extension/application to perform transactions.
 
