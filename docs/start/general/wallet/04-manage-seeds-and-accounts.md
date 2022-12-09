@@ -25,6 +25,6 @@ sidebar_label: Manage seeds and accounts
 
 You can read the instruction on how to manage your Venom Wallet with the Ledger device here: [insert link on Ledger device (7.1)]
 
-**The imported seed will immediately appear in your account portfolio!**
+The imported seed will immediately appear in your account portfolio!
 
-**Enjoy your trading with the Venom blockchain.**
+Enjoy your trading with the Venom blockchain.

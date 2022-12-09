@@ -15,7 +15,9 @@ Click the profile button to access the seeds manager. From this menu you can mak
 
   
 
-> **Note!** Notifications will be available in the upper-left corner under the “bell” icon.
+:::info info
+Notifications will be available in the upper-left corner under the “bell” icon.
+:::
 
 ## Wallets
 
@@ -23,7 +25,9 @@ Wallets are represented with the card-like icons. To switch between the differen
 
 >   
 > 
-> **Note!** Use the Explorer to have a detailed look into wallet transaction history.
+:::info info
+Use the Explorer to have a detailed look into wallet transaction history.
+:::
 
 ## Transaction buttons
 
@@ -31,12 +35,13 @@ To perform quick and effortless transactions, use functional buttons — “Rece
 
   
 
-> **Note!** To discover the address of the particular crypto asset, click on the asset’s icon.
-
+:::info info
+To discover the address of the particular crypto asset, click on the asset’s icon.
+:::
   
 
 In the bottom of the wallet window the user would find some complementary commands.
 
 Use “Refresh to find” to manually refresh the main page. “Manage (assets) manually” — from this menu the user can manually add a custom token (entering token route) to the wallet account or manually search for a token.
 
-**Enjoy your fast and effortless crypto trading with the Venom Wallet.**
+Enjoy your fast and effortless crypto trading with the Venom Wallet.

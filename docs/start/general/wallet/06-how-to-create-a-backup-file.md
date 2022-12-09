@@ -22,7 +22,9 @@ Luckily, **Venom Wallet** allows the user to create a .json backup file. This fi
 
 >   
 > 
-> **Note!** If you are using a Chrome Browser extension and it has a single path for downloads (i.e. Downloads folder), the file will be
-> saved to that folder without requesting to indicate the path.
+:::info info
+If you are using a Chrome Browser extension and it has a single path for downloads (i.e. Downloads folder), the file will be
+saved to that folder without requesting to indicate the path.
+:::
 
 Once created, the backup file could be used for restoring the access to the account. The file will restore all the seeds which are backed up with the wallet extension from your account. See, how to sign in into the account using an existing backup file.

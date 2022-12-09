@@ -14,10 +14,12 @@ To sign in into your Venom wallet account the user should use a unique seed phra
 
   
 
-> **Note!** We recommend backing it up with the wallet extension on your PC and using the ‘pen or pencil method”. Never share it with third
-> parties! Remembering your seed phrase is highly important, it allows
-> you to set up a new wallet, connect it on a phone, browser or hardware
-> device and regain access to your wallet transactions.
+:::info info
+We recommend backing it up with the wallet extension on your PC and using the ‘pen or pencil method”. Never share it with third
+parties! Remembering your seed phrase is highly important, it allows
+you to set up a new wallet, connect it on a phone, browser or hardware
+device and regain access to your wallet transactions.
+:::
 
 ####  How to sign in using an existing seed phrase:
 
@@ -31,12 +33,14 @@ To sign in into your Venom wallet account the user should use a unique seed phra
 
   
 
-> **Note!** Make sure you have made the seed phrase backup with the wallet extension, before logging out the account . See, how to back up
-> your seed phrase using your account [here] (06-how-to-create-a-backup-file.md). 
+:::info info
+Make sure you have made the seed phrase backup with the wallet extension, before logging out the account . See, how to back up
+your seed phrase using your account [here] (06-how-to-create-a-backup-file.md).
+::: 
 
   
 
-**In case if the seed phrase has been forgotten, the user may recover the phrase from a .json file backup on the computer to sign into the account:**
+In case if the seed phrase has been forgotten, the user may recover the phrase from a .json file backup on the computer to sign into the account:
 
   
 
@@ -49,4 +53,4 @@ To sign in into your Venom wallet account the user should use a unique seed phra
 
   
 
-**The wallet account now would be available to the user to perform transactions.**
+The wallet account now would be available to the user to perform transactions.
