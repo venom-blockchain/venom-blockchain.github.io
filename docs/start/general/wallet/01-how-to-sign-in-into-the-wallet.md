@@ -41,7 +41,7 @@ your seed phrase using your account [here](06-how-to-create-a-backup-file.md).
 
   
 
-In case if the seed phrase has been forgotten, the user may recover the phrase from a .json file backup on the computer to sign into the account:
+**In case if the seed phrase has been forgotten, the user may recover the phrase from a .json file backup on the computer to sign into the account:**
 
   
 

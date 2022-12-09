@@ -16,15 +16,15 @@ sidebar_label: Manage seeds and accounts
 **Step 5.** When redirected to adding a seed phrase, use “a navigation sign” to choose from the available options. To add an existing seed phrase click to **“import seed”** or “connect Ledger”.  
 
 :::info info
-You can also **“create new seed”** [insert link on creating new wallet]  from this menu and add it to the account. Selecting this option, click **“next”** and a new seed will be generated for you.
+You can also [**“create new seed”**](00-creating-new-wallet.md)  from this menu and add it to the account. Selecting this option, click **“next”** and a new seed will be generated for you.
 Please, make sure to back up all your seed phrases. You can read the
-instruction on how to back up your seed here: [insert link on backing up seeds]
+instruction on how to back up your seed [here](06-how-to-create-a-backup-file.md)
 :::
 
 **Step 5.1.** If you prefer to **“import seed”**,choose the method and enter the seed phrase in the field above. Click **“next”** to complete the operation. You can read the instruction on how to import your existing seed phrases here:[insert link on How to sign in into the wallet account using the seed phrase]  
 **Step 5.2.** If you prefer to **“connect Ledger”**,choose the method and  click **“next”**. Link the Ledger to your device, follow the recommendation on the screen. Click **“connect”**.  
 
-You can read the instruction on how to manage your Venom Wallet with the Ledger device here: [insert link on Ledger device (7.1)]
+You can read the instruction on how to manage your Venom Wallet with the Ledger device [here](05-the-ledger.md).
 
 The imported seed will immediately appear in your account portfolio!
 

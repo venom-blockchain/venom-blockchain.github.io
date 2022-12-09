@@ -10,7 +10,7 @@ sidebar_label: Create a New Account with Venom Wallet
 To start experiencing the Venom Blockchain the user would first need to create a new Venom wallet account.
 There are different types of accounts on the Venom Wallet platform - a personal account (default) or multisig for a corporate use. Therefore, the seed phrase will be created with a one default wallet account. The easiest way to create a new Wallet Account is to install the Venom Wallet Browser extension or download the application for IOS or for Android devices.
 
-Here is a universal step-by-step guide on how to set up a new account on Venom Wallet secured with the seed phrase and the password:
+**Here is a universal step-by-step guide on how to set up a new account on Venom Wallet secured with the seed phrase and the password:**
 
  **Step 1.** Launch the extension/application and select the wallet setup option - “create a new account”.  
 
