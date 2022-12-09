@@ -13,7 +13,7 @@ Get to know the technology behind the incredible scalability of the Venom blockc
 
 ## Content
 
-Here you'll find information about [Venom Ecosystem Products](02-ecosystem.md), start and go deeper into [Venom technology](../learn/01-architecture.md).
+Here you'll find information about [Venom Ecosystem Products](02-ecosystem.md), start and go deeper into [Venom technology](../learn/architecture.md).
 
 [The Build section](../../build/development-guides/readme.md) contains guides and tutorials for developers and integrators. Here you will find [comparing of Ethereum vs Venom](../../build/development-guides/comparing-of-ethereum-vs-venom-architectures.md) to better understand the key differences between the EVM, and Venom technologies and have smooth migration development to Venom.
 

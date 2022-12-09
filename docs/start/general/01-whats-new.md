@@ -35,8 +35,8 @@ slug: /general/whats-new
 
 ## 15 October 2022
 
-* Added learning article about one of the fundamental concepts of the Venom blockchain is [Messages and Transactions](../learn/03-messages-and-transactions.md)
+* Added learning article about one of the fundamental concepts of the Venom blockchain is [Messages and Transactions](../learn/messages-and-transactions.md)
 
 ## 13 October 2022
 
-* Added learning article [Tokens and Assets](../learn/02-tokens-and-assets.md), the article describes the most commonly used types of assets in the Venom blockchain
+* Added learning article [Tokens and Assets](../learn/tokens-and-assets.md), the article describes the most commonly used types of assets in the Venom blockchain
