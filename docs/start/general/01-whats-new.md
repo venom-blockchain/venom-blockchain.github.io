@@ -11,6 +11,8 @@ slug: /general/whats-new
 
 * Added development guide on [Venom In Action. Frontend for NFT collection](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-collection.md). This guide shows you how to use a salt process and how it is used for TIP4. As an example, you will learn how to show the NFTs of your collections and the NFTs of any user.
 
+* A new article titled [Gas and Fees](../learn/gas-and-fees.md) has been added to the Venom Blockchain Knowledge Base. This article provides an explanation of how gas fees work on the Venom Blockchain.
+
 ## 17 November 2022
 
 * Added development guide on [Venom In Action. Extend our voting system with backend](../../build/development-guides/developing-of-simple-voting-system/venom-in-action/extend-our-voting-system-with-backend.md), the first guide for backend developers, that shows how to interact with smart contracts from the backend, to listen to any smart contract's event.
