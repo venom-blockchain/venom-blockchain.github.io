@@ -8,6 +8,7 @@ sidebar_label: The Main Screen
 
   On this screen the user finds the essential instrumentarium for the account management.
 
+   ![main screen](../../assets/wallet/11.png)
 
 ## Profile
 

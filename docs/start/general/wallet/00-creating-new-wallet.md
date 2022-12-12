@@ -22,12 +22,12 @@ There are different types of accounts on the Venom Wallet platform - a personal 
  **Step 3.** Click the “submit” button. 
 
 
-   ![create a new account](../assets/wallet/2.png)
+   ![sign the privacy policy](../assets/wallet/2.png)
 
 
  **Step 4.** The unique seed phrase will be auto-generated.  
   
-   ![create a new account](../assets/wallet/3.png)
+   ![save the seed phrase](../assets/wallet/3.png)
 
 
 :::info info
@@ -38,19 +38,19 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 **Step 5.** Fill in the words and click confirm to verify that the unique seed phrase has been remembered. If the insertion was successful you will proceed to creation of the wallet password.  
 
 
-   ![create a new account](../assets/wallet/4.png)
+   ![let's check the seed phrase](../assets/wallet/4.png)
 
 
 **Step 6.** Create a password to secure the wallet transactions process (the password must be at least 8 characters long, containing uppercase, lowercase, number and special character).  
 
 
-   ![create a new account](../assets/wallet/5.png)
+   ![create a password](../assets/wallet/5.png)
 
 
 **Step 7.** Confirm your password entering it twice and click the “create a wallet” button.  
 
 
-   ![create a new account](../assets/wallet/6.png)
+   ![congratulations](../assets/wallet/6.png)
 
 
 :::info info
