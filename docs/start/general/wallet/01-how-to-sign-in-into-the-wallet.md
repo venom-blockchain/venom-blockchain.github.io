@@ -32,7 +32,7 @@ device and regain access to your wallet transactions.
 
    ![enter your seed phrase](../assets/wallet/9.png)
 
-3. Enter the password into the field to access your wallet. If successful, the user is signed in into the wallet account.
+3. Enter the password that you will then specify to confirm actions in the wallet.
 
    ![enter the password](../assets/wallet/10.png)
 
