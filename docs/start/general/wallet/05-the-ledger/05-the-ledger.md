@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: The Ledger
+slug: /general/wallet/the-ledger
 ---
 
 # The Ledger

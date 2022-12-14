@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: The Main Screen
+slug: /general/wallet/the-main-screen
 ---
 
 

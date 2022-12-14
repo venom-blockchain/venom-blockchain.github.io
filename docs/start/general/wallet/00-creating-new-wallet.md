@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 sidebar_label: Create a New Account with Venom Wallet
+slug: /general/wallet/create-a-new-wallet-account
 ---
 
 # How to Create a New Account with Venom Wallet

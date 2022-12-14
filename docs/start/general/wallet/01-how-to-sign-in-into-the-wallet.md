@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: How to Sign in into the Wallet
+slug: /general/wallet/how-to-sign-in-into-the-wallet
 ---
 
 # How to Sign in into the Wallet Account Using the Seed Phrase?

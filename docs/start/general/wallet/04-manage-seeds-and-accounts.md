@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: Manage seeds and accounts
+slug: /general/wallet/manage-seeds-and-accounts
 ---
 
 # Manage seeds and accounts.

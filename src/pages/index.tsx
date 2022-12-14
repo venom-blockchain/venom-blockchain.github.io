@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
                   <a href="/general/ecosystem">Ecosystem</a>
                 </li>
                 <li>
-                  <a href="/general/create-a-new-wallet-account">Create a new Wallet Account</a>
+                  <a href="/general/wallet/create-a-new-wallet-account">Create a new Wallet Account</a>
                 </li>
                 <li>
                   <a href="/general/balance-transfers">Balance Transfers</a>

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: How to Create a Backup File
+slug: /general/wallet/hot-to-create-a-backup-file
 ---
 
 # How to Create a Backup File to Enable Restoring Seed Phrases from it?
