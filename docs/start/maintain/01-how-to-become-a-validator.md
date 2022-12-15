@@ -56,6 +56,7 @@ sudo chown $VALIDATOR_USER:$VALIDATOR_GROUP /var/ever/rnode/
 ```
 
 1.2. Check if the NTP service is UP and running
+
 ```bash
 systemctl status systemd-timesyncd
 ```
@@ -67,7 +68,9 @@ Should show that the service is up and running. If not - please refer to the doc
      Active: active (running) 
 ```
 
-
+**Warning**
+>If the clock is out of sync (even by a small amount), the blocks the 
+> Validator produces,  may not get accepted by the network.
 
 2. Create firewall rules to allow ADNL communications
 ```bash
@@ -189,8 +192,9 @@ Init validator services
 ```bash
 sudo ~/.cargo/bin/stever init systemd
 ```
+**Warning**
+>Service MUST NOT run as the root user
 
-Service MUST NOT run as the root user
 ```
 [0/2] Preparing services
 ? Select the user from which the service will work ›
