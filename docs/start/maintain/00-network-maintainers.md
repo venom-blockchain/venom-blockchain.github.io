@@ -53,5 +53,4 @@ slashed.
 
 ## Links
 
-* How to become a validator \[soon]
-* Discord validators chat \[soon]
+* [How to run a Venom validator node](../maintain/01-how-to-become-a-validator.md)
