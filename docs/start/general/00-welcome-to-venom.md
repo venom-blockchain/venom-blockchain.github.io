@@ -19,7 +19,7 @@ Here you'll find information about [Venom Ecosystem Products](02-ecosystem.md), 
 
 Most useful is the [Integration Guides section](../../build/integration-guides/how-to-connect-dapp-ui-to-venom.md) for developers who build wallets, portfolio trackers, etc.
 
-If you want to maintain the network, there is a Section for Maintenance, where you will find all the necessary information about the roles of [Network Maintainers](../maintain/00-network-maintainers.md), and How to become a validator guide [soon].
+If you want to maintain the network, there is a Section for Maintenance, where you will find all the necessary information about the roles of [Network Maintainers](../maintain/00-network-maintainers.md), and [How to run a Venom validator node](../maintain/01-how-to-become-a-validator.md).
 
 ## First steps with Venom
 
