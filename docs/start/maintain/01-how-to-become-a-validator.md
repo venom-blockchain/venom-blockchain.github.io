@@ -10,7 +10,7 @@ You SHOULD  have enough Linux engineering skills to manage, secure, and maintain
 
 ### Pre-requisites 
 #### Stake
-You will need at least 2,5M Venom tokens to run a node. You can deploy the node either in validator or in DePool mode.
+You will need enough amount of Venom tokens to run a Validator node.  You can deploy the node either in validator or in DePool mode.
 
 #### Node hardware minimums
 CPU: 12x cores Intel Skylake or newer CPU. The higher base CPU frequency is preferred over the cores count;
