@@ -1,4 +1,4 @@
-# How to run a Venom Validator node
+# How to run a Venom validator node
 
 ## Precautions
 
