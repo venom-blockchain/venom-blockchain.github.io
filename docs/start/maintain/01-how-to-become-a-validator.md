@@ -43,8 +43,8 @@ To make your node work properly, configure the cloud firewall to accept incoming
 > Always check any scripts you are running
 
 
-_1. Prepare server for node setup
-__1.1. Create a user and group for running the Validator node, and create all necessary folders structure
+1. Prepare server for node setup
+1.1. Create a user and group for running the Validator node, and create all necessary folders structure
 ```bash 
 VALIDATOR_USER="validator"
 VALIDATOR_GROUP="validator"
@@ -55,7 +55,7 @@ sudo mkdir -p /var/ever/rnode/
 sudo chown $VALIDATOR_USER:$VALIDATOR_GROUP /var/ever/rnode/
 ```
 
-__1.2. Check if the NTP service is UP and running
+1.2. Check if the NTP service is UP and running
 ```bash
 systemctl status systemd-timesyncd
 ```
@@ -69,16 +69,16 @@ Should show that the service is up and running. If not - please refer to the doc
 
 
 
-_2. Create firewall rules to allow ADNL communications
+2. Create firewall rules to allow ADNL communications
 ```bash
 sudo ufw allow 30000/UDP
 ```
-_3. Install dependencies
+3. Install dependencies
 ```bash
 sudo apt update 
 sudo apt install -y git libssl-dev pkg-config build-essential libzstd-dev libclang-dev libgoogle-perftools-dev
 ```
-_4. Switch to the validator user
+4. Switch to the validator user
 ```
 sudo su validator
 ```
@@ -89,7 +89,7 @@ Install rust
 curl https://sh.rustup.rs -sSf | sh
 source "$HOME/.cargo/env"
 ```
-_5. Build a Validator node
+5. Build a Validator node
 ```bash
 
 cargo install --locked --git https://github.com/broxus/stever-node-tools
@@ -109,7 +109,7 @@ Here choose the user for the validator. DON'T RUN Validator service as a root us
 ```
 
 
-_6. Setup Validator and create wallets
+6. Setup Validator and create wallets
 Compile and init node
 ```bash
 stever init
@@ -162,7 +162,7 @@ Create a new seed phrase or import existing
 ```
 
 
-5.1 Define the desired stake per round. Notice you will need an amount of tokens 2*(stake per round)+10
+6.1 Define the desired stake per round. Notice you will need an amount of tokens 2*(stake per round)+10
 Leave "stake factor (ratio between maximum available stake on the network and your stake) to 3 as it is standard in the Venom network
 ```
 ✔ Stake per round (EVER) · 10000
