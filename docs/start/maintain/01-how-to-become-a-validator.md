@@ -1,9 +1,50 @@
-### How to run a Validator node
+# How to run a Venom Validator node
+
+## Precautions
+**Note**
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
+### Caution
+Running a Validator node makes you responsible for all your stake. If something goes wrong, the node could be slashed, and you can lose your stake.
+You SHOULD  have enough Linux engineering skills to manage, secure, and maintain nodes. Running a Validator node is considerably more than executing a validator binary.
+
+### Pre-requisites 
+#### Stake
+You will need at least 2,5M Venom tokens to run a node. You can deploy the node either in validator or in DePool mode.
+
+#### Node hardware minimums
+CPU: 12x cores Intel Skylake or newer CPU. The higher base CPU frequency is preferred over the cores count;
+RAM: 64GB;
+Network: 300Mbps reliable internet connection. Connection issues can potentially cause slashing of your Validator;
+Storage: 
+50GB SSD storage for the operating system;
+500GB of NVMe for Validator internal database, with the ability to add additional space because of the growth of blockchain;
+Operating system: Ubuntu 22.04 
+These specs are not a hard requirement, but a best practice. Because running a validator node is a responsible task you should consider using enterprise-grade hardware, to ensure the stability of your node.
+
+### Cloud providers
+**Warning**
+> Beware of the Terms and conditions of the cloud provider of your choice. DigitalOcean Acceptable User Policy requires implicit permission to do "mining of cryptocurrencies" and may be extended to other cryptocurrency activities. 
+
+Tested Cloud Providers
+- Google Cloud 
+- Amazon AWS
+- Microsoft Azure
+- OVH
+
+To make your node work properly, configure the cloud firewall to accept incoming traffic on UDP/30000 port 
+
+** Note **
+> Node consumes about 6TB of incoming traffic per month. Keep it in mind when you are estimating the costs of your setup.
 
 
+### Node setup
+**Warning** 
+> Always check any scripts you are running
 
-1. Prepare server for node setup
-1.1. Create a user and group for running the Validator node, create all nessessaty folders structure
+
+_1. Prepare server for node setup
+__1.1. Create a user and group for running the Validator node, and create all necessary folders structure
 ```bash 
 VALIDATOR_USER="validator"
 VALIDATOR_GROUP="validator"
@@ -14,12 +55,12 @@ sudo mkdir -p /var/ever/rnode/
 sudo chown $VALIDATOR_USER:$VALIDATOR_GROUP /var/ever/rnode/
 ```
 
-1.3. Check if the NTP service is UP and running
+__1.2. Check if the NTP service is UP and running
 ```bash
 systemctl status systemd-timesyncd
 ```
 
-Should show that service is up and running. If not - please refer documentation 
+Should show that the service is up and running. If not - please refer to the documentation 
 ```bash
 ● systemd-timesyncd.service - Network Time Synchronization
      Loaded: loaded (/lib/systemd/system/systemd-timesyncd.service; enabled; preset: enabled)
@@ -28,16 +69,16 @@ Should show that service is up and running. If not - please refer documentation
 
 
 
-2. Create firewall rules to allow ADNL communications
+_2. Create firewall rules to allow ADNL communications
 ```bash
-sudo ufw allow 30000/udp
+sudo ufw allow 30000/UDP
 ```
-3. Install dependencies
+_3. Install dependencies
 ```bash
 sudo apt update 
 sudo apt install -y git libssl-dev pkg-config build-essential libzstd-dev libclang-dev libgoogle-perftools-dev
 ```
-4. Switch to validator user
+_4. Switch to the validator user
 ```
 sudo su validator
 ```
@@ -48,7 +89,7 @@ Install rust
 curl https://sh.rustup.rs -sSf | sh
 source "$HOME/.cargo/env"
 ```
-5. Build node
+_5. Build a Validator node
 ```bash
 
 cargo install --locked --git https://github.com/broxus/stever-node-tools
@@ -59,7 +100,7 @@ cargo install --locked --git https://github.com/broxus/stever-node-tools
 sudo $PWD/.cargo/bin/stever init systemd
 ```
 
-Here choose user for validator. DON'T RUN Validator service as root
+Here choose the user for the validator. DON'T RUN Validator service as a root user!
 ```bash
 [0/2] Preparing services
 ? Select the user from which the service will work ›
@@ -68,7 +109,7 @@ Here choose user for validator. DON'T RUN Validator service as root
 ```
 
 
-6. Setup Validator and create wallets
+_6. Setup Validator and create wallets
 Compile and init node
 ```bash
 stever init
@@ -105,15 +146,15 @@ Provide global config URL (Contact Venom core team)
 [1/2] Preparing binary
 ```
 
-Node would be compiled 
-Select mode of your node: 
+The node would be compiled 
+Select the mode of your node: 
 ```
 ? Select validator type ›
 ❯ Single
   DePool
 ```
 
-Create new seed phrase or import existing
+Create a new seed phrase or import existing
 ```
 [0/2] Creating validator wallet
 ❯ Generate new keys
@@ -121,8 +162,8 @@ Create new seed phrase or import existing
 ```
 
 
-5.1 Define desired stake per round. Notice you will need amonut of tokens 2*(stake per round)+10
-Leave "stake factor (ratio between maximum available stake on  network anbd your stake) to 3 as it is standard in Venom network
+5.1 Define the desired stake per round. Notice you will need an amount of tokens 2*(stake per round)+10
+Leave "stake factor (ratio between maximum available stake on the network and your stake) to 3 as it is standard in the Venom network
 ```
 ✔ Stake per round (EVER) · 10000
 ✔ Stake factor · 3
@@ -140,7 +181,7 @@ Make sure you back up your keys:
 ```
 
 **NOTE:**
-> Make sure you back up your keys after initial configuration!
+> Make sure you back up your keys after the initial configuration!
 > All keys are stored at $HOME/.stever/keys/
 
 
@@ -149,7 +190,7 @@ Init validator services
 sudo ~/.cargo/bin/stever init systemd
 ```
 
-Service MUST NOT run as root user
+Service MUST NOT run as the root user
 ```
 [0/2] Preparing services
 ? Select the user from which the service will work ›
@@ -159,18 +200,22 @@ Service MUST NOT run as root user
 
 It will create two services:
 
-- ever-validator-manager - control service that takes part in elections, recovers stake and so on
+- ever-validator-manager - control service that takes part in elections, recovers stake and performs other tasks with the Elector contract
 - ever-validator - node itself, managing validation process
 
-you can check status of both services
+you can check the status of both services with the following commands:
 
 ```
 service ever-validator status
 service ever-validator-manager status
 ```
 7. Transfer tokens to the Validator contract
-Transfer required amount of tokens to address generated in previous step
+Transfer the required amount of tokens to the address generated in the previous step. The Wallet will become active after the first stake
 
-8. Wait until elections start
-When elections start node-control will automatically stake amount of tokens. You can check current state of elections in https://venomscan.com/validators
-if everything fine - you should see your address in validators for the next round
+8. Wait until the elections start
+When elections start the ever-validator-manager process will automatically stake the desired amount of tokens. You can check the current state of elections in [Venomscan.com](https://venomscan.com/validators).
+**Note**
+> ever-validator-manager adds 1 venom for the stake to pay for the transaction fees, and you will require to add 1 venom to the "stake and bonuses recovery" transaction. So always keep some additional amount of tokens in the Validator
+
+If everything is fine - you should see your address in the validators list for the next round.
+
