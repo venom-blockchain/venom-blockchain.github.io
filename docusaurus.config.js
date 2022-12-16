@@ -107,7 +107,6 @@ const config = {
       }),
     ],
   ],
-  
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
@@ -117,7 +116,7 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
-
+  themes: ['docusaurus-theme-search-typesense'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -218,6 +217,24 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['solidity'],
+      },
+      typesense: {
+        typesenseCollectionName: 'venom-docusaurus-2',
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'search.venom.foundation',
+              port: 443,
+              protocol: 'https',
+            }
+          ],
+          // search only key
+          apiKey: 'BhpHqhTN0peSwQ9ifye9nZ76nhxtIjww',
+        },
+        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/search.md#search-parameters
+        typesenseSearchParameters: {},
+        // Optional
+        contextualSearch: true,
       },
     }),
 };
