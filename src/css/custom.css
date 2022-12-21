@@ -60,6 +60,10 @@
   );
 }
 
+.DocSearch-Hit-content-wrapper {
+  line-height: normal !important;
+}
+
 
 /* You can override the default Infima variables here. */
 :root {
