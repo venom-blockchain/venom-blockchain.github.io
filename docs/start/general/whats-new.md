@@ -9,7 +9,7 @@ slug: /general/whats-new
 
 ## 15 December 2022
 
-[How to run a Venom validator node](../maintain/01-how-to-become-a-validator.md)
+[How to run a Venom validator node](../maintain/how-to-become-a-validator.md)
 guide has been added to the MAINTAIN section.
 
 ## 9 December 2022
@@ -39,7 +39,7 @@ state - as reading, as changing with transactions.
 ## 24 October 2022
 
 * Added an article about important participants of the Venom Blockchain
-[Network Maintainers](../maintain/00-network-maintainers.md)
+[Network Maintainers](../maintain/network-maintainers.md)
 
 ## 21 October 2022
 
