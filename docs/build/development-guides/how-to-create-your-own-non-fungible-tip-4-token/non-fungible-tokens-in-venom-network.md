@@ -27,8 +27,8 @@ TIP-4 provides the following functionality:
 
 ERC721 generally is a monolith smart contract, which stores mapping, that shows token owners by token ids. Tokens metadata can be stored here too in another mapping or you can store only `tokenUri` (mapped the same way - by token ids), which can help you to reach token metadata.
 
-![ERC721 concept simple scheme](<../../../../static/img/erc721.svg>)
+![ERC721 concept simple scheme](<./assets/erc721.svg>)
 
-TIP-4 consists of collection contract and personal contracts for each non-fungible token. As a result, users own the concrete amount of NFT contracts, that stores metadata.
+TIP-4 consists of collection contract and personal contracts for each non-fungible token. As a result, users own the concrete amount of NFT contracts, that stores metadata and operate with them for transfers or other actions.
 
-![TIP-4 concept simple scheme](<../../../../static/img/tip4.svg>)
+![TIP-4 concept simple scheme](<./assets/tip4.svg>)
