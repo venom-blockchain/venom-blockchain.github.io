@@ -449,7 +449,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 }
 ```
 
-You can explore this sample (with tests and some scripts) by going to this <todo: link> repository. But we should talk about scripts we need because this sample needs not only deploy scripts. Moving on.
+You can explore this sample (with tests and some scripts) by going to this [repository](https://github.com/venom-blockchain/guides/tree/master/nft-auction-contracts). But we should talk about scripts we need because this sample needs not only deploy scripts. Moving on.
 
 We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](../quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying is not really hard too.
 
