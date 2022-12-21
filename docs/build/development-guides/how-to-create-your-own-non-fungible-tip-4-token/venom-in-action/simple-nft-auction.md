@@ -14,7 +14,7 @@ This guide will be more complicated as compared with the Tokensale implementatio
 
 First of all, as usual, we should set up our development environment with the locklift. For this smart-contracts guideline, you need to include both [TIP-3](../../how-to-create-your-own-fungible-tip-3-token/quick-start-developing-with-tip-3.md#install-dependencies) and [TIP-4](../../how-to-create-your-own-non-fungible-tip-4-token/quick-start-developing-with-tip-4.md#install-dependencies) dependencies, because our Auction will be accepted in TIP-3 tokens. Let's explore some scheme of our contracts interaction and describe it
 
-![Our smart-contracts interaction logic](<../../../../../static/img/tip4auction.svg>)
+![Our smart-contracts interaction logic](<../assets/auction.svg>)
 
 NFT creation is a green arrow flow, and auction bids are yellow. Let's describe a processes
 

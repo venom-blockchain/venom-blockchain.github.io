@@ -28,10 +28,10 @@ TIP-3 provides the following functionalities
 
 ### Some words about differences with ERC20
 
-![ERC20 concept simple scheme](<../../../../static/img/erc20.svg>)
+![ERC20 concept simple scheme](<./assets/erc20.svg>)
 
-As you may know, the ERC20 contract's main value is balance mapping. So users just have records about their balances and work only with this contract. TIP-3 working flow is different because of the asynchronous nature of TVM.
+As you may know, the ERC20 contract's main value is balance mapping. So users just have records about their balances and work only with this contract. TIP-3 working flow is different because of the asynchronous nature of TVM. Each user has his own wallet and operates with it. Wallet operates with another wallet for transfers (see scheme).
 
-![TIP-3 concept simple scheme](<../../../../static/img/tip3.svg>)
+![TIP-3 concept simple scheme](<./assets/tip3.svg>)
 
 Safety of `TokenWallet - TokenWallet` interaction is provided by address calculation mechanics. Each contract in Venom Blockchain can store some contract code and can calculate an address by using some state variables. Next, this address can be compared with `msg.sender` address. If it is the same - the call is safe and correct. We will look through this mechanic in detail [later](../developing-of-simple-voting-system/venom-in-action/voting-system-contracts.md).
