@@ -53,4 +53,4 @@ slashed.
 
 ## Links
 
-* [How to run a Venom validator node](../maintain/01-how-to-become-a-validator.md)
+* [How to run a Venom validator node](../maintain/how-to-become-a-validator.md)
