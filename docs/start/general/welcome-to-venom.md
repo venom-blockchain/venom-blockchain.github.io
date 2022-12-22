@@ -23,7 +23,7 @@ If you want to maintain the network, there is a Section for Maintenance, where y
 
 ## First steps with Venom
 
-1. [Create a Wallet](wallet/00-creating-new-wallet.md)  
+1. [Create a Wallet](wallet/creating-new-wallet.md)  
    The Wallet Account is your identity in the Venom blockchain and a place to securely keep your Venom tokens.
 
 2. Get Venom tokens  
