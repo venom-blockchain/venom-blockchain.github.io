@@ -24,7 +24,7 @@ After all the data has been entered, the extension will calculate the gas fee an
     
 ### Instructions for the custodians, once the transaction has been initiated.
 
-1. Make sure that you are logged into the seed which has been added as a Custodian of the Multisignature account. You find the instructions on how to become the Custodian [here](03.2-creating-tracking-account.md).
+1. Make sure that you are logged into the seed which has been added as a Custodian of the Multisignature account. You find the instructions on how to become the Custodian [here](creating-tracking-account.md).
 2. Scroll the Accounts to the connected Tracking account
 3. From the main screen go to the Transactions tab.
 4. Locate the transaction with the “Waiting for confirmation” label that you are going to sign and click on it.
