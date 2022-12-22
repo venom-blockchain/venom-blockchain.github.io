@@ -16,7 +16,7 @@ import img05 from './assets/balance-transfers/5.png';
 A popular case of using blockchains is fund transfers from one account to another.
 
 :::caution
-This guide assumes that you've already [created a Wallet Account](create-a-new-wallet-account.md) and you [got some tokens](ecosystem/#venomget)
+This guide assumes that you've already [created a Wallet Account](wallet/00-creating-new-wallet.md) and you [got some tokens](ecosystem/#venomget)
 :::
 
 To start transferring we will use [Venom Wallet Browser Extension](ecosystem/#venom-wallet).
