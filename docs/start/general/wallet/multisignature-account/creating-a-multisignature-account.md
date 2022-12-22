@@ -43,7 +43,7 @@ wallet.
 8. Further we are going to set up our default account as one of the Custodians.  
  - (Custodians are the addresses which are going to be required to approve the transactions on our Multisignature account.)
 9. Click on the Copy button to copy the address of the newly created Multisignature account.
-10. Send at least 0.1 $VENOM to the Multisignature account. You can follow this instruction on how to [send $VENOM](../02-the-main/02.1-send.md)
+10. Send at least 0.1 $VENOM to the Multisignature account. You can follow this instruction on how to [send $VENOM](../the-main/send.md)
 11. Go back to your new Multisignature account after it has been topped up with the $VENOM and the Setup button has become available. Click on the Setup button.
 
    ![click on the setup button](../../assets/wallet/20.png)

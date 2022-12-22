@@ -43,7 +43,7 @@ device and regain access to your wallet transactions.
 
 :::info info
 Make sure you have made the seed phrase backup with the wallet extension, before logging out the account . See, how to back up
-your seed phrase using your account [here](06-how-to-create-a-backup-file.md).
+your seed phrase using your account [here](how-to-create-a-backup-file.md).
 ::: 
 
   
