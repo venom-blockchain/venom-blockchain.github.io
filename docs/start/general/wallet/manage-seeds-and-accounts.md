@@ -12,9 +12,17 @@ slug: /general/wallet/manage-seeds-and-accounts
 
 **Step 1.** Open your Venom Wallet extension and log in to your account.  
 **Step 2.** On the Wallet extension window select the **“Profile”** button.The seed management page will appear.  
+
+ ![create a new account](../assets/wallet/11.png)
+
 **Step 3.** Choose **“Manage seeds”**.  
+
+ ![create a new account](../assets/wallet/24.png)
+
 **Step 4.** Right to the screen, select **“+add new”**.  
 **Step 5.** When redirected to adding a seed phrase, use “a navigation sign” to choose from the available options. To add an existing seed phrase click to **“import seed”** or “connect Ledger”.  
+
+ ![create a new account](../assets/wallet/25.png)
 
 :::info info
 You can also [**“create new seed”**](creating-new-wallet.md)  from this menu and add it to the account. Selecting this option, click **“next”** and a new seed will be generated for you.
