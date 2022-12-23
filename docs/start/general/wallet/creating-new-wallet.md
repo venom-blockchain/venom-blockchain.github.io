@@ -4,6 +4,14 @@ sidebar_label: Create a New Account with Venom Wallet
 slug: /general/wallet/create-a-new-wallet-account
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../assets/wallet/1.png';
+import img02 from '../assets/wallet/2.png';
+import img03 from '../assets/wallet/3.png';
+import img04 from '../assets/wallet/4.png';
+import img05 from '../assets/wallet/5.png';
+import img06 from '../assets/wallet/6.png';
+
 # How to Create a New Account with Venom Wallet
 ### Generating the seed phrase
 
@@ -16,19 +24,28 @@ There are different types of accounts on the Venom Wallet platform - a personal 
  **Step 1.** Launch the extension/application and select the wallet setup option - “create a new account”.  
 
 
- ![create a new account](../assets/wallet/1.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
  **Step 2.** Read the decentralization policy and if you agree tick “I accept”.  
  **Step 3.** Click the “submit” button. 
 
 
-   ![sign the privacy policy](../assets/wallet/2.png)
+<Image img={img02} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
  **Step 4.** The unique seed phrase will be auto-generated.  
   
-   ![save the seed phrase](../assets/wallet/3.png)
+<Image img={img03} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
 :::info info
@@ -39,19 +56,28 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 **Step 5.** Fill in the words and click confirm to verify that the unique seed phrase has been remembered. If the insertion was successful you will proceed to creation of the wallet password.  
 
 
-   ![let's check the seed phrase](../assets/wallet/4.png)
+<Image img={img04} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
 **Step 6.** Create a password to secure the wallet transactions process (the password must be at least 8 characters long, containing uppercase, lowercase, number and special character).  
 
 
-   ![create a password](../assets/wallet/5.png)
+<Image img={img05} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
 **Step 7.** Confirm your password entering it twice and click the “create a wallet” button.  
 
 
-   ![congratulations](../assets/wallet/6.png)
+<Image img={img06} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 
 :::info info
