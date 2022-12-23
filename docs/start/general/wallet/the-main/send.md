@@ -4,16 +4,19 @@ sidebar_label: Send
 slug: /general/wallet/send
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../../assets/wallet/12.png';
+
 # Send
 
 ## Performing a transaction
 
-  
-
 The simplest way to transfer crypto to another account via the Venom Wallet extension is to use the quick command right from the home screen of the wallet account.
 
-   ![main screen](../../assets/wallet/12.png)
-  
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 **Here is the guide on the transactional process in detail:**
 

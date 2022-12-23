@@ -4,6 +4,10 @@ sidebar_label: How to Create a Backup File
 slug: /general/wallet/hot-to-create-a-backup-file
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../assets/wallet/40.png';
+import img02 from '../assets/wallet/41.png';
+
 # How to Create a Backup File to Enable Restoring Seed Phrases from it?
 
 The most common way of storing seed phrases for non-custodial wallets is having it recorded on a piece of paper. However, some users might also be willing to have a more convenient way storing the seed phrases and being able to restore them quickly.
@@ -15,11 +19,17 @@ Luckily, **Venom Wallet** allows the user to create a .json backup file. This fi
 2.  You will be brought to the “Seeds” window showing the list of all connected Seed phrases, with two options: “Log out” and “Manage seeds”.
 3.  Click on the “Manage seeds” option.
 
- ![create a new account](../assets/wallet/40.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 4.  You will be brought to the “Manage seed phrases” window. Click on the “Backup all” button.
 
- ![create a new account](../assets/wallet/41.png)
+<Image img={img02} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
     
 5.  You will be prompted to select the path for your .json file.
     

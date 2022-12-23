@@ -4,6 +4,10 @@ sidebar_label: Transactions
 slug: /general/wallet/transactions
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../../assets/wallet/13.png';
+import img02 from '../../assets/wallet/14.png';
+
 # Transactions
 
 ## Revising history and details
@@ -11,7 +15,10 @@ slug: /general/wallet/transactions
 
 For the user convenience a vital transactional data is always available on hand in the Venom Wallet.
 
-   ![transactions](../../assets/wallet/13.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 **Here a few steps for checking your transaction history via wallet extension:**
 
@@ -51,6 +58,9 @@ The user as well can find the link to the explorer tool, manually choosing the w
 2. Choose to “View in the explorer”.
     
 
-  ![transactions](../../assets/wallet/14.png)
+<Image img={img02} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 You will be redirected to the Venom Scan website, where you can enjoy this tool.

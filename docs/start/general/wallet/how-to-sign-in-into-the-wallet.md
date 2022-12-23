@@ -4,6 +4,11 @@ sidebar_label: How to Sign in into the Wallet
 slug: /general/wallet/how-to-sign-in-into-the-wallet
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../assets/wallet/1.png';
+import img02 from '../assets/wallet/9.png';
+import img03 from '../assets/wallet/10.png';
+
 # How to Sign in into the Wallet Account Using the Seed Phrase?
 
 ## Restoring your seed phrase
@@ -27,15 +32,24 @@ device and regain access to your wallet transactions.
   
 1. Launch the extension/application and select the wallet “sign in with the seed phrase” option.
 
-   ![sing in with seed phrase](../assets/wallet/1.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 2. Enter your whole unique series of words in accordance to its sequence in the seed phrase. (The interface allows you to transfer the whole phrase automatically in one click, pasting it into any field).
 
-   ![enter your seed phrase](../assets/wallet/9.png)
+<Image img={img02} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 3. Enter the password that you will then specify to confirm actions in the wallet.
 
-   ![enter the password](../assets/wallet/10.png)
+<Image img={img03} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 4. Open the extension/application to perform transactions.
 
