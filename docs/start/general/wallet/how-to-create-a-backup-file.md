@@ -25,7 +25,7 @@ Luckily, **Venom Wallet** allows the user to create a .json backup file. This fi
     
 6.  The .json file will be saved on your device.
     
-
+    
 >   
 > 
 :::info info
