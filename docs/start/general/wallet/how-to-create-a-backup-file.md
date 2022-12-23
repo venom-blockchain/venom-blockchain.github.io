@@ -14,7 +14,12 @@ Luckily, **Venom Wallet** allows the user to create a .json backup file. This fi
 1. Launch the Venom Wallet extension and in the main screen click on the profile icon.
 2.  You will be brought to the “Seeds” window showing the list of all connected Seed phrases, with two options: “Log out” and “Manage seeds”.
 3.  Click on the “Manage seeds” option.
+
+ ![create a new account](../assets/wallet/40.png)
+
 4.  You will be brought to the “Manage seed phrases” window. Click on the “Backup all” button.
+
+ ![create a new account](../assets/wallet/41.png)
     
 5.  You will be prompted to select the path for your .json file.
     
