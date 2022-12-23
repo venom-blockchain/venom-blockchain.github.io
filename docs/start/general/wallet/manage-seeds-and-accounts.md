@@ -4,6 +4,11 @@ sidebar_label: Manage seeds and accounts
 slug: /general/wallet/manage-seeds-and-accounts
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../assets/wallet/11.png';
+import img02 from '../assets/wallet/24.png';
+import img03 from '../assets/wallet/25.png';
+
 # Manage seeds and accounts.
 
 ## Gather all your existing wallets at a click.
@@ -13,16 +18,25 @@ slug: /general/wallet/manage-seeds-and-accounts
 **Step 1.** Open your Venom Wallet extension and log in to your account.  
 **Step 2.** On the Wallet extension window select the **“Profile”** button.The seed management page will appear.  
 
- ![create a new account](../assets/wallet/11.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 **Step 3.** Choose **“Manage seeds”**.  
 
- ![create a new account](../assets/wallet/24.png)
+<Image img={img02} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 **Step 4.** Right to the screen, select **“+add new”**.  
 **Step 5.** When redirected to adding a seed phrase, use “a navigation sign” to choose from the available options. To add an existing seed phrase click to **“import seed”** or “connect Ledger”.  
 
- ![create a new account](../assets/wallet/25.png)
+<Image img={img03} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 :::info info
 You can also [**“create new seed”**](creating-new-wallet.md)  from this menu and add it to the account. Selecting this option, click **“next”** and a new seed will be generated for you.

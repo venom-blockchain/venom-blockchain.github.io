@@ -4,12 +4,17 @@ sidebar_label: The Main Screen
 slug: /general/wallet/the-main-screen
 ---
 
+import Image from '@theme/IdealImage';
+import img01 from '../../assets/wallet/11.png';
 
 # The Main Screen of the Wallet Extension
 
-  On this screen the user finds the essential instrumentarium for the account management.
+On this screen the user finds the essential instrumentarium for the account management.
 
-   ![main screen](../../assets/wallet/11.png)
+<Image img={img01} alt="Click send button"
+    style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
+    className="balance-transfers inline-img"
+/>
 
 ## Profile
 
