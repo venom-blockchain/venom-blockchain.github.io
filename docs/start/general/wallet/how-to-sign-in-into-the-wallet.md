@@ -20,7 +20,7 @@ To sign in into your Venom wallet account the user should use a unique seed phra
 
   
 
-:::info info
+:::info
 We recommend backing it up with the wallet extension on your PC and using the ‘pen or pencil method”. Never share it with third
 parties! Remembering your seed phrase is highly important, it allows
 you to set up a new wallet, connect it on a phone, browser or hardware
@@ -55,7 +55,7 @@ device and regain access to your wallet transactions.
 
   
 
-:::info info
+:::info
 Make sure you have made the seed phrase backup with the wallet extension, before logging out the account . See, how to back up
 your seed phrase using your account [here](how-to-create-a-backup-file.md).
 ::: 

@@ -25,7 +25,7 @@ The simplest way to transfer crypto to another account via the Venom Wallet exte
  3. At the top of the “Send your    funds”    screen select the token which you are going to send.  
                
 
-:::info info
+:::info
 $VENOM token is selected by default.
 :::
 
@@ -34,7 +34,7 @@ $VENOM token is selected by default.
 
   
 
-:::info info
+:::info
 After all the data has been entered, the extension will calculate the gas fee and will indicate it in the Blockchain fee
 field. This field is dynamic and the estimated fee will be changing
 over time.

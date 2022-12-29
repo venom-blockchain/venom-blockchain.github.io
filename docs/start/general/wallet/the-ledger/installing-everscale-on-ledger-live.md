@@ -6,7 +6,7 @@ slug: /general/wallet/installing-ledger-app
 
 # Installing Everscale on Ledger Live
 
-:::info info
+:::info
 Before you will be able to set up Venom Wallet on your Ledger device you have to install Everscale App on it.
 :::
 

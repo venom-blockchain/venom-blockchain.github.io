@@ -38,7 +38,7 @@ import img03 from '../assets/wallet/25.png';
     className="balance-transfers inline-img"
 />
 
-:::info info
+:::info
 You can also [**“create new seed”**](creating-new-wallet.md)  from this menu and add it to the account. Selecting this option, click **“next”** and a new seed will be generated for you.
 Please, make sure to back up all your seed phrases. You can read the
 instruction on how to back up your seed [here](how-to-create-a-backup-file.md)
