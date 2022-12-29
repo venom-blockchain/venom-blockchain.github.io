@@ -116,17 +116,16 @@ export default function Home(): JSX.Element {
         <div className={clsx('main__container', 'container')}>
           <h2>Join our community</h2>
           <div className={clsx(styles.social_links)}>
-
-          <div className={clsx(styles.social_links__item)}>
-              <Image img={discord} alt='Discord link' style={{ width: '50px', marginRight: '15px' }} />
+            <div className={clsx(styles.social_links__item)}>
+              <img src={discord.src} alt="Discord" style = {{ width : '44px', marginRight : '15px' }} />
               <div>
                 <p>Discord</p>
                 <a href="https://discord.venom.foundation" target="_blank">Venom Foundation</a>
               </div>
             </div>
-            
+            <script>console.log(twitter)</script>
             <div className={clsx(styles.social_links__item)}>
-              <Image img={twitter} alt='Twitter link' style={{ width: '44px', marginRight: '15px' }} />
+              <img src={twitter.src} alt="Twitter" style = {{ width : '44px', marginRight : '15px' }} />
               <div>
                 <p>Twitter</p>
                 <a href="https://twitter.com/venomfoundation" target="_blank">@venomfoundation</a>
@@ -134,7 +133,7 @@ export default function Home(): JSX.Element {
             </div>
             
             <div className={clsx(styles.social_links__item)}>
-              <Image img={medium} alt='Medium link' style={{ width: '48px', marginRight: '15px' }} />
+              <img src={medium.src} alt="Medium" style = {{ width : '48px', marginRight : '15px' }} />
               <div>
                 <p>Medium</p>
                 <a href="https://medium.com/@venom.foundation" target="_blank">@venom.foundation</a>

@@ -58,6 +58,7 @@ h2.main__title{
 .social_links {
   padding: 20px 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .social_links__item {
