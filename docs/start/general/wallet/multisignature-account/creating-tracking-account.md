@@ -10,7 +10,7 @@ import img02 from '../../assets/wallet/33.png';
 import img03 from '../../assets/wallet/34.png';
 
 # Creating Tracking Account
-:::info info
+:::info
 To add a Tracking Account  make sure that the Public key of the Default account has been set as a custodian by the Multisignature account (for which a new Tracking Account is being created).
 :::
 
