@@ -59,7 +59,7 @@ Below you will find a step-by-step guide for creation of a Multisignature accoun
 
 7. In order to start utilizing the Multisignature account, you will have to add Custodians.  
       
-:::info info
+:::info
 Setting up Custodians requires having $VENOM tokens on the
 wallet.
 :::
@@ -77,7 +77,7 @@ wallet.
 
 12. You will be prompted to Setup your Multisignature Account. Here you should indicate the quantity of Custodians and their Public keys.
    
-:::info info
+:::info
 Not every Custodian should sign the transaction – the confirmation settings could be managed. For example, the transaction will be processed if 2 out of 3 Custodians have signed the transaction.
 :::
 

@@ -34,7 +34,7 @@ The list of the current wallet’s operational activity (such as date and time, 
 
   
 
-:::info info
+:::info
 To discover the detailed information on your crypto operations made on the Venom blockchain, we recommend using a
 specialized tool – Venom Scan.
 :::
