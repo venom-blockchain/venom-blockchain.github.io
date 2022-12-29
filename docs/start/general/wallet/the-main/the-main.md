@@ -27,7 +27,7 @@ Wallets are represented with the card-like icons. To switch between the differen
 
 >   
 > 
-:::info info
+:::info
 Use the Explorer to have a detailed look into wallet transaction history.
 :::
 
@@ -37,7 +37,7 @@ To perform quick and effortless transactions, use functional buttons — “Rece
 
   
 
-:::info info
+:::info
 To discover the address of the particular crypto asset, click on the asset’s icon.
 :::
   

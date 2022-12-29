@@ -48,7 +48,7 @@ There are different types of accounts on the Venom Wallet platform - a personal 
 />
 
 
-:::info info
+:::info
 We strongly recommend to keep it in the “safe environment”, never hand it over to someone and do not share it with third parties. Once created, the seed phrase gives access to the funds and information related to your wallet account. Make sure to save your seed phrase, just click the “copy” button to transfer the words to your device. We, as well, recommend to backup the seed phrase written down on a sheet of paper and store it in a dark cool place. When done, select an “I wrote it down on paper”.
 :::
 
@@ -80,7 +80,7 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 />
 
 
-:::info info
+:::info
 We advise you to also make the seed phrase backup on your PC from your wallet account before logging out. Use the wallet extension. Click on the upper-right corner profile icon and select the “manage seeds” button, then choose “backup all”. The extension will automatically generate the .json file on your device. You can now use this file to restore the seed phrase.
 :::
 

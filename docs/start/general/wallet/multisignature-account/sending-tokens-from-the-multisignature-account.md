@@ -34,7 +34,7 @@ In order to send tokens from the Multisignature account, the majority of Custodi
     className="balance-transfers inline-img"
 />
  
-:::info info
+:::info
 After all the data has been entered, the extension will calculate the gas fee and will indicate it in the Blockchain fee field. This field is dynamic and the estimated fee will be changing over time.
 :::
 
@@ -74,6 +74,6 @@ After all the data has been entered, the extension will calculate the gas fee an
     className="balance-transfers inline-img"
 />
     
-:::info info
+:::info
 The user can set up the number of the Custodians while creating the Multisignature Account.
 :::

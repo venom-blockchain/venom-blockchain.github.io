@@ -15,7 +15,7 @@ import img06 from '../../assets/wallet/28.png';
 # The Ledger
 ## Setting up Venom Wallet accounts with a Ledger device.
 
-:::info info
+:::info
 To start using the Venom Wallet with Ledger device you shoud have the Everscale app installed on it. See, how to install Everscale here.
 :::
 
@@ -80,7 +80,7 @@ To start using the Venom Wallet with Ledger device you shoud have the Everscale 
     className="balance-transfers inline-img"
 />
 
-:::info info
+:::info
 All accounts which were selected in the Ledger will be named Ledger 1, Ledger 2 and so on by default.
 :::
 
