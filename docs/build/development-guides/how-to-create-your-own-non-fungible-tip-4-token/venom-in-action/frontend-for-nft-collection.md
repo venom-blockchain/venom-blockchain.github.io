@@ -33,7 +33,7 @@ npx create-react-app my-tokensale-web --template typescript
 
 The previous frontend guide has a [section](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) where we reviewed the venom-connect library in detail. So let's create a venom-connect initialization function
 
-```typescript title="src/venom-connect/configure.ts" lineNumbers="true"
+```typescript title="src/venom-connect/connector.ts" lineNumbers="true"
 import { VenomConnect } from 'venom-connect';
 import { ProviderRpcClient } from 'everscale-inpage-provider';
 import { EverscaleStandaloneClient } from 'everscale-standalone-client';
@@ -130,8 +130,6 @@ Let's create a button for connecting the venom wallet. When the user is connecte
 ```typescript title="src/pages/Main.tsx" lineNumbers="true"
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
-
-import ConnectWallet from './components/ConnectWallet'
 
 type Props = {
   venomConnect: VenomConnect | undefined;
