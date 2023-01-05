@@ -7,6 +7,12 @@ slug: /general/whats-new
 
 # What's New
 
+## 5 January 2023
+
+* Added development guide on
+[Venom In Action. Frontend for NFT auction](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-auction.md).
+This guide is an appliance to auction smart contracts. Also, it demonstrates one of the most popular dapp actions - sending users' fungible tokens.
+
 ## 15 December 2022
 
 [How to run a Venom validator node](../maintain/how-to-become-a-validator.md)
