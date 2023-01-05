@@ -33,7 +33,7 @@ npm install --save-dev typescript @types/express
 Now it's time to see who will help us with smart contract interaction. You will be surprised, but backend libraries will be the same as frontend! Yes, these libraries are suitable for the backend too.
 
 ```shell
-npm install --save venom-connect everscale-inpage-provider everscale-standalone-client
+npm install --save everscale-inpage-provider everscale-standalone-client
 ```
 
 ## Interaction with smart contracts
