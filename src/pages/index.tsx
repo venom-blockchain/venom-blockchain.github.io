@@ -123,7 +123,6 @@ export default function Home(): JSX.Element {
                 <a href="https://discord.venom.foundation" target="_blank">Venom Foundation</a>
               </div>
             </div>
-            <script>console.log(twitter)</script>
             <div className={clsx(styles.social_links__item)}>
               <img src={twitter.src} alt="Twitter" style = {{ width : '44px', marginRight : '15px' }} />
               <div>
