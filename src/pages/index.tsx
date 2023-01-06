@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 
 import Layout from '@theme/Layout';
-import Image from '@theme/IdealImage';
 
 import discord from './assets/discord.png';
 import twitter from './assets/tw.png';
