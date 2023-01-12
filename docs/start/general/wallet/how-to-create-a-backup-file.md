@@ -30,8 +30,11 @@ Luckily, **Venom Wallet** allows the user to create a .json backup file. This fi
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
-    
+
+
+ 
 5.  You will be prompted to select the path for your .json file.
+    
     
 6.  The .json file will be saved on your device.
 
