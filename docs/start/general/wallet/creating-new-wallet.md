@@ -15,13 +15,11 @@ import img06 from '../assets/wallet/6.png';
 # How to Create a New Account with Venom Wallet
 ### Generating the seed phrase
 
+To use the Venom Blockchain, a user must first create a Venom wallet account. The Venom Wallet platform offers different types of accounts, including personal accounts (default) and multisig accounts for corporate use. A seed phrase is generated for the default wallet account upon creation. To create a new Wallet Account, the user can install the Venom Wallet Browser extension or download the application for IOS or Android devices.
 
-To start experiencing the Venom Blockchain the user would first need to create a new Venom wallet account.
-There are different types of accounts on the Venom Wallet platform - a personal account (default) or multisig for a corporate use. Therefore, the seed phrase will be created with a one default wallet account. The easiest way to create a new Wallet Account is to install the Venom Wallet Browser extension or download the application for IOS or for Android devices.
+**Here is a universal step-by-step guide for setting up a new account on Venom Wallet, ensuring it is secured with a seed phrase and password:**
 
-**Here is a universal step-by-step guide on how to set up a new account on Venom Wallet secured with the seed phrase and the password:**
-
- **Step 1.** Launch the extension/application and select the wallet setup option - “create a new account”.  
+ **Step 1.** Open the Venom Wallet extension or application and choose the option "create a new account" under the wallet setup.  
 
 
 <Image img={img01} alt="Click send button"
@@ -30,8 +28,8 @@ There are different types of accounts on the Venom Wallet platform - a personal 
 />
 
 
- **Step 2.** Read the decentralization policy and if you agree tick “I accept”.  
- **Step 3.** Click the “submit” button. 
+ **Step 2.** Review the decentralization policy, and if in agreement, select "I accept.”  
+ **Step 3.** Click the “submit” button.
 
 
 <Image img={img02} alt="Click send button"
@@ -49,11 +47,11 @@ There are different types of accounts on the Venom Wallet platform - a personal 
 
 
 :::info
-We strongly recommend to keep it in the “safe environment”, never hand it over to someone and do not share it with third parties. Once created, the seed phrase gives access to the funds and information related to your wallet account. Make sure to save your seed phrase, just click the “copy” button to transfer the words to your device. We, as well, recommend to backup the seed phrase written down on a sheet of paper and store it in a dark cool place. When done, select an “I wrote it down on paper”.
+Once the seed phrase is generated, it is crucial to keep it in a safe environment and to never share it with anyone or any third parties as it gives access to the funds and information related to your wallet account. Click the "copy" button to transfer the words to your device, and then save your seed phrase by writing it down on a sheet of paper and storing it in a safe location. When finished, select "I wrote it down on paper.”
 :::
 
 
-**Step 5.** Fill in the words and click confirm to verify that the unique seed phrase has been remembered. If the insertion was successful you will proceed to creation of the wallet password.  
+**Step 5.** Input the seed phrase words and click "confirm" to verify that you have accurately remembered the unique seed phrase. If you have successfully entered the words, you will proceed to create a password for your wallet.  
 
 
 <Image img={img04} alt="Click send button"
@@ -62,7 +60,7 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 />
 
 
-**Step 6.** Create a password to secure the wallet transactions process (the password must be at least 8 characters long, containing uppercase, lowercase, number and special character).  
+**Step 6.** Create a password to secure your wallet transactions. The password must be at least 8 characters long and include a combination of uppercase and lowercase letters, numbers, and special characters.  
 
 
 <Image img={img05} alt="Click send button"
@@ -71,7 +69,7 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 />
 
 
-**Step 7.** Confirm your password entering it twice and click the “create a wallet” button.  
+**Step 7.** Confirm your password by entering it twice and press the "create a wallet" button. This will complete the setup process of your new account on Venom Wallet.  
 
 
 <Image img={img06} alt="Click send button"
@@ -81,7 +79,7 @@ We strongly recommend to keep it in the “safe environment”, never hand it ov
 
 
 :::info
-We advise you to also make the seed phrase backup on your PC from your wallet account before logging out. Use the wallet extension. Click on the upper-right corner profile icon and select the “manage seeds” button, then choose “backup all”. The extension will automatically generate the .json file on your device. You can now use this file to restore the seed phrase.
+To ensure an additional backup of the seed phrase, you can backup the seed phrase on your PC by using the Venom Wallet extension. Click on the profile icon in the upper-right corner and select "manage seeds," then choose "backup all." The extension will automatically generate a .json file on your device. This file can be used to restore the seed phrase at a later time. It's important to remember to store it securely.
 :::
 
-A new default wallet account with the seed phrase has been created!
+Congratulations, you have successfully created a new default wallet account with a secure seed phrase on Venom Wallet! Remember to keep your seed phrase and password safe, and to store the backup of the seed phrase in a secure location.
