@@ -33,10 +33,12 @@ In order to send tokens from the Multisignature account, the majority of Custodi
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
- 
+
+
 :::info
 After all the data has been entered, the extension will calculate the gas fee and will indicate it in the Blockchain fee field. This field is dynamic and the estimated fee will be changing over time.
 :::
+
 
 6. Enter the Wallet password and click Confirm transaction.
 7. A link generated to follow the transaction on Venom scan will appear. The status and details on the transaction can be located by following the link.
@@ -73,6 +75,7 @@ After all the data has been entered, the extension will calculate the gas fee an
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
+
     
 :::info
 The user can set up the number of the Custodians while creating the Multisignature Account.
