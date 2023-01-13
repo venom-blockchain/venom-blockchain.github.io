@@ -26,7 +26,7 @@ Venom supports up to 2^32 workchains
 
 Based on masterchain security, a workchain may have its own state transition function, virtual machine, cryptographic primitives, transaction or block structures, and native cryptocurrencies.
 
-In this respect, the Venom Blockchain is heterogeneous. For example one of the workchains can implement ZK rollups and another can be created as a DeFi hub based on EVM, each one runs in the Venom environment and is secure by its consensus of masterchain validators.
+In this respect, the Venom Blockchain is heterogeneous. For example, one of the workchains can implement the NFT gaming network, and another can be created as a DeFi hub based on EVM. Each one runs in the Venom environment and is secure by its consensus of masterchain validators.
 
 ### Shardchain
 
