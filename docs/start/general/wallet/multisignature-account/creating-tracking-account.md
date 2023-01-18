@@ -11,31 +11,31 @@ import img03 from '../../assets/wallet/34.png';
 
 # Creating Tracking Account
 :::info
-To add a Tracking Account  make sure that the Public key of the Default account has been set as a custodian by the Multisignature account (for which a new Tracking Account is being created).
+To add a tracking account, ensure that the public key of the default account has been set as a custodian for the multisignature account for which a new tracking account is being created.
 :::
 
 
-**Here is a few steps to follow creating a new Tracking Account:**
-1. On the Main screen, scroll your existing accounts to the right until you reach the “Add Account” option.
-2. Upon choosing the Add Account option, you will be prompted to choose between the following 2 options: “Add Account” and “Add a tracking account”. Click on “Add a tracking account” option and then click Next.
+**Here are a few steps to follow when creating a new tracking account:**
+1. On the main screen, navigate to the section where your existing accounts are located and scroll until you reach the option labeled "Add Account".
+2. When you select the "Add Account" option, a new window will appear with two options: "Add Account" and "Add a tracking account". Select "Add a tracking account" and then click on the "Next" button.
 
 <Image img={img01} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-3. In the next window enter a name for new Tracking Account and paste the address of the Multisignature account.
+3. In the following window, provide a name for the new tracking account and paste the address of the multisignature account.
 
 <Image img={img02} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-4. Click Add account – your tracking account is ready to use.
+4. Click on the "Add account" button, your tracking account will be ready to use.
 
 <Image img={img03} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-Your new Tracking Account is now ready to use. From now on, you may perform transactions with this Account as an owner.
+Your new tracking account is now ready to use. From this point on, you can perform transactions with this account as an owner.
