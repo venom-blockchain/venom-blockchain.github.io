@@ -18,18 +18,18 @@ import img08 from '../../assets/wallet/22.png';
 
   
 
-There are some circumstances, when there is a need to enable the transaction from a wallet only after the approval by a certain number of individuals. Specifically for such instances a Multisignature Account feature is being applied. 
+In situations where multiple approvals are required for a transaction to be made from a wallet, a feature called Multisignature (often shortened to "Multisig") can be implemented. This allows for multiple individuals to sign off on a transaction before it is executed, providing an added level of security and accountability. 
 
 Below you will find a step-by-step guide for creation of a Multisignature account.
 1. Launch the Venom Wallet extension/application.
-2. On the Main screen, scroll your existing accounts to the right until you reach the “Add Account” option.
+2. On the main screen, navigate to the section where your existing accounts are located, and scroll until you reach the option labeled "Add Account".
 
 <Image img={img01} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-3. Upon choosing the Add Account option, you will be prompted to choose between the following 2 options: “Add Account” and “Add a tracking account”. Click on the “Add Account” option and then click Next.
+3. When you select the "Add Account" option, a new window will appear with two options: "Add Account" and "Add a tracking account". Select "Add Account" and then click on the "Next" button.
 
 <Image img={img02} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
@@ -43,61 +43,60 @@ Below you will find a step-by-step guide for creation of a Multisignature accoun
     className="balance-transfers inline-img"
 />
 
-5. In the next screen, you are prompted to select a wallet type. You may choose Default (similar to the one you already have as the first Account on your Venom Wallet) and Multisignature. Click on “Multisignature” and click on Create wallet address to proceed.
+5. On the following screen, you will be prompted to select a wallet type. You have the option to choose between "Default" and "Multisignature". Select "Multisignature" and then click on the "Create wallet address" button to proceed.
 
 <Image img={img04} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-6. After a new address has been successfully created, you are going to be brought to the main screen focused at the newly created Address.
+6. Once a new address has been created successfully, the main screen will automatically redirect and focus on the newly created address.
 
 <Image img={img05} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-7. In order to start utilizing the Multisignature account, you will have to add Custodians.  
+7. To start using the multisignature account, you will need to add custodians to the account. 
       
 :::info
-Setting up Custodians requires having $VENOM tokens on the
-wallet.
+Setting up Custodians requires you to have $VENOM tokens on the wallet.
 :::
 
-8. Further we are going to set up our default account as one of the Custodians.  
- - (Custodians are the addresses which are going to be required to approve the transactions on our Multisignature account.)
-9. Click on the Copy button to copy the address of the newly created Multisignature account.
-10. Send at least 0.1 $VENOM to the Multisignature account. You can follow this instruction on how to [send $VENOM](../the-main/send.md)
-11. Go back to your new Multisignature account after it has been topped up with the $VENOM and the Setup button has become available. Click on the Setup button.
+8. We will then proceed to set up our default account as one of the custodians.  
+ - (Custodians are the addresses that will be required to approve transactions on our multisignature account.)
+9. Click on the "Copy" button to duplicate the address of the newly created multisignature account.
+10. Send at least 0.1 $VENOM to the Multisignature account. You can follow this instruction on how to [Send $VENOM By Clicking Here](../the-main/send.md)
+11. Once the multisignature account has been funded with $VENOM and the "Setup" button becomes available, navigate back to the new multisignature account. Click on the "Setup" button.
 
 <Image img={img06} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-12. You will be prompted to Setup your Multisignature Account. Here you should indicate the quantity of Custodians and their Public keys.
+12. You will be prompted to set up your multisignature account. In this step, you will need to specify the number of custodians and input their public keys.
    
 :::info
-Not every Custodian should sign the transaction – the confirmation settings could be managed. For example, the transaction will be processed if 2 out of 3 Custodians have signed the transaction.
+It is not necessary for every custodian to sign off on a transaction as the confirmation settings can be customized. For example, a transaction can be executed if only 2 out of 3 custodians have signed it.
 :::
 
-13. Each owner of the addresses which are going to be Custodians Multisignature account, after sending at least 0.1 $VENOM to the Multisignature account, should copy their public key from the Preferences window and send it to the manager of the Multisignature account to be entered in this window.
-14. The manager of the Multisignature account has entered the quantity and the public keys of the Custodians and public address of each Custodian.
+13. Each owner of the addresses which will serve as custodians for the multisignature account, after transferring a minimum of 0.1 $VENOM to the multisignature account, should copy their public key from the Preferences window and send it to the manager of the multisignature account, who will then enter it in the setup window.
+14. The manager of the multisignature account has entered the number of custodians, their public keys, and the public address of each custodian.
 
 <Image img={img07} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-15. On the next screen carefully verify the entered data and if you approve click the Setup button to complete the setup of the Custodians of the Multisignature account.
+15. On the next screen, carefully review the entered data. If everything is correct, click the "Setup" button to complete the setup of the custodians for the multisignature account.
 
 <Image img={img08} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-16. You will be prompted to enter the password, upon entering which and confirming, you will be notified that the Setup has been completed successfully. Click OK to close the window.
-17. To see a list of added Custodians, click on a cog button and choose Custodians option.
+16. You will be prompted to enter your password. Once you have entered it and confirmed, you will receive a notification that the setup has been completed successfully. Click "OK" to close the window.
+17. To view the list of added custodians, click on the gear button and select the "Custodians" option.
 
 <Image img={img08} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
