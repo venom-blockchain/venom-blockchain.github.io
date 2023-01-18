@@ -13,14 +13,14 @@ import img02 from '../../assets/wallet/14.png';
 ## Revising history and details
   
 
-For the user convenience a vital transactional data is always available on hand in the Venom Wallet.
+For user's convenience, vital transactional data is always readily available in the Venom Wallet.
 
 <Image img={img01} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-**Here a few steps for checking your transaction history via wallet extension:**
+**Here are a few steps to follow to check your transaction history via the Venom Wallet extension:**
 
   
 
@@ -30,17 +30,16 @@ For the user convenience a vital transactional data is always available on hand 
 
   
 
-The list of the current wallet’s operational activity (such as date and time, amount, hash ID, transaction’s addresses and gas fee paid) would be available to the user. You may fast-check the data of every wallet added to your Venom blockchain account, by changing the wallet’s priority on the UI.
+The list of the current wallet’s operational activity (such as date and time, amount, hash ID, transaction’s addresses and gas fee paid) are available to the user. You may fast-check the data of every wallet added to your Venom blockchain account, by changing the wallet’s priority on the UI.
 
   
 
 :::info
-To discover the detailed information on your crypto operations made on the Venom blockchain, we recommend using a
-specialized tool – Venom Scan.
+To discover the detailed information on your crypto operations made on the Venom blockchain, we recommend using a specialized tool – Venom Scan.
 :::
   
 
-**You can access the tool right from the “Transactions” in your account:**
+**You can view your transaction history by accessing the "Transactions" tab in your Venom Wallet account:**
 
   
 
@@ -50,12 +49,12 @@ specialized tool – Venom Scan.
 
   
 
-The user as well can find the link to the explorer tool, manually choosing the wallet from the homepage of the extension.
+Users can also find a link to the explorer tool by manually selecting the wallet from the homepage of the Venom Wallet extension.
 
   
 
-1. Click on the “gear” icon.
-2. Choose to “View in the explorer”.
+1. Click on the “Gear” icon.
+2. Select to “View in the explorer”.
     
 
 <Image img={img02} alt="Click send button"
@@ -63,4 +62,4 @@ The user as well can find the link to the explorer tool, manually choosing the w
     className="balance-transfers inline-img"
 />
 
-You will be redirected to the Venom Scan website, where you can enjoy this tool.
+You will be redirected to the Venom Scan website, where you can make use of this tool.
