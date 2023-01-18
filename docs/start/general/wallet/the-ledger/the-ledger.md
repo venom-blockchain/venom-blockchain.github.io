@@ -16,15 +16,15 @@ import img06 from '../../assets/wallet/28.png';
 ## Setting up Venom Wallet accounts with a Ledger device.
 
 :::info
-To start using the Venom Wallet with Ledger device you shoud have the Everscale app installed on it. See, how to install Everscale here.
+In order to start using the Venom Wallet with a Ledger device, you should have the Everscale app installed. You can refer to these instructions on how to install Everscale.
 :::
 
 
-**Here is a guide to follow to set up the Venom Wallet Account using Ledger device:**
- - **Prepare your Ledger device** with the installed Eversacle App. You can find the instructions on Installing Everscale via Ledger Live [here](../the-ledger/installing-everscale-on-ledger-live.md).
+**Here is a step-by-step guide to setting up a Venom Wallet account using a Ledger device:**
+ - Before proceeding, ensure that your Ledger device has the Everscale app installed. You can find the instructions on Installing Everscale via Ledger Live [Here](../the-ledger/installing-everscale-on-ledger-live.md).
  -  **Do not forget to** have Ledger Live software **closed** at all times while performing the following steps.
 
-**If you have just installed Venom Wallet and it has no connected seed phrases:**
+**If you have recently installed Venom Wallet and it does not have any connected seed phrases:**
 1. Launch Venom Wallet.
 2. Choose Sign in with Ledger.
 
@@ -38,7 +38,7 @@ To start using the Venom Wallet with Ledger device you shoud have the Everscale 
 **If you have launched Venom Wallet before and have connected seed phrases:**
 
 1.  Open Venom Wallet extension.
-2.  Go to Profile Icon.
+2.  Access the Profile Icon.
 3.  Press Manage Seed button.
 
 <Image img={img02} alt="Click send button"
@@ -47,17 +47,17 @@ To start using the Venom Wallet with Ledger device you shoud have the Everscale 
 />
 
 4.  In the Manage Seed Phrases window click “Add New”.
-5.  In the Add Seed Phrase window in the dropdown list choose “Connect Ledger” and press Next.
+5.  In the Add Seed Phrase window, from the dropdown list, select "Connect Ledger" and press Next.
 
 <Image img={img03} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-6. Connect your Ledger to computer.
-7.  Enter the pin code to unlock it.
-8.  Navigate to the Everscale section on your Ledger dashboard to access the wallet.
-9.  Click Connect.
+6. Connect your Ledger device to your computer.
+7. Enter the pin code to unlock it.
+8. Navigate to the Everscale section on your Ledger dashboard to access the wallet.
+9. Click Connect.
 
 <Image img={img04} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
