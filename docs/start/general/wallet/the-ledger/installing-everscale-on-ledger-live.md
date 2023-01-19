@@ -13,7 +13,7 @@ Before you will be able to set up Venom Wallet on your Ledger device you have to
  To use Venom Wallet with Ledger devices the user should firt install Everscale app via Ledger Live software. 
 
  
- **HHere is a quick installation guide to follow:**
+ **Here is a quick installation guide to follow:**
 1.  Connect your Ledger device.
 2.  Open Ledger Live software.
 3.  Go to Settings (Gear icon).
