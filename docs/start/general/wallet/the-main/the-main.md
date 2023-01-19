@@ -44,6 +44,6 @@ To discover the address of the particular crypto asset, click on the asset’s i
 
 On the bottom of the wallet window, the user will find some additional commands.
 
-On the bottom of the wallet window, the user can find a button labeled "Refresh to find", selecting this button will manually refresh the assets list if the balances have not been fetched. Additionally, user may find a "Manage (assets) manually" button which will allow them to manually add a custom token by entering the token address or manually search for a token.
+On the bottom of the wallet window, the user can find a button labeled "Refresh to find", selecting this button will manually refresh the assets list if the balances have not been fetched. Additionally, users may find a "Manage (assets) manually" button which will allow them to manually add a custom token by entering the token address or manually search for a token.
 
 We hope you find Venom Wallet to be a useful tool for your crypto trading needs. It's designed to make the process of buying, selling, and managing your assets fast and effortless.
