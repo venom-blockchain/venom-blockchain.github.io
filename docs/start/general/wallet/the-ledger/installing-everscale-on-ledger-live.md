@@ -18,7 +18,7 @@ Before you will be able to set up Venom Wallet on your Ledger device you have to
 2.  Open Ledger Live software.
 3.  Go to Settings (Gear icon).
 4.  Go to the Experimental features tab.
-5.  Scroll down to the Developer mode and turn it on.
+5.  Scroll down to the Developer mode and switch it on.
 
    ![add account](../../assets/wallet/29.png)
 
