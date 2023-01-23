@@ -9,62 +9,49 @@ slug: /general/whats-new
 
 ## 5 January 2023
 
-* Added development guide on
-[Venom In Action. Frontend for NFT auction](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-auction.md).
-This guide is an appliance to auction smart contracts. Also, it demonstrates one of the most popular dapp actions - sending users' fungible tokens.
+* A development guide for Venom In Action has been added. This guide introduces the [Frontend for NFT Auctions](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-auction.md) and demonstrates how to use auction smart contracts. Additionally, it shows one of the most popular dApp actions, which is sending users' fungible tokens.
+
 
 ## 15 December 2022
 
-[How to run a Venom validator node](../maintain/how-to-become-a-validator.md)
-guide has been added to the MAINTAIN section.
+A development guide covering: [How To Run A Venom Validator Node](../maintain/how-to-become-a-validator.md) has been added to the maintain section.
 
 ## 9 December 2022
 
-* Added development guide on
-[Venom In Action. Frontend for NFT collection](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-collection.md).
-This guide shows you how to use a salt process and how it is used for TIP4. As
-an example, you will learn how to show the NFTs of your collections and the
-NFTs of any user.
+* A development guide for Venom In Action has been added, featuring a [Frontend For NFT Collections](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-collection.md).
+The guide demonstrates the use of a salt process and its application in TIP4. As an example, it teaches you how to display the NFTs in your collection and the NFTs of any other user.
 
-* A new article titled [Gas and Fees](../learn/gas-and-fees.md) has been added
-to the Venom Blockchain Knowledge Base. This article provides an explanation of
-how gas fees work on the Venom Blockchain.
+* A new article titled [Gas And Fees](../learn/gas-and-fees.md) has been added to the Venom Blockchain Knowledge Base. The article provides an overview of how gas fees function within the Venom Blockchain.
 
 ## 17 November 2022
 
-* Added development guide on [Venom In Action. Extend our voting system with backend](../../build/development-guides/developing-of-simple-voting-system/venom-in-action/extend-our-voting-system-with-backend.md),
-the first guide for backend developers, that shows how to interact with smart
-contracts from the backend, to listen to any smart contract's event.
+* A development guide for Venom In Action has been added, which expands on our [Voting System With A Backend Guide](../../build/development-guides/developing-of-simple-voting-system/venom-in-action/extend-our-voting-system-with-backend.md).
+* This guide is specifically for backend developers and illustrates how to interact with smart contracts from the backend, including how to listen to any smart contract's event.
 
 ## 10 November 2022
 
-* Added development guide on [Venom In Action. Extend our Tokensale with frontend](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md),
-the first guide for frontend developers aims at interaction with contracts
-state - as reading, as changing with transactions.
+* A development guide for Venom In Action has been added, which expands on our [Tokensale With A Frontend Guide](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md).
+This guide is specifically for frontend developers and focuses on interacting with smart contract state, including reading and changing it through transactions.
 
 ## 24 October 2022
 
-* Added an article about important participants of the Venom Blockchain
-[Network Maintainers](../maintain/network-maintainers.md)
+* A new article about important participants in the Venom Blockchain Network has been added, specifically focusing on [Network Maintainers](../maintain/network-maintainers.md).
 
 ## 21 October 2022
 
-* Added development guide on
-[How to create your own non-fungible TIP-4 token](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network.md),
-the guide discussing the creation of an NFT, and a simple auction contract
+* A development guide has been added on [Creating Your Own Non-Fungible TIP-4 Token](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network.md).
+The guide covers the creation of an NFT, as well as a simple auction contract.
 
 ## 18 October 2022
 
-* Added development guide on [How to create your own fungible TIP-3 token](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md), it's a good starting point for learning
-development on the Venom
+* A development guide has been added on [Creating Your Own Fungible Tip-3 Token](../../build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md).
+This guide serves as a good starting point for learning development on the Venom Blockchain.
 
 ## 15 October 2022
 
-* Added learning article about one of the fundamental concepts of the Venom
-blockchain is [Messages and Transactions](../learn/messages-and-transactions.md)
+* A new learning article has been added about one of the fundamental concepts of the Venom blockchain: [Messages And Transactions](../learn/messages-and-transactions.md).
 
 ## 13 October 2022
 
-* Added learning article [Tokens and Assets](../learn/tokens-and-assets.md),
-the article describes the most commonly used types of assets in the Venom
-blockchain
+* A new learning article has been added on [Tokens And Assets](../learn/tokens-and-assets.md),
+which describes the most commonly used types of assets on the Venom blockchain.
