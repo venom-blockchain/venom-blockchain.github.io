@@ -6,7 +6,7 @@ slug: /general/community
 
 # Community
 
-The members of the Venom community are very supportive of each other. They help grow the ecosystem by hosting events, contributing to the development of the network, and supporting the security and governance of the platform.
+The Venom community is highly collaborative, with members supporting one another to advance the ecosystem through hosting events, contributing to network development, and ensuring the platform's security and governance.
 
 The Venom community is constantly growing. There are a variety of essential links that help you stay connected to the platform and its members.
 
