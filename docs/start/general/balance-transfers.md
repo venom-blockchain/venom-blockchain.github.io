@@ -13,47 +13,47 @@ import img05 from './assets/balance-transfers/5.png';
 
 # Balance Transfers
 
-A popular case of using blockchains is fund transfers from one account to another.
+A common application of blockchains is the transfer of funds from one account to another.
 
 :::caution
-This guide assumes that you've already [created a Wallet Account](wallet/creating-new-wallet.md) and you [got some tokens](ecosystem/#venomget)
+This guide assumes that you've already [Created A Wallet Account](wallet/creating-new-wallet.md) and you [Have Some Tokens](ecosystem/#venomget)
 :::
 
-To start transferring we will use [Venom Wallet Browser Extension](ecosystem/#venom-wallet).
+To initiate transfers we will use the [Venom Wallet Browser Extension](ecosystem/#venom-wallet).
 
-**Step 1.** Let's open it and click the "Send" button
+**Step 1.** Open the extension and select the "Send" button.
 
 <Image img={img01} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-**Step 2.** Now you see a popup window that asks you to enter four inputs
+**Step 2.** A pop-up window will appear, prompting you to provide the following information:
 
-* "VENOM": The token that will be sent, you can choose other tokens here
-* "Amount": The number of tokens you will transfer to the receiver
-* "Receiver Address": The address of the receiver that will receive tokens
-* "Comment": The text message for the receiver
+* "VENOM": The token that will be sent, other options are also available
+* "Amount": The quantity of tokens you wish to transfer to the receiver
+* "Receiver Address": The address of the recipient who will receive the tokens
+* "Comment": An optional text message for the receiver
 
 <Image img={img02} alt="Sending window"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-After correctly filling in the input data, click the "Next" button
+Upon correctly filling in the input fields, select the "Next" button to proceed.
 
-**Step 3.** You will be directed to the confirmation message screen**.**&#x20;
+**Step 3.** You will be directed to a confirmation message screen.**.**&#x20;
 
-Make sure you have filled in all fields correctly**,** enter your password, and click the "Confirm transaction" button
+Verify that all fields have been filled in correctly, enter your password, and select the "Confirm transaction" button to complete the process.
 
 <Image img={img03} alt="Sending confirmation"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
     className="balance-transfers inline-img"
 />
 
-After you have confirmed the sending, the window will close.
+Upon confirming the transaction, the window will close.
 
-**Step 4.** Open Venom Wallet again and click the "Transactions" tab, look in the list of transactions you will see a transaction in the status "Transaction in progress", after a while it will be processed by the network and change its status.
+**Step 4.** Open the Venom Wallet again and select the "Transactions" tab. You will see a transaction with the status "Transaction in progress". It will be processed by the network, and the status will change after some time.
 
 <Image img={img04} alt="In progress status"
     style={{ width: "48%", minWidth: "320px", marginRight: "4%", display: "inline-block" }}
@@ -64,4 +64,4 @@ After you have confirmed the sending, the window will close.
     className="balance-transfers inline-img"
 />
 
-Now, you can see your transactions in [the explorer](ecosystem.md/#explorer).
+You can now view your transactions in [The Explorer](ecosystem.md/#explorer).
