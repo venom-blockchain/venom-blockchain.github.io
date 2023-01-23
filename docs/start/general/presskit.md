@@ -6,7 +6,7 @@ slug: /general/presskit
 
 # Presskit
 
-You can use these files to publish informational materials related to the Venom Foundation
+You can use these files to publish informational materials related to the Venom Foundation.
 
 ## Images
 
@@ -20,11 +20,11 @@ You can use these files to publish informational materials related to the Venom 
 
 ## About Venom
 
-Venom Blockchain has an asynchronous blockchain technology of dynamical sharding, that has made an unprecedented leap in blockchain technology development globally, bringing to the market boundless scalability, and higher security guarantees with decentralization.
+The Venom Blockchain utilizes an asynchronous blockchain technology called dynamical sharding, which represents a significant advancement in blockchain technology globally. This technology provides limitless scalability and improved security guarantees with decentralization.
 
 ## About Venom Foundation
 
-Venom Foundation is leading among three core directions, such as essential infrastructure, support of inbound projects, and developer-friendly platform, each to offer novel solutions for solving earlier existing issues on the crypto market.
+The Venom Foundation is focused on three key areas: essential infrastructure, support for inbound projects, and a developer-friendly platform, with the aim of providing innovative solutions to address existing challenges in the cryptocurrency market.
 
 ## Social links
 
