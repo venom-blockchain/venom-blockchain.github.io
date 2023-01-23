@@ -8,32 +8,31 @@ slug: /general/readme
 
 ## Get started
 
-The Knowledge Base is the entry point into the Venom universe.  
-Get to know the technology behind the incredible scalability of the Venom blockchain.
+The Knowledge Base is the entry point into the Venom universe. Get to know the technology behind the incredible scalability of the Venom blockchain.
 
 ## Content
 
-Here you'll find information about [Venom Ecosystem Products](ecosystem.md), start and go deeper into [Venom technology](../learn/architecture.md).
+Here you can find information about [Products Within The Venom Ecosystem](ecosystem.md), as well as an introduction to [Venom Technology](../learn/architecture.md) and the ability to delve deeper into it.
 
-[The Build section](../../build/development-guides/readme.md) contains guides and tutorials for developers and integrators. Here you will find [comparing of Ethereum vs Venom](../../build/development-guides/comparing-of-ethereum-vs-venom-architectures.md) to better understand the key differences between the EVM, and Venom technologies and have smooth migration development to Venom.
+[The Build Section](../../build/development-guides/readme.md) provides guides and tutorials for developers and integrators. It contains a [Comparison of Ethereum vs Venom](../../build/development-guides/comparing-of-ethereum-vs-venom-architectures.md) to help you understand the key differences between EVM and Venom Technologies, and to facilitate a smooth migration to Venom.
 
-Most useful is the [Integration Guides section](../../build/integration-guides/how-to-connect-dapp-ui-to-venom.md) for developers who build wallets, portfolio trackers, etc.
+[The Integration Guides](../../build/integration-guides/how-to-connect-dapp-ui-to-venom.md) section is particularly useful for developers who are building wallets, portfolio trackers, and other similar tools.
 
-If you want to maintain the network, there is a Section for Maintenance, where you will find all the necessary information about the roles of [Network Maintainers](../maintain/network-maintainers.md), and [How to run a Venom validator node](../maintain/how-to-become-a-validator.md).
+If you are interested in maintaining the network, the maintenance section provides all the necessary information on the roles of [Network Maintainers](../maintain/network-maintainers.md), and [How to run a Venom Validator Node](../maintain/how-to-become-a-validator.md).
 
 ## First steps with Venom
 
 1. [Create a Wallet](wallet/creating-new-wallet.md)  
-   The Wallet Account is your identity in the Venom blockchain and a place to securely keep your Venom tokens.
+   The Wallet Account is your identity on the Venom blockchain and a secure location to store your Venom tokens
 
 2. Get Venom tokens  
-   An Easy way to exchange any of your tokens on other chains to VENOM
+   An easy way to exchange any of your tokens on other chains for $VENOM
 
 3. [Transfer funds](balance-transfers.md)  
-   Send your VENOM to friends
+   Allows you to send your $VENOM to friends
 
 4. [Explore transactions](ecosystem.md/#explorer)  
-   Explore, and search transactions, addresses, tokens, and other activities on Venom Blockchain
+   Browse, search and view transactions, addresses, tokens and other activities on the Venom Blockchain
 
 5. [Bridge your tokens](ecosystem.md/#bridge)  
-   Explore the world of interchain transactions. Save time and money moving assets from one network to another.
+   Experience the convenience of interchain transactions. Save time and money when moving assets from one network to another
