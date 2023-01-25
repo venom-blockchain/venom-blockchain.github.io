@@ -25,7 +25,7 @@ To send tokens from a multisignature account, a majority of the custodians (e.g.
     className="balance-transfers inline-img"
 />
 
-3. At the top of the "Send your funds" screen, select the token you wish to send. The $VENOM token is selected by default.
+3. At the top of the "Send your funds" screen, select the token you wish to send. The VENOM token is selected by default.
 4. In the "Receiver Address" field, enter the wallet address of the recipient (by manually typing it or pasting it).
 5. In the "Amount" field, enter the number of tokens to be sent. This field can accept decimal values.
 
