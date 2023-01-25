@@ -60,14 +60,14 @@ Below you will find a step-by-step guide for creation of a Multisignature accoun
 7. To start using the multisignature account, you will need to add custodians to the account. 
       
 :::info
-Setting up Custodians requires you to have $VENOM tokens on the wallet.
+Setting up Custodians requires you to have VENOM tokens on the wallet.
 :::
 
 8. We will then proceed to set up our default account as one of the custodians.  
  - (Custodians are the addresses that will be required to approve transactions on our multisignature account.)
 9. Click on the "Copy" button to duplicate the address of the newly created multisignature account.
-10. Send at least 0.1 $VENOM to the Multisignature account. You can follow this instruction on how to [Send $VENOM By Clicking Here](../the-main/send.md)
-11. Once the multisignature account has been funded with $VENOM and the "Setup" button becomes available, navigate back to the new multisignature account. Click on the "Setup" button.
+10. Send at least 0.1 VENOM tokens to the Multisignature account. You can follow this instruction on how to [Send VENOM Tokens By Clicking Here](../the-main/send.md)
+11. Once the multisignature account has been funded with VENOM tokens and the "Setup" button becomes available, navigate back to the new multisignature account. Click on the "Setup" button.
 
 <Image img={img06} alt="Click send button"
     style={{ width: "50%", minWidth: "320px", marginBottom: "20px", display: "inline-block" }}
