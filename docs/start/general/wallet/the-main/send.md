@@ -26,7 +26,7 @@ The simplest way to transfer crypto to another account via the Venom Wallet exte
                
 
 :::info
-$VENOM token is selected by default.
+The VENOM token is selected by default.
 :::
 
  4. In the “Receiver Address” field paste (or manually enter) the wallet address of the recipient. 
