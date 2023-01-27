@@ -6,36 +6,27 @@ slug: /learn/transaction-fees
 
 # Gas and Fees
 
-To send a message to the network, you must attach a certain amount of VENOM.
-This is used to pay the validators for their work, cover the cost of storing
-the message on the network, and any remaining amount is returned as a change.
+When sending a message to the network, a specific amount of Venom tokens must be attached. This is used to compensate validators for their work, cover the costs of storing the message on the network, and any remaining balance is returned as change.
 
-This mechanism serves several purposes:
+This system serves multiple purposes:
 
-1. **To incentive** validators to maintain the correct operation of the network,
-perform transaction calculations, and store contract data on their nodes
+1. **To incentivize** validators to ensure the network runs smoothly, perform transaction calculations, and store contract data on their nodes.
 
-2. **To restrict** the ability to send spam to the network and restrict attempts
-to slow it down by malicious parties
+2. **To restrict** the ability to send spam to the network and prevent attempts by malicious parties to slow it down.
 
 There are several important characteristics of commissions:
 
-The cost of a gas unit in the network is fixed and is specified in the global configuration,
-which can only be changed by the general consensus of validators
+The cost per unit of gas on the network is fixed and is outlined in the global configuration, which can only be modified by the consensus of validators.
+
 :::info Gas cost in the network
 Currently, one gas unit in the network costs 100 nanoVENOM
 :::
 
-The network also charges a commission for data storage for the entire
-time of their existence in the network
+The network also charges a commission for data storage for the entire duration of their existence in the network
 
-The commission is always paid from the contract balance, as external messages
-cannot be value-bearing messages.
+The commission is always paid from the contract balance, as external messages cannot be value-bearing messages.
 
-The user determines how much VENOM to attach as payment fees
-from their contract account to the call. The attached value is the maximum
-amount that will be spent on executing the call chain.
-Usually, the DApp automatically proposes the recommended value for the user.
+The user decides how much VENOM to attach as payment fees from their contract account for the call. The attached value is the upper limit for the cost of executing the call chain. Typically, the DApp automatically suggests a recommended value for the user.
 
 ## Fee Calculation
 
@@ -43,19 +34,16 @@ As we know from the article [Messages and Transactions](messages-and-transaction
 , there are several phases of transaction execution. Each phase is associated
 with its own type of fee.
 
-**Inbound external message fee**: the only type of fee not related to the
-described phases of transaction execution. It is charged in the case of
-transaction initialization by an external message, as a fee for sending the
-message (*forward message fee*).
+**Inbound external message fee**: the only fee that is not related to the transaction execution phases described. It is charged when a transaction is initiated by an external message, as a fee for sending the message (forward message fee).
 
-Consider types of fees in the context of execution phases:
+Fees in the context of execution phases:
 
 **Storage**: related to the namesake fee (*Storage fee*) and charged for storing
 the contract and associated data.
 
-**Credit**: the only phase not associated with the charging of any fee.
+**Credit**: the only phase that does not involve the charging of any fee.
 
-**Compute**: charges (*Gas fee*) a fee for calculations performed in the called account (contract).
+**Compute**: charges a fee (Gas fee) for calculations performed in the called account (contract).
 
 **Action**: each outgoing message from the contract, both external and
 internal, must be paid a fee (*Action fee*) as a fee for sending the message.
@@ -134,7 +122,7 @@ the masterchain and workchains), which is the price for storing one cell.
 
 ## Gas fees
 
-For most primitives gas is calculated according to the following formula:
+For most primitives, gas is calculated using the following formula:
 
 $$
 Pb := 10 + b
@@ -165,8 +153,7 @@ The action fee might be absent if no actions are performed during the transactio
 
 ## Outbound messages
 
-The `outbound_internal_messages_fee` is determined by summing the fees for each
-outbound internal message generated as a result of transaction execution.
+The `outbound_internal_messages_fee` is determined by adding up the fees for each outbound internal message generated as a result of transaction execution.
 
 $$outbound\_internal\_messages\_fee = \sum_{i=1}^{n} (out\_int\_msg\_i.fwd\_fee + out\_int\_msg\_i.ihr\_fee)$$
 
