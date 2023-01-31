@@ -12,7 +12,7 @@ availability of the network for other participants.
 
 ## Validator
 
-The validator plays an essential role in maintaining the security of the network through staking Venom tokens and actively participating in consensus with other validators. Using the Catchain algorithm, the validator proposes candidate blocks and votes on blocks proposed by other validators. Once the voting threshold is reached, the proposed block is added to the chain. This process is facilitated by an overlay network created by the ADNL protocol, which connects the validators.
+The validator plays an essential role in maintaining the security of the network through staking Venom tokens and actively participating in consensus with other validators. Using the consensus algorithm, the validator proposes candidate blocks and votes on blocks proposed by other validators. Once the voting threshold is reached, the proposed block is added to the chain. This process is facilitated by an overlay network created by the network-layer protocol, which connects the validators.
 
 Validators are incentivized to participate in the block production process because each included block provides a reward.
 
