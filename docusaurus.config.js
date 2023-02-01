@@ -184,6 +184,10 @@ const config = {
             title: 'Community',
             items: [
               {
+                label: 'Forum',
+                href: 'https://forum.venom.foundation',
+              },
+              {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/questions/tagged/venomblockchain',
               },
