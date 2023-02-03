@@ -14,23 +14,21 @@ To help you better understand this page, we recommend you first read [Accounts](
 
 ## Message
 
-A message sent to an account is the reason for producing the transaction with
-the state changing its account. A message contains instructions for an execution
-call of a smart contract (an account).
+A message sent to an account triggers the creation of a transaction that modifies the account's state. The message includes instructions for executing a smart contract (an account).
 
 ### Message types
 
 The Venom network has three different types of messages:
 
-**Inbound external message:** a message sent from outside the blockchain into the blockchain. Such messages without a 'from' address, can be sent by regular users, external services, and any participants outside the chain, and are called "_messages from nowhere_". An inbound external message initializes updates on the state of the blockchain.
+**Inbound external message:** a message sent from outside the blockchain into the blockchain. These messages don't have a 'from' address and can be sent by regular users, external services and any participants outside the blockchain, known as "messages from nowhere". Inbound external messages initiate changes to the state of the blockchain.
 
 The external message can not be the value-bearing message from one participant to another, it only can declare intent to transfer value to another account.
 
-**Internal message:** a message from one contract to another. Also as an inbound external message that type of message updates the state of the Venom network.
+**Internal message:** a message sent from one contract to another. Like an inbound external message, it updates the state of the Venom network.
 
 Only an Internal message can be a value-bearing message.
 
-**Outbound external message:** Known as a "_message to nowhere_" or "_event_". An event may be produced by a smart contract. Any off-chain participant can subscribe to events inside of the Venom network and receive them.
+**Outbound external message:** Known as a "_message to nowhere_" or "_event_". This is a message that can be emitted by a smart contract. Off-chain participants can subscribe to events within the Venom network and receive them.
 
 ![Messages](<../../../static/img/messages.png>)
 
@@ -40,20 +38,20 @@ A message consists of such parts as '_header'_ and '_body'._
 
 The header contains the information about a sender, receiver, value, and the information necessary required by the validator to apply the message to the block.
 
-The message body includes payload to virtual machine instructions, that are required to execute the smart contract.
+The message body comprises the payload of virtual machine instructions that are necessary to execute the smart contract.
 
 ### Transaction
 
-A transaction is a result of executing a message. It is always associated with a message that generated it. A transaction contains the information: a target account, status, set of outbound messages, and hash of the updated state of an account.
+A transaction is the result of executing a message. It is always linked to the message that generated it. A transaction includes information such as the target account, status, set of outbound messages, and hash of the updated state of an account.
 
 ### Transaction phases
 
-**Storage**: a target contract pays a storage fee from its own balance.
+**Storage**: the target contract pays a storage fee from its own balance
 
-**Credit:** a message attached value is transferred to a contract balance.
+**Credit:** the value attached to the message is transferred to the contract balance
 
-**Compute:** the virtual machine executes the smart contract instructions and stores the intentions to create messages for their creation in the action phase.
+**Compute:** the virtual machine executes the smart contract instructions and records the intentions to create messages in the action phase
 
-**Action:** this step creates internal and outbound external messages.
+**Action:** this step generates internal and outbound external messages
 
-**Bounce:** in case of an error was thrown at stages (3, 4) of the transaction execution, the transaction will immediately go into the bounce phase, skipping the rest of the phases. Also, if a '_bounce_' flag was specified, a message will be sent back to the sender on the onBounce callback function.
+**Bounce:** if an error occurs during stages 3 or 4 of the transaction execution, the transaction will immediately move to the bounce phase and skip the remaining phases. Additionally, if a 'bounce' flag is specified, a message will be sent back to the sender through the onBounce callback function
