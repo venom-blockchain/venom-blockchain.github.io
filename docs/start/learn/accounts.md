@@ -8,33 +8,33 @@ slug: /learn/accounts
 # Accounts
 
 :::info
-If you need to create a wallet account and don't care about the technical details then you can follow [this article](../general/wallet/creating-new-wallet.md).
+If you want to create a wallet account without worrying about the technical details, you can refer to [This Article](../general/wallet/creating-new-wallet.md).
 :::
 
-Usually, an account means the user's identity in the blockchain. An account has an address, stores a balance, can send and receive funds, and calls smart contracts. In particular cases, an account is a smart contract with state storage.
+In a blockchain, an account typically refers to a user's identity. It has an address, holds a balance, can send and receive funds, and interacts with smart contracts. In certain instances, an account is a smart contract that has state storage.
 
-Ethereum accounts can be externally owned (controlled by anyone with private keys) or deployed as smart contracts. In the Venom blockchain, an account and a smart contract are the same things. Here we don't have externally-owned accounts in the usual sense, and any accounts are smart contracts.
+In Ethereum, accounts can be externally owned (controlled by anyone with private keys) or implemented as smart contracts. In Venom blockchain, an account and a smart contract are interchangeable. There are no externally-owned accounts in the traditional sense, all accounts are smart contracts.
 
-#### **Account has the ability to:**
+#### **An account has the capability to:**
 
-* Receive, hold and send VENOM and tokens
+* Receive, store, and send VENOM and tokens
 * Receive external messages from outside the blockchain
-* Send and receive messages inside the blockchain from other accounts
-* Send external messages to nowhere (think of this as events in Ethereum)
+* Send and receive messages within the blockchain from other accounts
+* Send external messages to no specific destination (similar to events in Ethereum)
 
 #### **Venom accounts have two fields:**
 
 `address` - The identifier by which an account is stored in the blockchain
 
-`storage` - The storage contains balance, state, last transaction logical time, and initial code hash
+`storage` - The storage contains balance, state, last transaction logical time and initial code hash
 
 ![Account Schema](../../../static/img/account-schema.jpeg)
 
 ## Address
 
-The address is the entry point for inbound messages, and it's the unique identifier of the contract storage which stores such data as balance, state, last tx logical time, and initial code hash.
+The address serves as the point of entry for incoming messages and is the unique identifier for the contract storage which holds data such as balance, state, last transaction logical time and initial code hash.
 
-The account address is represented in two parts: an identifier of the workchain where 1st part is the account storage is located, and 2nd part is the hash of the initial data.
+The account address is composed of two parts: a workchain identifier, where the first part is the location of the account storage and the second part is the hash of the initial data.
 
 Example: `0:0000000000000000000000000000000000000000000000000000000000000000`
 
@@ -44,7 +44,7 @@ Example: `0:0000000000000000000000000000000000000000000000000000000000000000`
 
 ### **Workchain IDs**
 
-Currently defined workchain IDs list
+Currently defined workchain IDs list:
 
 | Workchain ID | Description                                                                                   |
 | ------------ | --------------------------------------------------------------------------------------------- |
@@ -53,29 +53,29 @@ Currently defined workchain IDs list
 
 ## Storage
 
-* `last_trans_lt` - a last transaction logical time
-* `balance` - the number of VENOMs on the account balance
-* `init_code_hash` - hash of the contract code with which the contract was deployed for the first time
+* `last_trans_lt` - the last transaction logical time
+* `balance` - the number of VENOM tokens on the account balance
+* `init_code_hash` - the hash of the initial contract code used when the contract was first deployed
 * `state` - a current state of an account, can be one of the following values:
-  * _uninit - t_he account only has a balance; its code and data have not yet been initialized
-  * _active - t_he account’s code and data have been initialized as well.
-  * _frozen - t_he account’s code and data have been replaced by a hash, but the balance is still stored explicitly. The balance of a frozen account may effectively become negative, reflecting due storage payments.
+  * _uninit - the account only has a balance and its code and data have not been initialized yet.
+  * _active - the account's code and data have been initialized.
+  * _frozen - the account's code and data have been replaced with a hash, but the balance is still explicitly stored. The balance of a frozen account may be negative, indicating outstanding storage payments.
   * _nonexist_
 
 ## Types of the wallet accounts
 
 ### Wallet accounts
 
-Any users who needed to call smart contracts, store, send and receive Venom tokens in the network must have a wallet account. A wallet account is a smart contract in the Venom network designed for this purpose.
+To interact with smart contracts, store, send, and receive Venom tokens within the network, users must have a wallet account. A wallet account is a smart contract designed for this purpose in the Venom network.
 
-When a user wants to transfer some funds from a controlled wallet account to some other wallet account, In this case, the user sends a signed external message to the wallet account, then the wallet account authorizes the sender and allows them to pay for the transaction fee from their balance, and transfer funds from a wallet balance to the balance of another wallet account.
+When a user wants to transfer funds from a controlled wallet account to another wallet account, they send a signed external message to the initial wallet account. The wallet account verifies the sender and permits them to pay for the transaction fee from their balance, then it transfers funds from the initial wallet account to the receiving wallet account.
 
-Anyone wanted to send tokens to another wallet account must know the recipient's address. The important concept here, there is an easy way to calculate an address even before the contract is deployed on the network and send funds to it. It follows that anyone can send tokens to a recipient whose contract has not yet been deployed, and those tokens will be accepted and the contract deployed.
+To send tokens to another wallet account, one must have knowledge of the recipient's address. An important concept here is that it is possible to calculate an address even before the contract is deployed on the network and send funds to it. This means that anyone can send tokens to a recipient whose contract has not yet been deployed, and those tokens will be accepted and the contract can be deployed.
 
 ### Default wallet
 
-A wallet account with simple logic transferring funds. Suitable for most users.
+A wallet account that performs simple fund transfers, suitable for most users.
 
 ### Multisig wallet
 
-A multi-signature wallet is a wallet that is used by two or more users to enhance security by requiring signatures from multiple parties to sign transactions before execution.
+A multi-signature wallet is a type of wallet that is controlled by multiple users to increase security. Transactions must be signed by multiple parties before they can be executed.
