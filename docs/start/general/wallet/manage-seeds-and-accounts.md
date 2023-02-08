@@ -15,7 +15,7 @@ import img03 from '../assets/wallet/25.png';
 
 **The Venom Wallet** extension allows for easy and convenient storage of seed phrases in one place. Follow this guide to use this feature:
 
-**Step 1.** Open the Venom Wallet extension and log into your account. 
+**Step 1.** Open the Venom Wallet extension and log into your account.  
 **Step 2.** On the Wallet extension window select the “Profile” button. The seed management page will appear.  
 
 <Image img={img01} alt="Click send button"
@@ -30,7 +30,7 @@ import img03 from '../assets/wallet/25.png';
     className="balance-transfers inline-img"
 />
 
-**Step 4.** On the right side of the screen, click on the **“+add new button”**.  
+**Step 4.** On the right side of the screen, click on the **“+add new”**.  
 **Step 5.** When redirected to add a seed phrase, use the navigation sign to choose from the available options. To add an existing seed phrase, click on **"import seed"** or **"connect Ledger”**
 
 <Image img={img03} alt="Click send button"
