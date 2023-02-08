@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 
 import Layout from '@theme/Layout';
-import Image from '@theme/IdealImage';
 
 import discord from './assets/discord.png';
 import twitter from './assets/tw.png';
@@ -123,7 +122,6 @@ export default function Home(): JSX.Element {
                 <a href="https://discord.venom.foundation" target="_blank">Venom Foundation</a>
               </div>
             </div>
-            <script>console.log(twitter)</script>
             <div className={clsx(styles.social_links__item)}>
               <img src={twitter.src} alt="Twitter" style = {{ width : '44px', marginRight : '15px' }} />
               <div>
