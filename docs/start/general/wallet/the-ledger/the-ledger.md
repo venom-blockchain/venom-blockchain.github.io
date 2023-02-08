@@ -16,12 +16,12 @@ import img06 from '../../assets/wallet/28.png';
 ## Setting up Venom Wallet accounts with a Ledger device.
 
 :::info
-In order to start using the Venom Wallet with a Ledger device, you should have the Everscale app installed. You can refer to these instructions on how to install Everscale.
+In order to start using the Venom Wallet with a Ledger device, you should have the Venom app installed. You can refer to these instructions on how to install Venom.
 :::
 
 
 **Here is a step-by-step guide to setting up a Venom Wallet account using a Ledger device:**
- - Before proceeding, ensure that your Ledger device has the Everscale app installed. You can find the instructions on Installing Everscale via Ledger Live [Here](../the-ledger/installing-everscale-on-ledger-live.md).
+ - Before proceeding, ensure that your Ledger device has the Venom app installed. You can find the instructions on Installing Venom via Ledger Live [Here](../the-ledger/installing-everscale-on-ledger-live.md).
  -  **Do not forget to** have Ledger Live software **closed** at all times while performing the following steps.
 
 **If you have recently installed Venom Wallet and it does not have any connected seed phrases:**
@@ -56,7 +56,7 @@ In order to start using the Venom Wallet with a Ledger device, you should have t
 
 6. Connect your Ledger device to your computer.
 7. Enter the pin code to unlock it.
-8. Navigate to the Everscale section on your Ledger dashboard to access the wallet.
+8. Navigate to the Venom section on your Ledger dashboard to access the wallet.
 9. Click Connect.
 
 <Image img={img04} alt="Click send button"
