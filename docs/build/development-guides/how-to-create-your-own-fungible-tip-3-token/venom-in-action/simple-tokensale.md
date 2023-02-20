@@ -21,7 +21,7 @@ As in a previous guide, we need to have TIP-3 sources in this project. So. let's
 ```json title="package.json" lineNumbers="true"
 {
   "devDependencies": {
-    "tip3": "git://github.com/broxus/tip3#5.0",
+    "tip3": "git://github.com/broxus/tip3#v5",
     ...
   },
 }
