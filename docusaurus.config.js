@@ -134,7 +134,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'build/development-guides/readme',
+            docId: 'build/quick-start-on-testnet',
             position: 'left',
             label: 'Build',
           },
@@ -172,7 +172,7 @@ const config = {
               },
               {
                 label: 'Build',
-                to: 'build/development-guides',
+                to: 'build/quick-start-on-testnet',
               },
               {
                 label: 'Maintain',
