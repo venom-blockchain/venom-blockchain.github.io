@@ -140,6 +140,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'faq/integration',
+            position: 'left',
+            label: 'FAQ'
+          },
+          {
+            type: 'doc',
             docId: 'standards/readme',
             position: 'left',
             label: 'Standards',
@@ -173,6 +179,10 @@ const config = {
               {
                 label: 'Build',
                 to: 'build/quick-start-on-testnet',
+              },
+              {
+                label: 'FAQ',
+                to: 'faq',
               },
               {
                 label: 'Maintain',
