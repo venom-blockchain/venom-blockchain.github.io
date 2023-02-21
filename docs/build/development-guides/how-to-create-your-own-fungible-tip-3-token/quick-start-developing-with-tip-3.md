@@ -42,7 +42,7 @@ Add TIP-3 implementation repository as a `devDependencies` in the corresponding 
 ```json title="package.json" lineNumbers="true"
 {
   "devDependencies": {
-    "tip3": "git://github.com/broxus/tip3#5.0",
+    "tip3": "git://github.com/broxus/tip3#v5",
     ...
   },
 }
