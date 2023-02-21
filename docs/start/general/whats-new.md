@@ -7,6 +7,10 @@ slug: /general/whats-new
 
 # What's New
 
+## 21 February 2023
+
+* We have created a [FAQ](../../build/faq/integration.md) section for our documentation. Today, we have added some integration questions into. Of course, this section will be improved and we will add more questions and answers above many themes (ex. smart-contract developers, common architecture etc)
+
 ## 5 January 2023
 
 * A development guide for Venom In Action has been added. This guide introduces the [Frontend for NFT Auctions](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-auction.md) and demonstrates how to use auction smart contracts. Additionally, it shows one of the most popular dApp actions, which is sending users' fungible tokens.
