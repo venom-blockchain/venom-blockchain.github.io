@@ -13,7 +13,7 @@ module.exports = {
       from: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token'
     },
     {
-      to: '/build/integration-guides/how-to-connect-dapp-ui-to-venom',
+      to: '/build/faq/integration',
       from: '/build/integration-guides'
     },
     {
