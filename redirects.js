@@ -13,7 +13,7 @@ module.exports = {
       from: '/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token'
     },
     {
-      to: '/build/faq/integration',
+      to: '/faq/integration',
       from: '/build/integration-guides'
     },
     {
@@ -33,8 +33,8 @@ module.exports = {
       to: '/general/wallet/create-a-new-wallet-account'
     },
     {
-      from: '/build/faq',
-      to: '/build/faq/integration'
+      from: '/faq',
+      to: '/faq/integration'
     }
   ]
 }

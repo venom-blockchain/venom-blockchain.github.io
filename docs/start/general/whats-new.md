@@ -9,7 +9,7 @@ slug: /general/whats-new
 
 ## 21 February 2023
 
-* We have created a [FAQ](../../build/faq/integration.md) section for our documentation. Today, we have added some integration questions into. Of course, this section will be improved and we will add more questions and answers above many themes (ex. smart-contract developers, common architecture etc)
+* We have created a [FAQ](../../faq/integration.md) section for our documentation. Today, we have added some integration questions into. Of course, this section will be improved and we will add more questions and answers above many themes (ex. smart-contract developers, common architecture etc)
 
 ## 5 January 2023
 
