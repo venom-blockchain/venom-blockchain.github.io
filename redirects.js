@@ -28,5 +28,9 @@ module.exports = {
       to: '/maintain/network-maintainers',
       from: '/maintain'
     },
+    {
+      from: '/general/create-a-new-wallet-account',
+      to: '/general/wallet/create-a-new-wallet-account'
+    }
   ]
 }
