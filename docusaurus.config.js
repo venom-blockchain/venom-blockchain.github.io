@@ -182,7 +182,7 @@ const config = {
               },
               {
                 label: 'FAQ',
-                to: 'faq',
+                to: 'faq/integration',
               },
               {
                 label: 'Maintain',
