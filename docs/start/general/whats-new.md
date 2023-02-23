@@ -7,6 +7,10 @@ slug: /general/whats-new
 
 # What's New
 
+## 23 February 2023
+
+* Added some smart contract programming questions into the corresponding FAQ [section](../../faq/programming.md).
+
 ## 21 February 2023
 
 * We have created a [FAQ](../../faq/integration.md) section for our documentation. Today, we have added some integration questions into. Of course, this section will be improved and we will add more questions and answers above many themes (ex. smart-contract developers, common architecture etc)
