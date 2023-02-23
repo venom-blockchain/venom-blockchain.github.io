@@ -3,7 +3,7 @@ sidebar_position: 0
 sidebar_label: Integration
 ---
 
-# FAQ - Integration
+# Venom Blockchain FAQ: Integration with Venom Blockchain
 
 <details>
 <summary>
