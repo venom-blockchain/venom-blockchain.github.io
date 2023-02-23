@@ -70,7 +70,7 @@ There are many examples of this mechanic within the articles in the [Development
 
 <details>
 <summary>
-What if the 'flag' of the message and which exactly should I use?
+What is the 'flag' of the message and which exactly should I use?
 </summary>
 
 The parameter `flag` of the message determines how much funds will be carried with the message and how to operate with the forward fee.
