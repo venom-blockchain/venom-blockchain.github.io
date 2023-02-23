@@ -140,7 +140,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'faq/integration',
+            docId: 'faq/readme',
             position: 'left',
             label: 'FAQ'
           },
@@ -182,7 +182,7 @@ const config = {
               },
               {
                 label: 'FAQ',
-                to: 'faq/integration',
+                to: 'faq',
               },
               {
                 label: 'Maintain',
