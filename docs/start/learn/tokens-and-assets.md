@@ -46,7 +46,7 @@ The TIP-4 standard describes the second most widely used type of token as NFT. S
 
 ## Wrapped Venom (WVenom)
 
-Address: `0:28237a5d5abb32413a79b5f98573074d3b39b72121305d9c9c97912fc06d843c`
+Testnet Address: `0:2c3a2ff6443af741ce653ae4ef2c85c2d52a9df84944bbe14d702c3131da3f14`
 
 #### Why do we need WVenom token?
 
