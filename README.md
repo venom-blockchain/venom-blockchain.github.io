@@ -1,4 +1,23 @@
-# Website
+<p align="center">
+  <a href="https://github.com/venom-blockchain/developer-program">
+    <img src="https://raw.githubusercontent.com/venom-blockchain/developer-program/main/vf-dev-program.png" alt="Logo" width="366.8" height="146.4">
+  </a>
+</p>
+
+
+# The Venom Knowledge Base
+
+This website serves as [the official documentation](https://docs.venom.foundation/) for the Venom Blockchain. Here, you can find guides, tutorials, and documentation to help you get started with building on the Venom Blockchain. 
+
+## Getting Started
+
+To get started with the Venom Blockchain, you can visit the [official website](https://venom.foundation/) for more information. You can also join our [community chat](https://discord.venom.foundation/dev) to connect with other developers and ask questions.
+
+## Contributing
+
+We welcome contributions to the The Venom Knowledge Base! If you notice any issues or errors, feel free to open an issue or submit a pull request.
+
+## Local Development
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -8,7 +27,7 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 $ yarn
 ```
 
-### Local Development
+### Run
 
 ```
 $ yarn start
@@ -24,18 +43,6 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## License
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
