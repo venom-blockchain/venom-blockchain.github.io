@@ -7,10 +7,13 @@ slug: /general/whats-new
 
 # What's New
 
+## 1 March 2023
+
+* A new article has been added to the Venom knowledge base, introducing the Threaded Virtual Machine (TVM). [Read more](../learn/threaded_virtual_machine.md) about TVM, which is a virtual machine that utilizes the actor model for efficient message-passing concurrency.
+
 ## 5 January 2023
 
 * A development guide for Venom In Action has been added. This guide introduces the [Frontend for NFT Auctions](../../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/frontend-for-nft-auction.md) and demonstrates how to use auction smart contracts. Additionally, it shows one of the most popular dApp actions, which is sending users' fungible tokens.
-
 
 ## 15 December 2022
 
