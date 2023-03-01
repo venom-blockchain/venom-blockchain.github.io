@@ -16,8 +16,6 @@ Here you can find information about [Products Within The Venom Ecosystem](ecosys
 
 [The Build Section](../../build/development-guides/readme.md) provides guides and tutorials for developers and integrators. It contains a [Comparison of Ethereum vs Venom](../../build/development-guides/comparing-of-ethereum-vs-venom-architectures.md) to help you understand the key differences between EVM and Venom Technologies, and to facilitate a smooth migration to Venom.
 
-[The Integration Guides](../../build/integration-guides/how-to-connect-dapp-ui-to-venom.md) section is particularly useful for developers who are building wallets, portfolio trackers, and other similar tools.
-
 If you are interested in maintaining the network, the maintenance section provides all the necessary information on the roles of [Network Maintainers](../maintain/network-maintainers.md), and [How to run a Venom Validator Node](../maintain/how-to-become-a-validator.md).
 
 ## First steps with Venom
