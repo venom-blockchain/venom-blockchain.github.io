@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: Messages and Transactions
 slug: /learn/messages-and-transactions
 ---
@@ -42,16 +42,25 @@ The message body comprises the payload of virtual machine instructions that are 
 
 ### Transaction
 
-A transaction is the result of executing a message. It is always linked to the message that generated it. A transaction includes information such as the target account, status, set of outbound messages, and hash of the updated state of an account.
+A transaction is a direct result of the processing of exactly one inbound message by a recipient account code. When an inbound message is received by an account, it leads to the computation of the account's new state and the possibility of generating one or more outbound messages with the account serving as the source. The inbound message and the previous state of the account serve as inputs for the transaction, while the generated outbound messages and the next state of the account serve as outputs. This relation can be represented as a Directed Acyclic Graph (DAG).
+
+![Messages](<../../../static/img/transactions.png>)
 
 ### Transaction phases
 
-**Storage**: the target contract pays a storage fee from its own balance
+A transaction is a multi-step process composed of several distinct phases, each with its specific purpose. Each phase is a logical step in the message execution and may either complete successfully or result in an error. If an error occurs, the next stage not be executed.
 
-**Credit:** the value attached to the message is transferred to the contract balance
+The purpose of the credit phase is to add the value of the received internal message to the account's balance.
 
-**Compute:** the virtual machine executes the smart contract instructions and records the intentions to create messages in the action phase
+**The storage phase** is responsible for collecting storage payments for the account state, which includes the smart contract code and data. The storage phase is absent if the transaction is sent to deploy a new smart contract, which did not exist before. During this phase, the smart contract may be frozen if its balance is insufficient to pay the storage fee.
 
-**Action:** this step generates internal and outbound external messages
+**The computing phase** is where the smart contract code is invoked inside an instance of TVM with appropriate parameters, including the inbound message and the account's persistent data. This phase terminates with an exit code, new persistent data, and an action list, which includes outbound messages to be sent. The processing phase may lead to creating a new account (uninitialized or active) or activating a previously uninitialized or frozen account. The gas payment, equal to the product of the gas price and the gas consumed, is exacted from the account balance.
 
-**Bounce:** if an error occurs during stages 3 or 4 of the transaction execution, the transaction will immediately move to the bounce phase and skip the remaining phases. Additionally, if a 'bounce' flag is specified, a message will be sent back to the sender through the onBounce callback function
+**The action phase** is where the actions from the action list are performed if the smart contract is terminated successfully (with exit code 0 or 1). Suppose it is impossible to perform all the actions, for example, because of insufficient funds to transfer with an outbound message. In that case, the transaction is aborted, and the account state is rolled back.
+
+**The Bounce phase** is triggered when a transaction is aborted, and the inbound message has its bounce flag set. This phase involves automatically generating an outbound message, with the bounce flag clear, and sending it back to the original sender. The value of the original inbound message, minus any gas payments and forwarding fees, is transferred to this generated message, which has an empty body.
+
+The execution of a transaction requires payment of various types of fees. Each kind of fee serves a purpose, such as incentivizing validators to maintain the correct operation of the network, perform transaction execution, and store contract data on their nodes. Also, it serves as a measure to restrict spamming and malicious attempts to slow down the network.
+
+Note an external message is not a value-bearing message. Only an internal message can transfer value between accounts and increase its balance in the credit phase, and only after that are all fee payments due from the account balance.
+

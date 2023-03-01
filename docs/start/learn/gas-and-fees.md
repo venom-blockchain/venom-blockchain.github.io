@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 sidebar_label: Gas and fees
 slug: /learn/transaction-fees
 ---
@@ -74,12 +74,11 @@ This formula represents the total fee for forwarding a message, which is
 calculated by adding the `lump_price` to the price of forwarding the message's
 `bits` and `cells`. The price of forwarding the message's `bits` and `cells` is
 calculated by multiplying the price per bit and the number of bits in the
-message, and the price per cell and the number of cells in the message, and
-then dividing the result by 2^16. The final result is then
+message, and the price per cell and the number of cells in the message. The final result is then
 rounded up to the nearest integer number.
 
 $$
-msg\_fwd\_fee = lump\_price + \left\lceil\frac{bit\_price \cdot bits + cell\_price \cdot cells}{2^{16}} \right\rceil
+msg\_fwd\_fee = lump\_price + \left\lceil\ bit\_price \cdot bits + cell\_price \cdot cells \right\rceil
 $$
 
 The `bits` and `cells` values are derived from the tree of cells
@@ -97,13 +96,13 @@ using the following formula and is charged for the time between transactions:
 
 The storage fees are calculated by first multiplying the number of `bits` by the
 global bit price and the number of `cells` by the global cell price. This result
-is then multiplied by the period value and divided by 2^16.
+is then multiplied by the period value.
 
 Finally, the result is rounded up to the nearest integer.
 
 $$
-storage\_fees = \left\lceil \frac{(bits * global\_bit\_price + cells *
-global\_cell\_price) * period}{2^{16}} \right\rceil
+storage\_fees = \left\lceil (bits * global\_bit\_price + cells *
+global\_cell\_price) * period \right\rceil
 $$
 
 Where:

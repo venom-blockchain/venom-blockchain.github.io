@@ -70,6 +70,9 @@ export default function Home(): JSX.Element {
                   <a href="/learn/architecture">Architecture</a>
                 </li>
                 <li>
+                  <a href="/learn/tvm">Threaded Virtual Machine</a>
+                </li>
+                <li>
                   <a href="/learn/tokens-and-assets">Tokens and Assets</a>
                 </li>
                 <li>
