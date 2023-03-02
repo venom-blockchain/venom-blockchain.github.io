@@ -13,7 +13,7 @@ First, let's make sure we've chosen the right type of token for our purposes. In
 If you need to implement a different one of the most popular token types is NFT (Non-fungible token), follow [this](../how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network) article
 :::
 
-Venom network uses the standard of fungible tokens [TIP-3](../../../standards/TIP-3/core-description.md)
+Venom network uses the standard of fungible tokens [TIP-3](../../../standards/TIP/TIP-3/core-description.md)
 
 ### What is TIP-3?
 
