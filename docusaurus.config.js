@@ -86,6 +86,34 @@ const config = {
       {
         id: 'GTM-MQRC9JG', // GTM Container ID
       }
+    ],
+    [
+      (ctx, _) => {
+        return {
+          name: 'veps-data-generator',
+          async contentLoaded({ actions }) {
+            const veps = [];
+            const vepFilePaths = require('glob').globSync(
+              require('path').resolve(ctx.siteDir, 'docs/standards/VEP/vep-*.md')
+            );
+            for (const vepFilePath of vepFilePaths) {
+              const vep = require('fs').readFileSync(vepFilePath).toString();
+              const frontmatter = require('front-matter')(vep);
+              const file = await require('unified')()
+                .use(require('remark-parse'))
+                .parse(vep);
+              const vepPreambleNode = file.children.find(
+                (child) => child.type == 'code' && child.lang == 'preamble'
+              );
+              const preamble = require('yaml').parse(vepPreambleNode.value);
+              preamble.title = frontmatter.attributes.title;
+              veps.push(preamble);
+            }
+            const {setGlobalData} = actions;
+            setGlobalData({veps});
+          },
+        };
+      }, {}
     ]
   ],
 
@@ -150,7 +178,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'standards/readme',
+            docId: 'standards/VEP/readme',
             position: 'left',
             label: 'Standards',
           },

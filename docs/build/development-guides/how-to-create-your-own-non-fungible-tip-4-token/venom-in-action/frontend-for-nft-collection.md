@@ -15,7 +15,7 @@ This guide will not include frontend development basements and React essentials.
 
 ## Some words about salt in TIP-4.3
 
-Before you start, you should remember the [TIP-4.3](../../../../standards/TIP-4/3.md) standard. As you may know, this standard requires us to deploy `Index` smart contracts by every NFT's owner changing. These contracts contain a different salt. One of the contracts salts with the owner's address and collection address, and the other one salts with the owner's address and zero address (0:0000..00). The main purpose of this action is to have constant contracts in the network, which point to the original NFT, and their code depends on the owner's address and collection address (or zero address). So we can easily calculate their hashcode and find them all with just a single query.
+Before you start, you should remember the [TIP-4.3](../../../../standards/TIP/TIP-4/3.md) standard. As you may know, this standard requires us to deploy `Index` smart contracts by every NFT's owner changing. These contracts contain a different salt. One of the contracts salts with the owner's address and collection address, and the other one salts with the owner's address and zero address (0:0000..00). The main purpose of this action is to have constant contracts in the network, which point to the original NFT, and their code depends on the owner's address and collection address (or zero address). So we can easily calculate their hashcode and find them all with just a single query.
 
 Salting with the owner's address and collection address allows us to find all `Index`es of the concrete NFTs of the collection, and, hence the concrete owner's NFTs itself of the concrete collection.
 
@@ -298,7 +298,7 @@ import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 // Of course you need to place a contract ABI somewhere
 import nftAbi from '../abi/NFT.abi.json';
 
-// TIP-4.2. standard (https://docs.venom.foundation/standards/TIP-4/2)
+// TIP-4.2. standard (https://docs.venom.foundation/standards/TIP/TIP-4/2)
 interface BaseNftJson {
   name?: string;
   description?: string;
