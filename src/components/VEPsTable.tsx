@@ -17,7 +17,7 @@ export default function VEPsTable() {
         {veps.map(vep => {
           return (
             <tr>
-              <td><a href={ `vep-${vep.vep}` }>{ vep.vep }</a></td>
+              <td><a href={ `vep-${vep.VEP}` }>{ vep.VEP }</a></td>
               <td>{ vep.title }</td>
               <td>{ vep.author }</td>
               <td>{ vep.status }</td>

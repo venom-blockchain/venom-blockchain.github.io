@@ -6,7 +6,7 @@ title: Venom Enhance Proposals
 
 import VEPsTable from '@site/src/components/VEPsTable';
 
-In order to improve its offerings and provide a better user experience, Venom blockchain has drawn on TON Improvement Proposals to build features such as fungible and non-fungible tokens and interface definition. However, we have also introduced our own VEPs, which are designed to address the specific needs and preferences of Venom users.
+In order to improve its offerings and provide a better user experience, Venom blockchain has drawn on Everscale Improvement Proposals (TIPs) to build features such as fungible and non-fungible tokens and interface definition. However, we have also introduced our own VEPs, which are designed to address the specific needs and preferences of Venom users.
 
 ## Borrowed TIPs
 
