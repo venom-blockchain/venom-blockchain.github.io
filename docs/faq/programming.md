@@ -30,7 +30,7 @@ Check out [this](../build/quick-start-on-testnet.md) article. We have an awesome
 Does Venom Blockchain have some improvement proposals or some standards for example of fungible/non-fungible tokens?
 </summary>
 
-Sure! You can check the [standards](../standards/readme.md) section, it's right here on the top menu bar :)
+Sure! You can check the [standards](../standards/VEP/readme.md) section, it's right here on the top menu bar :)
 
 </details>
 
@@ -156,11 +156,11 @@ You can check more information about errors in threaded solidity [specification]
 My contract needs to receive fungible tokens. How can I do it?
 </summary>
 
-Your contract should have a TIP3 TokenWallet to perform this action. It is not necessary how exactly your contract will get its wallet (ex. you can call [deployWallet](../standards/TIP-3/2.md#deploy-token-wallet) of TokenRoot inside your contract constructor or deploy it by yourself). Next, your contract should implement an [onAcceptTokensTransfer](../standards/TIP-3/2.md#incoming-transfer-callback) callback. Pay attention, that a sender should set [notify](../standards/TIP-3/2.md#transfer-tokens-to-the-recipient) flag to true for this callback to be called.
+Your contract should have a TIP3 TokenWallet to perform this action. It is not necessary how exactly your contract will get its wallet (ex. you can call [deployWallet](../standards/TIP/TIP-3/2.md#deploy-token-wallet) of TokenRoot inside your contract constructor or deploy it by yourself). Next, your contract should implement an [onAcceptTokensTransfer](../standards/TIP/TIP-3/2.md#incoming-transfer-callback) callback. Pay attention, that a sender should set [notify](../standards/TIP/TIP-3/2.md#transfer-tokens-to-the-recipient) flag to true for this callback to be called.
 
 Check out [this](../build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/simple-nft-auction.md) guide, which shows how to implement a simple auction contract that accepts TIP-3 tokens.
 
-Of course, you need to check [TIP-3 standards](../standards/TIP-3/core-description.md) too.
+Of course, you need to check [TIP-3 standards](../standards/TIP/TIP-3/core-description.md) too.
 
 </details>
 

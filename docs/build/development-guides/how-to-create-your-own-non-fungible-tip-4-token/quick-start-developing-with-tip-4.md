@@ -119,7 +119,7 @@ contract Collection is TIP4_1Collection {
 }
 ```
 
-The previous code uses only TIP-4.1 part of TIP-4. But it is kinda useless. To work with your NFT with full NFT experience you should implement [TIP-4.2](../../../standards/TIP-4/2.md) - standard, which helps you with NFT metadata storing. Also, you will need [TIP-4.3](../../../standards/TIP-4/3.md) - standard, which helps other dApps to find all your NFT with single query (GQL or JRPC). You should study the information about these standards by links. Implementation of 4.2 and 4.3 is pretty simple.
+The previous code uses only TIP-4.1 part of TIP-4. But it is kinda useless. To work with your NFT with full NFT experience you should implement [TIP-4.2](../../../standards/TIP/TIP-4/2.md) - standard, which helps you with NFT metadata storing. Also, you will need [TIP-4.3](../../../standards/TIP/TIP-4/3.md) - standard, which helps other dApps to find all your NFT with single query (GQL or JRPC). You should study the information about these standards by links. Implementation of 4.2 and 4.3 is pretty simple.
 
 ```solidity title="Collection.sol" lineNumbers="true"
 pragma ever-solidity >= 0.61.2;

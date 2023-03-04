@@ -11,7 +11,7 @@ Non-fungible tokens aka NFT are unique cryptographic tokens that exist on a bloc
 Follow [this](../how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network) guide to explore another type of blockchain tokens - fungible tokens
 :::
 
-Venom network uses the standard of fungible tokens [TIP-4](../../../standards/TIP-4/core-description.md)
+Venom network uses the standard of fungible tokens [TIP-4](../../../standards/TIP/TIP-4/core-description.md)
 
 ## What is TIP-4?
 

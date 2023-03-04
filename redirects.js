@@ -31,6 +31,10 @@ module.exports = {
     {
       from: '/general/create-a-new-wallet-account',
       to: '/general/wallet/create-a-new-wallet-account'
+    },
+    {
+      from: '/standards',
+      to: '/standards/VEP/'
     }
   ]
 }
