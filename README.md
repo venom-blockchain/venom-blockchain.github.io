@@ -45,4 +45,4 @@ This command generates static content into the `build` directory and can be serv
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC-BY-SA-4.0 License - see the [LICENSE](LICENSE) file for details.
