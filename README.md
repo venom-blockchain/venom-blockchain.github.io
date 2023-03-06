@@ -7,17 +7,24 @@
 
 # The Venom Knowledge Base
 
+## Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## About
 This website serves as [the official documentation](https://docs.venom.foundation/) for the Venom Blockchain. Here, you can find guides, tutorials, and documentation to help you get started with building on the Venom Blockchain. 
 
 ## Getting Started
 
 To get started with the Venom Blockchain, you can visit the [official website](https://venom.foundation/) for more information. You can also join our [community chat](https://discord.venom.foundation/dev) to connect with other developers and ask questions.
 
-## Contributing
+## Usage
 
-We welcome contributions to the The Venom Knowledge Base! If you notice any issues or errors, feel free to open an issue or submit a pull request.
-
-## Local Development
+### Local Development
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -42,6 +49,10 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Contributing
+
+We welcome contributions to the The Venom Knowledge Base! If you notice any issues or errors, feel free to open an issue or submit a pull request.
 
 ## License
 
