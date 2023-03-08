@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title='Welcome to Venom'
-      description="Description will go into a meta tag in <head />">
+      description="The Knowledge Base is the entry point into the Venom universe. Get to know the technology behind the incredible scalability of the Venom blockchain.">
       <HomepageHeader />
       <main>
         <div className={clsx('main__container', 'container')}>
