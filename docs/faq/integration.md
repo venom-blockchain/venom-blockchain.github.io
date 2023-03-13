@@ -7,6 +7,15 @@ sidebar_label: Integration
 
 <details>
 <summary>
+Do you have something like MetaMask for Venom Blockchain?
+</summary>
+
+Of course! We have Venom Wallet. It is a browser extension and a mobile app. You can check it out [here](https://venom.foundation/wallet).
+
+</details>
+
+<details>
+<summary>
 How to connect Venom Wallet to my dApp?
 </summary>
 
@@ -14,7 +23,7 @@ The easiest way to connect your dApp to Venom Wallet is to use [Venom Connect](h
 
 Check out [this](../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) paragraph of the frontend guide, that explains how to use venom-connect in your project. Moreover, you can check the final source code of this guide [here](https://github.com/venom-blockchain/guides/tree/master/tokensale-frontend).
 
-You can read about all configuration options in venom-connect official [repository](https://github.com/web3sp/venom-connect). Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
+You can read about all configuration options in the venom-connect official [repository](https://github.com/web3sp/venom-connect). Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
 </details>
 
 <details>
@@ -23,6 +32,15 @@ What if I need very specific logic for connecting the Wallet to my dApp?
 </summary>
 
 So, in this case, you can use the library that venom-connect has been built on [inpage-provider](https://github.com/broxus/everscale-inpage-provider) and [standalone-client](https://github.com/broxus/everscale-standalone-client) - basic libraries for interaction with the venom network, so you can build your system for wallet connection. Check the documentation for these libraries in its repositories for more information.
+
+</details>
+
+<details>
+<summary>
+How can I connect to a Venom node using Web3.js?
+</summary>
+
+You can't use Web3.js with Venom Blockchain. But you can use [inpage-provider](https://github.com/broxus/everscale-inpage-provider). Combine it with [standalone-client](https://github.com/broxus/everscale-standalone-client) and you will get the same! Or just use [venom-connect](https://www.npmjs.com/package/venom-connect) which has already combined these libraries.
 
 </details>
 
@@ -51,6 +69,15 @@ I need to have personal access to Venom's transaction history. How can I achieve
 
 You can achieve this with two modules. Both of them, in fact, is a light node of Venom Blockchain, but it has some extra interfaces for you to process incoming blocks and transaction. One of them is [ton-indexer](https://github.com/broxus/ton-indexer) and the other one is [ton-kafka-producer](https://github.com/broxus/ton-kafka-producer). The first one uses rocksdb as storage for blockchain data storage, as you can see, works with Apache Kafka.
 
-The main idea is ton-indexer was written with Rust so you should use the Rust ecosystem for your project - use ton-indexer as a module of your Rust project to operate with incoming blockchain data, analyze it and store parts of data you need somewhere. When you are using ton-kafka-producer, you can use whatever you want to read Kafka's topics, which will be filled with blockchain data constantly, but of course, you need to have the Apache Kafka cluster.
+The main idea is that ton-indexer was written with Rust so you should use the Rust ecosystem for your project - use ton-indexer as a module of your Rust project to operate with incoming blockchain data, analyze it and store parts of data you need somewhere. When you are using ton-kafka-producer, you can use whatever you want to read Kafka's topics, which will be filled with blockchain data constantly, but of course, you need to have the Apache Kafka cluster.
+
+</details>
+
+<details>
+<summary>
+I need to access historical data, but I don't have any computation power to host my own node. Can I solve this problem somehow?
+</summary>
+
+Yes. You can use [Evercloud](https://www.evercloud.dev/). Evercloud supports Venom Network. Check its [documentation](https://docs.evercloud.dev/).
 
 </details>

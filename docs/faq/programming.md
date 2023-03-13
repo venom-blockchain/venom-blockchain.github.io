@@ -27,6 +27,24 @@ Check out [this](../build/quick-start-on-testnet.md) article. We have an awesome
 
 <details>
 <summary>
+I used to use the Hardhat of the truffle suite for developing smart contracts. Can I use it for Venom Blockchain?
+</summary>
+
+No, you can't. But we have a similar tool for Venom Blockchain named [locklift](https://www.npmjs.com/package/locklift). It is inspired by truffle and hardhat!
+
+</details>
+
+<details>
+<summary>
+What about the local node? Do you have something like Ganache (truffle suite) for launching a local node?
+</summary>
+
+Venom local node is provided by the docker image. You can check it out [here](https://hub.docker.com/r/tonlabs/local-node). Also, have a look up [there](../build/development-guides/setting-up-the-venom-smart-contract-development-environment.md#run-the-local-node). 
+
+</details>
+
+<details>
+<summary>
 Does Venom Blockchain have some improvement proposals or some standards for example of fungible/non-fungible tokens?
 </summary>
 
