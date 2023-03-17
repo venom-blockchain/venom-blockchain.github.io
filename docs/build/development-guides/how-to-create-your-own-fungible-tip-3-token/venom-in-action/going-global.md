@@ -23,7 +23,7 @@ const config: LockliftConfig = {
         },
       },
       giver: {
-        giverFactory: (ever, keyPair, address) => new GiverWallet(ever, keyPair, address),
+        giverFactory: (provider, keyPair, address) => new GiverWallet(provider, keyPair, address),
         address: "",
         phrase: "",
         accountId: 0
@@ -42,7 +42,7 @@ const config: LockliftConfig = {
         },
       },
       giver: {
-        giverFactory: (ever, keyPair, address) => new GiverWallet(ever, keyPair, address),
+        giverFactory: (provider, keyPair, address) => new GiverWallet(provider, keyPair, address),
         address: "",
         phrase: "",
         accountId: 0
@@ -66,9 +66,9 @@ As you can see we have a `giverFactory` field, that initializes a `GiverWallet` 
 export class GiverWallet implements Giver {
   public giverContract: Contract<typeof giverWallet>;
   
-  constructor(ever: ProviderRpcClient, readonly keyPair: Ed25519KeyPair, address: string) {
+  constructor(provider: ProviderRpcClient, readonly keyPair: Ed25519KeyPair, address: string) {
     const giverAddr = new Address(address);
-    this.giverContract = new ever.Contract(giverWallet, giverAddr);
+    this.giverContract = new provider.Contract(giverWallet, giverAddr);
   }
   
   public async sendTo(sendTo: Address, value: string): Promise<{ transaction: Transaction; output?: {} }> {
