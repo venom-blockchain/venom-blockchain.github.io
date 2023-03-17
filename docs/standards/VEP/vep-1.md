@@ -32,7 +32,7 @@ Several types of Venom Enhancement Proposals (VEPs) can be proposed, depending o
    1. **Core VEPs** that propose changes to the core protocol of the Venom blockchain, such as changes to the consensus algorithm or the block validation rules.
    2. **Networking VEPs** that propose changes to the network layer of the Venom blockchain, such as changes to the peer-to-peer networking protocol or the data propagation mechanisms.
    3. **Interface VEPs** that propose changes to user interfaces or APIs that interact with the Venom blockchain, such as changes to wallet software or developer tools.
-   4. **Contract VEPs** that propose changes to the smart contract functionality of the Venom blockchain, such as changes to the scripting language or the virtual machine.
+   4. **Contract VEPs** that propose changes in application-level standards and conventions, including contract standards (such as token standards for ex.) Also changes to the smart contract functionality of the Venom blockchain, such as changes to the scripting language or the virtual machine.
 * **Informational VEP** describes a Venom design issue, or provides general guidelines or information to the Venom community, but does not propose a new feature.
 * **Process VEP** that proposes changes to the VEP process itself, such as changes to the proposal format or the community review process.
 
@@ -117,7 +117,7 @@ Images, diagrams and auxiliary files should be included in a subdirectory of the
 The `title` field in the preamble:
 
 * Should not include the word "standard" or any variation thereof; and
-* Should not include the VEP's number.
+* Should include the VEP's number.
 
 ### Descriptions
 
