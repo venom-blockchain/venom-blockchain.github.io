@@ -31,6 +31,7 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
   reindex:
+    needs: deploy
     name: Reindex Typesearch
     runs-on: ubuntu-latest
     steps:
