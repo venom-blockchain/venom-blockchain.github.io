@@ -8,6 +8,10 @@ description: >-
 
 # Venom In Action. Simple Tokensale
 
+:::warning
+During the following of this guide's code-listings you can meet keywords like `pragma ever-solidity` or keyword `ever` as a unit of the transfer value. It will be changed to `venom` soon. Follow the news and updates.
+:::
+
 Who needs a token, that nobody can buy? So, let's create your first tokensale contract!
 
 Perhaps, you already can set up your venom developer environment. If not - follow [this](../../setting-up-the-venom-smart-contract-development-environment.md) guide. If you are already familiar with this action - let's start with locklift init.

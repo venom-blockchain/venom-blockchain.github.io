@@ -9,6 +9,10 @@ description: >-
 
 # Venom In Action. Voting system contracts
 
+:::warning
+During the following of this guide's code-listings you can meet keywords like `pragma ever-solidity` or keyword `ever` as a unit of the transfer value. It will be changed to `venom` soon. Follow the news and updates.
+:::
+
 No further ado. Let's start with familiar command
 
 ```shell
