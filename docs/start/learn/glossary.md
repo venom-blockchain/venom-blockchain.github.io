@@ -113,6 +113,8 @@ Giver, used in Locklift is a smart contract that provides VENOM tokens to other 
 
 By default giver deployed on the `0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415` address in [local-node](https://github.com/tonlabs/evernode-se).
 
+Also, you can [setup custom contract](https://github.com/broxus/locklift#note-about-giver-settings) as Giver in Locklift.
+
 ### Keys
 
 The private and public keys are large numbers that are utilized in a complex mathematical process for encrypting, decrypting, signing, and verifying messages.
