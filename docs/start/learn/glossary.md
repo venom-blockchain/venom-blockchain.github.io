@@ -6,9 +6,13 @@ slug: /learn/glossary
 
 # Glossary
 
+### Account
+
+An account on a blockchain is a unique identifier for a user that holds cryptocurrency and allows for transactions and smart contract execution. In the Venom blockchain, every account is a smart contract with its code, and there is no concept of externally-owned accounts (owned by key pair). This approach is called Account Abstraction and enables flexible authentication options beyond private key ownership.
+
 ### Wallet account
 
-A wallet account serves as your identity in the Venom ecosystem, it is a specific type of [Smart Contract](glossary.md#smart-contract) designed to interact with your Venom balance and other [Smart Contracts](glossary.md#smart-contract).
+A wallet account is a specific type of [Smart Contract](glossary.md#smart-contract) designed to store and interact with your VENOM token balance and other [Smart Contracts](glossary.md#smart-contract).
 
 Users who intend to send Venom tokens to network participants must first deploy a wallet account.
 
