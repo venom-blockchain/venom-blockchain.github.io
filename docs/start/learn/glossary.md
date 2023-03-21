@@ -107,9 +107,11 @@ In a [Multi-Blockchain](glossary.md#multi-blockchain) system, all the blockchain
 
 In a [Multi-Blockchain](glossary.md#multi-blockchain) system, when different blockchains (typically referred to as [Workchains](glossary.md#workchain) in this case) can have different "rules", the system is considered heterogeneous.
 
-### Hypercube routing
+### Giver
 
-The method of transmitting messages from one [Shardchain](glossary.md#shardchain) to another.
+Giver, used in Locklift is a smart contract that provides VENOM tokens to other contracts on the network during the development and testing phases. The Giver contract is typically deployed during the development and testing phases of a project.
+
+By default giver deployed on the `0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415` address in [local-node](https://github.com/tonlabs/evernode-se).
 
 ### Keys
 
