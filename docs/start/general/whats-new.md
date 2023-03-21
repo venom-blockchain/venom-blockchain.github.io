@@ -9,7 +9,7 @@ slug: /general/whats-new
 
 ## 1 March 2023
 
-* A new article has been added to the Venom knowledge base, introducing the Threaded Virtual Machine (TVM). [Read more](../learn/threaded_virtual_machine.md) about TVM, which is a virtual machine that utilizes the actor model for efficient message-passing concurrency.
+* A new article has been added to the Venom knowledge base, introducing the Threaded Virtual Machine (TVM). [Read more](../learn/threaded-virtual-machine.md) about TVM, which is a virtual machine that utilizes the actor model for efficient message-passing concurrency.
 
 ## 23 February 2023
 
