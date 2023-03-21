@@ -127,7 +127,7 @@ source "$HOME/.cargo/env"
 
 ```bash
 
-cargo install --locked --git https://github.com/broxus/stvenom-node-tools
+cargo install --locked --git https://github.com/venom-blockchain/stvenom-node-tools
 ```
 
 ```bash
