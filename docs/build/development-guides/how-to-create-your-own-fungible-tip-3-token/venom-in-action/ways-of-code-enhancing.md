@@ -5,6 +5,10 @@ sidebar_label: Ways of code enhancing
 
 # Venom In Action. Ways of code enhancing
 
+:::warning
+During the following of this guide's code-listings you can meet keywords like `pragma ever-solidity` or keyword `ever` as a unit of the transfer value. It will be changed to `venom` soon. Follow the news and updates.
+:::
+
 Let's go over some best practice points, that will helps us to enhance a code we have. As you remember we have some `tvm.rawReserve` calls, like
 
 ```solidity

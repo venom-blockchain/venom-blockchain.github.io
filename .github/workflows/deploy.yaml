@@ -30,3 +30,19 @@ jobs:
           cname: docs.venom.foundation
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+  reindex:
+    needs: deploy
+    name: Reindex Typesearch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run DocSearch Scraper
+        uses: celsiusnarhwal/typesense-scraper@v2
+        with:
+          api-key: ${{ secrets.TYPESENSE_API_KEY }}
+          host: search.venom.foundation
+          port: 443
+          protocol: https
+          config: docsearch.config.json

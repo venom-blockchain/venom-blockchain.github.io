@@ -81,7 +81,7 @@ const config: LockliftConfig = {
       // This giver is default local-node giverV2
       giver: {
         // Check if you need provide custom giver
-        giverFactory: (ever, keyPair, address) => new SimpleGiver(ever, keyPair, address),
+        giverFactory: (provider, keyPair, address) => new SimpleGiver(provider, keyPair, address),
         address: "0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415",
         key: "172af540e43a524763dd53b26a066d472a97c4de37d5498170564510608250c3",
       },

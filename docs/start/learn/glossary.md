@@ -6,9 +6,13 @@ slug: /learn/glossary
 
 # Glossary
 
+### Account
+
+An account on a blockchain is a unique identifier for a user that holds cryptocurrency and allows for transactions and smart contract execution. In the Venom blockchain, every account is a smart contract with its code, and there is no concept of externally-owned accounts (owned by key pair). This approach is called Account Abstraction and enables flexible authentication options beyond private key ownership.
+
 ### Wallet account
 
-A wallet account serves as your identity in the Venom ecosystem, it is a specific type of [Smart Contract](glossary.md#smart-contract) designed to interact with your Venom balance and other [Smart Contracts](glossary.md#smart-contract).
+A wallet account is a specific type of [Smart Contract](glossary.md#smart-contract) designed to store and interact with your VENOM token balance and other [Smart Contracts](glossary.md#smart-contract).
 
 Users who intend to send Venom tokens to network participants must first deploy a wallet account.
 
@@ -103,9 +107,13 @@ In a [Multi-Blockchain](glossary.md#multi-blockchain) system, all the blockchain
 
 In a [Multi-Blockchain](glossary.md#multi-blockchain) system, when different blockchains (typically referred to as [Workchains](glossary.md#workchain) in this case) can have different "rules", the system is considered heterogeneous.
 
-### Hypercube routing
+### Giver
 
-The method of transmitting messages from one [Shardchain](glossary.md#shardchain) to another.
+Giver, used in Locklift is a smart contract that provides VENOM tokens to other contracts on the network during the development and testing phases. The Giver contract is typically deployed during the development and testing phases of a project.
+
+By default giver deployed on the `0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415` address in [local-node](https://github.com/tonlabs/evernode-se).
+
+Also, you can [setup custom contract](https://github.com/broxus/locklift#note-about-giver-settings) as Giver in Locklift.
 
 ### Keys
 

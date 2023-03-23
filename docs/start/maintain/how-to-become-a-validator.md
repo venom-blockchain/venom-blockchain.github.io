@@ -72,8 +72,8 @@ VALIDATOR_GROUP="validator"
 sudo groupadd $VALIDATOR_GROUP
 sudo useradd $VALIDATOR_USER -m -s /bin/bash -g $VALIDATOR_GROUP -G sudo
 # Mount 
-sudo mkdir -p /var/ever/rnode/
-sudo chown $VALIDATOR_USER:$VALIDATOR_GROUP /var/ever/rnode/
+sudo mkdir -p /var/venom/rnode/
+sudo chown $VALIDATOR_USER:$VALIDATOR_GROUP /var/venom/rnode/
 ```
 
 1.2. Check if the NTP service is UP and running
@@ -127,12 +127,12 @@ source "$HOME/.cargo/env"
 
 ```bash
 
-cargo install --locked --git https://github.com/broxus/stever-node-tools
+cargo install --locked --git https://github.com/venom-blockchain/stvenom-node-tools
 ```
 
 ```bash
 # Enable validator services
-sudo $PWD/.cargo/bin/stever init systemd
+sudo $PWD/.cargo/bin/stvenom init systemd
 ```
 
 Here choose the user for the validator. DON'T RUN Validator service as a root user!
@@ -148,17 +148,17 @@ Here choose the user for the validator. DON'T RUN Validator service as a root us
 Compile and init node
 
 ```bash
-stever init
+stvenom init
 ```
 
 Choose "other" network
 
 ```bash
 [0/2] Preparing configs
-✔ Create root directory? (/home/validator/.stever) · yes
+✔ Create root directory? (/home/validator/.stvenom) · yes
 ? Select network ›
-  Everscale mainnet
-  Everscale testnet
+  Venom mainnet
+  Venom testnet
 ❯ other
 ```
 
@@ -171,7 +171,7 @@ Provide global config URL (Contact Venom core team)
 
 ```bash
 [0/2] Preparing configs
-✔ Create root directory? (/home/validator/.stever) · yes
+✔ Create root directory? (/home/validator/.stvenom) · yes
 ✔ Select network · other
 ✔ Config URL ·<hidden>
 ✔ Node config doesn't have control server entry. Create? · yes
@@ -179,7 +179,7 @@ Provide global config URL (Contact Venom core team)
 ✔ Specify control port · 31000
 ✔ Enter public ip · 164.92.106.127
 ✔ Specify server ADNL port · 30000
-✔ Specify node DB path · /var/ever/rnode
+✔ Specify node DB path · /var/venom/rnode
 [1/2] Preparing binary
 ```
 
@@ -206,30 +206,30 @@ Leave "stake factor (ratio between maximum available stake on the network and
 your stake) to 3 as it is standard in the Venom network
 
 ```bash
-✔ Stake per round (EVER) · 10000
+✔ Stake per round (VENOM) · 10000
 ✔ Stake factor · 3
 [2/2] Validator configured successfully. Great!
 
 Validator wallet address:
 
 
-Required validator wallet balance: 20010 EVER
-  • 10 EVER, maintenance balance
-  • 2 x 20010 EVER, stakes for each round
+Required validator wallet balance: 20010 VENOM
+  • 10 VENOM, maintenance balance
+  • 2 x 20010 VENOM, stakes for each round
 
 Make sure you back up your keys:
-/home/validator/.stever/keys/vld.keys.json
+/home/validator/.stvenom/keys/vld.keys.json
 ```
 
 :::info
 Make sure you back up your keys after the initial configuration!
-All keys are stored at $HOME/.stever/keys/
+All keys are stored at $HOME/.stvenom/keys/
 :::
 
 Init validator services
 
 ```bash
-sudo ~/.cargo/bin/stever init systemd
+sudo ~/.cargo/bin/stvenom init systemd
 ```
 
 :::caution
@@ -245,15 +245,15 @@ Service MUST NOT run as the root user
 
 It will create two services:
 
-- ever-validator-manager - control service that takes part in elections,
+- venom-validator-manager - control service that takes part in elections,
 recovers stake and performs other tasks with the Elector contract
-- ever-validator - node itself, managing validation process
+- venom-validator - node itself, managing validation process
 
 You can check the status of both services with the following commands:
 
 ```bash
-service ever-validator status
-service ever-validator-manager status
+service venom-validator status
+service venom-validator-manager status
 ```
 
 7. Transfer tokens to the Validator contract
@@ -263,10 +263,10 @@ step. The Wallet will become active after the first stake
 
 8. Wait until the elections start
 
-When elections start, the ever-validator-manager process will automatically stake the desired amount of tokens. You can check the current state of elections using [Venomscan.com](https://venomscan.com/validators).
+When elections start, the venom-validator-manager process will automatically stake the desired amount of tokens. You can check the current state of elections using [Venomscan.com](https://venomscan.com/validators).
 
 :::info
-Ever-validator-manager adds 1 Venom token for the stake to pay for the transaction fees, and you will be required to add 1 Venom token to the "stake and bonuses recovery" transaction. Due to this, it is adviseable to always keep some additional tokens in the Validator
+venom-validator-manager adds 1 VENOM token for the stake to pay for the transaction fees, and you will be required to add 1 VENOM token to the "stake and bonuses recovery" transaction. Due to this, it is adviseable to always keep some additional tokens in the Validator
 :::
 
 If everything has been setup correctly - you should see your address in the validators list for the next round.

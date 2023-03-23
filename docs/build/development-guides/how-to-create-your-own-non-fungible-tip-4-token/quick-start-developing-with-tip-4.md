@@ -8,6 +8,10 @@ description: >-
 
 # Quick start developing with TIP-4
 
+:::warning
+During the following of this guide's code-listings you can meet keywords like `pragma ever-solidity` or keyword `ever` as a unit of the transfer value. It will be changed to `venom` soon. Follow the news and updates.
+:::
+
 ## Source Code
 
 You can inspect the source code of TIP-4 token implementation by [link](https://github.com/itgoldio/everscale-tip).
