@@ -110,7 +110,7 @@ const config = {
               veps.push(preamble);
             }
             const {setGlobalData} = actions;
-            setGlobalData({veps});
+            setGlobalData({veps: veps.sort((a, b) => a.VEP - b.VEP)});
           },
         };
       }, {}
