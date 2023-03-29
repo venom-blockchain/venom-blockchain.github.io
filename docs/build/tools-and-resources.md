@@ -7,4 +7,4 @@ import HTMLPluginData from '@site/src/components/HTMLPluginData';
 
 # Tools & Resources
 
-<HTMLPluginData pluginName='awesome-venom-parser' dataFieldName='tools'/>
+<HTMLPluginData pluginName='awesome-list-parser' dataFieldName='parsedList'/>

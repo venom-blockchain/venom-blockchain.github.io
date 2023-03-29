@@ -118,19 +118,18 @@ const config = {
       }, {}
     ],
     [
-      (ctx, _) => {
+      (ctx, options) => {
         return {
-          name: 'awesome-venom-parser',
+          name: 'awesome-list-parser',
           async contentLoaded({ actions }) {
-            const content = (await require('axios')('https://raw.githubusercontent.com/venom-blockchain/awesome-venom/main/readme.md')).data
+            const content = (await require('axios')(options.awesomeListUrl)).data
             const parsed = unified()
               .use(remarkParse)
               .parse(content);
-            const excludeTopics = ['Contents', 'Tutorials', 'Documentation', 'Official'];
             const filtered = [];
             for (let i = 0; i < parsed.children.length; i++) {
               const child = parsed.children[i];
-              if (child.type == 'heading' && excludeTopics.indexOf(child.children[0].value) != -1) {
+              if (child.type == 'heading' && options.exclude.indexOf(child.children[0].value) != -1) {
                 // Skip excluded topics
                 while (i < parsed.children.length && parsed.children[i+1]?.type != 'heading') {
                   i++;
@@ -162,10 +161,13 @@ const config = {
             modifiedContent = classProcessorResult.toString();
             */
             const {setGlobalData} = actions;
-            setGlobalData({tools: modifiedContent});
+            setGlobalData({parsedList: modifiedContent});
           }
         }
-      }, {}
+      }, {
+        awesomeListUrl: 'https://raw.githubusercontent.com/venom-blockchain/awesome-venom/main/readme.md',
+        exclude: ['Contents', 'Tutorials', 'Documentation', 'Official']
+      }
     ],
   ],
 
