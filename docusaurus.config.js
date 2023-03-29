@@ -6,6 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const redirects = require('./redirects');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const unified = require('unified');
+const remarkParse = require('remark-parse');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -99,8 +101,8 @@ const config = {
             for (const vepFilePath of vepFilePaths) {
               const vep = require('fs').readFileSync(vepFilePath).toString();
               const frontmatter = require('front-matter')(vep);
-              const file = await require('unified')()
-                .use(require('remark-parse'))
+              const file = unified()
+                .use(remarkParse)
                 .parse(vep);
               const vepPreambleNode = file.children.find(
                 (child) => child.type == 'code' && child.lang == 'preamble'
@@ -114,7 +116,57 @@ const config = {
           },
         };
       }, {}
-    ]
+    ],
+    [
+      (ctx, _) => {
+        return {
+          name: 'awesome-venom-parser',
+          async contentLoaded({ actions }) {
+            const content = (await require('axios')('https://raw.githubusercontent.com/venom-blockchain/awesome-venom/main/readme.md')).data
+            const parsed = unified()
+              .use(remarkParse)
+              .parse(content);
+            const excludeTopics = ['Contents', 'Tutorials', 'Documentation', 'Official'];
+            const filtered = [];
+            for (let i = 0; i < parsed.children.length; i++) {
+              const child = parsed.children[i];
+              if (child.type == 'heading' && excludeTopics.indexOf(child.children[0].value) != -1) {
+                // Skip excluded topics
+                while (i < parsed.children.length && parsed.children[i+1]?.type != 'heading') {
+                  i++;
+                }
+                continue;
+              } else if (child.type == 'heading' && child.depth == 1) {
+                // Skip level 1 headings
+                continue
+              } else if (child.type == 'html') {
+                // Skip HTML markup for awesome list
+                continue
+              } else {
+                filtered.push(child);
+              }
+            }
+            parsed.children = filtered;
+            const remarkHtml = (await import('remark-html')).default;
+            let modifiedContent = unified()
+              .use(remarkHtml, {})
+              .stringify(parsed);
+            // way to save classes
+            /*
+            const classProcessorResult = (await import('rehype')).rehype()
+              .data('settings', { fragment: true })
+              .use(require('rehype-add-classes'), {
+                h2: 'anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-theme-Heading-styles-module'
+              })
+              .processSync(modifiedContent);
+            modifiedContent = classProcessorResult.toString();
+            */
+            const {setGlobalData} = actions;
+            setGlobalData({tools: modifiedContent});
+          }
+        }
+      }, {}
+    ],
   ],
 
   presets: [
