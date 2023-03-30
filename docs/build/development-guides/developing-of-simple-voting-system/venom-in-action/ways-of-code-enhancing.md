@@ -9,7 +9,7 @@ Let's dive into some best practices and good tone coding.&#x20;
 
 First of all, if your contract deploys some other contracts, it's advisable to have a view method for returning the new contract address:
 
-```solidity lineNumbers="true"
+```solidity showLineNumbers
 function getBallotAddress(address owner) 
     external
     view
@@ -33,7 +33,7 @@ As you can see we used some keywords and syntax, that hasn't been discussed befo
 
 The next important point is success/unsuccess callbacks or events. Enhancing your contract with event emitting wouldn't be amiss. Especially when you deploy something or end some case. For example, we can add `NewBallot` event (when the new ballot is deployed) and `VoteAccepted` event (after `onBallotUsed` callback)
 
-```solidity title="Vote.sol" lineNumbers="true"
+```solidity title="Vote.sol" showLineNumbers
 ...
 contract Vote {
     event NewBallot(address owner);
@@ -62,7 +62,7 @@ There is another small hack for helping frontend developers. You can transfer a 
 
 Frontend developers can subscribe to incoming transactions to the user's wallet and use these small values to detect contract behavior. For example, we can send 1 nanovenom, if the vote has been accepted
 
-```solidity title="Vote.sol" lineNumbers="true"
+```solidity title="Vote.sol" showLineNumbers
 ...
 contract Vote {
 
