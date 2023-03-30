@@ -22,7 +22,7 @@ npx locklift init --path my-first-crowdsale
 
 As in a previous guide, we need to have TIP-3 sources in this project. So. let's add them
 
-```json title="package.json" lineNumbers="true"
+```json title="package.json" showLineNumbers
 {
   "devDependencies": {
     "tip3": "git://github.com/broxus/tip3#v5",
@@ -31,7 +31,7 @@ As in a previous guide, we need to have TIP-3 sources in this project. So. let's
 }
 ```
 
-```typescript title="locklift.config.ts" lineNumbers="true"
+```typescript title="locklift.config.ts" showLineNumbers
 compiler: {
     ...
     externalContracts: {
@@ -42,7 +42,7 @@ compiler: {
 
 Now we can start with our tokensale contract. Create a `Tokensale.sol` file in your `contracts` folder. First of all, let's arrange pragmas and imports.
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
@@ -54,7 +54,7 @@ import "tip3/contracts/interfaces/ITokenWallet.sol";
 
 As you can see, we will use some interfaces from the TIP-3 implementation. Let's define our contract state and constructor.
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 contract Tokensale {
     uint16  static _nonce; // Some random value to affect on contract address
     address static _owner; // Tokensale owner. Will receive all transfers
@@ -108,7 +108,7 @@ The next line is a best practice for gas management in Venom. You always should 
 
 The next important logic of our constructor code is deploying a wallet for contract on-chain
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 ...
         ITokenRoot(distributedTokenRoot).deployWallet {
             value: 0.2 ever,
@@ -123,7 +123,7 @@ The next important logic of our constructor code is deploying a wallet for contr
 
 This action generates an outbound message to `TokenRoot` contract by calling a `deployWallet` function. This function is `responsible` . That means it will generate an internal outbound message by calling a function, that was passed in a `callback` parameter (`onTokenWallet` in our case). Let's implement this function for our `Tokensale` contract. From TIP-3 source code we know, that `deployWallet` returns tonly one parameter - deployed wallet address. So, just store it in our state.
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 ...
     function onTokenWallet(address value) external {
         require (
@@ -140,7 +140,7 @@ This action generates an outbound message to `TokenRoot` contract by calling a `
 
 That's all. Now, when we will deploy `Tokensale` contract, `deployWallet` will be called too and returned value will be stored in our contract state. All we need is a function to sell our tokens.
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 ...
     function buyTokens(uint128 deposit) external view {
         tvm.rawReserve(1 ever, 0);
@@ -187,7 +187,7 @@ Pay attention to `value` and `flag`. Again 0 and 128. This allows us to delegate
 
 So, let's check our final contract code
 
-```solidity title="Tokensale.sol" lineNumbers="true"
+```solidity title="Tokensale.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;

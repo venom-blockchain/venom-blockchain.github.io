@@ -10,7 +10,7 @@ description: >-
 
 First thing you should deal with - locklift config. Let's set up some global networks in `network` section of the config
 
-```typescript title="locklift.config.ts" lineNumbers="true"
+```typescript title="locklift.config.ts" showLineNumbers
 const config: LockliftConfig = {
 ...
   networks: {
@@ -62,7 +62,7 @@ When you work with a local node, you have a pre-deployed giver, which you can us
 
 As you can see we have a `giverFactory` field, that initializes a `GiverWallet` object. Let's have a look up there.
 
-```typescript title="giverSettings/index.ts" lineNumbers="true"
+```typescript title="giverSettings/index.ts" showLineNumbers
 export class GiverWallet implements Giver {
   public giverContract: Contract<typeof giverWallet>;
   

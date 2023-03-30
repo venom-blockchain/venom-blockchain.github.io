@@ -32,7 +32,7 @@ NFT creation is a green arrow flow, and auction bids are yellow. Let's describe 
 
 That's all! As you can see, the main mechanic of our interaction is callbacks. Let's start implementing our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](../quick-start-developing-with-tip-4.md) guide.
 
-```solidity title="Collection.sol" lineNumbers="true"
+```solidity title="Collection.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 
 pragma AbiHeader expire;
@@ -121,7 +121,7 @@ contract Collection is TIP4_2Collection, TIP4_3Collection {
 }
 ```
 
-```solidity title="NFT.sol" lineNumbers="true"
+```solidity title="NFT.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
@@ -198,7 +198,7 @@ We won't explain this code blocks because it's already done in TIP-4 [quick star
 
 Then, let's deal with `Auction` contract. We'll get started from the state and constructor, as usual. Do not forget to add the interfaces we need.
 
-```solidity code title="Auction.sol" lineNumbers="true"
+```solidity code title="Auction.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 
 pragma AbiHeader expire;
@@ -270,7 +270,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 
 Remember about gas management and token wallet deploying mechanics from the previous Venom In Action [guide](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/simple-tokensale.md). Implement `onTokenWallet` callback the same way.
 
-```solidity title="Auction.sol" lineNumbers="true"
+```solidity title="Auction.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
@@ -292,7 +292,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 
 Ok, the next callback we need is `onNftTransfer`, which will be called when the NFT owner sends NFT to the auction address
 
-```solidity title="Auction.sol" lineNumbers="true"
+```solidity title="Auction.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
@@ -333,7 +333,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 
 Great! Now we are ready to accept bids. Let's implement another callback `onAcceptTokensTransfer`, that our `TokenWallet` will call any time it got an incoming token transaction. Take attention! This is the main logic of our auction!
 
-```solidity title="Auction.sol" lineNumbers="true"
+```solidity title="Auction.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
@@ -395,7 +395,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 
 That's it. How hard is that? The last thing we need - is `finishAuction` function.
 
-```solidity title="Auction.sol" lineNumbers="true"
+```solidity title="Auction.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
@@ -457,7 +457,7 @@ You can explore this sample (with tests and some scripts) by going to this [repo
 
 We can take collection deploying script and NFT minting scripts from [TIP-4 quick start](../quick-start-developing-with-tip-4.md#deploy-action). Script for auction deploying is not really hard too.
 
-```typescript title="3-deploy-auction.ts" lineNumbers="true"
+```typescript title="3-deploy-auction.ts" showLineNumbers
 import { Address, getRandomNonce, WalletTypes } from "locklift";
 
 // you can pass this parameter by cli or get them by some file reading for example or calculate an address with locklift.provider.getExpectedAddress()
@@ -500,7 +500,7 @@ main()
 
 The next script, that can be useful for you - sending NFT to Auction. Let's code
 
-```typescript title="" lineNumbers="true"
+```typescript title="" showLineNumbers
 import { Address, toNano, WalletTypes } from "locklift";
 
 // you can pass this parameters by cli or get them by some file reading for example or calculate an address with locklift.provider.getExpectedAddress()

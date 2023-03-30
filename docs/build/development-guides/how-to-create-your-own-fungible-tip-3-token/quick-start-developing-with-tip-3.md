@@ -39,7 +39,7 @@ npx locklift init --path my-first-token
 
 Add TIP-3 implementation repository as a `devDependencies` in the corresponding section of `package.json` file
 
-```json title="package.json" lineNumbers="true"
+```json title="package.json" showLineNumbers
 {
   "devDependencies": {
     "tip3": "git://github.com/broxus/tip3#v5",
@@ -50,7 +50,7 @@ Add TIP-3 implementation repository as a `devDependencies` in the corresponding 
 
 Specify installed contracts to the external contracts section of locklift config, by providing a path to contracts artifacts (.abi.json files, .tvc files, etc., most commonly placed in a build folder of smart contracts projects) and contract names array.
 
-```json title="locklift.config.ts" lineNumbers="true"
+```json title="locklift.config.ts" showLineNumbers
 compiler: {
     ...
     externalContracts: {
@@ -86,7 +86,7 @@ ls ./build
 
 Let's move to deploy action. Firstly, we make a new deploy script in `scripts` directory for the TokenRoot contract.&#x20;
 
-```typescript title="01-deploy-token-root.ts" lineNumbers="true"
+```typescript title="01-deploy-token-root.ts" showLineNumbers
 import { Address, getRandomNonce, toNano, zeroAddress } from "locklift"
 import BigNumber from "bignumber.js"
 

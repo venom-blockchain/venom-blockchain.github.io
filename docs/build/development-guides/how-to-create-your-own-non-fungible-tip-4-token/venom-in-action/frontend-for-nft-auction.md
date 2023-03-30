@@ -23,7 +23,7 @@ npx create-react-app nft-auction-web --template typescript
 
 One of the previous frontend guides has a [section](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) where we reviewed the venom-connect library in detail. So let's create a venom-connect initialization function
 
-```typescript title="src/venom-connect/configure.ts" lineNumbers="true"
+```typescript title="src/venom-connect/configure.ts" showLineNumbers
 import { VenomConnect } from 'venom-connect';
 import { ProviderRpcClient } from 'everscale-inpage-provider';
 import { EverscaleStandaloneClient } from 'everscale-standalone-client';
@@ -74,7 +74,7 @@ export const initVenomConnect = async () => {
 
 Now we call the initialization function from our main app file and pass the VenomConnect instance to our Main page:
 
-```typescript title="src/App.tsx" lineNumbers="true"
+```typescript title="src/App.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import './styles/main.css';
 
@@ -97,7 +97,7 @@ function App() {
 export default App;
 ```
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -117,7 +117,7 @@ export default Main;
 
 Let's create a button for connecting the venom wallet. When the user is connected, we should show the user's address, so let's create something like a web app menu header.
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 import { ProviderRpcClient } from 'everscale-inpage-provider';
@@ -206,7 +206,7 @@ export default Main;
 
 Let's add some methods for working with TIP-3 TokenWallet. We have worked on this case already in [tokensale](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#reading-the-users-token-balance-from-deployed-smart-contract) guide. We need to get connected user's TokenWallet address and check its balance.
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
@@ -286,7 +286,7 @@ This is enough for our task. Let's implement a component, that will show us the 
 
 Let's implement a component, filled with all the auction data we need. Here is nothing special to show. We need just to read a smart contract state, so let's implement a full listing immediately:
 
-```typescript title="src/components/NftAuction.tsx" lineNumbers="true"
+```typescript title="src/components/NftAuction.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 import { BaseNftJson, formatBalance, formatDate } from '../utils/helpers';
@@ -417,7 +417,7 @@ The last thing we need to implement - is the possibility to participate in the a
 
 As we remember from our [smart contracts](simple-nft-auction.md) logic, we need just to send TIP-3 tokens to the `Auction` contract. So we need to implement a component for this logic...just a form. How to send TIP-3 tokens somewhere? Just call a `transfer` method of the user's `TokenWalet` contract. 
 
-```typescript title="src/components/AuctionSendForm.tsx" lineNumbers="true"
+```typescript title="src/components/AuctionSendForm.tsx" showLineNumbers
 import React, { useState } from 'react';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 // this helper is doing just multiplying by 10 ** 9 (decimals)
@@ -513,7 +513,7 @@ export default AuctionSendForm;
 
 Then we need to place this form component to our previous NftAuction component and pass variables, that were passed from the Main page.
 
-```typescript title="src/components/NftAuction.tsx" lineNumbers="true"
+```typescript title="src/components/NftAuction.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 ...
 import AuctionSendForm from './AuctionSendForm';

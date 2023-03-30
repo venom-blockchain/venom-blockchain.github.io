@@ -33,7 +33,7 @@ npx create-react-app my-tokensale-web --template typescript
 
 The previous frontend guide has a [section](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) where we reviewed the venom-connect library in detail. So let's create a venom-connect initialization function
 
-```typescript title="src/venom-connect/connector.ts" lineNumbers="true"
+```typescript title="src/venom-connect/connector.ts" showLineNumbers
 import { VenomConnect } from 'venom-connect';
 import { ProviderRpcClient } from 'everscale-inpage-provider';
 import { EverscaleStandaloneClient } from 'everscale-standalone-client';
@@ -84,7 +84,7 @@ export const initVenomConnect = async () => {
 
 Now we call the initialization function from our main app file and pass the VenomConnect instance to our Main page:
 
-```typescript title="src/App.tsx" lineNumbers="true"
+```typescript title="src/App.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import './styles/main.css';
 
@@ -107,7 +107,7 @@ function App() {
 export default App;
 ```
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -127,7 +127,7 @@ export default Main;
 
 Let's create a button for connecting the venom wallet. When the user is connected, we should show the user's address, so let's create something like a web app menu header.
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -213,7 +213,7 @@ export default Main;
 
 Then let's add the tabs for our header. As we mentioned above, we will need two tabs:
 
-```typescript title="src/pages/Main.tsx" lineNumbers="true"
+```typescript title="src/pages/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 ...
 
@@ -293,7 +293,7 @@ To fetch all collection's NFTs we should produce these steps:
 
 Firstly, let's create some utility functions for handy work with NFTs:
 
-```typescript title="src/utils/nft.tsx" lineNumbers="true"
+```typescript title="src/utils/nft.tsx" showLineNumbers
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 // Of course you need to place a contract ABI somewhere
 import nftAbi from '../abi/NFT.abi.json';
@@ -335,7 +335,7 @@ export const getCollectionItems = async (provider: ProviderRpcClient, nftAddress
 
 Now we can implement a component, that will show all collection's NFTs. It is not really hard:
 
-```typescript title="src/components/CollectionItems.tsx" lineNumbers="true"
+```typescript title="src/components/CollectionItems.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 import Gallery from './Gallery';
@@ -431,7 +431,7 @@ export const getNftsByIndexes = async (provider: ProviderRpcClient, indexAddress
 
 That's it. It will help us with our component. Let's implement him:
 
-```typescript title="src/components/MyItems.tsx" linenumbers="true"
+```typescript title="src/components/MyItems.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 import Gallery from './Gallery';
@@ -526,7 +526,7 @@ But what about searching all user NFTs across all collections?
 </summary>
 All you need is just to change a salt process:
 
-```typescript title="src/components/MyItems.tsx" linenumbers="true"
+```typescript title="src/components/MyItems.tsx" showLineNumbers
 const saltCode = async (provider: ProviderRpcClient, ownerAddress: string) => {
     // Index StateInit you should take from github. It ALWAYS constant!
     const INDEX_BASE_64 = 'te6ccgECIAEAA4IAAgE0AwEBAcACAEPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAgaK2zUfBAQkiu1TIOMDIMD/4wIgwP7jAvILHAYFHgOK7UTQ10nDAfhmifhpIds80wABn4ECANcYIPkBWPhC+RDyqN7TPwH4QyG58rQg+COBA+iogggbd0CgufK0+GPTHwHbPPI8EQ4HA3rtRNDXScMB+GYi0NMD+kAw+GmpOAD4RH9vcYIImJaAb3Jtb3Nwb3T4ZNwhxwDjAiHXDR/yvCHjAwHbPPI8GxsHAzogggujrde64wIgghAWX5bBuuMCIIIQR1ZU3LrjAhYSCARCMPhCbuMA+EbycyGT1NHQ3vpA0fhBiMjPjits1szOyds8Dh8LCQJqiCFus/LoZiBu8n/Q1PpA+kAwbBL4SfhKxwXy4GT4ACH4a/hs+kJvE9cL/5Mg+GvfMNs88gAKFwA8U2FsdCBkb2Vzbid0IGNvbnRhaW4gYW55IHZhbHVlAhjQIIs4rbNYxwWKiuIMDQEK103Q2zwNAELXTNCLL0pA1yb0BDHTCTGLL0oY1yYg10rCAZLXTZIwbeICFu1E0NdJwgGOgOMNDxoCSnDtRND0BXEhgED0Do6A34kg+Gz4a/hqgED0DvK91wv/+GJw+GMQEQECiREAQ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAD/jD4RvLgTPhCbuMA0x/4RFhvdfhk0ds8I44mJdDTAfpAMDHIz4cgznHPC2FeIMjPkll+WwbOWcjOAcjOzc3NyXCOOvhEIG8TIW8S+ElVAm8RyM+EgMoAz4RAzgH6AvQAcc8LaV4gyPhEbxXPCx/OWcjOAcjOzc3NyfhEbxTi+wAaFRMBCOMA8gAUACjtRNDT/9M/MfhDWMjL/8s/zsntVAAi+ERwb3KAQG90+GT4S/hM+EoDNjD4RvLgTPhCbuMAIZPU0dDe+kDR2zww2zzyABoYFwA6+Ez4S/hK+EP4QsjL/8s/z4POWcjOAcjOzc3J7VQBMoj4SfhKxwXy6GXIz4UIzoBvz0DJgQCg+wAZACZNZXRob2QgZm9yIE5GVCBvbmx5AELtRNDT/9M/0wAx+kDU0dD6QNTR0PpA0fhs+Gv4avhj+GIACvhG8uBMAgr0pCD0oR4dABRzb2wgMC41OC4yAAAADCD4Ye0e2Q==';

@@ -32,7 +32,7 @@ npm install --save venom-connect everscale-inpage-provider everscale-standalone-
 
 According to venom-connect documentation, we should just create a `VenomConnect` instance in our code. Let's implement some functions for returns `VenomConnect` instance. You can read about all configuration options in venom-connect official documentation. Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
 
-```typescript title="src/venom-connect/configure.ts" lineNumbers="true"
+```typescript title="src/venom-connect/configure.ts" showLineNumbers
 import { VenomConnect } from 'venom-connect';
 import { ProviderRpcClient } from 'everscale-inpage-provider';
 import { EverscaleStandaloneClient } from 'everscale-standalone-client';
@@ -83,7 +83,7 @@ export const initVenomConnect = async () => {
 
 Now we can add initializating in our main `App.tsx` file:
 
-```typescript title="App.tsx" lineNumbers="true"
+```typescript title="App.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -113,7 +113,7 @@ export default App;
 
 For a better experience, let's move our page to another component, that will be included in the root `App.tsx`
 
-```typescript title="src/Main.tsx" lineNumbers="true"
+```typescript title="src/Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 import logo from './logo.svg';
@@ -133,7 +133,7 @@ function Main({ venomConnect }: Props) {
 export default Main;
 ```
 
-```typescript title="App.tsx" lineNumbers="true"
+```typescript title="App.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 ...
 
@@ -151,7 +151,7 @@ export default App;
 
 Then we should call `venomConnect.connect()` method. Let's create a button for connection initializing. We need a separate React component for that action. This component will receive our initialized instance and call `connect` function.
 
-```typescript title="src/components/ConnectWallet.ts" lineNumbers="true"
+```typescript title="src/components/ConnectWallet.ts" showLineNumbers
 import React from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -182,7 +182,7 @@ export default ConnectWallet;
 
 Now we can add this component to our `Main.tsx` file, and pass the venom-connect instance from.
 
-```typescript title="Main.tsx" lineNumbers="true"
+```typescript title="Main.tsx" showLineNumbers
 import React from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -209,7 +209,7 @@ That's it. Now you can see the widget popup window after clicking on `Connect Wa
 
 But now the user doesn't know if his connection was successful. Let's add a header, that shows the wallet address after the wallet has been connected. And, of course, the disconnect button. In that case, we need to add some code. Pay attention to code comments
 
-```typescript title="Main.tsx" lineNumbers="true"
+```typescript title="Main.tsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 
@@ -281,7 +281,7 @@ export default Main;
 
 We got a user's address! That's great, but I think we need to show the user's token balance too. for address fetching, you have operated with inpage-provider part of wallet interaction. We will use provider later to interact with the blockchain, especially for sending token purchase transactions. But for reading public data from the blockchain, it's possible to use a standalone client. The next listing will show you how to read the smart contract state with a standalone client, provided by venom-connect
 
-```typescript title="Main.tsx" lineNumbers="true"
+```typescript title="Main.tsx" showLineNumbers
 ...
 
 // Importing of our contract ABI from smart-contract build action. Of cource we need ABI for contracts calls.
@@ -399,7 +399,7 @@ That's it. Now we know how to read the state from the deployed smart contract! S
 
 Let's implement some buying tokens form. It should be shown only after the wallet has been connected. We need to get purchasing amount from the user and send the purchase transaction from the user's wallet with inpage-provider, provided by venom-connect. Starts with a component for our form.
 
-```typescript title="components/SaleForm.tsx" lineNumbers="true"
+```typescript title="components/SaleForm.tsx" showLineNumbers
 import React, { useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
@@ -486,7 +486,7 @@ export default SaleForm;
 
 That's it. Now we should place our new form on our `Main` page. Remember, that we should show the form only after the user's wallet has been connected.
 
-```typescript title="Main.tsx" lineNumbers="true"
+```typescript title="Main.tsx" showLineNumbers
 ...
 function Main({ venomConnect }: Props) {
   ...
@@ -525,7 +525,7 @@ function Main({ venomConnect }: Props) {
 
 Inpage provider can help you to ask the user if it wants to add your distributable token to the wallet extension. Implementation of this feature is pretty simple. Just add a button somewhere on your layout (we will create another block with the token address and new button) and create a click handler, where `provider.addAsset()` function will be called.
 
-```typescript title="components/SaleForm.tsx" lineNumbers="true"
+```typescript title="components/SaleForm.tsx" showLineNumbers
 import React, { useState } from "react";
 
 ...

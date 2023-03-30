@@ -40,7 +40,7 @@ npm install --save everscale-inpage-provider everscale-standalone-client
 
 Let's implement a module for smart contract interaction. We need to initialize a client here
 
-```typescript title="src/modules/blockchain.ts" lineNumbers="true"
+```typescript title="src/modules/blockchain.ts" showLineNumbers
 import { ProviderRpcClient } from "everscale-inpage-provider";
 import { EverscaleStandaloneClient, SimpleKeystore } from "everscale-standalone-client/nodejs";
 
@@ -84,7 +84,7 @@ Pay attention to the keystore section. This is the difference with the usage sta
 
 Now we can implement an `activateBallot` function here.
 
-```typescript title="src/modules/blockchain.ts" lineNumbers="true"
+```typescript title="src/modules/blockchain.ts" showLineNumbers
 import { Address, Contract, ProviderRpcClient } from "everscale-inpage-provider";
 import { EverscaleStandaloneClient, SimpleKeystore } from "everscale-standalone-client/nodejs";
 import { readFileSync } from 'fs';
@@ -136,7 +136,7 @@ But what if I need to send an internal message from my wallet?
 
 Then you should perform some improvements. First thing - `accountsStorage` parameter for client initialization. Suppose you have a `WalletV3` and this is a wallet for your internal interaction. Provide wallet address and key pair somehow (this example provides it by environment variables). So your `getClient` function will be like
 
-```typescript title="src/modules/blockchain.ts" lineNumbers="true"
+```typescript title="src/modules/blockchain.ts" showLineNumbers
 async function getClient(): Promise<ProviderRpcClient> {
   // initializing accounts storage
   // SimpleAccountsStorage is a class from everscale-standalone-client
@@ -178,7 +178,7 @@ async function getClient(): Promise<ProviderRpcClient> {
 
 And then you can implement a `deployBallot` function, for example.
 
-```typescript title="src/modules/blockchain.ts" lineNumbers="true"
+```typescript title="src/modules/blockchain.ts" showLineNumbers
 // Same simple helper to get a Vote contract instance
 // Import an ABI files from somewhere...same as for Ballot.
 function getVoteContract(
@@ -238,7 +238,7 @@ That is the way to deal with sending internal messages from your wallet to anoth
 
 Let's implement a smart contract event handler. We can do it with everscale-inpage-provider. It will be just a function, that will be instantiated in the express `listen` method a little bit later.
 
-```typescript title="src/modules/blockchain.ts" lineNumbers="true"
+```typescript title="src/modules/blockchain.ts" showLineNumbers
 import { Address, Contract, ProviderRpcClient, Subscriber } from "everscale-inpage-provider";
 import { EverscaleStandaloneClient, SimpleKeystore } from "everscale-standalone-client/nodejs";
 import { readFileSync } from 'fs';
@@ -292,7 +292,7 @@ You can accept the same ideas for your frontend app, just because we are using t
 
 We are not going to analyze some NodeJS Express features and SQLite here in details. Just move on straight to code snippets. Start with database stuff.
 
-```typescript title="src/modules/database.ts" lineNumbers="true"
+```typescript title="src/modules/database.ts" showLineNumbers
 import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
 
@@ -324,7 +324,7 @@ export async function initDB() {
 
 OK. Now move to express router stuff:
 
-```typescript title="src/modules/api.ts" lineNumbers="true"
+```typescript title="src/modules/api.ts" showLineNumbers
 import { Router } from "express";
 import { getConnection } from "./database";
 import { activateBallot } from "./blockchain";
@@ -381,7 +381,7 @@ ballotsRouter.post("/lottery", async function (req, res) {
 
 The finishing touch - main script with our express server initialization.
 
-```typescript title="src/index.ts" lineNumbers="true"
+```typescript title="src/index.ts" showLineNumbers
 import express, { Express } from 'express';
 import * as bodyParser from 'body-parser';
 import { initDB } from './modules/database';
