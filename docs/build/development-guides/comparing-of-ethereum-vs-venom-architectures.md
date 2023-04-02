@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Comparing Ethereum vs. Venom architectures
 ---
 
-# Comparing of Ethereum vs. Venom architectures
+# Comparing Ethereum vs. Venom architectures
 
 Most likely, you are familiar with EVM-based blockchains like Ethereum, and you need to migrate your experience from EVM-based blockchain to Venom. This article touches most important things about the difference between the two networks.
 
@@ -17,7 +17,7 @@ EVM is designed like a "global computer," but only one computer for everything i
 
 In the real world, we have many computers with modern multicore architectures for different tasks. You can email your friend while your computer compiles the code and does many other things.
 
-The Venom blockchain works like a multicore system instead of an EVM-based network. TVM is designed as a distributed computing system with the scalability opportunity through dynamic sharding. This means that The Venom blockchain can share tasks between groups of validator nodes called "a validator task group" (similar to processor cores) depending on the load. One part of the tasks don't need to wait for another tasks to be completed. For this reason, all interactions between system participants (accounts, aka smart contracts) are asynchronous, one participant doesn't need to wait for another.
+The Venom blockchain works like a multicore system instead of an EVM-based network. TVM is designed as a distributed computing system with the scalability opportunity through dynamic sharding. This means that The Venom blockchain can share tasks between groups of validator nodes called "a validator task group" (similar to processor cores) depending on the load. The part of tasks doesn't need to wait for other tasks to be completed. For this reason, all interactions between system participants (accounts, aka smart contracts) are asynchronous. One participant doesn't need to wait for another.
 
 To learn more about the architecture of the Venom blockchain, please follow [the link](./../../start/learn/architecture.md) provided.
 
@@ -27,7 +27,7 @@ Therefore, an important difference between TVM-based and EVM-based networks is t
 
 TVM, by design, has an asynchronous communication model between accounts (aka smart contracts). This is because of the need to maintain calls between contracts in different shards processed by different validator task groups. In this way, each account has the only way to affect the state of some other account by sending a message. When an account receives an inbound message, it triggers the computation of the account's new state and the possibility of generating one or more outbound messages, with the account serving as the source. The inbound message and the previous state of the account serve as inputs for the transaction, while the generated outbound messages and the next state of the account serve as outputs.
 
-This makes the transaction processing in TVM more efficient because it is not necessary to update the state of all accounts when executing each transaction. Instead, each account processes only the messages that are addressed to it, allowing for parallel processing of multiple transactions and increasing the transaction processing speed.
+This makes the transaction processing in TVM more efficient because it is not necessary to update the state of all accounts when executing each transaction. Instead, each account processes only the messages that are addressed to it, allowing for the parallel processing of multiple transactions and increasing the transaction processing speed.
 
 You can find additional information regarding messages and transactions by clicking on the following link [here](./../../start/learn/messages-and-transactions.md).
 
@@ -35,9 +35,9 @@ You can find additional information regarding messages and transactions by click
 
 In Ethereum, the gas model is used to limit the number of computational steps that a transaction can perform. Users pay gas fees for each transaction they send, and these fees are paid in the native currency of the network, Ether (ETH). The fees are determined by the amount of gas used by a transaction, and the gas price, which fluctuates according to network demand.
 
-On the other hand, in Venom, the fee calculation is based on a combination of gas, data storage, and forward message fees. The user decides how much VENOM to attach as payment fees from their contract account for the call, and this value is the upper limit for the cost of executing the call chain for the user.
+On the other hand, in Venom, the fee calculation is based on a combination of gas, data storage, and forward message fees. The user decides how many VENOM to attach as payment fees from their contract account for the call, and this value is the upper limit for the cost of executing the call chain for the user.
 
-By including data storage fees in the fee calculation, Venom incentivizes efficient use of storage space on the network and encourages developers to design contracts that minimize storage usage. This helps to prevent network congestion in long term.
+By including data storage fees in the fee calculation, Venom incentivizes efficient use of storage space on the network and encourages developers to design contracts that minimize storage usage. This helps to prevent network congestion in the long term.
 
 Additional information regarding gas and fees can be found [here](./../../start/learn/gas-and-fees.md).
 
@@ -50,3 +50,7 @@ T-Sol (Threaded-Solidity) is a high-level programming language designed explicit
 TVM, however, does not rely on a single, smart contract language. The Threaded Virtual Machine (TVM) is designed to be language-agnostic, allowing developers to write smart contracts in multiple languages.
 
 The Standards [section](./../../standards/VEP/readme.md) contains specifications of smart contract architectures that are specifically designed for the TVM asynchronous model.
+
+## References
+
+* [T-Sol API](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md)
