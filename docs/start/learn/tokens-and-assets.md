@@ -15,8 +15,8 @@ The smallest transferable VENOM unit is Nano VENOM.
 | Unit       | Decimal Places | Conversion to NANO VENOM | Conversion to VENOM |
 | ---------- | -------------- | ------------------------ | ------------------- |
 | NanoVENOM  | 0              | 1                        | 0.000000001         |
-| MicroVENOM | 4              | 10^4                     | 0.00001             |
-| MilliVENOM | 7              | 10^7                     | 0.01                |
+| MicroVENOM | 3              | 10^3                     | 0.000001            |
+| MilliVENOM | 6              | 10^6                     | 0.001               |
 | VENOM      | 9              | 10^9                     | 1                   |
 
 ## VENOM utility
