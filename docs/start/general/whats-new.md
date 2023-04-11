@@ -7,6 +7,10 @@ slug: /general/whats-new
 
 # What's New
 
+## 11 April 2023
+
+* We are excited to announce the addition of [a new article](../learn/consensus.md) to the Venom knowledge base! [Learn about](../learn/consensus.md) how the Venom blockchain utilizes the Proof of Stake (PoS) consensus mechanism, Byzantine fault-tolerant (BFT) algorithm, and the essential role of validators in maintaining the network's security and integrity.
+
 ## 1 March 2023
 
 * A new article has been added to the Venom knowledge base, introducing the Threaded Virtual Machine (TVM). [Read more](../learn/threaded-virtual-machine.md) about TVM, which is a virtual machine that utilizes the actor model for efficient message-passing concurrency.
