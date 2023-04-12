@@ -202,10 +202,7 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
-  themes: ['docusaurus-theme-search-typesense', '@docusaurus/theme-mermaid'],
-  markdown: {
-    mermaid: true,
-  },
+  themes: ['docusaurus-theme-search-typesense'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
