@@ -7,40 +7,44 @@ slug: /general/ecosystem
 
 # Ecosystem
 
+:::caution
+All products are currently deployed on the testnet for testing purposes. The Venom blockchain does not yet have a mainnet, and the VENOM token is not being sold now.
+:::
+
 ### Venom Wallet
 
 Non-custodial Venom wallet to proceed with transactions, store, send and receive tokens.
 
-[Chrome extension](https://chrome.google.com/webstore/detail/venom-wallet/ojggmchlghnjlapmfbnjholfjkiidbch) | [Mobile Wallet](https://venom.foundation/wallet.html#app-mobile)
+[venomwallet.com](https://venomwallet.com/)
 
-### VenomGet
+### Venom Scan
 
-Obtain your Venom tokens through the exchange of any cryptocurrency using the multichain interface.
+Search and explore the immutable records of the Venom blockchain
 
-[venomget.com](https://venomget.com)
+[testnet.venomscan.com](https://testnet.venomscan.com/)
 
-### Bridge
+### Venom Bridge
 
-The connection point for linking your liquidity from popular blockchain platforms to the Venom ecosystem.
+Explore the world of interchain transactions
 
-[venombridge.com](https://venombridge.com)
-
-### Explorer
-
-The most efficient method for thoroughly examining the network, providing access to information about each block, message, transaction, and account within the Venom network.
-
-[venomscan.com](https://venomscan.com/)
+[testnet.venombridge.com](https://testnet.venombridge.com/bridge)
 
 ## Partners
 
-### Staking pools
+### VenomPools
 
-Join the Venom Maintainers community by staking $VENOM to validator nodes, contributing to the security and decentralization of the Venom network.
+Use your VENOM on validator nodes using Venom Pools
 
-[venompools.com](https://venompools.com)
+[testnet.venompools.com](https://testnet.venompools.com/)
 
-### Web3 world
+### Web3.World
 
-Web3.World is a decentralized exchange platform that provides DeFi services.
+Intuitively swap assets, provide liquidity, and farm available assets
 
-[web3.world](https://web3.world/)
+[testnet.web3.world](https://testnet.web3.world/)
+
+### Oasis.gallery
+
+An NFT marketplace on Venom blockchain for unique digital assets trading
+
+[testnet.oasis.gallery](https://testnet.oasis.gallery/)
