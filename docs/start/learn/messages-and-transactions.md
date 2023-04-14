@@ -4,6 +4,12 @@ sidebar_label: Messages and Transactions
 slug: /learn/messages-and-transactions
 ---
 
+import ImageSwitcher from './../../../src/components/ImageSwitcher';
+import messages_light from './assets/messages-and-transactions/message_flow_light.png';
+import messages_dark from './assets/messages-and-transactions/message_flow_dark.png';
+import transaction_flow_light from './assets/messages-and-transactions/transaction_flow_light.png';
+import transaction_flow_dark from './assets/messages-and-transactions/transaction_flow_dark.png';
+
 # Messages and Transactions
 
 All interactions with the Venom network are carried out through messages.
@@ -22,7 +28,7 @@ The Venom network has three different types of messages:
 
 **Inbound external message:** a message sent from outside the blockchain into the blockchain. These messages don't have a 'from' address and can be sent by regular users, external services and any participants outside the blockchain, known as "messages from nowhere". Inbound external messages initiate changes to the state of the blockchain.
 
-The external message can not be the value-bearing message from one participant to another, it only can declare intent to transfer value to another account.
+The external message can not be the value-bearing message from one participant to another. It only can declare intent to transfer value to another account.
 
 **Internal message:** a message sent from one contract to another. Like an inbound external message, it updates the state of the Venom network.
 
@@ -30,7 +36,11 @@ Only an Internal message can be a value-bearing message.
 
 **Outbound external message:** Known as a "_message to nowhere_" or "_event_". This is a message that can be emitted by a smart contract. Off-chain participants can subscribe to events within the Venom network and receive them.
 
-![Messages](<../../../static/img/messages.png>)
+<ImageSwitcher
+    lightImageSrc={messages_light}
+    darkImageSrc={messages_dark}
+    alt="Message flow"
+/>
 
 ### Message structure
 
@@ -44,7 +54,11 @@ The message body comprises the payload of virtual machine instructions that are 
 
 A transaction is a direct result of the processing of exactly one inbound message by a recipient account code. When an inbound message is received by an account, it leads to the computation of the account's new state and the possibility of generating one or more outbound messages with the account serving as the source. The inbound message and the previous state of the account serve as inputs for the transaction, while the generated outbound messages and the next state of the account serve as outputs. This relation can be represented as a Directed Acyclic Graph (DAG).
 
-![Messages](<../../../static/img/transactions.png>)
+<ImageSwitcher
+    lightImageSrc={transaction_flow_light}
+    darkImageSrc={transaction_flow_dark}
+    alt="Transaction flow"
+/>
 
 ### Transaction phases
 
