@@ -1,0 +1,17 @@
+.social_links {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social_links__item {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social_links p {
+  padding: 0;
+  margin: 0;
+}

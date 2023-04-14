@@ -4,14 +4,14 @@ sidebar_label: Community
 slug: /general/community
 ---
 
+import SocialLinks from './../../../src/components/SocialLinks'
+
 # Community
 
-The Venom community is highly collaborative, with members supporting one another to advance the ecosystem through hosting events, contributing to network development, and ensuring the platform's security and governance.
+The Venom blockchain is a community-driven network that empowers participants to shape the ecosystem's future. The network's success depends on the engagement and contributions of its users, validators, and developers. Members work together to advance the ecosystem by hosting events, contributing to network development, and ensuring the platform's security and governance.
 
-The Venom community is constantly growing. There are a variety of essential links that help you stay connected to the platform and its members.
+We aim to create a decentralized community that can influence the future of blockchain technology. We believe every community member has something valuable to contribute to developing this technology. Our goal is to create a platform where everyone can share their ideas, opinions, and knowledge and learn something new.
 
-### Links
+We invite you to join us and subscribe to our official channels and social media to stay up-to-date with the latest news.
 
-[https://github.com/venom-blockchain](https://github.com/venom-blockchain)
-
-[![Discord](../../../static/img/discord.png)](https://discord.gg/E5JdCbFFW7)     [![Twitter](../../../static/img/tw.png)](https://twitter.com/venomfoundation)     [![Medium](../../../static/img/md.png)](https://medium.com/@venom.foundation)
+<SocialLinks />

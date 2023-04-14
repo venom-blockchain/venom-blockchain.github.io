@@ -230,3 +230,7 @@ html.docs-doc-id-start\/learn\/glossary .markdown h3 {
   border-top: 1px solid var(--ifm-toc-border-color);
   padding-top: 30px;
 }
+
+.community {
+  margin-bottom: 60px;
+}

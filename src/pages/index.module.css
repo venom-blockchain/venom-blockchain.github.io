@@ -54,24 +54,3 @@ h2.main__title{
   align-items: center;
   justify-content: center;
 }
-
-.social_links {
-  padding: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.social_links__item {
-  display: flex;
-  width: 400px;
-  align-items: center;
-}
-
-.social_links p {
-  padding: 0;
-  margin: 0;
-}
-
-.social_links a {
-  margin-right: 20px;
-}

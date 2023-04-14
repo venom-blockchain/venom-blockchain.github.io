@@ -8,6 +8,7 @@ import twitter from './assets/tw.png';
 import medium from './assets/md.png';
 
 import styles from './index.module.css';
+import SocialLinks from '../components/SocialLinks';
 
 function HomepageHeader() {
   return (
@@ -67,19 +68,25 @@ export default function Home(): JSX.Element {
                   <a href="/learn/glossary">Glossary</a>
                 </li>
                 <li>
+                  <a href="/learn/tokens-and-assets">Tokens and Assets</a>
+                </li>
+                <li>
                   <a href="/learn/architecture">Architecture</a>
+                </li>
+                <li>
+                  <a href="/learn/consensus">Consensus</a>
                 </li>
                 <li>
                   <a href="/learn/tvm">Threaded Virtual Machine</a>
                 </li>
                 <li>
-                  <a href="/learn/tokens-and-assets">Tokens and Assets</a>
+                  <a href="/learn/accounts">Accounts</a>
                 </li>
                 <li>
                   <a href="/learn/messages-and-transactions">Messages and Transactions</a>
                 </li>
                 <li>
-                  <a href="/learn/accounts">Accounts</a>
+                  <a href="/learn/transaction-fees">Gas and Fees</a>
                 </li>
               </ul>
             </div>
@@ -89,7 +96,10 @@ export default function Home(): JSX.Element {
               </h3>
               <ul>
                 <li>
-                  <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up The Venom Smart Contract Development Environment</a>
+                  <a href="/build/quick-start-on-testnet">Quick start developing on testnet</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up Smart Contract Development Environment</a>
                 </li>
                 <li>
                   <a href="/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network">How to create your own fungible TIP-3 token</a>
@@ -99,6 +109,9 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <a href="/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network">How to create your own non-fungible TIP-4 token</a>
+                </li>
+                <li>
+                  <a href="/build/tools-and-resources">Tools & Resources</a>
                 </li>
               </ul>
             </div>
@@ -115,32 +128,10 @@ export default function Home(): JSX.Element {
           </div>
         </div>
 
-        <div className={clsx('main__container', 'container')}>
+        <div className={clsx('main__container', 'container', 'community')}>
           <h2>Join our community</h2>
-          <div className={clsx(styles.social_links)}>
-            <div className={clsx(styles.social_links__item)}>
-              <img src={discord.src} alt="Discord" style = {{ width : '44px', marginRight : '15px' }} />
-              <div>
-                <p>Discord</p>
-                <a href="https://discord.venom.foundation" target="_blank">Venom Foundation</a>
-              </div>
-            </div>
-            <div className={clsx(styles.social_links__item)}>
-              <img src={twitter.src} alt="Twitter" style = {{ width : '44px', marginRight : '15px' }} />
-              <div>
-                <p>Twitter</p>
-                <a href="https://twitter.com/venomfoundation" target="_blank">@venomfoundation</a>
-              </div>
-            </div>
-            
-            <div className={clsx(styles.social_links__item)}>
-              <img src={medium.src} alt="Medium" style = {{ width : '48px', marginRight : '15px' }} />
-              <div>
-                <p>Medium</p>
-                <a href="https://medium.com/@venom.foundation" target="_blank">@venom.foundation</a>
-              </div>
-            </div>
-          </div>
+          
+          <SocialLinks />
         </div>
       </main>
     </Layout>

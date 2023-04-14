@@ -80,7 +80,7 @@ Setting up Custodians requires you to have VENOM tokens on the wallet.
 It is not necessary for every custodian to sign off on a transaction as the confirmation settings can be customized. For example, a transaction can be executed if only 2 out of 3 custodians have signed it.
 :::
 
-13. Each owner of the addresses which will serve as custodians for the multisignature account, after transferring a minimum of 0.1 $VENOM to the multisignature account, should copy their public key from the Preferences window and send it to the manager of the multisignature account, who will then enter it in the setup window.
+13. Each owner of the addresses which will serve as custodians for the multisignature account, after transferring a minimum of 0.1 VENOM to the multisignature account, should copy their public key from the Preferences window and send it to the manager of the multisignature account, who will then enter it in the setup window.
 14. The manager of the multisignature account has entered the number of custodians, their public keys, and the public address of each custodian.
 
 <Image img={img07} alt="Click send button"
