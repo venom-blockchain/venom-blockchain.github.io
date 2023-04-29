@@ -2,6 +2,10 @@
 
 ## Precautions
 
+:::caution
+The Venom network is running in the testnet and cannot be used to run a validator now. Please note that any results obtained using this tutorial must be more accurate or reliable. Please wait for official announcements.
+:::
+
 :::info
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
