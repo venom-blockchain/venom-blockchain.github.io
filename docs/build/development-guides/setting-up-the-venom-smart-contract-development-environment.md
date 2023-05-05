@@ -134,7 +134,7 @@ Check out GraphQL playground at [http://localhost/graphql](http://localhost/grap
 That's all! You can run tests and start to develop your amazing projects
 
 ```shell
-locklift test --network local --config ./locklift.config.js
+locklift test --network local --config ./locklift.config.ts
 ```
 
 The next step in your learning is [here](how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md)
