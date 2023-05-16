@@ -27,7 +27,7 @@ No changes REQUIRED in existing standard TIP-3.2.
 
 ### [Token wallet](https://docs.venom.foundation/standards/TIP/TIP-3/1#token-wallet) contract
 
-##### increaseAllowance
+#### increaseAllowance
 
 Allows the spender contract to withdraw from your wallet multiple times, up to the `amount`. If this function is called again for the same `spender` it increases the current allowance with the `amount`.
 
@@ -43,7 +43,7 @@ function increaseAllowance(
 
 **Note:** Multi-allowance MUST be possible by executing increaseAllowance for each spender address.
 
-##### decreaseAllowance
+#### decreaseAllowance
 
 Decreases the current allowance with the `amount`. If the current `spender` allowance does not exist, do nothing. 
 
@@ -60,7 +60,7 @@ function decreaseAllowance(
 **Note**: 
 1. If the `amount` is `>=` that existing allowance then deletes the current allowance.
 
-##### allowance
+#### allowance
 
 Returns the amount which spender is still allowed to withdraw from the wallet.
 
@@ -68,7 +68,7 @@ Returns the amount which spender is still allowed to withdraw from the wallet.
 function allowance(address spender) external view returns (uint128 amount);
 ```
 
-##### transferFrom
+#### transferFrom
 
 The `transferFrom` method is used for a withdrawal workflow, allowing `spender` contracts to transfer tokens on your behalf to a token wallet, owned by the `spender`. Token wallet address is derived automatically.
 
@@ -88,7 +88,7 @@ function transferFrom(
 
 ## Callbacks
 
-##### Incoming approval callback
+#### Incoming approval callback
 
 Notifies spender contract that an allowance was changed.
 
@@ -103,9 +103,9 @@ function onAcceptTokensAllowance(
 ) external;
 ```
 
-#### Extended interface
+## Extended interface
 
-##### disapprove
+#### disapprove
 
 Cancel current spender allowance. Can be used as an alternative to `decreaseAllowance` to cancel allowance without need to know the amount of the current allowance. 
 
@@ -113,7 +113,7 @@ Cancel current spender allowance. Can be used as an alternative to `decreaseAllo
 function disapprove(address spender) external;
 ```
 
-##### increaseAllowanceRenewable
+#### increaseAllowanceRenewable
 
 An auto-renewable allowance enables many traditional financial concepts like credit and debit limits. A wallet owner can specify a spending limit, and limit the amount that can be charged from the wallet based on an allowance that recovers over time at a rate of recoveryRate up to a limit of amount. recoveryRate defines the amount of tokens per second that the allowance regains towards the initial maximum approval amount. If this function is called again for the same spender it increases the current allowance with the amount or current recovery rate according to the new recoveryRate.
 
@@ -132,7 +132,7 @@ function increaseAllowanceRenewable(
 1. Renewable allowances can be implemented with discrete resets per time cycle. However, a continuous `recoveryRate` allows for more flexible use cases not bound by reset cycles and can be implemented with simpler logic.
 2. Current recovered allowance (from the last execution of `tranferFrom` function) MUST be recalculated according new `amount` and/or `recoveryRate`.
 
-##### decreaseAllowanceRenewable
+#### decreaseAllowanceRenewable
 
 Decreases the current allowance with the `amount` and/or current recovery rate with `recoveryRate`. If the current `spender` allowance does not exist, do nothing. 
 
@@ -151,7 +151,7 @@ function decreaseAllowanceRenewable(
 1. If the `amount` is `>=`that existing allowance then deletes the current allowance.
 2. Current recovered allowance (from the last execution of `tranferFrom` function) MUST be recalculated according new `amount` and/or `recoveryRate`.
 
-##### allowanceRenewable
+#### allowanceRenewable
 
 Returns approved max amount and recovery rate of allowance granted to spender. The amount returned by allowance method MUST be as of `block.timestamp`, if a renewable allowance for `spender` is present.
 
@@ -159,13 +159,13 @@ Returns approved max amount and recovery rate of allowance granted to spender. T
 function allowanceRenewable() external view returns (uint128 amount, uint128 recoveryRate);
 ```
 
-##### increaseAllowance, decreaseAllowance
+#### increaseAllowance, decreaseAllowance
 
 Base methods `increaseAllowance` and `decreaseAllowance` MUST set recoveryRate to `0`.
 
 #### Interface detection
 
-##### Allowance
+#### Allowance
 
 ```
 interface IAllowanceTokenWallet {
@@ -199,7 +199,7 @@ interface IAllowanceTokenWallet {
 
 The token wallet interface ID is `0x6AD37E62`
 
-##### Renewable Allowance
+#### Renewable Allowance
 
 ```
 interface IAllowanceRenewableTokenWallet {
