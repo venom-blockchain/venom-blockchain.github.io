@@ -86,7 +86,7 @@ function transferFrom(
 ) external;
 ```
 
-## Callbacks
+### Callbacks
 
 #### Incoming approval callback
 
@@ -103,7 +103,7 @@ function onAcceptTokensAllowance(
 ) external;
 ```
 
-## Extended interface
+### Extended interface
 
 #### disapprove
 
@@ -163,7 +163,7 @@ function allowanceRenewable() external view returns (uint128 amount, uint128 rec
 
 Base methods `increaseAllowance` and `decreaseAllowance` MUST set recoveryRate to `0`.
 
-#### Interface detection
+### Interface detection
 
 #### Allowance
 
