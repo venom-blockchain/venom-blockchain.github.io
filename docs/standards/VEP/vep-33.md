@@ -159,6 +159,7 @@ An auto-renewable allowance enables many traditional financial concepts like cre
 /// @param amount tokens amount
 /// @param recoveryRate recovery rate
 /// @param remaningGasTo remaining gas address
+/// @param notify notify waller owner
 /// @param payload transaction payload
 
 function increaseAllowanceRenewable(
@@ -230,6 +231,7 @@ interface IAllowanceTokenWallet {
       /// @param spender spender address
       /// @param amount tokens amount
       /// @param remaningGasTo remaining gas address
+      /// @param notify notify waller owner
       /// @param payload transaction payload
       function increaseAllowance(
 		address spender,
@@ -284,6 +286,7 @@ interface IAllowanceRenewableTokenWallet {
       /// @param spender spender address
       /// @param amount tokens amount
       /// @param remaningGasTo remaining gas address
+      /// @param notify notify waller owner
       /// @param payload transaction payload
       function increaseAllowanceRenewable(
 		address spender,
