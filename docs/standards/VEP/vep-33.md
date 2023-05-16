@@ -32,11 +32,11 @@ No changes REQUIRED in existing standard TIP-3.2.
 Allows the spender contract to withdraw from your wallet multiple times, up to the `amount`. If this function is called again for the same `spender` it increases the current allowance with the `amount`.
 
 ```
-/// @notice This function increasing user allowance
+/// @notice This function increasing spender allowance
 /// @param spender spender address
 /// @param amount allowance amount
 /// @param remaningGasTo remaining gas address
-/// @param notify notify user
+/// @param notify notify waller owner
 /// @param payload transaction payload
 
 function increaseAllowance(
@@ -59,7 +59,7 @@ Decreases the current allowance with the `amount`. If the current `spender` allo
 /// @param spender spender address
 /// @param amount allowance amount
 /// @param remaningGasTo remaining gas address
-/// @param notify notify user
+/// @param notify notify wallet owner
 /// @param payload transaction payload
 
 function decreaseAllowance(
@@ -99,7 +99,7 @@ If `deployWalletValue` is greater than `0`, token wallet MUST deploy token walle
 /// @notice This function is transfered tokens to a spender wallet
 /// @param amount tokens amount
 /// @param deployWalletValue value to deploy the recipient's wallet if needed
-/// @param notify notify user
+/// @param notify notify wallet owner
 /// @param payload transaction payload
 
 function transferFrom(
