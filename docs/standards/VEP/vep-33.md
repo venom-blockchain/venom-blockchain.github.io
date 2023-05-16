@@ -177,17 +177,17 @@ interface IAllowanceTokenWallet {
 	 	TvmCell payload
       ) external;
 
-     function decreaseAllowance(
+      function decreaseAllowance(
 		address spender,
 		uint128 amount, 		
 		address remaningGasTo,
 		bool notify,
 		TvmCell payload
-     ) external;
+      ) external;
 
-	function allowance(address sender) external returns (uint128 amount);
+      function allowance(address sender) external returns (uint128 amount);
 
-	function transferFrom(
+      function transferFrom(
 		uint128 amount,
 		uint128 deployWalletValue,
 		address remainingGasTo,
@@ -197,7 +197,7 @@ interface IAllowanceTokenWallet {
 }
 ```
 
-The token wallet interface ID is `0x6AD37E62`
+The token wallet interface ID is `0x2FC61B07`
 
 #### Renewable Allowance
 
@@ -222,11 +222,19 @@ interface IAllowanceRenewableTokenWallet {
 		TvmCell payload
       ) external;
 
-	function allowanceRenewable(address sender) external returns (uint128 amount, uint128 recoveryRate);
+      function allowanceRenewable(address sender) external returns (uint128 amount, uint128 recoveryRate);
+	
+      function transferFrom(
+		uint128 amount,
+		uint128 deployWalletValue,
+		address remainingGasTo,
+		bool notify,
+		TvmCell payload
+      ) external;
 }
 ```
 
-The token wallet interface ID is `0x44380A15`
+The token wallet interface ID is `0x7EB81C0D`
 
 ## Rationale
 
