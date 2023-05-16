@@ -50,7 +50,7 @@ Save testnet's RPC URLs. You will need them:
 
 https://jrpc-testnet.venom.foundation/rpc
 
-https://gql-testnet.venom.foundation
+https://gql-testnet.venom.foundation/graphql
 
 :::
 
