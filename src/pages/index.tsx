@@ -102,6 +102,9 @@ export default function Home(): JSX.Element {
                   <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up Smart Contract Development Environment</a>
                 </li>
                 <li>
+                  <a href="/build/development-guides/backend-integration">Add Venom to your backend</a>
+                </li>
+                <li>
                   <a href="/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network">How to create your own fungible TIP-3 token</a>
                 </li>
                 <li>

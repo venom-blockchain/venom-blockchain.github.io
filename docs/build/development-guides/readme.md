@@ -14,6 +14,10 @@ Welcome to the Development Guides section. If you would like to learn developmen
 
 How to set up the development environment with the necessary tools to improve your development experience.
 
+### [Add Venom to your backend](backend-integration.md)
+
+How to add Venom blockchain and Venom token support to the backend of your project.
+
 ### [How to create your own fungible TIP-3 token](how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md)
 
 Learn you possibilities of the Venom blockchain for [fungible tokens implementation](how-to-create-your-own-fungible-tip-3-token/quick-start-developing-with-tip-3.md), create your own [tokensale contract](how-to-create-your-own-fungible-tip-3-token/venom-in-action/simple-tokensale.md), and improve your skills in Smart Contract development with the [Ways of code enhancing](how-to-create-your-own-fungible-tip-3-token/venom-in-action/ways-of-code-enhancing.md) article.
