@@ -228,6 +228,16 @@ interface IAllowanceRenewableTokenWallet {
 
 The token wallet interface ID is `0x44380A15`
 
+## Rationale
+
+### Auto-renewable allowance
+In the most EVM networks ERC-20 tokens support allowances, with which token owners can allow a spender to spend a certain amount of tokens on their behalf. However, this is not ideal in circumstances involving recurring payments (e.g. subscriptions, regular payouts, instalments, costs averaging etc).
+Many existing DApps in EVM networks circumvent this limitation by requesting that users grant a large or unlimited allowance. This presents a security risk as malicious DApps can drain users’ accounts up to the allowance granted, and users may not be aware of the implications of granting allowances.
+An auto-renewable allowance is used to mitigate such risks by providing possibility to limit the amount charged from the token wallet based on an allowance that recovers over time.
+
+### increaseAllowance/decreaseAllowance
+In ERC-20 token standard allowance is implemented with help of `approve` method but changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. To mitigate such risks we excluded this function from standard and proposed to use `increaseAllowance` and `decreaseAllowance` instead. 
+
 ## Backwards compatibility
 
 This standard is compatible with [TIP-3.1], [TIP-3.2] standards.
