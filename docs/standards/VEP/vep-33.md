@@ -21,11 +21,11 @@ The TIP-3.2 standard describes how to create a token wallet, how token wallets a
 ## Specification
 The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
 
-### [Token root](https://docs.venom.foundation/standards/TIP/TIP-3/1#token-root) contract
+### [Token root contract](https://docs.venom.foundation/standards/TIP/TIP-3/1#token-root) 
 
 No changes REQUIRED in existing standard TIP-3.2.
 
-### [Token wallet](https://docs.venom.foundation/standards/TIP/TIP-3/1#token-wallet) contract
+### [Token wallet contract](https://docs.venom.foundation/standards/TIP/TIP-3/1#token-wallet)
 
 #### increaseAllowance
 
