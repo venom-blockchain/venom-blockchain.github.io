@@ -32,6 +32,13 @@ No changes REQUIRED in existing standard TIP-3.2.
 Allows the spender contract to withdraw from your wallet multiple times, up to the `amount`. If this function is called again for the same `spender` it increases the current allowance with the `amount`.
 
 ```
+/// @notice This function increasing user allowance
+/// @param spender spender address
+/// @param amount allowance amount
+/// @param remaningGasTo remaining gas address
+/// @param notify notify user
+/// @param payload transaction payload
+
 function increaseAllowance(
 		address spender,
 		uint128 amount, 		
@@ -48,6 +55,13 @@ function increaseAllowance(
 Decreases the current allowance with the `amount`. If the current `spender` allowance does not exist, do nothing. 
 
 ```
+/// @notice This function is decreasing user allowance
+/// @param spender spender address
+/// @param amount allowance amount
+/// @param remaningGasTo remaining gas address
+/// @param notify notify user
+/// @param payload transaction payload
+
 function decreaseAllowance(
 		address spender,
 		uint128 amount, 		
@@ -66,7 +80,7 @@ Returns the amount which spender is still allowed to withdraw from the wallet.
 
 ```
 function allowance(address spender) external view returns (uint128 amount);
-```
+``` 
 
 #### transferFrom
 
@@ -77,6 +91,13 @@ The function MUST throw an error unless the message sender has permission to wit
 If `deployWalletValue` is greater than `0`, token wallet MUST deploy token wallet for recipient.
 
 ```
+
+/// @notice This function is transfered tokens to a spender wallet
+/// @param amount tokens amount
+/// @param deployWalletValue value to deploy the recipient's wallet if needed
+/// @param notify notify user
+/// @param payload transaction payload
+
 function transferFrom(
 		uint128 amount,
 		uint128 deployWalletValue,
@@ -93,6 +114,13 @@ function transferFrom(
 Notifies spender contract that an allowance was changed.
 
 ```
+/// @notice This function notify spender contract about allowance changes
+/// @param tokenRoot token root address
+/// @param recoveryRate recovery rate
+/// @param sender sender address
+/// @param remaningGasTo remaining gas address
+/// @param payload transaction payload
+
 function onAcceptTokensAllowance(
           address tokenRoot,
           uint128 amount,
@@ -118,6 +146,14 @@ function disapprove(address spender) external;
 An auto-renewable allowance enables many traditional financial concepts like credit and debit limits. A wallet owner can specify a spending limit, and limit the amount that can be charged from the wallet based on an allowance that recovers over time at a rate of recoveryRate up to a limit of amount. recoveryRate defines the amount of tokens per second that the allowance regains towards the initial maximum approval amount. If this function is called again for the same spender it increases the current allowance with the amount or current recovery rate according to the new recoveryRate.
 
 ```
+
+/// @notice This function increasing user allowance
+/// @param spender spender address
+/// @param amount tokens amount
+/// @param recoveryRate recovery rate
+/// @param remaningGasTo remaining gas address
+/// @param payload transaction payload
+
 function increaseAllowanceRenewable(
 		address spender,
 		uint128 amount,
@@ -137,6 +173,14 @@ function increaseAllowanceRenewable(
 Decreases the current allowance with the `amount` and/or current recovery rate with `recoveryRate`. If the current `spender` allowance does not exist, do nothing. 
 
 ```
+/// @notice This function is decreasing user allowance
+/// @param spender spender address
+/// @param amount allowance amount
+/// @param recoveryRate recovery rate
+/// @param remaningGasTo remaining gas address
+/// @param notify notify user
+/// @param payload transaction payload
+
 function decreaseAllowanceRenewable(
 		address spender,
 		uint128 amount,
@@ -169,7 +213,14 @@ Base methods `increaseAllowance` and `decreaseAllowance` MUST set recoveryRate t
 
 ```
 interface IAllowanceTokenWallet {
-      function increaseAllowance(
+
+      /// @notice This function increasing user allowance
+	  /// @param spender spender address
+      /// @param amount tokens amount
+      /// @param remaningGasTo remaining gas address
+      /// @param payload transaction payload
+	  
+	  function increaseAllowance(
 		address spender,
 		uint128 amount, 		
 		address remaningGasTo,
@@ -177,7 +228,15 @@ interface IAllowanceTokenWallet {
 	 	TvmCell payload
       ) external;
 
-      function decreaseAllowance(
+	  /// @notice This function is decreasing user allowance
+	  /// @param spender spender address
+	  /// @param amount allowance amount
+	  /// @param recoveryRate recovery rate
+	  /// @param remaningGasTo remaining gas address
+	  /// @param notify notify user
+	  /// @param payload transaction payload
+      
+	  function decreaseAllowance(
 		address spender,
 		uint128 amount, 		
 		address remaningGasTo,
@@ -186,6 +245,12 @@ interface IAllowanceTokenWallet {
       ) external;
 
       function allowance(address sender) external returns (uint128 amount);
+
+      /// @notice This function is transfered tokens to a spender wallet
+      /// @param amount tokens amount
+      /// @param deployWalletValue value to deploy the recipient's wallet if needed
+      /// @param notify notify user
+      /// @param payload transaction payload
 
       function transferFrom(
 		uint128 amount,
@@ -203,6 +268,12 @@ The token wallet interface ID is `0x2FC61B07`
 
 ```
 interface IAllowanceRenewableTokenWallet {
+    
+      /// @notice This function increasing user allowance
+	  /// @param spender spender address
+      /// @param amount tokens amount
+      /// @param remaningGasTo remaining gas address
+      /// @param payload transaction payload
 
       function increaseAllowanceRenewable(
 		address spender,
@@ -212,6 +283,14 @@ interface IAllowanceRenewableTokenWallet {
 		bool notify,
 		TvmCell payload
       ) external;
+
+	  /// @notice This function is decreasing user allowance
+	  /// @param spender spender address
+	  /// @param amount allowance amount
+	  /// @param recoveryRate recovery rate
+	  /// @param remaningGasTo remaining gas address
+	  /// @param notify notify user
+	  /// @param payload transaction payload
 
       function decreaseAllowanceRenewable(
 		address spender,
@@ -223,7 +302,13 @@ interface IAllowanceRenewableTokenWallet {
       ) external;
 
       function allowanceRenewable(address sender) external returns (uint128 amount, uint128 recoveryRate);
-	
+
+      /// @notice This function is transfered tokens to a spender wallet
+      /// @param amount tokens amount
+      /// @param deployWalletValue value to deploy the recipient's wallet if needed
+      /// @param notify notify user
+      /// @param payload transaction payload
+
       function transferFrom(
 		uint128 amount,
 		uint128 deployWalletValue,
