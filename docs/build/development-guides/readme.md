@@ -14,7 +14,7 @@ Welcome to the Development Guides section. If you would like to learn developmen
 
 How to set up the development environment with the necessary tools to improve your development experience.
 
-### [Add Venom to your backend](backend-integration.md)
+### [Adding Venom to your backend](backend-integration.md)
 
 How to add Venom blockchain and Venom token support to the backend of your project.
 
