@@ -11,7 +11,10 @@ This document describes the various ways to accomplish the most important tasks 
 
 ## Setting up Blockchain Access
 
-Currently, you cannot run your own node on Venom.
+:::caution
+The Venom network is running in testnet and cannot be used to run your own node now. Please note that any results obtained using this tutorial might be more accurate or reliable in future. You can use only our public testnet graphql API. Please wait for official announcements.
+:::
+
 To access the Venom Blockchain in your app, use the official GraphQL Venom endpoint.
 
 Everdev tool and SDK used in the examples below can connect to it, as if it were a regular node. It has the same API as the supernode and [local node for testing](https://github.com/tonlabs/evernode-se), and provides all needed capabilities.
