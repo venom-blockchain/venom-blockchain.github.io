@@ -102,9 +102,6 @@ export default function Home(): JSX.Element {
                   <a href="/build/development-guides/setting-up-the-venom-smart-contract-development-environment">Setting Up Smart Contract Development Environment</a>
                 </li>
                 <li>
-                  <a href="/build/development-guides/backend-integration">Adding Venom to your backend</a>
-                </li>
-                <li>
                   <a href="/build/development-guides/how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network">How to create your own fungible TIP-3 token</a>
                 </li>
                 <li>
@@ -112,6 +109,9 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <a href="/build/development-guides/how-to-create-your-own-non-fungible-tip-4-token/non-fungible-tokens-in-venom-network">How to create your own non-fungible TIP-4 token</a>
+                </li>
+                <li>
+                  <a href="/build/development-guides/using-ever-sdk-and-devtools-to-work-with-venom">Using Ever SDK and developer tools to work with Venom Blockchain</a>
                 </li>
                 <li>
                   <a href="/build/tools-and-resources">Tools & Resources</a>
