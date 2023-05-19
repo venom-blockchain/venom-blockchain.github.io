@@ -12,11 +12,23 @@ requires: TIP-3, TIP-3.1, TIP-3.2, TIP-6
 ```
 
 ## Abstract
-The following standard extends TIP-3.2 with ‘allowance’ functionality which is commonly used in traditional token standards, such as ERC-20.
+VEP-33 describes an Allowance Token Interface by which token owners can allow a spender contract to spend a certain amount of tokens on their behalf to add support of pull payments (e.g. subscriptions, regular payouts, instalments, costs averaging etc).
 
 ## Motivation
 
-The TIP-3.2 standard describes how to create a token wallet, how token wallets are owned, how to transfer, mint or burn tokens, how tokens recipients can handle the incoming transfer, etc. Otherwise it doesn’t describe an allowance interface by which token owners can allow a spender contract to spend a certain amount of tokens on their behalf to add support of pull payments (e.g. subscriptions, regular payouts, instalments, costs averaging etc).
+The present cryptocurrency payment infrastructure primarily depends on push transactions. In such a system, the payer initiates the payment and sends ('pushes') the funds to the payee's wallet address. While this system has proven effective for cryptocurrencies up to now, it also poses several challenges that impede mainstream adoption and restrict the versatility of cryptocurrencies across various commercial contexts. This proposal aspires to introduce the Allowance Token Interface as a solution to these challenges.
+
+Subscription-based business models have witnessed exponential growth across numerous industries, such as media streaming, Software as a Service (SaaS), gaming, and more. Users are usually charged on a regular basis - monthly, quarterly, or annually. The existing push payment systems in the crypto landscape make recurring payments a cumbersome and complex process. This is because a new transaction needs to be manually initiated every time a payment is due, significantly reducing the feasibility of subscription-based models.
+
+Consider the experience of a user named Alice, who maintains several subscriptions for streaming services, software, and online magazines, all payable in cryptocurrency. With the current push system, Alice would need to remember each due date and manually process each payment. The inconvenience and potential for missed payments could deter Alice and others like her from using cryptocurrencies for these transactions.
+
+By incorporating this interface into the token, TIP3 token issuers can significantly boost user adoption and expand the practical applications for tokens in real-world scenarios, such as:
+* Subscription Services
+* Investments and Savings
+* Rent
+* Membership Fees
+* Donations
+* Online Learning and E-Courses
 
 ## Specification
 The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
