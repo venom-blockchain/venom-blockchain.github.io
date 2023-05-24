@@ -22,6 +22,10 @@ Learn you possibilities of the Venom blockchain for [fungible tokens implementat
 
 Learn [how to create the NFT collection](how-to-create-your-own-non-fungible-tip-4-token/quick-start-developing-with-tip-4.md) with [Simple Auction contracts](how-to-create-your-own-non-fungible-tip-4-token/venom-in-action/simple-nft-auction.md).
 
+### [Using Ever SDK and developer tools to work with Venom](using-ever-sdk-and-devtools-to-work-with-venom/readme.md)
+
+Learn how to work with wallets and transactions, and to add Venom blockchain and Venom token support to the backend of your project with the help of Ever SDK and Everdev CLI tool.
+
 ### [Tools & Resources](../tools-and-resources.md)
 
 Check out the list of helpful **tools** to start on the Venom blockchain
