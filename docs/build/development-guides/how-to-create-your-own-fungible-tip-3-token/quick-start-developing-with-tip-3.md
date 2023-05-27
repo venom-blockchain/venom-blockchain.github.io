@@ -37,18 +37,20 @@ npx locklift init --path my-first-token
 
 ### Install dependencies
 
-Add TIP-3 implementation repository as a `devDependencies` in the corresponding section of `package.json` file
+Add TIP-3 implementation repository as a `devDependencies` in the corresponding section of the `package.json` file
 
 ```json title="package.json" showLineNumbers
 {
   "devDependencies": {
-    "tip3": "git://github.com/broxus/tip3#v5",
+    "tip3": "https://github.com/broxus/tip3#v5",
     ...
   },
 }
 ```
 
-Specify installed contracts to the external contracts section of locklift config, by providing a path to contracts artifacts (.abi.json files, .tvc files, etc., most commonly placed in a build folder of smart contracts projects) and contract names array.
+Then run `npm install` to fetch dependencies needed.
+
+Specify installed contracts to the `compiler.externalContracts` section of `locklift.config.ts`, by providing a path to contracts artifacts (`.abi.json`, `.tvc` files, etc., most commonly placed in a `build` folder of smart contracts projects) and contract names array.
 
 ```json title="locklift.config.ts" showLineNumbers
 compiler: {
@@ -84,7 +86,7 @@ ls ./build
 > ...
 ```
 
-Let's move to deploy action. Firstly, we make a new deploy script in `scripts` directory for the TokenRoot contract.&#x20;
+Let's move to deploy. Firstly, we make a new deploy script in `scripts` directory for the `TokenRoot` contract.&#x20;
 
 ```typescript title="01-deploy-token-root.ts" showLineNumbers
 import { Address, getRandomNonce, toNano, zeroAddress } from "locklift"
@@ -114,7 +116,7 @@ async function main() {
                   
   
   /* 
-    Returns compilation artifacts based on the .sol file name
+    Returns compilation artifacts based on the .tsol file name
       or name from value config.externalContracts[pathToLib].
   */
   const TokenWallet = locklift.factory.getContractArtifacts("TokenWallet")
@@ -161,7 +163,7 @@ main()
 
 ```
 
-Finally, we can deploy a new token to `local` network. For this, make sure the local node is running, if not follow the next command
+Finally, we can deploy a new token to `local` network. For this, make sure the local node is running. If not, run the following command
 
 ```shell
 docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node
