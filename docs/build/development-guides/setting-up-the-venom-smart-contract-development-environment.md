@@ -29,29 +29,26 @@ locklift init --path sample-project
 This command initializes a new Locklift project, filled with samples:
 
 ```txt
-├── locklift.config.js
+├── locklift.config.ts
 ├── tsconfig.json
 ├── package.json
 ├── package-lock.json
 │
 ├── contracts
-│   └── Sample.sol
+│   └── Sample.tsol
 ├── scripts 
-│   └── 1-deploy-sample.js
-└── giverSettings
-│    └── index.ts
+│   └── 1-deploy-sample.ts
 └── test
-    └── sample-test.js
+    └── sample-test.ts
 ```
 
 ## Configuration
 
-The configuration file is called `locklift.config.js`. Here's the basic layout for Venom blockchain networks:
+The configuration file is called `locklift.config.ts`. Here's the basic layout for Venom blockchain networks:
 
 ```typescript
 import { LockliftConfig } from "locklift";
 import { FactorySource } from "./build/factorySource";
-import { SimpleGiver, GiverWallet } from "./giverSettings";
 
 declare global {
   const locklift: import("locklift").Locklift<FactorySource>;
@@ -80,8 +77,6 @@ const config: LockliftConfig = {
       },
       // This giver is default local-node giverV2
       giver: {
-        // Check if you need provide custom giver
-        giverFactory: (provider, keyPair, address) => new SimpleGiver(provider, keyPair, address),
         address: "0:ece57bcc6c530283becbbd8a3b24d3c5987cdddc3c8b7b33be6e4a6312490415",
         key: "172af540e43a524763dd53b26a066d472a97c4de37d5498170564510608250c3",
       },
@@ -124,7 +119,7 @@ If Locklift is like a Hardhat development environment tool, then local-node is G
 To run local-node you need to follow a command
 
 ```shell
- docker run -d -e USER_AGREEMENT=yes --rm --name local-node -p80:80 tonlabs/local-node:0.29.1
+ docker run -d -e USER_AGREEMENT=yes --rm --name local-node -p80:80 tonlabs/local-node
 ```
 
 The container exposes the specified 80 port with Nginx which proxies requests to /graphql to GraphQL API.
@@ -134,7 +129,7 @@ Check out GraphQL playground at [http://localhost/graphql](http://localhost/grap
 That's all! You can run tests and start to develop your amazing projects
 
 ```shell
-locklift test --network local --config ./locklift.config.js
+locklift test --network local --config ./locklift.config.ts
 ```
 
 The next step in your learning is [here](how-to-create-your-own-fungible-tip-3-token/fungible-tokens-in-venom-network.md)
