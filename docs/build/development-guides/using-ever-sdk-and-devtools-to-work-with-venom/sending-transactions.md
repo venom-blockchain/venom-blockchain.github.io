@@ -271,7 +271,9 @@ This example shows how to generate a transaction from a Multisig wallet, using i
 
 In this example tokens are withdrawn from the user account to the account specified in `dest`. In a proper implementation, the desired destination address should be used instead.
 
-```javascript
+```typescript
+    // 2.----------------------- Transfer tokens ------------------------
+    // 
     // We send 0.5 tokens. Value is written in nanotokens
     const amount = 0.5e9
     const dest = "-1:7777777777777777777777777777777777777777777777777777777777777777"
@@ -287,7 +289,7 @@ In this example tokens are withdrawn from the user account to the account specif
                 input: {
                     dest: dest,
                     value: amount,
-                    bounce: true,
+                    bounce: false,
                     flags: 64,
                     payload: ''
                 }
@@ -360,6 +362,7 @@ In this example tokens are withdrawn from the user account to the account specif
         console.log('Contract deployed. Transaction hash', transaction.id)
         assert.equal(transaction.status, 3)
         assert.equal(transaction.status_name, "finalized")
+
 ```
 ### Mitigating risks of token loss due to user error
 

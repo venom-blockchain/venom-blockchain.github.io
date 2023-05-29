@@ -194,9 +194,6 @@ Note, that similar to the Everdev approach described above, you have to sponsor 
 The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/master/demo/msig-wallet/contract/SetcodeMultisig.sol) contract is used.
 
 ```typescript
-
- async function main(client: TonClient) {
-    // 
     // 1. ------------------ Deploy multisig wallet --------------------------------
     // 
     // Generate a key pair for the wallet to be deployed
@@ -220,40 +217,44 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
     const messageParams: ParamsOfEncodeMessage = {
         abi: { type: 'Json', value: msigABI },
         deploy_set: { tvc: msigTVC, initial_data: {} },
-        signer: { type: 'Keys', keys: keypair },
-        processing_try_index: 1
+        signer: { type: 'Keys', keys: keypair }
     }
 
     const encoded: ResultOfEncodeMessage = await client.abi.encode_message(messageParams)
 
     const msigAddress = encoded.address
 
+    console.log(`You can topup your wallet from dashboard at https://dashboard.evercloud.dev`)
     console.log(`Please send >= ${MINIMAL_BALANCE} tokens to ${msigAddress}`)
     console.log(`awaiting...`)
 
     // Blocking here, waiting for account balance changes.
-    // It is assumed that at this time you replenish this account.
+    // It is assumed that at this time you go to dashboard.evercloud.dev
+    // and replenish this account.
     let balance: number
+    let accType: number
     for (; ;) {
         // The idiomatic way to send a request is to specify 
         // query and variables as separate properties.
-        const getBalanceQuery = `
+        const getInfoQuery = `
                 query getBalance($address: String!) {
                     blockchain {
                     account(address: $address) {
                             info {
                             balance
+                            acc_type
                         }
                     }
                 }
             }
             `
         const resultOfQuery: ResultOfQuery = await client.net.query({
-            query: getBalanceQuery,
+            query: getInfoQuery,
             variables: { address: msigAddress }
         })
 
         const nanotokens = parseInt(resultOfQuery.result.data.blockchain.account.info?.balance, 16)
+        accType = resultOfQuery.result.data.blockchain.account.info?.acc_type;
         if (nanotokens > MINIMAL_BALANCE * 1e9) {
             balance = nanotokens / 1e9
             break
@@ -261,7 +262,7 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
         // TODO: rate limiting
         await sleep(1000)
     }
-    console.log(`Account balance is: ${balance.toString(10)} tokens`)
+    console.log(`Account balance is: ${balance.toString(10)} tokens. Account type is ${accType}`)
 
     console.log(`Deploying wallet contract to address: ${msigAddress} and waiting for transaction...`)
 
@@ -285,7 +286,6 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
     assert.equal(result.transaction?.status, 3)
     assert.equal(result.transaction?.status_name, "finalized")
 
-    //
 ```
 
 ### Ever Wallet
