@@ -11,9 +11,13 @@ This guide follows up with details on how to send transactions from the wallet y
 
 Similarly, SDK and Everdev CLI tool approaches are detailed below. They implement the same process.
 
-The specific function that is used to withdraw the funds depends on the contract chosen for the wallet account. Examples provided below are applicable for the [SetcodeMultisig](https://github.com/EverSurf/multisig2) contract.
+The specific function that is used to withdraw the funds depends on the contract chosen for the wallet account. 
+
+Examples provided below are applicable for the [**SetcodeMultisig**](https://github.com/EverSurf/multisig2) contract and (in the case of the [relevant SDK section](#ever-wallet), as only SDK currently supports it) **Ever Wallet** contract.
 
 ## Using CLI tool
+
+> **Note**: This section is only applicable for Multisig Wallet. Refer to the [SDK section](#ever-wallet) for Ever Wallet guidelines.
 
 Command line `Everdev` tool may be used to automate withdrawals from wallet account in your scripts.
 
@@ -247,9 +251,13 @@ If the account is already active, a small portion of the requested amount may be
 
 ## Using SDK
 
-You may integrate transaction sending into your backend using SDK as well. A sample is available in [this repository](https://github.com/tonlabs/sdk-samples/tree/master/demo/msig-wallet) and an overview of the relevant part is given below. 
+You may integrate transaction sending into your backend using SDK as well.
 
-In this sample JS SDK is used.  [Bindings](https://docs.everos.dev/ever-sdk/#community-bindings) for a large number of languages have been developed for SDK.
+In these samples JS SDK is used.  [Bindings](https://docs.everos.dev/ever-sdk/#community-bindings) for a large number of languages have been developed for SDK.
+
+### Multisig Wallet
+
+ A sample is available in [this repository](https://github.com/tonlabs/sdk-samples/tree/master/demo/msig-wallet) and an overview of the relevant part is given below. 
 
 To run the sample, clone the repository, save the Venom endpoit as an environment variable and launch:
 
@@ -293,6 +301,66 @@ In this example tokens are withdrawn from the user account to the account specif
 
 ```
 
+### Ever Wallet
+
+A sample is available in [this repository](https://github.com/tonlabs/sdk-samples/tree/master/demo/ever-wallet) and an overview is given below.
+
+To run the sample, clone the repository, save the Venom endpoit as an environment variable and launch:
+
+```sh
+export ENDPOINT=https://gql-testnet.venom.foundation/graphql
+npm i
+npm run ever-wallet
+```
+
+In this example tokens are withdrawn from the user account to the account specified in `dest`. In a proper implementation, the desired destination address should be used instead.
+
+```typescript
+    // 3.----------------- Make simple transfer -----------------------
+    // 
+
+    console.log(`Making simple transfer from ever-wallet contract to address: -1:7777777777777777777777777777777777777777777777777777777777777777 and waiting for transaction...`)
+      
+        // encode message body by ever-wallet ABI
+         body = (await client.abi.encode_message_body({
+            address: everWalletAddress,
+            abi: { type: 'Json', value: everWalletABI },
+            call_set: {      
+                function_name: 'sendTransaction',
+                input: {
+                    dest: '-1:7777777777777777777777777777777777777777777777777777777777777777',
+                    value: '1000000000', // amount in units (nano)
+                    bounce: false,
+                    flags: 3,
+                    payload: ''
+                }
+            },
+            is_internal:false,
+            signer:{type: 'Keys', keys: keypair}
+        })).body;
+    
+        let transferMsg =  await client.boc.encode_external_in_message({
+            dst: everWalletAddress,
+            body: body
+        });
+    
+        sendRequestResult = await client.processing.send_message({
+            message: transferMsg.message,
+            send_events: false
+        });
+    
+        transaction = (await client.processing.wait_for_transaction({
+            abi: { type: 'Json', value: everWalletABI },
+            message: transferMsg.message,
+            shard_block_id: sendRequestResult.shard_block_id,
+            send_events: false
+        })).transaction;
+    
+    
+        console.log('Contract deployed. Transaction hash', transaction.id)
+        assert.equal(transaction.status, 3)
+        assert.equal(transaction.status_name, "finalized")
+```
 ### Mitigating risks of token loss due to user error
 
 Similarly to the everdev approach, you can add the account status check prior to sending tokens.
