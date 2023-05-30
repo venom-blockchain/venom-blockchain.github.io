@@ -203,26 +203,47 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
     console.log('Generated wallet keys:', JSON.stringify(keypair))
     console.log('Do not forget to save the keys!')
 
-    // To deploy a wallet we need its TVC and ABI files
-    const msigTVC: string =
-        readFileSync(path.resolve(__dirname, "../contract/SetcodeMultisig.tvc")).toString("base64")
+
     const msigABI: string =
         readFileSync(path.resolve(__dirname, "../contract/SetcodeMultisig.abi.json")).toString("utf8")
 
+        const msigCode: string =
+        readFileSync(path.resolve(__dirname, "../contract/SetcodeMultisig.code.boc")).toString("base64")
+
     // We need to know the future address of the wallet account,
     // because its balance must be positive for the contract to be deployed
-    // Future address can be calculated by encoding the deploy message.
-    // https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_abi#encode_message
+    //
+    // Future address can be calculated from code and data of the contract
+    //
+    // For solidity contracts of version up to ***
+    // initial data consists of pubkey + all static contract variables
+    // and can be packed like this:
 
-    const messageParams: ParamsOfEncodeMessage = {
-        abi: { type: 'Json', value: msigABI },
-        deploy_set: { tvc: msigTVC, initial_data: {} },
-        signer: { type: 'Keys', keys: keypair }
-    }
+    const initData = (await client.abi.encode_boc({
+        params: [
+            { name: "data", type: "map(uint64,uint256)" }
+        ],
+        data: {
+            "data": {
+                0: `0x`+keypair.public
+            //  1: 1st-static-variable-value
+            //  2: 2nd-static-variable-value
+            },
+        }
+    })).boc;
 
-    const encoded: ResultOfEncodeMessage = await client.abi.encode_message(messageParams)
+    console.log('Init data', initData);
 
-    const msigAddress = encoded.address
+    // Lets construct the initial state of the contract
+    const stateInit = (await client.boc.encode_state_init({
+        code:msigCode,
+        data:initData
+    })).state_init;
+
+    // Address is the TVM hash of the initial state + workchain id (we work in 0 workchain)
+    const msigAddress = `0:`+(await client.boc.get_boc_hash({boc: stateInit})).hash;
+    console.log('Address: ', msigAddress);
+
 
     console.log(`You can topup your wallet from dashboard at https://dashboard.evercloud.dev`)
     console.log(`Please send >= ${MINIMAL_BALANCE} tokens to ${msigAddress}`)
@@ -251,11 +272,13 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
         const resultOfQuery: ResultOfQuery = await client.net.query({
             query: getInfoQuery,
             variables: { address: msigAddress }
-        })
+        });
+        const accountInfo = resultOfQuery.result.data.blockchain.account.info;
 
-        const nanotokens = parseInt(resultOfQuery.result.data.blockchain.account.info?.balance, 16)
-        accType = resultOfQuery.result.data.blockchain.account.info?.acc_type;
-        if (nanotokens > MINIMAL_BALANCE * 1e9) {
+
+        const nanotokens = parseInt(accountInfo.balance, 16)
+        accType = accountInfo.acc_type;
+        if (nanotokens >= MINIMAL_BALANCE * 1e9) {
             balance = nanotokens / 1e9
             break
         }
@@ -266,25 +289,43 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
 
     console.log(`Deploying wallet contract to address: ${msigAddress} and waiting for transaction...`)
 
-    // This function returns type `ResultOfProcessMessage`, see: 
-    // https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_processing#process_message
-    let result: ResultOfProcessMessage = await client.processing.process_message({
-        message_encode_params: {
-            ...messageParams,  // use the same params as for `encode_message`,
-            call_set: {        // plus add `call_set`
-                function_name: 'constructor',
-                input: {
-                    owners: [`0x${keypair.public}`],
-                    reqConfirms: 1,
-                    lifetime: 3600
-                }
-            },
+    // Encode the body with constructor call
+    let body = (await client.abi.encode_message_body({
+        address: msigAddress,
+        abi: { type: 'Json', value: msigABI },
+        call_set: {       
+            function_name: 'constructor',
+            input: {
+                owners: [`0x${keypair.public}`],
+                reqConfirms: 1,
+                lifetime: 3600 
+            }
         },
-        send_events: false,
-    })
-    console.log('Contract deployed. Transaction hash', result.transaction?.id)
-    assert.equal(result.transaction?.status, 3)
-    assert.equal(result.transaction?.status_name, "finalized")
+        is_internal:false,
+        signer:{type: 'Keys', keys: keypair}
+    })).body;
+
+    let deployMsg =  await client.boc.encode_external_in_message({
+        dst: msigAddress,
+        init: stateInit,
+        body: body
+    });
+
+    let sendRequestResult = await client.processing.send_message({
+        message: deployMsg.message,
+        send_events: false
+    });
+
+    let transaction = (await client.processing.wait_for_transaction({
+        abi: { type: 'Json', value: msigABI },
+        message: deployMsg.message,
+        shard_block_id: sendRequestResult.shard_block_id,
+        send_events: false
+    })).transaction;
+
+    console.log('Contract deployed. Transaction hash', transaction?.id)
+    assert.equal(transaction?.status, 3)
+    assert.equal(transaction?.status_name, "finalized")
 
 ```
 
@@ -372,7 +413,7 @@ The [Ever Wallet](https://github.com/broxus/ever-wallet-contract) contract is us
         })
 
         const nanotokens = parseInt(resultOfQuery.result.data.blockchain.account.info?.balance, 16)
-        if (nanotokens > MINIMAL_BALANCE * 1e9) {
+        if (nanotokens >= MINIMAL_BALANCE * 1e9) {
             balance = nanotokens / 1e9
             break
         }
@@ -426,7 +467,6 @@ The [Ever Wallet](https://github.com/broxus/ever-wallet-contract) contract is us
     console.log('Contract deployed. Transaction hash', transaction.id)
     assert.equal(transaction.status, 3)
     assert.equal(transaction.status_name, "finalized")
-
 ```
 
 ## What's next?
