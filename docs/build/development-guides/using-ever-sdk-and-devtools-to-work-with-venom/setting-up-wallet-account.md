@@ -11,11 +11,17 @@ This guide will help you learn to set up wallet accounts in Venom Blockchain wit
 
 SDK and Everdev CLI tool approaches are detailed below. They implement a similar process of wallet deployment.
 
-Currently we can recommend the [SetcodeMultisig](https://github.com/EverSurf/multisig2) contract to be used for wallets. It is well tested and secure, supports multiple custodians, and can be set up to require several independent signatures for any transfers.
+Currently we can recommend the [**SetcodeMultisig**](https://github.com/EverSurf/multisig2) contract to be used for wallets. It is well tested and secure, supports multiple custodians, and can be set up to require several independent signatures for any transfers.
+
+Alternatively, you may use the **Ever Wallet** contract. It has some different features and capabilities. You can read about them and find the contract files in this [repository](https://github.com/broxus/ever-wallet-contract).
+
+**Note**: Ever Wallet however is not currently supported by Everdev CLI tool, so only the SDK approach will work for it. If you choose it, skip straight to the [SDK section with Ever Wallet sample](#ever-wallet). 
 
 ## Using CLI tool
 
 [Everdev](https://docs.everos.dev/everdev/), the command line tool for development on the TVM blockchains, allows to write scripts to deploy any smart contracts to the blockchain, call all contract methods, sign transactions, and generally manage an account.
+
+> **Note**: This section is only applicable for Multisig Wallet. Refer to the [SDK section](#ever-wallet) for Ever Wallet guidelines.
 
 ### 1. Install Everdev
 
@@ -171,6 +177,8 @@ You may integrate above described process of wallet account deployment into your
 
 > [Bindings](https://docs.everos.dev/ever-sdk/#community-bindings) for a large number of languages have been developed for SDK.
 
+### Multisig Wallet
+
 A sample is available in [this repository](https://github.com/tonlabs/sdk-samples/tree/master/demo/msig-wallet) and an overview is given below.
 
 To run the sample, clone the repository, save the Venom endpoit as an environment variable and launch:
@@ -186,9 +194,6 @@ Note, that similar to the Everdev approach described above, you have to sponsor 
 The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/master/demo/msig-wallet/contract/SetcodeMultisig.sol) contract is used.
 
 ```typescript
-
- async function main(client: TonClient) {
-    // 
     // 1. ------------------ Deploy multisig wallet --------------------------------
     // 
     // Generate a key pair for the wallet to be deployed
@@ -212,40 +217,44 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
     const messageParams: ParamsOfEncodeMessage = {
         abi: { type: 'Json', value: msigABI },
         deploy_set: { tvc: msigTVC, initial_data: {} },
-        signer: { type: 'Keys', keys: keypair },
-        processing_try_index: 1
+        signer: { type: 'Keys', keys: keypair }
     }
 
     const encoded: ResultOfEncodeMessage = await client.abi.encode_message(messageParams)
 
     const msigAddress = encoded.address
 
+    console.log(`You can topup your wallet from dashboard at https://dashboard.evercloud.dev`)
     console.log(`Please send >= ${MINIMAL_BALANCE} tokens to ${msigAddress}`)
     console.log(`awaiting...`)
 
     // Blocking here, waiting for account balance changes.
-    // It is assumed that at this time you replenish this account.
+    // It is assumed that at this time you go to dashboard.evercloud.dev
+    // and replenish this account.
     let balance: number
+    let accType: number
     for (; ;) {
         // The idiomatic way to send a request is to specify 
         // query and variables as separate properties.
-        const getBalanceQuery = `
+        const getInfoQuery = `
                 query getBalance($address: String!) {
                     blockchain {
                     account(address: $address) {
                             info {
                             balance
+                            acc_type
                         }
                     }
                 }
             }
             `
         const resultOfQuery: ResultOfQuery = await client.net.query({
-            query: getBalanceQuery,
+            query: getInfoQuery,
             variables: { address: msigAddress }
         })
 
         const nanotokens = parseInt(resultOfQuery.result.data.blockchain.account.info?.balance, 16)
+        accType = resultOfQuery.result.data.blockchain.account.info?.acc_type;
         if (nanotokens > MINIMAL_BALANCE * 1e9) {
             balance = nanotokens / 1e9
             break
@@ -253,7 +262,7 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
         // TODO: rate limiting
         await sleep(1000)
     }
-    console.log(`Account balance is: ${balance.toString(10)} tokens`)
+    console.log(`Account balance is: ${balance.toString(10)} tokens. Account type is ${accType}`)
 
     console.log(`Deploying wallet contract to address: ${msigAddress} and waiting for transaction...`)
 
@@ -277,7 +286,147 @@ The recommended [SetcodeMultisig](https://github.com/tonlabs/sdk-samples/blob/ma
     assert.equal(result.transaction?.status, 3)
     assert.equal(result.transaction?.status_name, "finalized")
 
-    //
+```
+
+### Ever Wallet
+
+A sample is available in [this repository](https://github.com/tonlabs/sdk-samples/tree/master/demo/ever-wallet) and an overview is given below.
+
+To run the sample, clone the repository, save the Venom endpoit as an environment variable and launch:
+
+```sh
+export ENDPOINT=https://gql-testnet.venom.foundation/graphql
+npm i
+npm run ever-wallet
+```
+
+Note, that similar to the Everdev approach described above, you have to sponsor a user account before deploying contract code. The sample assumes you send test tokens to the contract address generated by the sample. In a production environment you may set up a giver to sponsor your contract deployment operations. An example of such a set up can be found in this [sample](https://github.com/tonlabs/sdk-samples/tree/master/demo/hello-wallet).
+
+The [Ever Wallet](https://github.com/broxus/ever-wallet-contract) contract is used.
+
+```typescript
+    // 1. ------------------ Deploy ever-wallet --------------------------------
+    // 
+    // Generate a key pair for the wallet to be deployed
+    const keypair = await client.crypto.generate_random_sign_keys();
+
+    // TODO: Save generated keypair!
+    console.log('Generated wallet keys:', JSON.stringify(keypair))
+    console.log('Do not forget to save the keys!')
+
+    // To deploy a wallet we need its code and ABI files
+    const everWalletCode: string =
+        readFileSync(path.resolve(__dirname, "../contract/Wallet.code.boc")).toString("base64")
+    const everWalletABI: string =
+        readFileSync(path.resolve(__dirname, "../contract/everWallet.abi.json")).toString("utf8")
+
+        const initData = (await client.abi.encode_boc({
+            params: [
+                { name: "publicKey", type: "uint256" },
+                { name: "timestamp", type: "uint64" }
+            ],
+            data: {
+                "publicKey": `0x`+keypair.public,
+                "timestamp": 0
+            }
+        })).boc;
+
+        console.log('Init data', initData);
+    
+
+    const stateInit = (await client.boc.encode_state_init({
+        code:everWalletCode,
+        data:initData
+    })).state_init;
+
+    const everWalletAddress = `0:`+(await client.boc.get_boc_hash({boc: stateInit})).hash;
+    console.log('Address: ', everWalletAddress);
+
+
+
+    console.log(`You can topup your wallet from dashboard at https://dashboard.evercloud.dev`)
+    console.log(`Please send >= ${MINIMAL_BALANCE} tokens to ${everWalletAddress}`)
+    console.log(`awaiting...`)
+
+    // Blocking here, waiting for account balance changes.
+    // It is assumed that at this time you go to dashboard.evercloud.dev
+    // and replenish this account.
+    let balance: number
+    for (; ;) {
+        // The idiomatic way to send a request is to specify 
+        // query and variables as separate properties.
+        const getBalanceQuery = `
+                query getBalance($address: String!) {
+                    blockchain {
+                    account(address: $address) {
+                            info {
+                            balance
+                        }
+                    }
+                }
+            }
+            `
+        const resultOfQuery: ResultOfQuery = await client.net.query({
+            query: getBalanceQuery,
+            variables: { address: everWalletAddress }
+        })
+
+        const nanotokens = parseInt(resultOfQuery.result.data.blockchain.account.info?.balance, 16)
+        if (nanotokens > MINIMAL_BALANCE * 1e9) {
+            balance = nanotokens / 1e9
+            break
+        }
+        // TODO: rate limiting
+        await sleep(1000)
+    }
+    console.log(`Account balance is: ${balance.toString(10)} tokens`)
+
+
+
+    console.log(`Making first transfer+deploy from ever-wallet contract to address: -1:7777777777777777777777777777777777777777777777777777777777777777 and waiting for transaction...`)
+// Here we construct body by ABI
+// and then add state init to the message for deploy
+  
+    let body = (await client.abi.encode_message_body({
+        address: everWalletAddress,
+        abi: { type: 'Json', value: everWalletABI },
+        call_set: {      
+            function_name: 'sendTransaction',
+            input: {
+                dest: '-1:7777777777777777777777777777777777777777777777777777777777777777',
+                value: '1000000000', // amount in nano EVER
+                bounce: false,
+                flags: 3,
+                payload: ''
+            }
+        },
+        is_internal:false,
+        signer:{type: 'Keys', keys: keypair}
+    })).body;
+
+    let deployAndTransferMsg =  await client.boc.encode_external_in_message({
+        dst: everWalletAddress,
+        init: stateInit,
+        body: body
+    });
+
+    let sendRequestResult = await client.processing.send_message({
+        message: deployAndTransferMsg.message,
+        send_events: false
+    });
+
+    let transaction = (await client.processing.wait_for_transaction({
+        abi: { type: 'Json', value: everWalletABI },
+        message: deployAndTransferMsg.message,
+        shard_block_id: sendRequestResult.shard_block_id,
+        send_events: false
+    })).transaction;
+
+
+    console.log('Contract deployed. Transaction hash', transaction.id)
+    assert.equal(transaction.status, 3)
+    assert.equal(transaction.status_name, "finalized")
+
 ```
 
 ## What's next?
