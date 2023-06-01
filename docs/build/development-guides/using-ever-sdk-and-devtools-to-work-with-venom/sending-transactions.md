@@ -280,26 +280,57 @@ In this example tokens are withdrawn from the user account to the account specif
 
     console.log('Sending 0.5 token to', dest)
 
-    result = await client.processing.process_message({
-        message_encode_params: {
-            address: msigAddress,
-            ...messageParams, // use the same params as for `encode_message`,
-            call_set: {       // plus add `call_set`
-                function_name: 'sendTransaction',
-                input: {
-                    dest: dest,
-                    value: amount,
-                    bounce: false,
-                    flags: 64,
-                    payload: ''
-                }
-            },
+    // If you want to add a comment to your transfer, create payload with it:
+
+    const comment = (await client.abi.encode_boc({
+        params: [
+            { name: "op", type: "uint32" }, // operation
+            { name: "comment", type: "bytes" }
+        ],
+        data: {
+            "op": 0, // operation = 0 means comment
+            "comment": Buffer.from("My comment").toString("hex"),
+        }
+    })).boc;
+
+    // Encode the body with sendTransaction call and comment
+    body = (await client.abi.encode_message_body({
+        address: msigAddress,
+        abi: { type: 'Json', value: msigABI },
+        call_set: {      
+            function_name: 'sendTransaction',
+            input: {
+                dest: dest,
+                value: amount,
+                bounce: false,
+                flags: 64,
+                payload: comment // specify "" if no payload is provided
+            }
         },
-        send_events: false, // do not send intermidate events
-    })
-    console.log('Transfer completed. Transaction hash', result.transaction?.id)
-    assert.equal(result.transaction?.status, 3)
-    assert.equal(result.transaction?.status_name, "finalized")
+        is_internal:false,
+        signer:{type: 'Keys', keys: keypair}
+    })).body;
+
+    let msg =  await client.boc.encode_external_in_message({
+        dst: msigAddress,
+        body: body
+    });
+
+    sendRequestResult = await client.processing.send_message({
+        message: msg.message,
+        send_events: false
+    });
+
+    transaction = (await client.processing.wait_for_transaction({
+        abi: { type: 'Json', value: msigABI },
+        message: msg.message,
+        shard_block_id: sendRequestResult.shard_block_id,
+        send_events: false
+    })).transaction;
+
+    console.log('Transfer completed. Transaction hash', transaction?.id)
+    assert.equal(transaction?.status, 3)
+    assert.equal(transaction?.status_name, "finalized")
 
 ```
 
@@ -323,6 +354,20 @@ In this example tokens are withdrawn from the user account to the account specif
 
     console.log(`Making simple transfer from ever-wallet contract to address: -1:7777777777777777777777777777777777777777777777777777777777777777 and waiting for transaction...`)
       
+    // If you want to add a comment to your transfer, create payload with it:
+
+        const comment = (await client.abi.encode_boc({
+            params: [
+                { name: "op", type: "uint32" }, // operation
+                { name: "comment", type: "bytes" }
+            ],
+            data: {
+                "op": 0, // operation = 0 means comment
+                "comment": Buffer.from("My comment").toString("hex"),
+            }
+        })).boc;
+
+
         // encode message body by ever-wallet ABI
          body = (await client.abi.encode_message_body({
             address: everWalletAddress,
@@ -331,10 +376,10 @@ In this example tokens are withdrawn from the user account to the account specif
                 function_name: 'sendTransaction',
                 input: {
                     dest: '-1:7777777777777777777777777777777777777777777777777777777777777777',
-                    value: '1000000000', // amount in units (nano)
+                    value: '500000000', // amount in units (nano)
                     bounce: false,
                     flags: 3,
-                    payload: ''
+                    payload: comment // specify "" if no payload is provided
                 }
             },
             is_internal:false,
@@ -362,7 +407,6 @@ In this example tokens are withdrawn from the user account to the account specif
         console.log('Contract deployed. Transaction hash', transaction.id)
         assert.equal(transaction.status, 3)
         assert.equal(transaction.status_name, "finalized")
-
 ```
 ### Mitigating risks of token loss due to user error
 
