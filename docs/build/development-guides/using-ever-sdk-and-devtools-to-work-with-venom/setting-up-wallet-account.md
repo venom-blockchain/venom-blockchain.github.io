@@ -58,15 +58,30 @@ To set it up, first save the custodian keys of your giver account into a signer 
 everdev signer add giver_sign signer_secret_key_or_seed_phrase_in_quotes
 ```
 
-Then add the giver address specifying the signer to be used with it.
+Example:
+
+```sh
+everdev signer add giver_sign "alien mammal improve win raven royal broccoli  finish kingdom reveal donor style"
+
+```
+
+Then add the address of the account you chose to use as a giver and specifying the signer to be used with it.
 
 ```sh
 everdev network giver venom giver_address --signer giver_sign --type MsigV2
 ```
 
-Where
+Where:
 
-`giver_type` is the type of the giver contract you selected (GiverV1 | GiverV2 | GiverV3 | SafeMultisigWallet | MsigV2| SetcodeMultisigWallet). MsigV2 is supported in the Venom wallet.
+`giver_address` is the address of the account you chose to use as a giver.
+
+`type` is the type of the giver contract you selected (GiverV1 | GiverV2 | GiverV3 | SafeMultisigWallet | MsigV2| SetcodeMultisigWallet). MsigV2 is supported in the Venom wallet.
+
+Example:
+
+```sh
+everdev network giver venom 0:ee00cb10821fc027073ca0abcc4b64e26fa705ff92944c9a5cf5cbad7d5a847d --signer giver_sign --type MsigV2
+```
 
 ### 4. Get wallet account contract files
 
