@@ -10,11 +10,11 @@ sidebar_label: Integration
 How to connect Venom Wallet to my dApp?
 </summary>
 
-The easiest way to connect your dApp to Venom Wallet is to use [Venom Connect](https://www.npmjs.com/package/venom-connect). It is a library that allows you to connect to Venom Wallet (both mobile and browser extension) and interact with it. This library provides you with a handy interface for building connect popup for our venom wallet and then gives us an interface for working with the venom network.
+The easiest way to connect your dApp to Venom Wallet is to use [Venom Connect](https://www.npmjs.com/package/venom-connect). It is a library that allows you to connect to Venom Wallet (both mobile and browser extension) and interact with it. This library provides you with a handy interface for building a connect popup for our Venom Wallet and then gives you an interface for working with the Venom network.
 
-Check out [this](../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) paragraph of the frontend guide, that explains how to use venom-connect in your project. Moreover, you can check the final source code of this guide [here](https://github.com/venom-blockchain/guides/tree/master/tokensale-frontend).
+Check out [this](../build/development-guides/how-to-create-your-own-fungible-tip-3-token/venom-in-action/extend-our-tokensale-with-frontend.md#connecting-venom-wallet-to-your-app) paragraph of the frontend guide, which explains how to use Venom Connect in your project. Moreover, you can check the final source code of this guide [here](https://github.com/venom-blockchain/guides/tree/master/tokensale-frontend).
 
-You can read about all configuration options in venom-connect official [repository](https://github.com/web3sp/venom-connect). Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
+You can read about all configuration options in the venom-connect official [repository](https://github.com/web3sp/venom-connect). Also, it has an [example](https://github.com/web3sp/venom-connect/tree/main/examples/react).
 </details>
 
 <details>
