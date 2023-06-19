@@ -375,3 +375,4 @@ Copyright and related rights waived via [CC0](https://docs.venom.foundation/stan
 * [https://eips.ethereum.org/EIPS/eip-20](https://eips.ethereum.org/EIPS/eip-20)
 * [https://eips.ethereum.org/EIPS/eip-5827](https://eips.ethereum.org/EIPS/eip-5827)
 * [https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20-increaseAllowance-address-uint256-](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20-increaseAllowance-address-uint256-)
+* [Reference implementation by EverDues](https://github.com/EverDues/tip3)
