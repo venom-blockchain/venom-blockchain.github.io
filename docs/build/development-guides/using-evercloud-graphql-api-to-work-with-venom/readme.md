@@ -4,7 +4,7 @@ sidebar_position: 0
 sidebar_label: Welcome
 ---
 
-# Using Evercloud GraphQL server to work with Venom
+# Using Evercloud GraphQL API to work with Venom
 
 This section contains guides on the various ways to access the Venom blockchain using the capabilities of Evercloud GraphQL API.
 
