@@ -34,7 +34,7 @@ Everdev is built with Ever SDK.
 The Venom network is running in testnet and cannot be used to run your own node now. Please note that any results obtained using these tutorials might be more accurate or reliable in future. You can use only our public testnet graphql API. Please wait for official announcements.
 :::
 
-To access the Venom Blockchain while trying out the guides in this section, use the official GraphQL Venom endpoint.
+To access the Venom Blockchain while trying out the guides in this section, use the official GraphQL Venom endpoint provided by [Evercloud](../using-evercloud-graphql-api-to-work-with-venom/readme.md).
 
 Everdev tool and SDK used in the examples below can connect to it, as if it were a regular node. It has the same API as the supernode and [local node for testing](https://github.com/tonlabs/evernode-se), and provides all needed capabilities.
 

@@ -26,7 +26,7 @@ Learn [how to create the NFT collection](how-to-create-your-own-non-fungible-tip
 
 Learn how to work with wallets and transactions, and to add Venom blockchain and Venom token support to the backend of your project with the help of Ever SDK and Everdev CLI tool.
 
-### [Using Evercloud GaphQL Server to work with-Venom](using-evercloud-graphql-server-to-work-with-venom/readme.md)
+### [Using Evercloud GaphQL API to work with-Venom](using-evercloud-graphql-api-to-work-with-venom/readme.md)
 
 Learn how to query Venom blockchain data with GraphQL API and integrate these queries in various environments and projects.
 
