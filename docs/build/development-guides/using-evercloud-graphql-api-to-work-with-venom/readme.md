@@ -12,7 +12,7 @@ This section contains guides on the various ways to access the Venom blockchain 
 
 Evercloud is a highhly available cloud solution that provides TVM-compatible networks, including Venom, with GraphQl API endpoints. 
 
-With Evercloud GraphQL server, you don't need to run your own node to access the blockchain. It shares the API with supernode and [local node for testing](https://github.com/tonlabs/evernode-se), providing all the necessary capabilities. As a result, projects can be easily migrated between the local node, Evercloud, and supernode.
+With Evercloud, you don't need to run your own node to access the blockchain. It shares the API with supernode and [local node for testing](https://github.com/tonlabs/evernode-se), providing all the necessary capabilities. As a result, projects can be easily migrated between the local node, Evercloud, and supernode.
 
 Evercloud has been designed with both community-driven development and high-load enterprise DApps in mind.
 
