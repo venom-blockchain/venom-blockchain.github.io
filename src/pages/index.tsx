@@ -114,6 +114,9 @@ export default function Home(): JSX.Element {
                   <a href="/build/development-guides/using-ever-sdk-and-devtools-to-work-with-venom">Using Ever SDK and developer tools to work with Venom Blockchain</a>
                 </li>
                 <li>
+                  <a href="/build/development-guides/using-evercloud-graphql-server-to-work-with-venom">Using Evercloud GraphQL server to work with Venom</a>
+                </li>
+                <li>
                   <a href="/build/tools-and-resources">Tools & Resources</a>
                 </li>
               </ul>
