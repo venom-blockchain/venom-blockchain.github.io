@@ -41,7 +41,7 @@ Click on the button **DOCS** on the right. You will see the API documentation wi
 
 ![](./assets/2.png)
 
-### Request with curl
+## Request with curl
 
 Use this command in terminal to get the same data as in the playground sample above:
 
