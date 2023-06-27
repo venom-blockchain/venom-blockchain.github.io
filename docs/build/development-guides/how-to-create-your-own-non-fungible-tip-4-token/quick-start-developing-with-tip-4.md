@@ -14,7 +14,7 @@ During the following of this guide's code-listings you can meet keywords like `p
 
 ## Source Code
 
-You can inspect the source code of TIP-4 token implementation by [link](https://github.com/itgoldio/everscale-tip).
+You can inspect the source code of TIP-4 token implementation by [link](https://github.com/broxus/tip4).
 
 ## How to deploy your own NFT collection
 
@@ -44,21 +44,21 @@ npx locklift init --path my-first-nft
 TIP-4 is accessible from npm. Let's install it
 
 ```shell
-npm i --save-dev @itgold/everscale-tip
+npm i --save-dev @broxus/tip4
 ```
 
 ### Implement base contracts
 
 Next, you should implement two interfaces in two contracts. Firstly, let's deal with Nft contract. The only thing we should do for basics is implementing `TIP4_1Nft``&#x20;
 
-```solidity title="Nft.sol" showLineNumbers
+```solidity title="Nft.tsol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import '@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol';
+import '@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.sol';
 
 contract Nft is TIP4_1Nft {
 
@@ -77,15 +77,15 @@ contract Nft is TIP4_1Nft {
 
 Now we should go for the Collection contract. We should implement `TIP4_1Collection` and write some method for NFT deploying.
 
-```solidity title="Collection.sol" showLineNumbers
+```solidity title="Collection.tsol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import '@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Collection.sol';
-import './Nft.sol';
+import '@broxus/tip4/contracts/TIP4_1/TIP4_1Collection.tsol';
+import './Nft.tsol';
 
 contract Collection is TIP4_1Collection {
 
@@ -125,15 +125,15 @@ contract Collection is TIP4_1Collection {
 
 The previous code uses only TIP-4.1 part of TIP-4. But it is kinda useless. To work with your NFT with full NFT experience you should implement [TIP-4.2](../../../standards/TIP/TIP-4/2.md) - standard, which helps you with NFT metadata storing. Also, you will need [TIP-4.3](../../../standards/TIP/TIP-4/3.md) - standard, which helps other dApps to find all your NFT with single query (GQL or JRPC). You should study the information about these standards by links. Implementation of 4.2 and 4.3 is pretty simple.
 
-```solidity title="Collection.sol" showLineNumbers
+```solidity title="Collection.tsol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
 // importing all standards bases
-import '@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol';
-import '@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Nft.sol';
-import '@itgold/everscale-tip/contracts/TIP4_3/TIP4_3Nft.sol';
+import '@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.tsol';
+import '@broxus/tip4/contracts/TIP4_2/TIP4_2Nft.tsol';
+import '@broxus/tip4/contracts/TIP4_3/TIP4_3Nft.tsol';
 
 
 contract Nft is TIP4_1Nft, TIP4_2Nft, TIP4_3Nft {
