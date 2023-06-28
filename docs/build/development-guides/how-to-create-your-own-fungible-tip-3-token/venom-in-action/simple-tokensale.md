@@ -187,9 +187,9 @@ pragma ever-solidity >= 0.61.2;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
-import "@broxus/tip3/contracts/interfaces/IAcceptTokensTransferCallback.sol";
-import "@broxus/tip3/contracts/interfaces/ITokenRoot.sol";
-import "@broxus/tip3/contracts/interfaces/ITokenWallet.sol";
+import "@broxus/tip3/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
+import "@broxus/tip3/contracts/interfaces/ITokenRoot.tsol";
+import "@broxus/tip3/contracts/interfaces/ITokenWallet.tsol";
 
 
 contract Tokensale {
