@@ -37,18 +37,11 @@ npx locklift init --path my-first-token
 
 ### Install dependencies
 
-Add TIP-3 implementation repository as a `devDependencies` in the corresponding section of the `package.json` file
+Add TIP-3 implementation repository as a devDependency:
 
-```json title="package.json" showLineNumbers
-{
-  "devDependencies": {
-    "tip3": "https://github.com/broxus/tip3#v5",
-    ...
-  },
-}
+```shell
+npm i --save-dev @broxus/tip3
 ```
-
-Then run `npm install` to fetch dependencies needed.
 
 Specify installed contracts to the `compiler.externalContracts` section of `locklift.config.ts`, by providing a path to contracts artifacts (`.abi.json`, `.tvc` files, etc., most commonly placed in a `build` folder of smart contracts projects) and contract names array.
 
@@ -56,7 +49,7 @@ Specify installed contracts to the `compiler.externalContracts` section of `lock
 compiler: {
     ...
     externalContracts: {
-      "node_modules/tip3/build": ["TokenRoot", "TokenWallet"],
+      "node_modules/@broxus/tip3/build": ["TokenRoot", "TokenWallet"],
     },
   }
 ```
