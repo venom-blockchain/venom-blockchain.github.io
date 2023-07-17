@@ -94,6 +94,38 @@ main(client)
 function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
 ```
 
+:::caution
+
+  The GraphQL API is undergoing refactoring to better handle the growing network load. An update to the API will be released in August 2023. With this update, the Blockchain API used in this sample for pagination will provide only data from the past 7 days by default. To retrieve earlier data, the `archive: true` flag must be specified in the query.
+
+To learn more about upcoming changes and receive seamless migration advice, visit [here](https://docs.evercloud.dev/reference/breaking-changes/migration-guides/graphql-api-1.0-migration).
+
+:::
+
+The flag is already supported by the API, but does not yet affect the query results. To avoid any interruptions when the update happens, you can already include it in your queries where needed.
+
+The following query sample shows how to use the `archive` flag.
+
+```
+query {
+    blockchain {
+        transactions(
+            workchain: 0
+            archive: true
+            ) {
+            edges {
+                node { 
+                    id
+                    balance_delta
+                    account_addr
+                }
+            }
+            pageInfo { hasNextPage endCursor }
+        }
+    }
+}
+```
+
 ## Subscription
 
 [Subscription](https://github.com/tonlabs/sdk-samples/tree/master/demo/subscribe-transactions) sample subscribes to new transactions of the listed accounts and lists them as they appear.
