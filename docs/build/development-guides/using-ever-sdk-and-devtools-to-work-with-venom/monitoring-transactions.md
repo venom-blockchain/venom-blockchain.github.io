@@ -38,6 +38,7 @@ npm run list-tr
             blockchain {
                 transactions(
                     workchain: 0
+                    archive: true
                     first: $count
                     after: $cursor
                  ) {
@@ -92,6 +93,33 @@ main(client)
 
 // This helper function is used for limiting request rate
 function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
+```
+
+**Note**: 
+With the next update coming in August 2023, Blockchain API used in this sample for pagination will provide only data from the past 7 days by default. To retrieve earlier data, make sure to use the `archive: true` flag in the filters of the query.
+
+The flag is already supported by the API, but does not yet affect the query results. To avoid any interruptions when the update happens, you can already include it in your queries where needed.
+
+The following query sample illustrates the usage of the `archive` flag.
+
+```
+query {
+    blockchain {
+        transactions(
+            workchain: 0
+            archive: true
+            ) {
+            edges {
+                node { 
+                    id
+                    balance_delta
+                    account_addr
+                }
+            }
+            pageInfo { hasNextPage endCursor }
+        }
+    }
+}
 ```
 
 ## Subscription
