@@ -27,6 +27,8 @@ Run these samples on the Venom testnet public endpoint: https://gql-testnet.veno
 
 - [Messages](https://docs.evercloud.dev/samples/graphql-samples/messages) - query samples for message data: get message information
 
+- [Message Processing and Monitoring](https://docs.evercloud.dev/samples/graphql-samples/message-processing-and-monitoring) - query or subscribe to processing statuses of batches of external messages
+
 - [Block and Transaction Pagination: Best Practice](https://docs.evercloud.dev/samples/graphql-samples/block-and-transaction-pagination-best-practice) - how to paginate blocks and transactions properly and not lose any data while doing it
 
 - [Subscribe for REMP receipts](https://docs.evercloud.dev/samples/graphql-samples/subscribe-for-remp-receipts) - receive detailed information about message processing stages
