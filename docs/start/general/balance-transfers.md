@@ -64,4 +64,4 @@ Upon confirming the transaction, the window will close.
     className="balance-transfers inline-img"
 />
 
-You can now view your transactions in [The Explorer](ecosystem.md/#explorer).
+You can now view your transactions in [The Explorers](ecosystem.md/#explorer).
