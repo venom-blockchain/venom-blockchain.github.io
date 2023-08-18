@@ -267,7 +267,7 @@ step. The Wallet will become active after the first stake
 
 8. Wait until the elections start
 
-When elections start, the venom-validator-manager process will automatically stake the desired amount of tokens. You can check the current state of elections using [Venomscan.com](https://venomscan.com/validators).
+When elections start, the venom-validator-manager process will automatically stake the desired amount of tokens. You can check the current state of elections using [Venomscan.com](https://venomscan.com/validators) or the alternative explorer [Venomscan.live](https://testnet.venomscan.live/validators).
 
 :::info
 venom-validator-manager adds 1 VENOM token for the stake to pay for the transaction fees, and you will be required to add 1 VENOM token to the "stake and bonuses recovery" transaction. Due to this, it is adviseable to always keep some additional tokens in the Validator

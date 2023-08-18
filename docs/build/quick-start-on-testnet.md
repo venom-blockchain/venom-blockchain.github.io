@@ -26,7 +26,7 @@ To deploy your wallet or any other smart contract or for any interaction with an
 
 ## Explore the Explorer
 
-One of the most important tools for a developer is the explorer. It allows you to see the state of the blockchain and smart contracts, transactions, token transfers etc. You can use [Venom Explorer](https://testnet.venomscan.com/) to see the state of the blockchain and the smart contracts.
+One of the most important tools for a developer is the explorer. It allows you to see the state of the blockchain and smart contracts, transactions, token transfers etc. You can use [Venom Explorer](https://testnet.venomscan.com/) or the [alternative explorer](https://testnet.venomscan.live/blocks) to see the state of the blockchain and the smart contracts.
 
 ## Check some tutorials
 

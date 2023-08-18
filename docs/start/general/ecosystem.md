@@ -17,11 +17,13 @@ Non-custodial Venom wallet to proceed with transactions, store, send and receive
 
 [venomwallet.com](https://venomwallet.com/)
 
-### Venom Scan
+### Venom Explorers
 
 Search and explore the immutable records of the Venom blockchain
 
 [testnet.venomscan.com](https://testnet.venomscan.com/)
+
+[testnet.venomscan.live](https://testnet.venomscan.live/blocks) - alternative explorer
 
 ### Venom Bridge
 
