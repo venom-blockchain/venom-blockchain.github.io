@@ -45,7 +45,7 @@ So that allows you to easily change gas variables for your contract
 ```solidity title="Tokensale.sol" showLineNumbers
 pragma ever-solidity >= 0.61.2;
 ...
-import "./gas/TokensaleGas.sol"
+import "./gas/TokensaleGas.sol";
 
 contract Tokensale {
 ...
@@ -56,10 +56,10 @@ contract Tokensale {
                 address sendRemainingGasTo
             ) public {
                 tvm.accept();
-                tvm.rawReserve(TokesaleGas.INITIAL_BALANCE, 0);
+                tvm.rawReserve(TokensaleGas.INITIAL_BALANCE, 0);
 ...
                 ITokenRoot(distributedTokenRoot).deployWallet {
-                    value: TokesaleGas.DEPLOY_EMPTY_WALLET_VALUE,
+                    value: TokensaleGas.DEPLOY_EMPTY_WALLET_VALUE,
                     flag: 1,
                     callback: Tokensale.onTokenWallet
                 } (
