@@ -33,7 +33,7 @@ General information about NFT metadata. [TIP-4.2](./../TIP-4/2.md) is optional, 
 
 ## (Status:Review) [On-chain indexes (TIP-4.3)](./../TIP-4/3.md)
 
-On-chain Indexes solves easy and fast searching any data in blockchain. [TIP-4.3](./../TIP-4/3.md) is optional, but can be use for find all your NFT with one [dApp](https://gql-testnet.venom.foundation/graphql) query.
+On-chain Indexes solves easy and fast searching any data in blockchain. [TIP-4.3](./../TIP-4/3.md) is optional, but can be use for find all your NFT with one [dApp](https://gql.venom.foundation/graphql) query.
 
 ## (Status:Draft) [On-chain storage (TIP-4.4)](./../TIP-4/4.md)
 

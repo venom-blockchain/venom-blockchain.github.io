@@ -33,7 +33,7 @@ NFT creation is a green arrow flow, and auction bids are yellow. Let's describe 
 That's all! As you can see, the main mechanic of our interaction is callbacks. Let's start implementing our contracts. First, implement Collection and NFT contracts same as in TIP-4 [quick start](../quick-start-developing-with-tip-4.md) guide.
 
 ```solidity title="Collection.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
@@ -122,7 +122,7 @@ contract Collection is TIP4_2Collection, TIP4_3Collection {
 ```
 
 ```solidity title="NFT.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
@@ -199,7 +199,7 @@ We won't explain this code blocks because it's already done in TIP-4 [quick star
 Then, let's deal with `Auction` contract. We'll get started from the state and constructor, as usual. Do not forget to add the interfaces we need.
 
 ```solidity code title="Auction.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
@@ -271,7 +271,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 Remember about gas management and token wallet deploying mechanics from the previous Venom In Action [guide](../../how-to-create-your-own-fungible-tip-3-token/venom-in-action/simple-tokensale.md). Implement `onTokenWallet` callback the same way.
 
 ```solidity title="Auction.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 ...
@@ -293,7 +293,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 Ok, the next callback we need is `onNftTransfer`, which will be called when the NFT owner sends NFT to the auction address
 
 ```solidity title="Auction.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 ...
@@ -334,7 +334,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 Great! Now we are ready to accept bids. Let's implement another callback `onAcceptTokensTransfer`, that our `TokenWallet` will call any time it got an incoming token transaction. Take attention! This is the main logic of our auction!
 
 ```solidity title="Auction.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 ...
@@ -396,7 +396,7 @@ contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 That's it. How hard is that? The last thing we need - is `finishAuction` function.
 
 ```solidity title="Auction.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 contract Auction is INftTransfer, IAcceptTokensTransferCallback {
 ...

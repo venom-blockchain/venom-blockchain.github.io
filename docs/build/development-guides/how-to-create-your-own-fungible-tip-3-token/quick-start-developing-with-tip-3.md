@@ -79,6 +79,8 @@ ls ./build
 > ...
 ```
 
+### Deploy your token
+
 Let's move to deploy. Firstly, we make a new deploy script in `scripts` directory for the `TokenRoot` contract.&#x20;
 
 ```typescript title="01-deploy-token-root.ts" showLineNumbers
@@ -165,13 +167,20 @@ docker run -d --name local-node -e USER_AGREEMENT=yes -p80:80 tonlabs/local-node
 and run the deploy script
 
 ```shell
-npx locklift run -s ./scripts/01-deploy-token.ts -n local
-
+npx locklift run -s ./scripts/01-deploy-token-root.ts -n local
 > Found 1 sources
 
 > factorySource generated
 > Built
 > First Venom Token: 0:69f2407386ca20390878565da97124be717f65496cb03e14aaa676709a6ccb2b
 ```
+
+:::danger Deployment Error
+When trying to deploy the script, you may encounter the following error:  
+`Cannot use "in" operator to search for 'map' in undefined`
+
+This issue is still current. A solution can be found at this GitHub link:
+[Error Fix](https://github.com/venom-blockchain/locklift/pull/15/commits/9a4d3c87d4ed673288cbf7c9d52cff45d1a78e6b).
+:::
 
 Congratulations, your first token on the Venom network has been deployed!

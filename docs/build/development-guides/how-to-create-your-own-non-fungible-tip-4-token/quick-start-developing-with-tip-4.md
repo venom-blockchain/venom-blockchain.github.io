@@ -52,7 +52,7 @@ npm i --save-dev @broxus/tip4
 Next, you should implement two interfaces in two contracts. Firstly, let's deal with Nft contract. The only thing we should do for basics is implementing `TIP4_1Nft``&#x20;
 
 ```solidity title="Nft.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
@@ -78,7 +78,7 @@ contract Nft is TIP4_1Nft {
 Now we should go for the Collection contract. We should implement `TIP4_1Collection` and write some method for NFT deploying.
 
 ```solidity title="Collection.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 pragma AbiHeader expire;
 pragma AbiHeader time;
@@ -126,7 +126,7 @@ contract Collection is TIP4_1Collection {
 The previous code uses only TIP-4.1 part of TIP-4. But it is kinda useless. To work with your NFT with full NFT experience you should implement [TIP-4.2](../../../standards/TIP/TIP-4/2.md) - standard, which helps you with NFT metadata storing. Also, you will need [TIP-4.3](../../../standards/TIP/TIP-4/3.md) - standard, which helps other dApps to find all your NFT with single query (GQL or JRPC). You should study the information about these standards by links. Implementation of 4.2 and 4.3 is pretty simple.
 
 ```solidity title="Nft.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 

@@ -8,14 +8,6 @@ slug: /general/readme
 
 The Knowledge Base is the entry point into the Venom universe. Get to know the technology behind the incredible scalability of the Venom blockchain.
 
-:::info
-At present, the Venom blockchain is running in testnet and is not intended to process or store transactions related to real value.
-
-Please note that there is currently no official information regarding the launch of token sales. Any messages about token sales that you may receive from other sources are not authorized and are not associated with the Venom Foundation.
-
-We recommend all users carefully verify the information and follow official developer channels to obtain up-to-date information.
-:::
-
 ## Why the Venom blockchain for everyone?
 
 The Venom blockchain offers many benefits, making it an attractive choice for users and developers. It is a safe place for everyone to build their blockchain-based solutions and conduct transactions securely and efficiently.

@@ -112,6 +112,14 @@ Now you can just use the same deploy scripts, but with another network. For exam
 ```shell
 npx locklift run -s ./scripts/01-deploy-token.ts -n venomTestnet
 ```
+:::caution Deployment Error
+When trying to deploy the script, you may encounter the following error:
+
+`Cannot use "in" operator to search for 'map' in undefined`
+
+This issue is still current. A solution can be found at this GitHub link:
+[Error Fix](https://github.com/venom-blockchain/locklift/pull/15/commits/9a4d3c87d4ed673288cbf7c9d52cff45d1a78e6b).
+:::
 
 Summarizing:
 

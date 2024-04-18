@@ -7,46 +7,40 @@ slug: /general/ecosystem
 
 # Ecosystem
 
-:::caution
-All products are currently deployed on the testnet for testing purposes. The Venom blockchain does not yet have a mainnet, and the VENOM token is not being sold now.
-:::
-
-### Venom Wallet
+### [Venom Wallet](https://venomwallet.com/)
 
 Non-custodial Venom wallet to proceed with transactions, store, send and receive tokens.
 
 [venomwallet.com](https://venomwallet.com/)
 
-### Venom Explorers
+### [Venom Explorer](https://venomscan.com/)
 
 Search and explore the immutable records of the Venom blockchain
 
-[testnet.venomscan.com](https://testnet.venomscan.com/)
+[venomscan.com](https://venomscan.com/)
 
-[testnet.venomscan.live](https://testnet.venomscan.live/blocks) - alternative explorer
-
-### Venom Bridge
+### [Venom Bridge](https://venombridge.com/bridge)
 
 Explore the world of interchain transactions
 
-[testnet.venombridge.com](https://testnet.venombridge.com/bridge)
+[venombridge.com](https://venombridge.com/bridge)
+
+### [VenomStake](https://venomStake.com)
+
+Secure solution for staking VENOM tokens
+
+[venomStake.com](https://venomstake.com/)
 
 ## Partners
 
-### VenomPools
-
-Use your VENOM on validator nodes using Venom Pools
-
-[testnet.venompools.com](https://testnet.venompools.com/)
-
-### Web3.World
+### [Web3.World](https://web3.world/swap)
 
 Intuitively swap assets, provide liquidity, and farm available assets
 
-[testnet.web3.world](https://testnet.web3.world/)
+[web3.world](https://web3.world/swap)
 
-### Oasis.gallery
+### [Oasis.gallery](https://oasis.gallery/)
 
 An NFT marketplace on Venom blockchain for unique digital assets trading
 
-[testnet.oasis.gallery](https://testnet.oasis.gallery/)
+[oasis.gallery](https://oasis.gallery/)

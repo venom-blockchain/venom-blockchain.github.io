@@ -38,7 +38,7 @@ compiler: {
 Now we can start with our tokensale contract. Create a `Tokensale.tsol` file in your `contracts` folder. First of all, let's arrange pragmas and imports.
 
 ```solidity title="Tokensale.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
@@ -183,7 +183,7 @@ Pay attention to `value` and `flag`. Again 0 and 128. This allows us to delegate
 So, let's check our final contract code
 
 ```solidity title="Tokensale.tsol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 

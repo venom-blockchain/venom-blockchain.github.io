@@ -11,8 +11,6 @@ Other GraphQL guides and samples are available in Evercloud documentation and ar
 
 Run these samples on the Venom testnet public endpoint: https://gql-testnet.venom.foundation/graphql
 
-
-
 ## GraphQL samples and guides
 
 - [Send Message](https://docs.evercloud.dev/samples/graphql-samples/send-message) - send a message to blockchain via GraphQL
