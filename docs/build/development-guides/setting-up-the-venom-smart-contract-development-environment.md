@@ -58,7 +58,7 @@ const LOCAL_NETWORK_ENDPOINT = "http://localhost/graphql";
 
 const config: LockliftConfig = {
   compiler: {
-    version: "0.61.2",
+    version: "0.62.0",
   },
   linker: {
     version: "0.15.48",

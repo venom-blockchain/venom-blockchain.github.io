@@ -32,7 +32,7 @@ ITokenRoot(distributedTokenRoot).deployWallet {
 Just create some library:
 
 ```solidity title="TokensaleGas.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 library TokensaleGas {
     uint128 constant INITIAL_BALANCE                                  = 0.7  ever;
@@ -43,7 +43,7 @@ library TokensaleGas {
 So that allows you to easily change gas variables for your contract
 
 ```solidity title="Tokensale.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 import "./gas/TokensaleGas.sol"
 
@@ -71,7 +71,7 @@ contract Tokensale {
 You can accept the same idea for error codes:
 
 ```solidity title="TokensaleErrors.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 
 library TokensaleErrors {
     uint8 constant BAD_ROOT_CALL               = 101;
@@ -79,7 +79,7 @@ library TokensaleErrors {
 ```
 
 ```solidity title="Tokensale.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 import "./errors/TokensaleErrors.sol"

@@ -22,7 +22,7 @@ npx locklift init --path my-smv
 As you previously read, we need to implement two smart contracts. There are no external dependencies for this guide. Start with `Vote` contract. We have a pretty clean state and constructor without something unusual
 
 ```solidity title="Vote.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
@@ -51,7 +51,7 @@ contract Vote {
 Next function we need - `deployBallot`. It realizes the popular "deploy contract from contract" mechanic well-described [here](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#deploy-contract-from-contract). We should just use `tvm.buildStateInit` function, fill `varInit` section with future values of our `Ballot` contract static variables and use the keyword `new` for deploying.
 
 ```solidity title="Vote.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 contract Vote {
@@ -85,7 +85,7 @@ Well, the votes will be stored in our Vote contract. That's why we need a specia
 It can't be any easier. The address of any contract can be definitely calculated if you know state init variables, a public key and contract code:
 
 ```solidity title="Vote.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 contract Vote {
@@ -135,7 +135,7 @@ function getDetails() external view returns (uint32 accepted, uint32 rejected) {
 Bring it all together
 
 ```solidity title="Vote.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
@@ -217,7 +217,7 @@ contract Vote {
 Now let's deal with `Ballot` contract. There is no something special in state and constructor:
 
 ```solidity title="Ballot.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
@@ -249,7 +249,7 @@ contract Ballot {
 Let's talk about the activation mechanic. In constructor, we already reserved little more venoms. We made it with the purpose, that fee for the external call will be paid from the contract balance. That way of gas management allows us to transfer external calls fee-paying to user responsibility. But activate method shouldn't be called by somebody unauthorized, so we just use `require` keyword by comparing `msg.pubkey` and  `_managerPublicKey` stored in state init. Of course, you need to call `tvm.accept()` function. Simply put, this call allows the contract to use its own balance for executive pay.
 
 ```solidity title="Ballot.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 import "./interfaces/IVote.sol";
@@ -276,7 +276,7 @@ Let's implement the main function of our `Ballot` - `vote`.
 Pay attention to imports. We have `import "./interfaces/IVote.sol"`. It's just an interface for calling our `Vote` contract (just like for EVM if you know what I mean).&#x20;
 
 ```solidity title="interfaces/IVote.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 
 interface IVote {
@@ -287,7 +287,7 @@ interface IVote {
 Let us now return to `vote` function
 
 ```solidity title="Ballot.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 import "./interfaces/IVote.sol";
@@ -313,7 +313,7 @@ contract Ballot {
 That's all. `Vote` contract will check our Ballot address by calculating it, as you remember, and the vote will be accepted. But what if Vote calls will fail because of some reason (low gas attached or yet network problem!)? Our `Ballot` will be marked as used (`_used` state variable will be set as true, and we can't call vote once again). To solve this problems, TVM has [bounce](../../../../start/learn/messages-and-transactions.md) messages and [`onBounce`](https://github.com/tonlabs/TON-Solidity-Compiler/blob/master/API.md#onbounce) function for handling them. Let's deal with it by example
 
 ```solidity title="Ballot.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 ...
 
 import "./interfaces/IVote.sol";
@@ -337,7 +337,7 @@ contract Ballot {
 That's it. Now let's bring it all together.&#x20;
 
 ```solidity title="Ballot.sol" showLineNumbers
-pragma ever-solidity >= 0.61.2;
+pragma ever-solidity >= 0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader pubkey;
 
