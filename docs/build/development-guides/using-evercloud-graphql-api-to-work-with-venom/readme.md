@@ -28,13 +28,9 @@ Full Evercloud and GraphQL API documentation is available at https://docs.evercl
 
 ## Venom Network access
 
-:::caution
-The Venom network is running in testnet and cannot be used to run your own node now. Please note that any results obtained using these tutorials might be more accurate or reliable in future. You can use only our public testnet graphql API. Please wait for official announcements.
-:::
-
 To access the Venom Blockchain while trying out the guides in this section, use the official GraphQL Venom endpoint available at:
 
-https://gql-testnet.venom.foundation/graphql
-
+**For Mainnet**: https://gql.venom.foundation/graphql       
+**For Testnet**: https://gql-testnet.venom.foundation/graphql
 
 
