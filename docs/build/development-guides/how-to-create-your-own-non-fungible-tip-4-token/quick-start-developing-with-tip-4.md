@@ -216,7 +216,7 @@ Notice, that Index (and IndexBasis) code must be precompiled! You shouldn't comp
 
     // Specify config for extarnal contracts as in exapmple
     externalContracts: {
-      "../path/to/precompiled/indexes": ['Index', 'IndexBasis']
+      "../path/to/precompiled/indexes": ["Index", "IndexBasis"],
     }
     ...
 ```
