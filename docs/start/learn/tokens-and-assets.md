@@ -48,16 +48,16 @@ The TIP-4 standard describes the second most widely used type of token as NFT. S
 
 Token Address: [`0:77d36848bb159fa485628bc38dc37eadb74befa514395e09910f601b841f749e`](https://venomscan.com/accounts/0:77d36848bb159fa485628bc38dc37eadb74befa514395e09910f601b841f749e)
 
-#### Why do we need WVenom token?
+#### **Why do we need WVenom token?**
 
 If you are a regular user of DeFi protocols, you will likely not experience direct ownership of the VENOM token. As protocols typically handle the process of wrapping the VENOM token behind the scenes, you don't have to concern yourself with it.
 
-#### Why do they do it?
+#### **Why do they do it?**
 
 Venom is the native token of the Venom blockchain, and WVENOM is a TIP-3 standard token implemented in smart contract code. DeFi protocols only support TIP-3 for ease of implementation and general compatibility, in this aspect, the Venom network follows the prevalent practice in most blockchains.
 
 For example, a swap on a DEX in the VENOM -> USDT pair will appear as a process in which VENOM first wraps into WVENOM, and then WVENOM changes to USDT.
 
-#### Is this not the actual VENOM?
+#### **Is this not the actual VENOM?**
 
 WVENOM is a fungible TIP-3 token, issued 1 to 1 with the VENOM token. You always have the option to convert your WVENOM back to VENOM.

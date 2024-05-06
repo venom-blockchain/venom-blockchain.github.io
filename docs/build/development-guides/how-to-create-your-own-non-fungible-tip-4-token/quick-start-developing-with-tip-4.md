@@ -53,26 +53,40 @@ Next, you should implement two interfaces in two contracts. Firstly, let's deal 
 
 ```solidity title="Nft.tsol" showLineNumbers
 pragma ever-solidity >= 0.62.0;
-
 pragma AbiHeader expire;
-pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import '@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.sol';
+// importing all standards bases
+import '@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.tsol';
+import '@broxus/tip4/contracts/TIP4_2/TIP4_2Nft.tsol';
+import '@broxus/tip4/contracts/TIP4_3/TIP4_3Nft.tsol';
 
-contract Nft is TIP4_1Nft {
 
+contract Nft is TIP4_1Nft, TIP4_2Nft, TIP4_3Nft {
+
+    // just call constructors of all implemented classes
     constructor(
         address owner,
         address sendGasTo,
-        uint128 remainOnNft
+        uint128 remainOnNft,
+        string json, // for TIP-4.2
+        TvmCell codeIndex, // for TIP-4.3
+        uint128 indexDeployValue, // for TIP-4.3
+        uint128 indexDestroyValue // for TIP-4.3
     ) TIP4_1Nft(
         owner,
         sendGasTo,
         remainOnNft
-    ) public {}
-
-}
+    ) TIP4_2Nft (
+        json
+    ) TIP4_3Nft (
+        indexDeployValue,
+        indexDestroyValue,
+        codeIndex
+    ) 
+    public {
+        
+    }
 ```
 
 Now we should go for the Collection contract. We should implement `TIP4_1Collection` and write some method for NFT deploying.
@@ -84,20 +98,49 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import '@broxus/tip4/contracts/TIP4_1/TIP4_1Collection.tsol';
+import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
+import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+
 import './Nft.tsol';
 
-contract Collection is TIP4_1Collection {
+contract Collection is TIP4_2Collection, TIP4_3Collection {
+
+    uint64 static nonce_;
 
     constructor(
-        TvmCell codeNft
-    ) TIP4_1Collection (
-        codeNft
-    ) public {
+        TvmCell codeNft,
+        TvmCell codeIndex,
+        TvmCell codeIndexBasis,
+        address owner,
+        uint128 remainOnNft,
+        string json
+    )
+        public
+        TIP4_1Collection(codeNft)
+        TIP4_2Collection(json)
+        TIP4_3Collection(codeIndex, codeIndexBasis
+    ) {
         tvm.accept();
+        tvm.rawReserve(1 ever, 0);
+        owner = msg.sender;
     }
 
-    function mintNft() external virtual {
+    function codeDepth() public view returns(uint16) {
+        return (_buildNftCode(address(this)).depth());
+    }
+
+    function _buildNftState(TvmCell code, uint256 id)
+        internal
+        pure
+        virtual
+        override (TIP4_2Collection, TIP4_3Collection)
+        returns (TvmCell)
+    {
+        return tvm.buildStateInit({contr: Nft, varInit: {_id: id}, code: code});
+    }
+
+    function mintNft(string json) external virtual {
         require(msg.value > 0.4 ever, 101);
         tvm.rawReserve(0, 4);
 
@@ -117,8 +160,12 @@ contract Collection is TIP4_1Collection {
         }(
             msg.sender,
             msg.sender,
-            0.3 ever
-        );     
+            0.3 ever,
+            json,                // put your json here
+            _codeIndex,        // for TIP-4.3
+            _indexDeployValue, // for TIP-4.3
+            _indexDestroyValue // for TIP-4.3
+        );
     }
 }
 ```
@@ -199,6 +246,24 @@ contract Nft is TIP4_1Nft, TIP4_2Nft, TIP4_3Nft {
         TIP4_3Nft._deployIndex();
     }
 
+    function _beforeChangeManager(
+        address oldManager,
+        address newManager,
+        address sendGasTo,
+        mapping(address => CallbackParams) callbacks
+    ) internal override virtual {
+        oldManager; newManager; sendGasTo; callbacks; //disable warnings
+    }
+
+    function _afterChangeManager(
+        address oldManager,
+        address newManager,
+        address sendGasTo,
+        mapping(address => CallbackParams) callbacks
+    ) internal override virtual {
+        oldManager; newManager; sendGasTo; callbacks; //disable warnings
+    }
+
 }
 ```
 
@@ -216,7 +281,7 @@ Notice, that Index (and IndexBasis) code must be precompiled! You shouldn't comp
 
     // Specify config for extarnal contracts as in exapmple
     externalContracts: {
-      "../path/to/precompiled/indexes": ['Index', 'IndexBasis']
+      "../path/to/precompiled/indexes": ["Index", "IndexBasis"],
     }
     ...
 ```
@@ -228,20 +293,29 @@ Notice, that Index (and IndexBasis) code must be precompiled! You shouldn't comp
 Let's move to deploy action. We need two scripts for this quick start: one for `Collection` deploying, and the second for calling `mintNft` function, that we have implemented.
 
 ```typescript title="1-deploy-collection.ts" showLineNumbers
+import { Address } from "locklift";
+
 async function main() {
   const signer = (await locklift.keystore.getSigner("0"))!;
-  const nftArtifacts = await locklift.factory.getContractArtifacts("NFT");
+  const nftArtifacts = await locklift.factory.getContractArtifacts("Nft");
   const indexArtifacts = await locklift.factory.getContractArtifacts("Index");
   const indexBasisArtifacts = await locklift.factory.getContractArtifacts("IndexBasis");
+
+  const owner = new Address('0:0000000000000000000000000000000000000000000000000000000000000000')
+
   const { contract: sample, tx } = await locklift.factory.deployContract({
     contract: "Collection",
     publicKey: signer.publicKey,
-    initParams: {},
+    initParams: {
+      nonce_: 0,
+    },
     constructorParams: {
-        codeNft: nftArtifacts.code,
-        codeIndex: indexArtifacts.code,
-        codeIndexBasis: indexBasisArtifacts.code,
-        json: `{"collection":"tutorial"}` // EXAMPLE...not by TIP-4.2
+      codeNft: nftArtifacts.code,
+      codeIndex: indexArtifacts.code,
+      codeIndexBasis: indexBasisArtifacts.code,
+      owner: owner,
+      remainOnNft: locklift.utils.toNano(0.2),
+      json: `{"collection":"tutorial"}` // EXAMPLE...not by TIP-4.2
     },
     value: locklift.utils.toNano(5),
   });
@@ -265,20 +339,21 @@ import { toNano, WalletTypes } from "locklift";
 // or you can pass this parameter by cli or get them by some file reading for example
 // if phrase or secret was not set up in key section, calling (await locklift.keystore.getSigner("0"))! will give you a different results from launch to lauch
 // we just hardcode it here
-const COLLECTION_DEPLOY_PUBLIC_KEY = "e85f61aaef0ea43afc14e08e6bd46c3b996974c495a881baccc58760f6349300"
+// const COLLECTION_DEPLOY_PUBLIC_KEY = "e85f61aaef0ea43afc14e08e6bd46c3b996974c495a881baccc58760f6349300"
 
 async function main() {
     const signer = (await locklift.keystore.getSigner("0"))!;
-    const collectionArtifacts = await locklift.factory.getContractArtifacts("Collection");
-    const nftArtifacts = await locklift.factory.getContractArtifacts("NFT");
+    const collectionArtifacts = locklift.factory.getContractArtifacts("Collection");
 
     // calculation of deployed Collection contract address
     const collectionAddress = await locklift.provider.getExpectedAddress(
         collectionArtifacts.abi,
         {
             tvc: collectionArtifacts.tvc,
-            publicKey: COLLECTION_DEPLOY_PUBLIC_KEY,
-            initParams: {} // we don't have any initParams for collection
+            publicKey: signer.publicKey,
+            initParams: {
+                nonce_: 0,
+            }
         }
     );
     // initialize contract object by locklift
@@ -297,7 +372,7 @@ async function main() {
     // firstly get current nft id (totalSupply) for future NFT address calculating
     const {count: id} = await collectionInsance.methods.totalSupply({ answerId: 0 }).call();
     await collectionInsance.methods.mintNft({ json: `{"name":"hello world"}` }).send({ from: someAccount.address, amount: toNano(1)});
-    const {nft: nftAddress} = await collectionInsance.methods.nftAddress({ answerId: 0, id: id }).call();
+    const { nft: nftAddress } = await collectionInsance.methods.nftAddress({ answerId: 0, id: id }).call();
   
     console.log(`NFT: ${nftAddress.toString()}`);
 }
@@ -308,7 +383,6 @@ main()
         console.log(e);
         process.exit(1);
     });
-  
 ```
 
 Finally, we can deploy a new token to the `local` network. For this, make sure the local node is running, if not follow the next command
