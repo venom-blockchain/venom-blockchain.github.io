@@ -9,7 +9,7 @@ Take a look at [Quick start on Venom Blockchain](graphql-quick-start.md) to get 
 
 Other GraphQL guides and samples are available in Evercloud documentation and are listed below.
 
-Run these samples on the Venom testnet public endpoint: https://gql-testnet.venom.foundation/graphql
+Run these samples on the Venom public endpoint: https://gql.venom.foundation/graphql
 
 ## GraphQL samples and guides
 
